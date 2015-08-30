@@ -1,0 +1,92 @@
+Running with 1 MPI task
+Running openMP with    48 threads
+ Setting up timer with           48  threads and reporting for classes <= 
+          10
+   surface wet points:              77285
+   wet points:                    7136949
+                   rank:        0
+           array config:        565       331       137     77285   7136949
+        no of wetpoints:  7136949
+      surface wet range:        1   77285
+     plane data range i:        1     565
+     plane data range j:        1     331
+     plane halo range i:        1     565
+     plane halo range j:        1     331
+OpenMP 3D decomposition statistics (ideal mean, mean, min, max):
+    148686   148686.       148618 ( 17 )       148792 ( 48 )
+OpenMP 2D decomposition statistics (ideal mean, mean, min, max):
+     1610.     1609.         1417 ( 32 )         2218 ( 48 )
+openMP thread   1 handles surface range:          1      1851
+openMP thread   2 handles surface range:       1852      3686
+openMP thread   3 handles surface range:       3687      5461
+openMP thread   4 handles surface range:       5462      7196
+openMP thread   5 handles surface range:       7197      8736
+openMP thread   6 handles surface range:       8737     10360
+openMP thread   7 handles surface range:      10361     11944
+openMP thread   8 handles surface range:      11945     13537
+openMP thread   9 handles surface range:      13538     15109
+openMP thread  10 handles surface range:      15110     16656
+openMP thread  11 handles surface range:      16657     18187
+openMP thread  12 handles surface range:      18188     19745
+openMP thread  13 handles surface range:      19746     21260
+openMP thread  14 handles surface range:      21261     22752
+openMP thread  15 handles surface range:      22753     24279
+openMP thread  16 handles surface range:      24280     25778
+openMP thread  17 handles surface range:      25779     27400
+openMP thread  18 handles surface range:      27401     29048
+openMP thread  19 handles surface range:      29049     30649
+openMP thread  20 handles surface range:      30650     32170
+openMP thread  21 handles surface range:      32171     33655
+openMP thread  22 handles surface range:      33656     35167
+openMP thread  23 handles surface range:      35168     36658
+openMP thread  24 handles surface range:      36659     38197
+openMP thread  25 handles surface range:      38198     39653
+openMP thread  26 handles surface range:      39654     41132
+openMP thread  27 handles surface range:      41133     42616
+openMP thread  28 handles surface range:      42617     44064
+openMP thread  29 handles surface range:      44065     45513
+openMP thread  30 handles surface range:      45514     47008
+openMP thread  31 handles surface range:      47009     48486
+openMP thread  32 handles surface range:      48487     49904
+openMP thread  33 handles surface range:      49905     51349
+openMP thread  34 handles surface range:      51350     52788
+openMP thread  35 handles surface range:      52789     54211
+openMP thread  36 handles surface range:      54212     55670
+openMP thread  37 handles surface range:      55671     57174
+openMP thread  38 handles surface range:      57175     58727
+openMP thread  39 handles surface range:      58728     60302
+openMP thread  40 handles surface range:      60303     61899
+openMP thread  41 handles surface range:      61900     63531
+openMP thread  42 handles surface range:      63532     65233
+openMP thread  43 handles surface range:      65234     67001
+openMP thread  44 handles surface range:      67002     68929
+openMP thread  45 handles surface range:      68930     70895
+openMP thread  46 handles surface range:      70896     73004
+openMP thread  47 handles surface range:      73005     75066
+openMP thread  48 handles surface range:      75067     77285
+Validation prints:
+------------------------------------------------------------------------
+Statistics for domain:               1
+Average value for salinity:      35.0000000000000
+RMS and STD for salinity:        35.0000000000000      0.0000000000000
+Average value for temperature:   10.0000000000000
+RMS and STD for temperature:     10.0000000000000      0.0000000000000
+Min and max for salinity:        35.0000000000000     35.0000000000000
+Min and max for temperature:     10.0000000000000     10.0000000000000
+------------------------------------------------------------------------
+TS - Initialisation took:      0.7030000 seconds
+TS - tflow_adv took:     81.8590000 seconds
+Validation prints:
+------------------------------------------------------------------------
+Statistics for domain:               1
+Average value for salinity:      35.0000000000000
+RMS and STD for salinity:        35.0000000000000      0.0000000000000
+Average value for temperature:   10.0000000000000
+RMS and STD for temperature:     10.0000000000000      0.0000000000000
+Min and max for salinity:        34.9999999999964     35.0000000000007
+Min and max for temperature:     10.0000000000000     10.0000000000001
+------------------------------------------------------------------------
+TS - IO time took:      0.2140000 seconds
+END TIME IN HBM
+Program exited, return value=0
+Time to die for MPI

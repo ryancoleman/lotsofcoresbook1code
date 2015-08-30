@@ -1,0 +1,30 @@
+# Source for base of embedded Linux file system
+Base CPIO /usr/share/mpss/boot/initramfs-knightscorner.cpio.gz
+
+# MIC card unique overlay files such as etc, etc.
+CommonDir /var/mpss/common
+
+# Additional command line parameters.  Caution should be used in changing these.
+ExtraCommandLine "highres=off"
+
+# MIC Console
+Console "hvc0"
+
+# MIC Shutdown timeout - Wait for orderly shutdown to complete
+# via service MPSS stop/unload and micctrl --shutdown or --reboot and --wait
+# +ve integer -> Time in seconds to wait for shutdown to complete before forcing reset
+# -ve integer -> Infinite wait for orderly shutdown to complete
+# 0           -> Forced shutdown or reset. NOT RECOMMENDED!
+ShutdownTimeout 300
+
+# Storage location and size for MIC kernel crash dumps
+CrashDump /var/crash/mic/ 16
+
+Bridge micbr0 External HOSTIPADDR 24 9000
+
+# Control card power state setting
+# cpufreq: P state
+# corec6: Core C6 state
+# pc3: Package C3 state
+# pc6: Package C6 state
+PowerManagement "cpufreq_on;corec6_off;pc3_off;pc6_off"

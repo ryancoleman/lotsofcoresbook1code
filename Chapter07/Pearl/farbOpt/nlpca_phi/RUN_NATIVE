@@ -1,0 +1,19 @@
+DEV=mic0
+SEED=1234
+. ./common.sh
+
+./gen_$APP - $EXAMPLES $DEV $SEED | ./train_$APP.mic - $APP.param 
+
+#scp train_$APP.mic $DEV:
+#./gen_$APP - $EXAMPLES $VAR $SEED \
+#   | ssh $DEV "export LD_LIBRARY_PATH=/tmp; ./train_$APP.mic - $APP.param" 
+
+#scp $DEV:$APP.param .
+
+#clean up
+#ssh $DEV "rm train_$APP.mic $APP.param"
+#./gen_$APP - 1000 0 1 | ./pred_$APP $APP.param - > output.txt
+
+# create file for gnuplot
+#tail -n +3 output.txt > plot.txt
+

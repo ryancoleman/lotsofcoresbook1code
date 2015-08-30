@@ -1,0 +1,38 @@
+##########################
+##  This file is controlled by puppet!
+##  Any manual changes will be overwritten.
+## Only make changes on the puppetmaster at:
+## PEAR:/etc/puppet/modules/beacon/files/etc/micN.conf.template
+##########################
+Version 1 1
+
+# Include configuration common to all MIC cards
+Include default.conf
+
+# Include all additional functionality configuration files by default
+Include "conf.d/*.conf"
+
+# Unique per card files for embedded Linux file system
+MicDir /var/mpss/MICN
+
+# Hostname to assign to MIC card
+Hostname "NODE-MICN"
+
+# MAC address configuration
+MacAddrs "Serial"
+
+Network class=StaticBridge bridge=micbr0 micip=MICIPADDR mtu=64512 modhost=no modcard=no
+
+# MIC OS Verbose messages to console
+VerboseLogging Disabled
+
+# MIC OS image
+OSimage /usr/share/mpss/boot/bzImage-knightscorner /usr/share/mpss/boot/System.map-knightscorner
+
+# Boot MIC card when MPSS stack is started
+BootOnStart Enabled
+
+# Root device for MIC card
+RootDevice ramfs /var/mpss/MICN.image.gz
+
+Cgroup memory=disabled

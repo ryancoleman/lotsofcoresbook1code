@@ -1,0 +1,284 @@
+Running with 1 MPI task
+Running openMP with   240 threads
+ Setting up timer with          240  threads and reporting for classes <= 
+          10
+   surface wet points:              77285
+   wet points:                    7136949
+                   rank:        0
+           array config:        565       331       137     77285   7136949
+        no of wetpoints:  7136949
+      surface wet range:        1   77285
+     plane data range i:        1     565
+     plane data range j:        1     331
+     plane halo range i:        1     565
+     plane halo range j:        1     331
+OpenMP 3D decomposition statistics (ideal mean, mean, min, max):
+     29737    29737.        29675 (168 )        29890 (240 )
+OpenMP 2D decomposition statistics (ideal mean, mean, min, max):
+      322.      321.          256 (121 )          516 (240 )
+openMP thread   1 handles surface range:          1       330
+openMP thread   2 handles surface range:        331       687
+openMP thread   3 handles surface range:        688      1070
+openMP thread   4 handles surface range:       1071      1482
+openMP thread   5 handles surface range:       1483      1852
+openMP thread   6 handles surface range:       1853      2211
+openMP thread   7 handles surface range:       2212      2585
+openMP thread   8 handles surface range:       2586      2963
+openMP thread   9 handles surface range:       2964      3317
+openMP thread  10 handles surface range:       3318      3687
+openMP thread  11 handles surface range:       3688      4059
+openMP thread  12 handles surface range:       4060      4416
+openMP thread  13 handles surface range:       4417      4771
+openMP thread  14 handles surface range:       4772      5117
+openMP thread  15 handles surface range:       5118      5463
+openMP thread  16 handles surface range:       5464      5815
+openMP thread  17 handles surface range:       5816      6184
+openMP thread  18 handles surface range:       6185      6540
+openMP thread  19 handles surface range:       6541      6874
+openMP thread  20 handles surface range:       6875      7198
+openMP thread  21 handles surface range:       7199      7511
+openMP thread  22 handles surface range:       7512      7817
+openMP thread  23 handles surface range:       7818      8121
+openMP thread  24 handles surface range:       8122      8434
+openMP thread  25 handles surface range:       8435      8738
+openMP thread  26 handles surface range:       8739      9073
+openMP thread  27 handles surface range:       9074      9384
+openMP thread  28 handles surface range:       9385      9725
+openMP thread  29 handles surface range:       9726     10037
+openMP thread  30 handles surface range:      10038     10362
+openMP thread  31 handles surface range:      10363     10675
+openMP thread  32 handles surface range:      10676     10985
+openMP thread  33 handles surface range:      10986     11323
+openMP thread  34 handles surface range:      11324     11637
+openMP thread  35 handles surface range:      11638     11946
+openMP thread  36 handles surface range:      11947     12272
+openMP thread  37 handles surface range:      12273     12596
+openMP thread  38 handles surface range:      12597     12909
+openMP thread  39 handles surface range:      12910     13216
+openMP thread  40 handles surface range:      13217     13541
+openMP thread  41 handles surface range:      13542     13869
+openMP thread  42 handles surface range:      13870     14172
+openMP thread  43 handles surface range:      14173     14507
+openMP thread  44 handles surface range:      14508     14815
+openMP thread  45 handles surface range:      14816     15111
+openMP thread  46 handles surface range:      15112     15443
+openMP thread  47 handles surface range:      15444     15743
+openMP thread  48 handles surface range:      15744     16039
+openMP thread  49 handles surface range:      16040     16361
+openMP thread  50 handles surface range:      16362     16657
+openMP thread  51 handles surface range:      16658     16950
+openMP thread  52 handles surface range:      16951     17281
+openMP thread  53 handles surface range:      17282     17588
+openMP thread  54 handles surface range:      17589     17886
+openMP thread  55 handles surface range:      17887     18187
+openMP thread  56 handles surface range:      18188     18516
+openMP thread  57 handles surface range:      18517     18811
+openMP thread  58 handles surface range:      18812     19101
+openMP thread  59 handles surface range:      19102     19415
+openMP thread  60 handles surface range:      19416     19745
+openMP thread  61 handles surface range:      19746     20043
+openMP thread  62 handles surface range:      20044     20331
+openMP thread  63 handles surface range:      20332     20651
+openMP thread  64 handles surface range:      20652     20965
+openMP thread  65 handles surface range:      20966     21259
+openMP thread  66 handles surface range:      21260     21548
+openMP thread  67 handles surface range:      21549     21871
+openMP thread  68 handles surface range:      21872     22176
+openMP thread  69 handles surface range:      22177     22463
+openMP thread  70 handles surface range:      22464     22752
+openMP thread  71 handles surface range:      22753     23080
+openMP thread  72 handles surface range:      23081     23378
+openMP thread  73 handles surface range:      23379     23663
+openMP thread  74 handles surface range:      23664     23956
+openMP thread  75 handles surface range:      23957     24279
+openMP thread  76 handles surface range:      24280     24598
+openMP thread  77 handles surface range:      24599     24895
+openMP thread  78 handles surface range:      24896     25188
+openMP thread  79 handles surface range:      25189     25480
+openMP thread  80 handles surface range:      25481     25778
+openMP thread  81 handles surface range:      25779     26129
+openMP thread  82 handles surface range:      26130     26464
+openMP thread  83 handles surface range:      26465     26779
+openMP thread  84 handles surface range:      26780     27090
+openMP thread  85 handles surface range:      27091     27400
+openMP thread  86 handles surface range:      27401     27713
+openMP thread  87 handles surface range:      27714     28041
+openMP thread  88 handles surface range:      28042     28390
+openMP thread  89 handles surface range:      28391     28718
+openMP thread  90 handles surface range:      28719     29047
+openMP thread  91 handles surface range:      29048     29376
+openMP thread  92 handles surface range:      29377     29698
+openMP thread  93 handles surface range:      29699     30012
+openMP thread  94 handles surface range:      30013     30326
+openMP thread  95 handles surface range:      30327     30649
+openMP thread  96 handles surface range:      30650     30970
+openMP thread  97 handles surface range:      30971     31286
+openMP thread  98 handles surface range:      31287     31597
+openMP thread  99 handles surface range:      31598     31898
+openMP thread 100 handles surface range:      31899     32169
+openMP thread 101 handles surface range:      32170     32453
+openMP thread 102 handles surface range:      32454     32738
+openMP thread 103 handles surface range:      32739     33039
+openMP thread 104 handles surface range:      33040     33343
+openMP thread 105 handles surface range:      33344     33655
+openMP thread 106 handles surface range:      33656     33958
+openMP thread 107 handles surface range:      33959     34262
+openMP thread 108 handles surface range:      34263     34559
+openMP thread 109 handles surface range:      34560     34864
+openMP thread 110 handles surface range:      34865     35167
+openMP thread 111 handles surface range:      35168     35458
+openMP thread 112 handles surface range:      35459     35747
+openMP thread 113 handles surface range:      35748     36038
+openMP thread 114 handles surface range:      36039     36351
+openMP thread 115 handles surface range:      36352     36658
+openMP thread 116 handles surface range:      36659     36979
+openMP thread 117 handles surface range:      36980     37296
+openMP thread 118 handles surface range:      37297     37607
+openMP thread 119 handles surface range:      37608     37906
+openMP thread 120 handles surface range:      37907     38196
+openMP thread 121 handles surface range:      38197     38453
+openMP thread 122 handles surface range:      38454     38754
+openMP thread 123 handles surface range:      38755     39057
+openMP thread 124 handles surface range:      39058     39360
+openMP thread 125 handles surface range:      39361     39652
+openMP thread 126 handles surface range:      39653     39915
+openMP thread 127 handles surface range:      39916     40181
+openMP thread 128 handles surface range:      40182     40492
+openMP thread 129 handles surface range:      40493     40816
+openMP thread 130 handles surface range:      40817     41132
+openMP thread 131 handles surface range:      41133     41419
+openMP thread 132 handles surface range:      41420     41686
+openMP thread 133 handles surface range:      41687     42000
+openMP thread 134 handles surface range:      42001     42318
+openMP thread 135 handles surface range:      42319     42616
+openMP thread 136 handles surface range:      42617     42891
+openMP thread 137 handles surface range:      42892     43166
+openMP thread 138 handles surface range:      43167     43474
+openMP thread 139 handles surface range:      43475     43782
+openMP thread 140 handles surface range:      43783     44065
+openMP thread 141 handles surface range:      44066     44334
+openMP thread 142 handles surface range:      44335     44653
+openMP thread 143 handles surface range:      44654     44962
+openMP thread 144 handles surface range:      44963     45237
+openMP thread 145 handles surface range:      45238     45513
+openMP thread 146 handles surface range:      45514     45828
+openMP thread 147 handles surface range:      45829     46134
+openMP thread 148 handles surface range:      46135     46402
+openMP thread 149 handles surface range:      46403     46691
+openMP thread 150 handles surface range:      46692     47008
+openMP thread 151 handles surface range:      47009     47312
+openMP thread 152 handles surface range:      47313     47589
+openMP thread 153 handles surface range:      47590     47870
+openMP thread 154 handles surface range:      47871     48186
+openMP thread 155 handles surface range:      48187     48487
+openMP thread 156 handles surface range:      48488     48762
+openMP thread 157 handles surface range:      48763     49046
+openMP thread 158 handles surface range:      49047     49353
+openMP thread 159 handles surface range:      49354     49643
+openMP thread 160 handles surface range:      49644     49904
+openMP thread 161 handles surface range:      49905     50204
+openMP thread 162 handles surface range:      50205     50499
+openMP thread 163 handles surface range:      50500     50771
+openMP thread 164 handles surface range:      50772     51046
+openMP thread 165 handles surface range:      51047     51348
+openMP thread 166 handles surface range:      51349     51637
+openMP thread 167 handles surface range:      51638     51909
+openMP thread 168 handles surface range:      51910     52198
+openMP thread 169 handles surface range:      52199     52498
+openMP thread 170 handles surface range:      52499     52785
+openMP thread 171 handles surface range:      52786     53058
+openMP thread 172 handles surface range:      53059     53356
+openMP thread 173 handles surface range:      53357     53649
+openMP thread 174 handles surface range:      53650     53931
+openMP thread 175 handles surface range:      53932     54209
+openMP thread 176 handles surface range:      54210     54509
+openMP thread 177 handles surface range:      54510     54798
+openMP thread 178 handles surface range:      54799     55079
+openMP thread 179 handles surface range:      55080     55366
+openMP thread 180 handles surface range:      55367     55669
+openMP thread 181 handles surface range:      55670     55969
+openMP thread 182 handles surface range:      55970     56263
+openMP thread 183 handles surface range:      56264     56555
+openMP thread 184 handles surface range:      56556     56865
+openMP thread 185 handles surface range:      56866     57173
+openMP thread 186 handles surface range:      57174     57475
+openMP thread 187 handles surface range:      57476     57775
+openMP thread 188 handles surface range:      57776     58087
+openMP thread 189 handles surface range:      58088     58406
+openMP thread 190 handles surface range:      58407     58726
+openMP thread 191 handles surface range:      58727     59042
+openMP thread 192 handles surface range:      59043     59353
+openMP thread 193 handles surface range:      59354     59654
+openMP thread 194 handles surface range:      59655     59979
+openMP thread 195 handles surface range:      59980     60301
+openMP thread 196 handles surface range:      60302     60624
+openMP thread 197 handles surface range:      60625     60940
+openMP thread 198 handles surface range:      60941     61260
+openMP thread 199 handles surface range:      61261     61576
+openMP thread 200 handles surface range:      61577     61898
+openMP thread 201 handles surface range:      61899     62206
+openMP thread 202 handles surface range:      62207     62536
+openMP thread 203 handles surface range:      62537     62866
+openMP thread 204 handles surface range:      62867     63195
+openMP thread 205 handles surface range:      63196     63530
+openMP thread 206 handles surface range:      63531     63865
+openMP thread 207 handles surface range:      63866     64201
+openMP thread 208 handles surface range:      64202     64541
+openMP thread 209 handles surface range:      64542     64885
+openMP thread 210 handles surface range:      64886     65232
+openMP thread 211 handles surface range:      65233     65582
+openMP thread 212 handles surface range:      65583     65934
+openMP thread 213 handles surface range:      65935     66288
+openMP thread 214 handles surface range:      66289     66642
+openMP thread 215 handles surface range:      66643     67001
+openMP thread 216 handles surface range:      67002     67361
+openMP thread 217 handles surface range:      67362     67729
+openMP thread 218 handles surface range:      67730     68138
+openMP thread 219 handles surface range:      68139     68540
+openMP thread 220 handles surface range:      68541     68928
+openMP thread 221 handles surface range:      68929     69319
+openMP thread 222 handles surface range:      69320     69733
+openMP thread 223 handles surface range:      69734     70092
+openMP thread 224 handles surface range:      70093     70517
+openMP thread 225 handles surface range:      70518     70894
+openMP thread 226 handles surface range:      70895     71334
+openMP thread 227 handles surface range:      71335     71744
+openMP thread 228 handles surface range:      71745     72151
+openMP thread 229 handles surface range:      72152     72573
+openMP thread 230 handles surface range:      72574     73003
+openMP thread 231 handles surface range:      73004     73425
+openMP thread 232 handles surface range:      73426     73860
+openMP thread 233 handles surface range:      73861     74292
+openMP thread 234 handles surface range:      74293     74694
+openMP thread 235 handles surface range:      74695     75066
+openMP thread 236 handles surface range:      75067     75437
+openMP thread 237 handles surface range:      75438     75873
+openMP thread 238 handles surface range:      75874     76330
+openMP thread 239 handles surface range:      76331     76768
+openMP thread 240 handles surface range:      76769     77285
+Validation prints:
+------------------------------------------------------------------------
+Statistics for domain:               1
+Average value for salinity:      35.0000000000000
+RMS and STD for salinity:        35.0000000000000      0.0000000000000
+Average value for temperature:   10.0000000000000
+RMS and STD for temperature:     10.0000000000000      0.0000000000000
+Min and max for salinity:        35.0000000000000     35.0000000000000
+Min and max for temperature:     10.0000000000000     10.0000000000000
+------------------------------------------------------------------------
+TS - Initialisation took:      5.1670000 seconds
+TS - tflow_adv took:     71.7020000 seconds
+Validation prints:
+------------------------------------------------------------------------
+Statistics for domain:               1
+Average value for salinity:      35.0000000000000
+RMS and STD for salinity:        35.0000000000000      0.0000000000001
+Average value for temperature:   10.0000000000000
+RMS and STD for temperature:     10.0000000000000      0.0000000000000
+Min and max for salinity:        34.9999999999964     35.0000000000003
+Min and max for temperature:      9.9999999999990     10.0000000000001
+------------------------------------------------------------------------
+TS - IO time took:      1.3350000 seconds
+END TIME IN HBM
+Program exited, return value=0
+Time to die for MPI

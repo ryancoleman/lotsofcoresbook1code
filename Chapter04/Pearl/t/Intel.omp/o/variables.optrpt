@@ -1,0 +1,40 @@
+
+Begin optimization report for: VARIABLES_MODULE::CTOPRIM
+
+    Report from: OpenMP optimizations [openmp]
+
+OpenMP Construct at src/variables.f90(116,11) inlined into src/variables.f90(95,13)
+   remark #16200: OpenMP DEFINED LOOP WAS PARALLELIZED
+OpenMP Construct at src/variables.f90(114,11) inlined into src/variables.f90(95,13)
+   remark #16201: OpenMP DEFINED REGION WAS PARALLELIZED
+===========================================================================
+
+Begin optimization report for: VARIABLES_MODULE::CTOPRIM_3D
+
+    Report from: OpenMP optimizations [openmp]
+
+OpenMP Construct at src/variables.f90(116,11)
+   remark #16200: OpenMP DEFINED LOOP WAS PARALLELIZED
+OpenMP Construct at src/variables.f90(114,11)
+   remark #16201: OpenMP DEFINED REGION WAS PARALLELIZED
+===========================================================================
+
+Begin optimization report for: VARIABLES_MODULE::RESET_DENSITY
+
+    Report from: OpenMP optimizations [openmp]
+
+OpenMP Construct at src/variables.f90(197,11) inlined into src/variables.f90(180,13)
+   remark #16200: OpenMP DEFINED LOOP WAS PARALLELIZED
+OpenMP Construct at src/variables.f90(195,11) inlined into src/variables.f90(180,13)
+   remark #16201: OpenMP DEFINED REGION WAS PARALLELIZED
+===========================================================================
+
+Begin optimization report for: VARIABLES_MODULE::RESET_RHO_3D
+
+    Report from: OpenMP optimizations [openmp]
+
+OpenMP Construct at src/variables.f90(197,11)
+   remark #16200: OpenMP DEFINED LOOP WAS PARALLELIZED
+OpenMP Construct at src/variables.f90(195,11)
+   remark #16201: OpenMP DEFINED REGION WAS PARALLELIZED
+===========================================================================

@@ -1,0 +1,2784 @@
+crew = gunner | commander | loader;
+
+loadedModel = root;
+
+big_system = lpbdfdMpdfl | loadedModel; 
+
+root = ptr | tpr | component | shelf | pt1r | tp1r | junk | compartment;
+
+component = hull | turret | suspension;
+
+shelf = nr1;
+
+junk = arsg7 | protoleft | Rim;
+
+compartment = hull_1 | turret_1 | suspension_1;
+
+hull = hull_ext | hull_int | hull_air;
+
+turret = tur_ext | tur_int | tur_air;
+
+suspension = roadwheellt4 | roadwheellt5 | roadwheelrt1 | roadwheelrt2 | roadwheelrt3 | roadwheelrt4 | roadwheelrt5 | roadwheellt1 | roadwheellt2 | roadwheellt3 | torsion_barlt1 | torsion_barlt2 | torsion_barlt3 | torsion_barlt4 | torsion_barlt5 | torsion_barrt4 | torsion_barrt5 | torsion_barrt1 | torsion_barrt2 | torsion_barrt3 | shockltrear | shockltfront | shockrtfront | shockrtrear | track_adjust | left_track | right_track | sprocketlt | sprocketrt | idlerrt | idlerlt;
+
+arsg7 = arsr1;
+
+protoleft = protoleft_transform_rimouter | protoleft_transform_riminner;
+
+Rim = Rim1 | Rim2 | Rim3 | Rim4 | Rim5 | rim1 | rim2 | rim3 | rim4 | rim5;
+
+hull_1 = hull_ext_1 | hull_int_1 | hull_air_1;
+
+turret_1 = tur_ext_1 | tur_int_1 | tur_air_1;
+
+suspension_1 = roadwheellt4_1 | roadwheellt5_1 | roadwheelrt1_1 | roadwheelrt2_1 | roadwheelrt3_1 | roadwheelrt4_1 | roadwheelrt5_1 | roadwheellt1_1 | roadwheellt2_1 | roadwheellt3_1 | torsion_barlt1_1 | torsion_barlt2_1 | torsion_barlt3_1 | torsion_barlt4_1 | torsion_barlt5_1 | torsion_barrt4_1 | torsion_barrt5_1 | torsion_barrt1_1 | torsion_barrt2_1 | torsion_barrt3_1 | shockltrear_1 | shockltfront_1 | shockrtfront_1 | shockrtrear_1 | track_adjust_1 | left_track_1 | right_track_1 | sprocketlt_1 | sprocketrt_1 | idlerrt_1 | idlerlt_1;
+
+hull_ext = hull_armor | fender_lt | fender_rt | drvr_scopes | tool_boxes | exhaust_port | eng_oil_tank | ext_fuel_tanks | headlight | spare_track;
+
+hull_int = driver | fuel_system | firewall | fire_sup_sys | elec_sys | infrared_sys | r537tool_box | storage_box | air_bottles | radiometric | bilge | exhaust_fan | rear_ammo_rack | eng_comp | drvr_controls | hullammo;
+
+hull_air = hair02 | hair05 | fair07 | fair08;
+
+tur_ext = tur_armor | cmmdr_ir_light | r739ir_detctor | searchlight | maingun | a127machine_gun | r748ldr_scope | r741gnr_scope | antenna | r756snorkel | gun_cover | cmdr_periscopes | gun_sight;
+
+tur_int = gunner | commander | loader | slip_ring | turfloor | gun_control | hyd_sys | ventilator | amplidyne | turammo;
+
+tur_air = tair02 | gunair01;
+
+roadwheellt4 = r9tread | r29hub | r96axle | r97arm | moon4 | lt4flange;
+
+roadwheellt5 = r10tread | r30hub | r101axle | r102arm | moon5 | lt5flange;
+
+roadwheelrt1 = r1tread | r21hub | r106axle | r107arm | Moon1 | rt1flange;
+
+roadwheelrt2 = r2tread | r22hub | r111axle | r112arm | Moon2 | rt2flange;
+
+roadwheelrt3 = r3tread | r23hub | r116axle | r117arm | Moon3 | rt3flange;
+
+roadwheelrt4 = r4tread | r24hub | r121axle | r122arm | Moon4 | rt4flange;
+
+roadwheelrt5 = r5tread | r25hub | r126axle | r127arm | Moon5 | rt5flange;
+
+roadwheellt1 = r6tread | r26hub | r81axle | r82arm | moon1 | lt1flange;
+
+roadwheellt2 = r7tread | r27hub | r86axle | r87arm | moon2 | lt2flange;
+
+roadwheellt3 = r8tread | r28hub | r91axle | r92arm | moon3 | lt3flange;
+
+torsion_barlt1 = r83hub | r84housing | r85bar;
+
+torsion_barlt2 = r88hub | r89housing | r90bar;
+
+torsion_barlt3 = r93hub | r94housing | r95bar;
+
+torsion_barlt4 = r98hub | r99housing | r100bar;
+
+torsion_barlt5 = r103hub | r104housing | r105bar;
+
+torsion_barrt4 = r123hub | r124housing | r125bar;
+
+torsion_barrt5 = r128hub | r129housing | r130bar;
+
+torsion_barrt1 = r108hub | r109housing | r110bar;
+
+torsion_barrt2 = r113hub | r114housing | r115bar;
+
+torsion_barrt3 = r118hub | r119housing | r120bar;
+
+shockltrear = r136connector | r137arm1 | r138arm2 | r139shock | r140housing;
+
+shockltfront = r131connector | r132arm1 | r133arm2 | r134shock | r135housing;
+
+shockrtfront = r141connector | r142arm1 | r143arm2 | r144shock | r145housing;
+
+shockrtrear = r146connector | r147arm1 | r148arm2 | r149shock | r150housing;
+
+track_adjust = r151rt | r152lt;
+
+left_track = r57 | r58 | r59 | r56 | r60 | r61 | r62 | r63 | r64 | teethlt;
+
+right_track = r48 | r49 | r47 | r50 | r51 | r52 | r53 | r54 | r55 | teethrt;
+
+sprocketlt = r32teeth | drumlt | r40hub;
+
+sprocketrt = r31teeth | drumrt | r39hub;
+
+idlerrt = r41rim | r43disc | r45hub;
+
+idlerlt = r42rim | r44disc | r46hub;
+
+hull_armor = rt_side | bottom | top | upper_glacis | lower_glacis | back | driver_hatch | eng_hatch | radiator_hatch | trans_hatch | final_dr_housng | lt_side;
+
+fender_lt = r197 | r205 | r206 | r207 | r208 | r213 | r214 | r217 | supportslt;
+
+fender_rt = r198 | r209 | r210 | r211 | r212 | r215 | r216 | r218 | supportsrt;
+
+drvr_scopes = r657 | r658;
+
+tool_boxes = r199 | r201 | r204 | r222;
+
+exhaust_port = r202;
+
+eng_oil_tank = r203case | r827oil;
+
+ext_fuel_tanks = r219case | r220case | r221case | r782fuel | r783fuel | r784fuel;
+
+headlight = r223ir_light | r224light | r225shield;
+
+spare_track = r200;
+
+driver = r548neck | r549torso | r547head | r552loarm_lt | r551uparm_rt | r557loleg_rt | r550uparm_lt | r556loleg_lt | r555upleg_rt | r553loarm_rt | r554upleg_lt | drvr_seat;
+
+fuel_system = tanks | a3wayvalve | primer | fuel_lines;
+
+firewall = r526 | r527 | r528 | r529;
+
+fire_sup_sys = r531control | r561relay;
+
+elec_sys = r530batteries | r532relay | r533fan_cntrl | course_indictr | r538black_box;
+
+infrared_sys = r536instrument | r614power;
+
+storage_box = r539 | r540;
+
+air_bottles = r558case | r559case | r789air | r790air;
+
+radiometric = r560;
+
+bilge = r611pump | r612pipe | r613pipe;
+
+exhaust_fan = r615fan | r616motor;
+
+rear_ammo_rack = r629 | r630 | r631 | r632 | r633;
+
+eng_comp = engine | transmission | final_drive_lt | final_drive_rt | brake_rt | brake_lt | cooling_fan | radiator_water | radiator_oil | air_filter | transfer | final_dr_gears;
+
+drvr_controls = steering_brake | shifting | parking_brake | clutch | speed_cntrl;
+
+hullammo = inrtfuel | inltfuel | onleftwall | inammorack;
+
+hair02 = r595 | r596 | r597 | r598 | r599 | r600 | r601 | r602 | r603 | r604 | r605 | r815 | r816 | r817 | r818 | r819 | r820 | r821 | r822 | r823 | r824 | r825 | r828 | r829 | r830 | r831 | r832 | hullair1r | hullair2r | hullair4r | hullair3r | hullair5r | hullair6r | hullair7r | hullair8r | hullair9r | hullair10r | hullair11r | hullair20r | hullair21r | hullair22r | hullair13r;
+
+hair05 = r606 | r607 | r608 | r609 | r610 | r645 | r833 | r834 | r835 | r836 | r837;
+
+fair07 = fair071 | fair072 | fair073 | fair074;
+
+fair08 = fair081 | fair082;
+
+rt_side = r160 | r161 | r162 | r176 | r178 | r180 | r182 | r184 | r186 | r188 | r190 | r196 | r653 | r654 | r163 | r164 | r169 | idlersupport | r525 | r848;
+
+bottom = r170 | r193 | r194;
+
+top = r191 | r192;
+
+upper_glacis = r171 | r172;
+
+lower_glacis = r173 | r174;
+
+back = r165;
+
+driver_hatch = r655 | r656;
+
+eng_hatch = r646;
+
+radiator_hatch = r649 | r650;
+
+trans_hatch = r647 | r648;
+
+final_dr_housng = r153 | r154;
+
+lt_side = r155 | r156 | r157 | r175 | r177 | r179 | r181 | r183 | r185 | r187 | r189 | r195 | r652 | r158 | r159 | r168 | idler_support | r524 | r847 | tringr;
+
+supportslt = r634 | r635 | r636 | r637 | r638 | r639;
+
+supportsrt = r640 | r641 | r642 | r643 | r644;
+
+idlersupport = r166;
+
+idler_support = r167;
+
+drvr_seat = r541bot | r542back | ltside | rtside;
+
+tanks = fronttank | rtammotank | ltammotank | midtank;
+
+a3wayvalve = r684 | r685;
+
+primer = r686 | r687;
+
+fuel_lines = midtank2front | ammotank2valve | frnttank2valve | toengine;
+
+course_indictr = r534 | r535converter;
+
+engine = r767 | r768 | r769;
+
+transmission = r770;
+
+final_drive_lt = r771;
+
+final_drive_rt = r772;
+
+brake_rt = r774;
+
+brake_lt = r773;
+
+cooling_fan = r775;
+
+radiator_water = r776;
+
+radiator_oil = r777;
+
+air_filter = r778;
+
+transfer = r779 | r780 | r781;
+
+final_dr_gears = r841 | r842 | r843 | r844;
+
+steering_brake = r659lever | r662rod | r660lever | r661axle;
+
+shifting = r663lever | r664axle | r665rod1 | r666rod2 | r667rod3;
+
+parking_brake = r668axle | r669arm | r670pedal | r673rod | r675rod;
+
+clutch = r671pedal | r672arm | r674rod | r676rod;
+
+speed_cntrl = r677pedal | r678rod | r679rod | handthrottle;
+
+inrtfuel = ce1 | ce2 | ce3 | ce4 | ce5 | ce6 | ce7 | ce8;
+
+inltfuel = ke1 | ke2 | ke3 | ke4 | ke5 | ke6 | ke7 | ke8;
+
+onleftwall = ke9 | ke10;
+
+inammorack = he1 | he2 | he3 | he4 | he5 | he6 | he8 | he9 | he10 | he11 | he13 | he14 | he15 | he16 | he17 | he18 | he19 | he20;
+
+ltside = r543 | r545;
+
+rtside = r544 | r546;
+
+fronttank = r226tank | r227tank | r522tank | fuel;
+
+rtammotank = r230tank | r228abutment | ammosleeves | r239fuel;
+
+ltammotank = r229abutment | r304tank | ammo_sleeves | r313fuel;
+
+midtank = r523tank | r788fuel;
+
+midtank2front = r682 | r683;
+
+ammotank2valve = r688;
+
+frnttank2valve = r689;
+
+toengine = r690 | r691 | r692 | r693;
+
+fuel = r785 | r786 | r787;
+
+ammosleeves = r231 | r232 | r233 | r234 | r235 | r236 | r237 | r238;
+
+ammo_sleeves = r305 | r306 | r307 | r308 | r309 | r310 | r311 | r312;
+
+handthrottle = r680 | r681;
+
+ce1 = r246liner | r240case | r242case | r241prop | r245he | r243projo | r244projo | r247projo;
+
+ce2 = r248case | r249prop | r254liner | r250case | r253he | r251projo | r252projo | r255projo;
+
+ce3 = r259projo | r256case | r258case | r257prop | r261he | r260projo | r263projo | r262liner;
+
+ce4 = r267projo | r268projo | r264case | r266case | r265prop | r269he | r270liner | r271projo;
+
+ce5 = r279projo | r278liner | r272case | r274case | r273prop | r277he | r275projo | r276projo;
+
+ce6 = r287projo | r286liner | r280case | r282case | r281prop | r285he | r283projo | r284projo;
+
+ce7 = r288case | r289prop | r295projo | r294liner | r290case | r293he | r291projo | r292projo;
+
+ce8 = r299projo | r296case | r298case | r297prop | r301he | r300projo | r303projo | r302liner;
+
+ke1 = r317pen | r318pen | r319pen | r314case | r316case | r315prop | r850prop;
+
+ke2 = r320case | r322case | r321prop | r323pen | r324pen | r325pen | r851prop;
+
+ke3 = r329pen | r326case | r328case | r327prop | r330pen | r331pen | r852prop;
+
+ke4 = r336pen | r337pen | r332case | r334case | r333prop | r335pen | r853prop;
+
+ke5 = r338case | r339prop | r340case | r341pen | r342pen | r343pen | r854prop;
+
+ke6 = r347pen | r348pen | r349pen | r344case | r346case | r345prop | r855prop;
+
+ke7 = r354pen | r355pen | r350case | r352case | r351prop | r353pen | r856prop;
+
+ke8 = r359pen | r356case | r358case | r357prop | r360pen | r361pen | r857prop;
+
+ke9 = r697pen | r698pen | r699pen | r694case | r696case | r695prop | r858prop;
+
+ke10 = r700case | r702case | r701prop | r703pen | r704pen | r705pen | r859prop;
+
+he1 = r368projo | r362case | r364case | r363prop | r367he | r369he | r365projo | r366projo;
+
+he2 = r376projo | r370case | r372case | r371prop | r375he | r377he | r373projo | r374projo;
+
+he3 = r378case | r379prop | r380case | r383he | r385he | r381projo | r382projo | r384projo;
+
+he4 = r389projo | r386case | r388case | r387prop | r391he | r393he | r390projo | r392projo;
+
+he5 = r399he | r397projo | r398projo | r394case | r396case | r395prop | r400projo | r401he;
+
+he6 = r402case | r404case | r403prop | r407he | r409he | r405projo | r406projo | r408projo;
+
+he8 = r418case | r419prop | r420case | r423he | r425he | r421projo | r422projo | r424projo;
+
+he9 = r429projo | r426case | r428case | r427prop | r431he | r433he | r430projo | r432projo;
+
+he10 = r434case | r436case | r435prop | r439he | r437projo | r438projo | r440projo | r441he;
+
+he11 = r448projo | r442case | r444case | r443prop | r447he | r449he | r445projo | r446projo;
+
+he13 = r458case | r459prop | r460case | r463he | r465he | r461projo | r462projo | r464projo;
+
+he14 = r469projo | r466case | r468case | r467prop | r471he | r473he | r470projo | r472projo;
+
+he15 = r477projo | r478projo | r474case | r476case | r475prop | r479he | r480projo | r481he;
+
+he16 = r485projo | r486projo | r488projo | r482case | r484case | r483prop | r487he | r489he;
+
+he17 = r494projo | r496projo | r490case | r492case | r491prop | r495he | r497he | r493projo;
+
+he18 = r498case | r499prop | r500case | r503he | r505he | r501projo | r502projo | r504projo;
+
+he19 = r506case | r508case | r507prop | r509projo | r511he | r513he | r510projo | r512projo;
+
+he20 = r514case | r516case | r515prop | r519he | r517projo | r518projo | r520projo | r521he;
+
+tur_armor = r717 | r718 | r719 | r720 | r725 | r726 | r727 | r728 | r733 | tur_ring | r738ir_base | gnnr_scope_base | cmdr_hatch_base | ldr_hatch_base | shellhatch_base | r746ldr_hatch | shell_hatch | vent_hatch | r743cmdr_hatch;
+
+cmmdr_ir_light = r744lamp | brackets;
+
+searchlight = r757lamp | r805;
+
+maingun = barrel | breech | coax_762;
+
+a127machine_gun = r747 | r795 | r796 | r797 | r798 | r799 | r800;
+
+antenna = r737 | r791 | r792;
+
+gun_cover = r879;
+
+cmdr_periscopes = r749 | r801 | r802 | r803;
+
+gun_sight = r759 | r813;
+
+gunner = r562head | r563neck | r564torso | r565uparm_lt | r566uparm_rt | r567loarm_lt | r568loarm_rt | r569upleg_lt | r570upleg_rt | r571loleg_lt | r572loleg_rt | gnrseat;
+
+commander = r578loarm_lt | r577uparm_rt | r576uparm_lt | r574neck | r575torso | r573head | r579loarm_rt | r583loleg_rt | r582loleg_lt | r581upleg_rt | r580upleg_lt | cmdrseat;
+
+loader = r588uparmrt | r589loarmlt | r585neck | r587uparmlt | r586torso | r584head | r591upleglt | r594lolegrt | r592uplegrt | r593loleglt | r590loarmrt | r620seat;
+
+slip_ring = r622 | r623 | supports;
+
+turfloor = r621;
+
+gun_control = laying_mech | traverse_mech | elevating_mech;
+
+hyd_sys = r762pump | r763motor;
+
+ventilator = r752blower | r753duct | r804duct;
+
+amplidyne = r755;
+
+turammo = inturbasket | inturret;
+
+tair02 = r721 | r722 | r723 | r724 | r729 | r730 | r731 | r732 | r734 | r736 | r765 | r766 | r838 | r839 | r862 | r880 | r881 | r882 | r883 | r884 | r845 | r846;
+
+gunair01 = r849;
+
+tur_ring = r735;
+
+gnnr_scope_base = r740;
+
+cmdr_hatch_base = r742;
+
+ldr_hatch_base = r745;
+
+shellhatch_base = r826;
+
+shell_hatch = r750;
+
+vent_hatch = r751;
+
+brackets = r793 | r794;
+
+barrel = r758 | r806 | r807evac | r808 | r809 | r840;
+
+breech = r810 | r811;
+
+coax_762 = r764 | r814mount;
+
+gnrseat = r617seat | r628spprt;
+
+cmdrseat = r618 | r619;
+
+supports = r624 | r625 | r626 | r627;
+
+laying_mech = r760;
+
+traverse_mech = r761;
+
+elevating_mech = r754;
+
+inturbasket = he7 | he12;
+
+inturret = ke11 | ke12;
+
+he7 = r410case | r412case | r411prop | r415he | r417he | r413projo | r414projo | r416projo;
+
+he12 = r450case | r452case | r451prop | r455he | r457he | r453projo | r454projo | r456projo;
+
+ke11 = r709pen | r706case | r708case | r707prop | r710pen | r711pen | r860prop;
+
+ke12 = r715pen | r716pen | r712case | r714case | r713prop | r812pen | r861prop;
+
+lt4flange = lt4riminner | lt4rimouter;
+
+lt5flange = lt5riminner | lt5rimouter;
+
+rt1flange = rt1riminner | rt1rimouter;
+
+rt2flange = rt2riminner | rt2rimouter;
+
+rt3flange = rt3riminner | rt3rimouter;
+
+rt4flange = rt4riminner | rt4rimouter;
+
+rt5flange = rt5riminner | rt5rimouter;
+
+lt1flange = lt1riminner | lt1rimouter;
+
+lt2flange = lt2riminner | lt2rimouter;
+
+lt3flange = lt3riminner | lt3rimouter;
+
+teethlt = r76 | r77 | r78 | r79 | r73 | r74 | r75 | r80;
+
+teethrt = r66 | r67 | r68 | r69 | r65 | r70 | r71 | r72;
+
+drumlt = r34 | r36 | r38;
+
+drumrt = r33 | r35 | r37;
+
+lt4riminner = lt4flat | lt4curve1 | lt4curve2 | lt4curve3 | lt4curve4 | lt4curve5;
+
+lt4rimouter = lt4otflat | lt4otcurve1 | lt4otcurve2 | lt4otcurve3 | lt4otcurve4 | lt4otcurve5;
+
+lt5riminner = lt5flat | lt5curve1 | lt5curve2 | lt5curve3 | lt5curve4 | lt5curve5;
+
+lt5rimouter = lt5otflat | lt5otcurve1 | lt5otcurve2 | lt5otcurve3 | lt5otcurve4 | lt5otcurve5;
+
+rt1riminner = rt1flat | rt1curve1 | rt1curve2 | rt1curve3 | rt1curve4 | rt1curve5;
+
+rt1rimouter = rt1otflat | rt1otcurve1 | rt1otcurve2 | rt1otcurve3 | rt1otcurve4 | rt1otcurve5;
+
+rt2riminner = rt2flat | rt2curve1 | rt2curve2 | rt2curve3 | rt2curve4 | rt2curve5;
+
+rt2rimouter = rt2otflat | rt2otcurve1 | rt2otcurve2 | rt2otcurve3 | rt2otcurve4 | rt2otcurve5;
+
+rt3riminner = rt3flat | rt3curve1 | rt3curve2 | rt3curve3 | rt3curve4 | rt3curve5;
+
+rt3rimouter = rt3otflat | rt3otcurve1 | rt3otcurve2 | rt3otcurve3 | rt3otcurve4 | rt3otcurve5;
+
+rt4riminner = rt4flat | rt4curve1 | rt4curve2 | rt4curve3 | rt4curve4 | rt4curve5;
+
+rt4rimouter = rt4otflat | rt4otcurve1 | rt4otcurve2 | rt4otcurve3 | rt4otcurve4 | rt4otcurve5;
+
+rt5riminner = rt5flat | rt5curve1 | rt5curve2 | rt5curve3 | rt5curve4 | rt5curve5;
+
+rt5rimouter = rt5otflat | rt5otcurve1 | rt5otcurve2 | rt5otcurve3 | rt5otcurve4 | rt5otcurve5;
+
+lt1riminner = lt1flat | lt1curve1 | lt1curve2 | lt1curve3 | lt1curve4 | lt1curve5;
+
+lt1rimouter = lt1otflat | lt1otcurve1 | lt1otcurve2 | lt1otcurve3 | lt1otcurve4 | lt1otcurve5;
+
+lt2riminner = lt2flat | lt2curve1 | lt2curve2 | lt2curve3 | lt2curve4 | lt2curve5;
+
+lt2rimouter = lt2otflat | lt2otcurve1 | lt2otcurve2 | lt2otcurve3 | lt2otcurve4 | lt2otcurve5;
+
+lt3riminner = lt3flat | lt3curve1 | lt3curve2 | lt3curve3 | lt3curve4 | lt3curve5;
+
+lt3rimouter = lt3otflat | lt3otcurve1 | lt3otcurve2 | lt3otcurve3 | lt3otcurve4 | lt3otcurve5;
+
+protoleft_transform_rimouter = rimouter;
+
+protoleft_transform_riminner = riminner;
+
+Rim1 = Rim1_transform_protoright;
+
+Rim2 = Rim2_transform_protoright;
+
+Rim3 = Rim3_transform_protoright;
+
+Rim4 = Rim4_transform_protoright;
+
+Rim5 = Rim5_transform_protoright;
+
+rim1 = ltprotoleft;
+
+rim2 = rim2_transform_ltprotoleft;
+
+rim3 = rim3_transform_ltprotoleft;
+
+rim4 = rim4_transform_ltprotoleft;
+
+rim5 = rim5_transform_ltprotoleft;
+
+rimouter = rimouter_transform_flat | rimouter_transform_curve1 | rimouter_transform_curve2 | rimouter_transform_curve3 | rimouter_transform_curve4 | rimouter_transform_curve5;
+
+riminner = riminner_transform_flat | riminner_transform_curve1 | riminner_transform_curve2 | riminner_transform_curve3 | riminner_transform_curve4 | riminner_transform_curve5;
+
+rimouter_transform_flat = flat;
+
+rimouter_transform_curve1 = curve1;
+
+rimouter_transform_curve2 = curve2;
+
+rimouter_transform_curve3 = curve3;
+
+rimouter_transform_curve4 = curve4;
+
+rimouter_transform_curve5 = curve5;
+
+riminner_transform_flat = flat_1;
+
+riminner_transform_curve1 = curve1_1;
+
+riminner_transform_curve2 = curve2_1;
+
+riminner_transform_curve3 = curve3_1;
+
+riminner_transform_curve4 = curve4_1;
+
+riminner_transform_curve5 = curve5_1;
+
+Rim1_transform_protoright = protoright;
+
+Rim2_transform_protoright = protoright_1;
+
+Rim3_transform_protoright = protoright_2;
+
+Rim4_transform_protoright = protoright_3;
+
+Rim5_transform_protoright = protoright_4;
+
+ltprotoleft = ltprotoleft_transform_ltrimouter | ltprotoleft_transform_ltriminner;
+
+rim2_transform_ltprotoleft = ltprotoleft_1;
+
+rim3_transform_ltprotoleft = ltprotoleft_2;
+
+rim4_transform_ltprotoleft = ltprotoleft_3;
+
+rim5_transform_ltprotoleft = ltprotoleft_4;
+
+protoright = protoright_transform_rimouter | protoright_transform_riminner;
+
+protoright_transform_rimouter = rimouter_1;
+
+protoright_transform_riminner = riminner_1;
+
+rimouter_1 = rimouter_transform_flat_1 | rimouter_transform_curve1_1 | rimouter_transform_curve2_1 | rimouter_transform_curve3_1 | rimouter_transform_curve4_1 | rimouter_transform_curve5_1;
+
+riminner_1 = riminner_transform_flat_1 | riminner_transform_curve1_1 | riminner_transform_curve2_1 | riminner_transform_curve3_1 | riminner_transform_curve4_1 | riminner_transform_curve5_1;
+
+rimouter_transform_flat_1 = flat_2;
+
+rimouter_transform_curve1_1 = curve1_2;
+
+rimouter_transform_curve2_1 = curve2_2;
+
+rimouter_transform_curve3_1 = curve3_2;
+
+rimouter_transform_curve4_1 = curve4_2;
+
+rimouter_transform_curve5_1 = curve5_2;
+
+riminner_transform_flat_1 = flat_3;
+
+riminner_transform_curve1_1 = curve1_3;
+
+riminner_transform_curve2_1 = curve2_3;
+
+riminner_transform_curve3_1 = curve3_3;
+
+riminner_transform_curve4_1 = curve4_3;
+
+riminner_transform_curve5_1 = curve5_3;
+
+protoright_1 = protoright_transform_rimouter_1 | protoright_transform_riminner_1;
+
+protoright_transform_rimouter_1 = rimouter_2;
+
+protoright_transform_riminner_1 = riminner_2;
+
+rimouter_2 = rimouter_transform_flat_2 | rimouter_transform_curve1_2 | rimouter_transform_curve2_2 | rimouter_transform_curve3_2 | rimouter_transform_curve4_2 | rimouter_transform_curve5_2;
+
+riminner_2 = riminner_transform_flat_2 | riminner_transform_curve1_2 | riminner_transform_curve2_2 | riminner_transform_curve3_2 | riminner_transform_curve4_2 | riminner_transform_curve5_2;
+
+rimouter_transform_flat_2 = flat_4;
+
+rimouter_transform_curve1_2 = curve1_4;
+
+rimouter_transform_curve2_2 = curve2_4;
+
+rimouter_transform_curve3_2 = curve3_4;
+
+rimouter_transform_curve4_2 = curve4_4;
+
+rimouter_transform_curve5_2 = curve5_4;
+
+riminner_transform_flat_2 = flat_5;
+
+riminner_transform_curve1_2 = curve1_5;
+
+riminner_transform_curve2_2 = curve2_5;
+
+riminner_transform_curve3_2 = curve3_5;
+
+riminner_transform_curve4_2 = curve4_5;
+
+riminner_transform_curve5_2 = curve5_5;
+
+protoright_2 = protoright_transform_rimouter_2 | protoright_transform_riminner_2;
+
+protoright_transform_rimouter_2 = rimouter_3;
+
+protoright_transform_riminner_2 = riminner_3;
+
+rimouter_3 = rimouter_transform_flat_3 | rimouter_transform_curve1_3 | rimouter_transform_curve2_3 | rimouter_transform_curve3_3 | rimouter_transform_curve4_3 | rimouter_transform_curve5_3;
+
+riminner_3 = riminner_transform_flat_3 | riminner_transform_curve1_3 | riminner_transform_curve2_3 | riminner_transform_curve3_3 | riminner_transform_curve4_3 | riminner_transform_curve5_3;
+
+rimouter_transform_flat_3 = flat_6;
+
+rimouter_transform_curve1_3 = curve1_6;
+
+rimouter_transform_curve2_3 = curve2_6;
+
+rimouter_transform_curve3_3 = curve3_6;
+
+rimouter_transform_curve4_3 = curve4_6;
+
+rimouter_transform_curve5_3 = curve5_6;
+
+riminner_transform_flat_3 = flat_7;
+
+riminner_transform_curve1_3 = curve1_7;
+
+riminner_transform_curve2_3 = curve2_7;
+
+riminner_transform_curve3_3 = curve3_7;
+
+riminner_transform_curve4_3 = curve4_7;
+
+riminner_transform_curve5_3 = curve5_7;
+
+protoright_3 = protoright_transform_rimouter_3 | protoright_transform_riminner_3;
+
+protoright_transform_rimouter_3 = rimouter_4;
+
+protoright_transform_riminner_3 = riminner_4;
+
+rimouter_4 = rimouter_transform_flat_4 | rimouter_transform_curve1_4 | rimouter_transform_curve2_4 | rimouter_transform_curve3_4 | rimouter_transform_curve4_4 | rimouter_transform_curve5_4;
+
+riminner_4 = riminner_transform_flat_4 | riminner_transform_curve1_4 | riminner_transform_curve2_4 | riminner_transform_curve3_4 | riminner_transform_curve4_4 | riminner_transform_curve5_4;
+
+rimouter_transform_flat_4 = flat_8;
+
+rimouter_transform_curve1_4 = curve1_8;
+
+rimouter_transform_curve2_4 = curve2_8;
+
+rimouter_transform_curve3_4 = curve3_8;
+
+rimouter_transform_curve4_4 = curve4_8;
+
+rimouter_transform_curve5_4 = curve5_8;
+
+riminner_transform_flat_4 = flat_9;
+
+riminner_transform_curve1_4 = curve1_9;
+
+riminner_transform_curve2_4 = curve2_9;
+
+riminner_transform_curve3_4 = curve3_9;
+
+riminner_transform_curve4_4 = curve4_9;
+
+riminner_transform_curve5_4 = curve5_9;
+
+protoright_4 = protoright_transform_rimouter_4 | protoright_transform_riminner_4;
+
+protoright_transform_rimouter_4 = rimouter_5;
+
+protoright_transform_riminner_4 = riminner_5;
+
+rimouter_5 = rimouter_transform_flat_5 | rimouter_transform_curve1_5 | rimouter_transform_curve2_5 | rimouter_transform_curve3_5 | rimouter_transform_curve4_5 | rimouter_transform_curve5_5;
+
+riminner_5 = riminner_transform_flat_5 | riminner_transform_curve1_5 | riminner_transform_curve2_5 | riminner_transform_curve3_5 | riminner_transform_curve4_5 | riminner_transform_curve5_5;
+
+rimouter_transform_flat_5 = flat_10;
+
+rimouter_transform_curve1_5 = curve1_10;
+
+rimouter_transform_curve2_5 = curve2_10;
+
+rimouter_transform_curve3_5 = curve3_10;
+
+rimouter_transform_curve4_5 = curve4_10;
+
+rimouter_transform_curve5_5 = curve5_10;
+
+riminner_transform_flat_5 = flat_11;
+
+riminner_transform_curve1_5 = curve1_11;
+
+riminner_transform_curve2_5 = curve2_11;
+
+riminner_transform_curve3_5 = curve3_11;
+
+riminner_transform_curve4_5 = curve4_11;
+
+riminner_transform_curve5_5 = curve5_11;
+
+ltprotoleft_transform_ltrimouter = ltrimouter;
+
+ltprotoleft_transform_ltriminner = ltriminner;
+
+ltrimouter = ltrimouter_transform_ltflat | ltrimouter_transform_ltcurve1 | ltrimouter_transform_ltcurve2 | ltrimouter_transform_ltcurve3 | ltrimouter_transform_ltcurve4 | ltrimouter_transform_ltcurve5;
+
+ltriminner = ltriminner_transform_ltflat | ltriminner_transform_ltcurve1 | ltriminner_transform_ltcurve2 | ltriminner_transform_ltcurve3 | ltriminner_transform_ltcurve4 | ltriminner_transform_ltcurve5;
+
+ltrimouter_transform_ltflat = ltflat;
+
+ltrimouter_transform_ltcurve1 = ltcurve1;
+
+ltrimouter_transform_ltcurve2 = ltcurve2;
+
+ltrimouter_transform_ltcurve3 = ltcurve3;
+
+ltrimouter_transform_ltcurve4 = ltcurve4;
+
+ltrimouter_transform_ltcurve5 = ltcurve5;
+
+ltriminner_transform_ltflat = ltflat_1;
+
+ltriminner_transform_ltcurve1 = ltcurve1_1;
+
+ltriminner_transform_ltcurve2 = ltcurve2_1;
+
+ltriminner_transform_ltcurve3 = ltcurve3_1;
+
+ltriminner_transform_ltcurve4 = ltcurve4_1;
+
+ltriminner_transform_ltcurve5 = ltcurve5_1;
+
+ltprotoleft_1 = ltprotoleft_transform_ltrimouter_1 | ltprotoleft_transform_ltriminner_1;
+
+ltprotoleft_transform_ltrimouter_1 = ltrimouter_1;
+
+ltprotoleft_transform_ltriminner_1 = ltriminner_1;
+
+ltrimouter_1 = ltrimouter_transform_ltflat_1 | ltrimouter_transform_ltcurve1_1 | ltrimouter_transform_ltcurve2_1 | ltrimouter_transform_ltcurve3_1 | ltrimouter_transform_ltcurve4_1 | ltrimouter_transform_ltcurve5_1;
+
+ltriminner_1 = ltriminner_transform_ltflat_1 | ltriminner_transform_ltcurve1_1 | ltriminner_transform_ltcurve2_1 | ltriminner_transform_ltcurve3_1 | ltriminner_transform_ltcurve4_1 | ltriminner_transform_ltcurve5_1;
+
+ltrimouter_transform_ltflat_1 = ltflat_2;
+
+ltrimouter_transform_ltcurve1_1 = ltcurve1_2;
+
+ltrimouter_transform_ltcurve2_1 = ltcurve2_2;
+
+ltrimouter_transform_ltcurve3_1 = ltcurve3_2;
+
+ltrimouter_transform_ltcurve4_1 = ltcurve4_2;
+
+ltrimouter_transform_ltcurve5_1 = ltcurve5_2;
+
+ltriminner_transform_ltflat_1 = ltflat_3;
+
+ltriminner_transform_ltcurve1_1 = ltcurve1_3;
+
+ltriminner_transform_ltcurve2_1 = ltcurve2_3;
+
+ltriminner_transform_ltcurve3_1 = ltcurve3_3;
+
+ltriminner_transform_ltcurve4_1 = ltcurve4_3;
+
+ltriminner_transform_ltcurve5_1 = ltcurve5_3;
+
+ltprotoleft_2 = ltprotoleft_transform_ltrimouter_2 | ltprotoleft_transform_ltriminner_2;
+
+ltprotoleft_transform_ltrimouter_2 = ltrimouter_2;
+
+ltprotoleft_transform_ltriminner_2 = ltriminner_2;
+
+ltrimouter_2 = ltrimouter_transform_ltflat_2 | ltrimouter_transform_ltcurve1_2 | ltrimouter_transform_ltcurve2_2 | ltrimouter_transform_ltcurve3_2 | ltrimouter_transform_ltcurve4_2 | ltrimouter_transform_ltcurve5_2;
+
+ltriminner_2 = ltriminner_transform_ltflat_2 | ltriminner_transform_ltcurve1_2 | ltriminner_transform_ltcurve2_2 | ltriminner_transform_ltcurve3_2 | ltriminner_transform_ltcurve4_2 | ltriminner_transform_ltcurve5_2;
+
+ltrimouter_transform_ltflat_2 = ltflat_4;
+
+ltrimouter_transform_ltcurve1_2 = ltcurve1_4;
+
+ltrimouter_transform_ltcurve2_2 = ltcurve2_4;
+
+ltrimouter_transform_ltcurve3_2 = ltcurve3_4;
+
+ltrimouter_transform_ltcurve4_2 = ltcurve4_4;
+
+ltrimouter_transform_ltcurve5_2 = ltcurve5_4;
+
+ltriminner_transform_ltflat_2 = ltflat_5;
+
+ltriminner_transform_ltcurve1_2 = ltcurve1_5;
+
+ltriminner_transform_ltcurve2_2 = ltcurve2_5;
+
+ltriminner_transform_ltcurve3_2 = ltcurve3_5;
+
+ltriminner_transform_ltcurve4_2 = ltcurve4_5;
+
+ltriminner_transform_ltcurve5_2 = ltcurve5_5;
+
+ltprotoleft_3 = ltprotoleft_transform_ltrimouter_3 | ltprotoleft_transform_ltriminner_3;
+
+ltprotoleft_transform_ltrimouter_3 = ltrimouter_3;
+
+ltprotoleft_transform_ltriminner_3 = ltriminner_3;
+
+ltrimouter_3 = ltrimouter_transform_ltflat_3 | ltrimouter_transform_ltcurve1_3 | ltrimouter_transform_ltcurve2_3 | ltrimouter_transform_ltcurve3_3 | ltrimouter_transform_ltcurve4_3 | ltrimouter_transform_ltcurve5_3;
+
+ltriminner_3 = ltriminner_transform_ltflat_3 | ltriminner_transform_ltcurve1_3 | ltriminner_transform_ltcurve2_3 | ltriminner_transform_ltcurve3_3 | ltriminner_transform_ltcurve4_3 | ltriminner_transform_ltcurve5_3;
+
+ltrimouter_transform_ltflat_3 = ltflat_6;
+
+ltrimouter_transform_ltcurve1_3 = ltcurve1_6;
+
+ltrimouter_transform_ltcurve2_3 = ltcurve2_6;
+
+ltrimouter_transform_ltcurve3_3 = ltcurve3_6;
+
+ltrimouter_transform_ltcurve4_3 = ltcurve4_6;
+
+ltrimouter_transform_ltcurve5_3 = ltcurve5_6;
+
+ltriminner_transform_ltflat_3 = ltflat_7;
+
+ltriminner_transform_ltcurve1_3 = ltcurve1_7;
+
+ltriminner_transform_ltcurve2_3 = ltcurve2_7;
+
+ltriminner_transform_ltcurve3_3 = ltcurve3_7;
+
+ltriminner_transform_ltcurve4_3 = ltcurve4_7;
+
+ltriminner_transform_ltcurve5_3 = ltcurve5_7;
+
+ltprotoleft_4 = ltprotoleft_transform_ltrimouter_4 | ltprotoleft_transform_ltriminner_4;
+
+ltprotoleft_transform_ltrimouter_4 = ltrimouter_4;
+
+ltprotoleft_transform_ltriminner_4 = ltriminner_4;
+
+ltrimouter_4 = ltrimouter_transform_ltflat_4 | ltrimouter_transform_ltcurve1_4 | ltrimouter_transform_ltcurve2_4 | ltrimouter_transform_ltcurve3_4 | ltrimouter_transform_ltcurve4_4 | ltrimouter_transform_ltcurve5_4;
+
+ltriminner_4 = ltriminner_transform_ltflat_4 | ltriminner_transform_ltcurve1_4 | ltriminner_transform_ltcurve2_4 | ltriminner_transform_ltcurve3_4 | ltriminner_transform_ltcurve4_4 | ltriminner_transform_ltcurve5_4;
+
+ltrimouter_transform_ltflat_4 = ltflat_8;
+
+ltrimouter_transform_ltcurve1_4 = ltcurve1_8;
+
+ltrimouter_transform_ltcurve2_4 = ltcurve2_8;
+
+ltrimouter_transform_ltcurve3_4 = ltcurve3_8;
+
+ltrimouter_transform_ltcurve4_4 = ltcurve4_8;
+
+ltrimouter_transform_ltcurve5_4 = ltcurve5_8;
+
+ltriminner_transform_ltflat_4 = ltflat_9;
+
+ltriminner_transform_ltcurve1_4 = ltcurve1_9;
+
+ltriminner_transform_ltcurve2_4 = ltcurve2_9;
+
+ltriminner_transform_ltcurve3_4 = ltcurve3_9;
+
+ltriminner_transform_ltcurve4_4 = ltcurve4_9;
+
+ltriminner_transform_ltcurve5_4 = ltcurve5_9;
+
+hull_ext_1 = hull_armor_1 | fender_lt_1 | fender_rt_1 | drvr_scopes_1 | tool_boxes_1 | exhaust_port_1 | eng_oil_tank_1 | ext_fuel_tanks_1 | headlight_1 | spare_track_1;
+
+hull_int_1 = driver_1 | fuel_system_1 | firewall_1 | fire_sup_sys_1 | elec_sys_1 | infrared_sys_1 | r537tool_box_1 | storage_box_1 | air_bottles_1 | radiometric_1 | bilge_1 | exhaust_fan_1 | rear_ammo_rack_1 | eng_comp_1 | drvr_controls_1 | hullammo_1;
+
+hull_air_1 = hair02_1 | hair05_1 | fair07_1 | fair08_1;
+
+tur_ext_1 = tur_armor_1 | cmmdr_ir_light_1 | r739ir_detctor_1 | searchlight_1 | maingun_1 | a127machine_gun_1 | r748ldr_scope_1 | r741gnr_scope_1 | antenna_1 | r756snorkel_1 | gun_cover_1 | cmdr_periscopes_1 | gun_sight_1;
+
+tur_int_1 = gunner_1 | commander_1 | loader_1 | slip_ring_1 | turfloor_1 | gun_control_1 | hyd_sys_1 | ventilator_1 | amplidyne_1 | turammo_1;
+
+tur_air_1 = tair02_1 | gunair01_1;
+
+roadwheellt4_1 = r9tread_1 | r29hub_1 | r96axle_1 | r97arm_1 | moon4_1 | lt4flange_1;
+
+roadwheellt5_1 = r10tread_1 | r30hub_1 | r101axle_1 | r102arm_1 | moon5_1 | lt5flange_1;
+
+roadwheelrt1_1 = r1tread_1 | r21hub_1 | r106axle_1 | r107arm_1 | Moon1_1 | rt1flange_1;
+
+roadwheelrt2_1 = r2tread_1 | r22hub_1 | r111axle_1 | r112arm_1 | Moon2_1 | rt2flange_1;
+
+roadwheelrt3_1 = r3tread_1 | r23hub_1 | r116axle_1 | r117arm_1 | Moon3_1 | rt3flange_1;
+
+roadwheelrt4_1 = r4tread_1 | r24hub_1 | r121axle_1 | r122arm_1 | Moon4_1 | rt4flange_1;
+
+roadwheelrt5_1 = r5tread_1 | r25hub_1 | r126axle_1 | r127arm_1 | Moon5_1 | rt5flange_1;
+
+roadwheellt1_1 = r6tread_1 | r26hub_1 | r81axle_1 | r82arm_1 | moon1_1 | lt1flange_1;
+
+roadwheellt2_1 = r7tread_1 | r27hub_1 | r86axle_1 | r87arm_1 | moon2_1 | lt2flange_1;
+
+roadwheellt3_1 = r8tread_1 | r28hub_1 | r91axle_1 | r92arm_1 | moon3_1 | lt3flange_1;
+
+torsion_barlt1_1 = r83hub_1 | r84housing_1 | r85bar_1;
+
+torsion_barlt2_1 = r88hub_1 | r89housing_1 | r90bar_1;
+
+torsion_barlt3_1 = r93hub_1 | r94housing_1 | r95bar_1;
+
+torsion_barlt4_1 = r98hub_1 | r99housing_1 | r100bar_1;
+
+torsion_barlt5_1 = r103hub_1 | r104housing_1 | r105bar_1;
+
+torsion_barrt4_1 = r123hub_1 | r124housing_1 | r125bar_1;
+
+torsion_barrt5_1 = r128hub_1 | r129housing_1 | r130bar_1;
+
+torsion_barrt1_1 = r108hub_1 | r109housing_1 | r110bar_1;
+
+torsion_barrt2_1 = r113hub_1 | r114housing_1 | r115bar_1;
+
+torsion_barrt3_1 = r118hub_1 | r119housing_1 | r120bar_1;
+
+shockltrear_1 = r136connector_1 | r137arm1_1 | r138arm2_1 | r139shock_1 | r140housing_1;
+
+shockltfront_1 = r131connector_1 | r132arm1_1 | r133arm2_1 | r134shock_1 | r135housing_1;
+
+shockrtfront_1 = r141connector_1 | r142arm1_1 | r143arm2_1 | r144shock_1 | r145housing_1;
+
+shockrtrear_1 = r146connector_1 | r147arm1_1 | r148arm2_1 | r149shock_1 | r150housing_1;
+
+track_adjust_1 = r151rt_1 | r152lt_1;
+
+left_track_1 = r57_1 | r58_1 | r59_1 | r56_1 | r60_1 | r61_1 | r62_1 | r63_1 | r64_1 | teethlt_1;
+
+right_track_1 = r48_1 | r49_1 | r47_1 | r50_1 | r51_1 | r52_1 | r53_1 | r54_1 | r55_1 | teethrt_1;
+
+sprocketlt_1 = r32teeth_1 | drumlt_1 | r40hub_1;
+
+sprocketrt_1 = r31teeth_1 | drumrt_1 | r39hub_1;
+
+idlerrt_1 = r41rim_1 | r43disc_1 | r45hub_1;
+
+idlerlt_1 = r42rim_1 | r44disc_1 | r46hub_1;
+
+hull_armor_1 = rt_side_1 | bottom_1 | top_1 | upper_glacis_1 | lower_glacis_1 | back_1 | driver_hatch_1 | eng_hatch_1 | radiator_hatch_1 | trans_hatch_1 | final_dr_housng_1 | lt_side_1;
+
+fender_lt_1 = r197_1 | r205_1 | r206_1 | r207_1 | r208_1 | r213_1 | r214_1 | r217_1 | supportslt_1;
+
+fender_rt_1 = r198_1 | r209_1 | r210_1 | r211_1 | r212_1 | r215_1 | r216_1 | r218_1 | supportsrt_1;
+
+drvr_scopes_1 = r657_1 | r658_1;
+
+tool_boxes_1 = r199_1 | r201_1 | r204_1 | r222_1;
+
+exhaust_port_1 = r202_1;
+
+eng_oil_tank_1 = r203case_1 | r827oil_1;
+
+ext_fuel_tanks_1 = r219case_1 | r220case_1 | r221case_1 | r782fuel_1 | r783fuel_1 | r784fuel_1;
+
+headlight_1 = r223ir_light_1 | r224light_1 | r225shield_1;
+
+spare_track_1 = r200_1;
+
+driver_1 = r548neck_1 | r549torso_1 | r547head_1 | r552loarm_lt_1 | r551uparm_rt_1 | r557loleg_rt_1 | r550uparm_lt_1 | r556loleg_lt_1 | r555upleg_rt_1 | r553loarm_rt_1 | r554upleg_lt_1 | drvr_seat_1;
+
+fuel_system_1 = tanks_1 | a3wayvalve_1 | primer_1 | fuel_lines_1;
+
+firewall_1 = r526_1 | r527_1 | r528_1 | r529_1;
+
+fire_sup_sys_1 = r531control_1 | r561relay_1;
+
+elec_sys_1 = r530batteries_1 | r532relay_1 | r533fan_cntrl_1 | course_indictr_1 | r538black_box_1;
+
+infrared_sys_1 = r536instrument_1 | r614power_1;
+
+storage_box_1 = r539_1 | r540_1;
+
+air_bottles_1 = r558case_1 | r559case_1 | r789air_1 | r790air_1;
+
+radiometric_1 = r560_1;
+
+bilge_1 = r611pump_1 | r612pipe_1 | r613pipe_1;
+
+exhaust_fan_1 = r615fan_1 | r616motor_1;
+
+rear_ammo_rack_1 = r629_1 | r630_1 | r631_1 | r632_1 | r633_1;
+
+eng_comp_1 = engine_1 | transmission_1 | final_drive_lt_1 | final_drive_rt_1 | brake_rt_1 | brake_lt_1 | cooling_fan_1 | radiator_water_1 | radiator_oil_1 | air_filter_1 | transfer_1 | final_dr_gears_1;
+
+drvr_controls_1 = steering_brake_1 | shifting_1 | parking_brake_1 | clutch_1 | speed_cntrl_1;
+
+hullammo_1 = inrtfuel_1 | inltfuel_1 | onleftwall_1 | inammorack_1;
+
+hair02_1 = r595_1 | r596_1 | r597_1 | r598_1 | r599_1 | r600_1 | r601_1 | r602_1 | r603_1 | r604_1 | r605_1 | r815_1 | r816_1 | r817_1 | r818_1 | r819_1 | r820_1 | r821_1 | r822_1 | r823_1 | r824_1 | r825_1 | r828_1 | r829_1 | r830_1 | r831_1 | r832_1 | hullair1r_1 | hullair2r_1 | hullair4r_1 | hullair3r_1 | hullair5r_1 | hullair6r_1 | hullair7r_1 | hullair8r_1 | hullair9r_1 | hullair10r_1 | hullair11r_1 | hullair20r_1 | hullair21r_1 | hullair22r_1 | hullair13r_1;
+
+hair05_1 = r606_1 | r607_1 | r608_1 | r609_1 | r610_1 | r645_1 | r833_1 | r834_1 | r835_1 | r836_1 | r837_1;
+
+fair07_1 = fair071_1 | fair072_1 | fair073_1 | fair074_1;
+
+fair08_1 = fair081_1 | fair082_1;
+
+rt_side_1 = r160_1 | r161_1 | r162_1 | r176_1 | r178_1 | r180_1 | r182_1 | r184_1 | r186_1 | r188_1 | r190_1 | r196_1 | r653_1 | r654_1 | r163_1 | r164_1 | r169_1 | idlersupport_1 | r525_1 | r848_1;
+
+bottom_1 = r170_1 | r193_1 | r194_1;
+
+top_1 = r191_1 | r192_1;
+
+upper_glacis_1 = r171_1 | r172_1;
+
+lower_glacis_1 = r173_1 | r174_1;
+
+back_1 = r165_1;
+
+driver_hatch_1 = r655_1 | r656_1;
+
+eng_hatch_1 = r646_1;
+
+radiator_hatch_1 = r649_1 | r650_1;
+
+trans_hatch_1 = r647_1 | r648_1;
+
+final_dr_housng_1 = r153_1 | r154_1;
+
+lt_side_1 = r155_1 | r156_1 | r157_1 | r175_1 | r177_1 | r179_1 | r181_1 | r183_1 | r185_1 | r187_1 | r189_1 | r195_1 | r652_1 | r158_1 | r159_1 | r168_1 | idler_support_1 | r524_1 | r847_1 | tringr_1;
+
+supportslt_1 = r634_1 | r635_1 | r636_1 | r637_1 | r638_1 | r639_1;
+
+supportsrt_1 = r640_1 | r641_1 | r642_1 | r643_1 | r644_1;
+
+idlersupport_1 = r166_1;
+
+idler_support_1 = r167_1;
+
+drvr_seat_1 = r541bot_1 | r542back_1 | ltside_1 | rtside_1;
+
+tanks_1 = fronttank_1 | rtammotank_1 | ltammotank_1 | midtank_1;
+
+a3wayvalve_1 = r684_1 | r685_1;
+
+primer_1 = r686_1 | r687_1;
+
+fuel_lines_1 = midtank2front_1 | ammotank2valve_1 | frnttank2valve_1 | toengine_1;
+
+course_indictr_1 = r534_1 | r535converter_1;
+
+engine_1 = r767_1 | r768_1 | r769_1;
+
+transmission_1 = r770_1;
+
+final_drive_lt_1 = r771_1;
+
+final_drive_rt_1 = r772_1;
+
+brake_rt_1 = r774_1;
+
+brake_lt_1 = r773_1;
+
+cooling_fan_1 = r775_1;
+
+radiator_water_1 = r776_1;
+
+radiator_oil_1 = r777_1;
+
+air_filter_1 = r778_1;
+
+transfer_1 = r779_1 | r780_1 | r781_1;
+
+final_dr_gears_1 = r841_1 | r842_1 | r843_1 | r844_1;
+
+steering_brake_1 = r659lever_1 | r662rod_1 | r660lever_1 | r661axle_1;
+
+shifting_1 = r663lever_1 | r664axle_1 | r665rod1_1 | r666rod2_1 | r667rod3_1;
+
+parking_brake_1 = r668axle_1 | r669arm_1 | r670pedal_1 | r673rod_1 | r675rod_1;
+
+clutch_1 = r671pedal_1 | r672arm_1 | r674rod_1 | r676rod_1;
+
+speed_cntrl_1 = r677pedal_1 | r678rod_1 | r679rod_1 | handthrottle_1;
+
+inrtfuel_1 = ce1_1 | ce2_1 | ce3_1 | ce4_1 | ce5_1 | ce6_1 | ce7_1 | ce8_1;
+
+inltfuel_1 = ke1_1 | ke2_1 | ke3_1 | ke4_1 | ke5_1 | ke6_1 | ke7_1 | ke8_1;
+
+onleftwall_1 = ke9_1 | ke10_1;
+
+inammorack_1 = he1_1 | he2_1 | he3_1 | he4_1 | he5_1 | he6_1 | he8_1 | he9_1 | he10_1 | he11_1 | he13_1 | he14_1 | he15_1 | he16_1 | he17_1 | he18_1 | he19_1 | he20_1;
+
+ltside_1 = r543_1 | r545_1;
+
+rtside_1 = r544_1 | r546_1;
+
+fronttank_1 = r226tank_1 | r227tank_1 | r522tank_1 | fuel_1;
+
+rtammotank_1 = r230tank_1 | r228abutment_1 | ammosleeves_1 | r239fuel_1;
+
+ltammotank_1 = r229abutment_1 | r304tank_1 | ammo_sleeves_1 | r313fuel_1;
+
+midtank_1 = r523tank_1 | r788fuel_1;
+
+midtank2front_1 = r682_1 | r683_1;
+
+ammotank2valve_1 = r688_1;
+
+frnttank2valve_1 = r689_1;
+
+toengine_1 = r690_1 | r691_1 | r692_1 | r693_1;
+
+fuel_1 = r785_1 | r786_1 | r787_1;
+
+ammosleeves_1 = r231_1 | r232_1 | r233_1 | r234_1 | r235_1 | r236_1 | r237_1 | r238_1;
+
+ammo_sleeves_1 = r305_1 | r306_1 | r307_1 | r308_1 | r309_1 | r310_1 | r311_1 | r312_1;
+
+handthrottle_1 = r680_1 | r681_1;
+
+ce1_1 = r246liner_1 | r240case_1 | r242case_1 | r241prop_1 | r245he_1 | r243projo_1 | r244projo_1 | r247projo_1;
+
+ce2_1 = r248case_1 | r249prop_1 | r254liner_1 | r250case_1 | r253he_1 | r251projo_1 | r252projo_1 | r255projo_1;
+
+ce3_1 = r259projo_1 | r256case_1 | r258case_1 | r257prop_1 | r261he_1 | r260projo_1 | r263projo_1 | r262liner_1;
+
+ce4_1 = r267projo_1 | r268projo_1 | r264case_1 | r266case_1 | r265prop_1 | r269he_1 | r270liner_1 | r271projo_1;
+
+ce5_1 = r279projo_1 | r278liner_1 | r272case_1 | r274case_1 | r273prop_1 | r277he_1 | r275projo_1 | r276projo_1;
+
+ce6_1 = r287projo_1 | r286liner_1 | r280case_1 | r282case_1 | r281prop_1 | r285he_1 | r283projo_1 | r284projo_1;
+
+ce7_1 = r288case_1 | r289prop_1 | r295projo_1 | r294liner_1 | r290case_1 | r293he_1 | r291projo_1 | r292projo_1;
+
+ce8_1 = r299projo_1 | r296case_1 | r298case_1 | r297prop_1 | r301he_1 | r300projo_1 | r303projo_1 | r302liner_1;
+
+ke1_1 = r317pen_1 | r318pen_1 | r319pen_1 | r314case_1 | r316case_1 | r315prop_1 | r850prop_1;
+
+ke2_1 = r320case_1 | r322case_1 | r321prop_1 | r323pen_1 | r324pen_1 | r325pen_1 | r851prop_1;
+
+ke3_1 = r329pen_1 | r326case_1 | r328case_1 | r327prop_1 | r330pen_1 | r331pen_1 | r852prop_1;
+
+ke4_1 = r336pen_1 | r337pen_1 | r332case_1 | r334case_1 | r333prop_1 | r335pen_1 | r853prop_1;
+
+ke5_1 = r338case_1 | r339prop_1 | r340case_1 | r341pen_1 | r342pen_1 | r343pen_1 | r854prop_1;
+
+ke6_1 = r347pen_1 | r348pen_1 | r349pen_1 | r344case_1 | r346case_1 | r345prop_1 | r855prop_1;
+
+ke7_1 = r354pen_1 | r355pen_1 | r350case_1 | r352case_1 | r351prop_1 | r353pen_1 | r856prop_1;
+
+ke8_1 = r359pen_1 | r356case_1 | r358case_1 | r357prop_1 | r360pen_1 | r361pen_1 | r857prop_1;
+
+ke9_1 = r697pen_1 | r698pen_1 | r699pen_1 | r694case_1 | r696case_1 | r695prop_1 | r858prop_1;
+
+ke10_1 = r700case_1 | r702case_1 | r701prop_1 | r703pen_1 | r704pen_1 | r705pen_1 | r859prop_1;
+
+he1_1 = r368projo_1 | r362case_1 | r364case_1 | r363prop_1 | r367he_1 | r369he_1 | r365projo_1 | r366projo_1;
+
+he2_1 = r376projo_1 | r370case_1 | r372case_1 | r371prop_1 | r375he_1 | r377he_1 | r373projo_1 | r374projo_1;
+
+he3_1 = r378case_1 | r379prop_1 | r380case_1 | r383he_1 | r385he_1 | r381projo_1 | r382projo_1 | r384projo_1;
+
+he4_1 = r389projo_1 | r386case_1 | r388case_1 | r387prop_1 | r391he_1 | r393he_1 | r390projo_1 | r392projo_1;
+
+he5_1 = r399he_1 | r397projo_1 | r398projo_1 | r394case_1 | r396case_1 | r395prop_1 | r400projo_1 | r401he_1;
+
+he6_1 = r402case_1 | r404case_1 | r403prop_1 | r407he_1 | r409he_1 | r405projo_1 | r406projo_1 | r408projo_1;
+
+he8_1 = r418case_1 | r419prop_1 | r420case_1 | r423he_1 | r425he_1 | r421projo_1 | r422projo_1 | r424projo_1;
+
+he9_1 = r429projo_1 | r426case_1 | r428case_1 | r427prop_1 | r431he_1 | r433he_1 | r430projo_1 | r432projo_1;
+
+he10_1 = r434case_1 | r436case_1 | r435prop_1 | r439he_1 | r437projo_1 | r438projo_1 | r440projo_1 | r441he_1;
+
+he11_1 = r448projo_1 | r442case_1 | r444case_1 | r443prop_1 | r447he_1 | r449he_1 | r445projo_1 | r446projo_1;
+
+he13_1 = r458case_1 | r459prop_1 | r460case_1 | r463he_1 | r465he_1 | r461projo_1 | r462projo_1 | r464projo_1;
+
+he14_1 = r469projo_1 | r466case_1 | r468case_1 | r467prop_1 | r471he_1 | r473he_1 | r470projo_1 | r472projo_1;
+
+he15_1 = r477projo_1 | r478projo_1 | r474case_1 | r476case_1 | r475prop_1 | r479he_1 | r480projo_1 | r481he_1;
+
+he16_1 = r485projo_1 | r486projo_1 | r488projo_1 | r482case_1 | r484case_1 | r483prop_1 | r487he_1 | r489he_1;
+
+he17_1 = r494projo_1 | r496projo_1 | r490case_1 | r492case_1 | r491prop_1 | r495he_1 | r497he_1 | r493projo_1;
+
+he18_1 = r498case_1 | r499prop_1 | r500case_1 | r503he_1 | r505he_1 | r501projo_1 | r502projo_1 | r504projo_1;
+
+he19_1 = r506case_1 | r508case_1 | r507prop_1 | r509projo_1 | r511he_1 | r513he_1 | r510projo_1 | r512projo_1;
+
+he20_1 = r514case_1 | r516case_1 | r515prop_1 | r519he_1 | r517projo_1 | r518projo_1 | r520projo_1 | r521he_1;
+
+tur_armor_1 = r717_1 | r718_1 | r719_1 | r720_1 | r725_1 | r726_1 | r727_1 | r728_1 | r733_1 | tur_ring_1 | r738ir_base_1 | gnnr_scope_base_1 | cmdr_hatch_base_1 | ldr_hatch_base_1 | shellhatch_base_1 | r746ldr_hatch_1 | shell_hatch_1 | vent_hatch_1 | r743cmdr_hatch_1;
+
+cmmdr_ir_light_1 = r744lamp_1 | brackets_1;
+
+searchlight_1 = r757lamp_1 | r805_1;
+
+maingun_1 = barrel_1 | breech_1 | coax_762_1;
+
+a127machine_gun_1 = r747_1 | r795_1 | r796_1 | r797_1 | r798_1 | r799_1 | r800_1;
+
+antenna_1 = r737_1 | r791_1 | r792_1;
+
+gun_cover_1 = r879_1;
+
+cmdr_periscopes_1 = r749_1 | r801_1 | r802_1 | r803_1;
+
+gun_sight_1 = r759_1 | r813_1;
+
+gunner_1 = r562head_1 | r563neck_1 | r564torso_1 | r565uparm_lt_1 | r566uparm_rt_1 | r567loarm_lt_1 | r568loarm_rt_1 | r569upleg_lt_1 | r570upleg_rt_1 | r571loleg_lt_1 | r572loleg_rt_1 | gnrseat_1;
+
+commander_1 = r578loarm_lt_1 | r577uparm_rt_1 | r576uparm_lt_1 | r574neck_1 | r575torso_1 | r573head_1 | r579loarm_rt_1 | r583loleg_rt_1 | r582loleg_lt_1 | r581upleg_rt_1 | r580upleg_lt_1 | cmdrseat_1;
+
+loader_1 = r588uparmrt_1 | r589loarmlt_1 | r585neck_1 | r587uparmlt_1 | r586torso_1 | r584head_1 | r591upleglt_1 | r594lolegrt_1 | r592uplegrt_1 | r593loleglt_1 | r590loarmrt_1 | r620seat_1;
+
+slip_ring_1 = r622_1 | r623_1 | supports_1;
+
+turfloor_1 = r621_1;
+
+gun_control_1 = laying_mech_1 | traverse_mech_1 | elevating_mech_1;
+
+hyd_sys_1 = r762pump_1 | r763motor_1;
+
+ventilator_1 = r752blower_1 | r753duct_1 | r804duct_1;
+
+amplidyne_1 = r755_1;
+
+turammo_1 = inturbasket_1 | inturret_1;
+
+tair02_1 = r721_1 | r722_1 | r723_1 | r724_1 | r729_1 | r730_1 | r731_1 | r732_1 | r734_1 | r736_1 | r765_1 | r766_1 | r838_1 | r839_1 | r862_1 | r880_1 | r881_1 | r882_1 | r883_1 | r884_1 | r845_1 | r846_1;
+
+gunair01_1 = r849_1;
+
+tur_ring_1 = r735_1;
+
+gnnr_scope_base_1 = r740_1;
+
+cmdr_hatch_base_1 = r742_1;
+
+ldr_hatch_base_1 = r745_1;
+
+shellhatch_base_1 = r826_1;
+
+shell_hatch_1 = r750_1;
+
+vent_hatch_1 = r751_1;
+
+brackets_1 = r793_1 | r794_1;
+
+barrel_1 = r758_1 | r806_1 | r807evac_1 | r808_1 | r809_1 | r840_1;
+
+breech_1 = r810_1 | r811_1;
+
+coax_762_1 = r764_1 | r814mount_1;
+
+gnrseat_1 = r617seat_1 | r628spprt_1;
+
+cmdrseat_1 = r618_1 | r619_1;
+
+supports_1 = r624_1 | r625_1 | r626_1 | r627_1;
+
+laying_mech_1 = r760_1;
+
+traverse_mech_1 = r761_1;
+
+elevating_mech_1 = r754_1;
+
+inturbasket_1 = he7_1 | he12_1;
+
+inturret_1 = ke11_1 | ke12_1;
+
+he7_1 = r410case_1 | r412case_1 | r411prop_1 | r415he_1 | r417he_1 | r413projo_1 | r414projo_1 | r416projo_1;
+
+he12_1 = r450case_1 | r452case_1 | r451prop_1 | r455he_1 | r457he_1 | r453projo_1 | r454projo_1 | r456projo_1;
+
+ke11_1 = r709pen_1 | r706case_1 | r708case_1 | r707prop_1 | r710pen_1 | r711pen_1 | r860prop_1;
+
+ke12_1 = r715pen_1 | r716pen_1 | r712case_1 | r714case_1 | r713prop_1 | r812pen_1 | r861prop_1;
+
+lt4flange_1 = lt4riminner_1 | lt4rimouter_1;
+
+lt5flange_1 = lt5riminner_1 | lt5rimouter_1;
+
+rt1flange_1 = rt1riminner_1 | rt1rimouter_1;
+
+rt2flange_1 = rt2riminner_1 | rt2rimouter_1;
+
+rt3flange_1 = rt3riminner_1 | rt3rimouter_1;
+
+rt4flange_1 = rt4riminner_1 | rt4rimouter_1;
+
+rt5flange_1 = rt5riminner_1 | rt5rimouter_1;
+
+lt1flange_1 = lt1riminner_1 | lt1rimouter_1;
+
+lt2flange_1 = lt2riminner_1 | lt2rimouter_1;
+
+lt3flange_1 = lt3riminner_1 | lt3rimouter_1;
+
+teethlt_1 = r76_1 | r77_1 | r78_1 | r79_1 | r73_1 | r74_1 | r75_1 | r80_1;
+
+teethrt_1 = r66_1 | r67_1 | r68_1 | r69_1 | r65_1 | r70_1 | r71_1 | r72_1;
+
+drumlt_1 = r34_1 | r36_1 | r38_1;
+
+drumrt_1 = r33_1 | r35_1 | r37_1;
+
+lt4riminner_1 = lt4flat_1 | lt4curve1_1 | lt4curve2_1 | lt4curve3_1 | lt4curve4_1 | lt4curve5_1;
+
+lt4rimouter_1 = lt4otflat_1 | lt4otcurve1_1 | lt4otcurve2_1 | lt4otcurve3_1 | lt4otcurve4_1 | lt4otcurve5_1;
+
+lt5riminner_1 = lt5flat_1 | lt5curve1_1 | lt5curve2_1 | lt5curve3_1 | lt5curve4_1 | lt5curve5_1;
+
+lt5rimouter_1 = lt5otflat_1 | lt5otcurve1_1 | lt5otcurve2_1 | lt5otcurve3_1 | lt5otcurve4_1 | lt5otcurve5_1;
+
+rt1riminner_1 = rt1flat_1 | rt1curve1_1 | rt1curve2_1 | rt1curve3_1 | rt1curve4_1 | rt1curve5_1;
+
+rt1rimouter_1 = rt1otflat_1 | rt1otcurve1_1 | rt1otcurve2_1 | rt1otcurve3_1 | rt1otcurve4_1 | rt1otcurve5_1;
+
+rt2riminner_1 = rt2flat_1 | rt2curve1_1 | rt2curve2_1 | rt2curve3_1 | rt2curve4_1 | rt2curve5_1;
+
+rt2rimouter_1 = rt2otflat_1 | rt2otcurve1_1 | rt2otcurve2_1 | rt2otcurve3_1 | rt2otcurve4_1 | rt2otcurve5_1;
+
+rt3riminner_1 = rt3flat_1 | rt3curve1_1 | rt3curve2_1 | rt3curve3_1 | rt3curve4_1 | rt3curve5_1;
+
+rt3rimouter_1 = rt3otflat_1 | rt3otcurve1_1 | rt3otcurve2_1 | rt3otcurve3_1 | rt3otcurve4_1 | rt3otcurve5_1;
+
+rt4riminner_1 = rt4flat_1 | rt4curve1_1 | rt4curve2_1 | rt4curve3_1 | rt4curve4_1 | rt4curve5_1;
+
+rt4rimouter_1 = rt4otflat_1 | rt4otcurve1_1 | rt4otcurve2_1 | rt4otcurve3_1 | rt4otcurve4_1 | rt4otcurve5_1;
+
+rt5riminner_1 = rt5flat_1 | rt5curve1_1 | rt5curve2_1 | rt5curve3_1 | rt5curve4_1 | rt5curve5_1;
+
+rt5rimouter_1 = rt5otflat_1 | rt5otcurve1_1 | rt5otcurve2_1 | rt5otcurve3_1 | rt5otcurve4_1 | rt5otcurve5_1;
+
+lt1riminner_1 = lt1flat_1 | lt1curve1_1 | lt1curve2_1 | lt1curve3_1 | lt1curve4_1 | lt1curve5_1;
+
+lt1rimouter_1 = lt1otflat_1 | lt1otcurve1_1 | lt1otcurve2_1 | lt1otcurve3_1 | lt1otcurve4_1 | lt1otcurve5_1;
+
+lt2riminner_1 = lt2flat_1 | lt2curve1_1 | lt2curve2_1 | lt2curve3_1 | lt2curve4_1 | lt2curve5_1;
+
+lt2rimouter_1 = lt2otflat_1 | lt2otcurve1_1 | lt2otcurve2_1 | lt2otcurve3_1 | lt2otcurve4_1 | lt2otcurve5_1;
+
+lt3riminner_1 = lt3flat_1 | lt3curve1_1 | lt3curve2_1 | lt3curve3_1 | lt3curve4_1 | lt3curve5_1;
+
+lt3rimouter_1 = lt3otflat_1 | lt3otcurve1_1 | lt3otcurve2_1 | lt3otcurve3_1 | lt3otcurve4_1 | lt3otcurve5_1;
+
+
+dqfx = hvnnfq | dpnnbndfq | lpbdfq;
+
+lpbdfdMpdfl = qppt;
+
+qppt = ptq | tpq | dpnppnfnt | thflf | pt1q | tp1q | jvnl | dpnpbqtnfnt;
+
+dpnppnfnt = hvll | tvqqft | tvtpfntjpn;
+
+thflf = nq1;
+
+jvnl = bqth7 | pqptplfft | Rjn;
+
+dpnpbqtnfnt = hvll_1 | tvqqft_1 | tvtpfntjpn_1;
+
+hvll = hvll_fxt | hvll_jnt | hvll_bjq;
+
+tvqqft = tvq_fxt | tvq_jnt | tvq_bjq;
+
+tvtpfntjpn = qpbdxhffllt4 | qpbdxhffllt5 | qpbdxhfflqt1 | qpbdxhfflqt2 | qpbdxhfflqt3 | qpbdxhfflqt4 | qpbdxhfflqt5 | qpbdxhffllt1 | qpbdxhffllt2 | qpbdxhffllt3 | tpqtjpn_bbqlt1 | tpqtjpn_bbqlt2 | tpqtjpn_bbqlt3 | tpqtjpn_bbqlt4 | tpqtjpn_bbqlt5 | tpqtjpn_bbqqt4 | tpqtjpn_bbqqt5 | tpqtjpn_bbqqt1 | tpqtjpn_bbqqt2 | tpqtjpn_bbqqt3 | thpdlltqfbq | thpdlltfqpnt | thpdlqtfqpnt | thpdlqtqfbq | tqbdl_bdjvtt | lfft_tqbdl | qjhht_tqbdl | tpqpdlftlt | tpqpdlftqt | jdlfqqt | jdlfqlt;
+
+bqth7 = bqtq1;
+
+pqptplfft = pqptplfft_tqbntfpqn_qjnpvtfq | pqptplfft_tqbntfpqn_qjnjnnfq;
+
+Rjn = Rjn1 | Rjn2 | Rjn3 | Rjn4 | Rjn5 | qjn1 | qjn2 | qjn3 | qjn4 | qjn5;
+
+hvll_1 = hvll_fxt_1 | hvll_jnt_1 | hvll_bjq_1;
+
+tvqqft_1 = tvq_fxt_1 | tvq_jnt_1 | tvq_bjq_1;
+
+tvtpfntjpn_1 = qpbdxhffllt4_1 | qpbdxhffllt5_1 | qpbdxhfflqt1_1 | qpbdxhfflqt2_1 | qpbdxhfflqt3_1 | qpbdxhfflqt4_1 | qpbdxhfflqt5_1 | qpbdxhffllt1_1 | qpbdxhffllt2_1 | qpbdxhffllt3_1 | tpqtjpn_bbqlt1_1 | tpqtjpn_bbqlt2_1 | tpqtjpn_bbqlt3_1 | tpqtjpn_bbqlt4_1 | tpqtjpn_bbqlt5_1 | tpqtjpn_bbqqt4_1 | tpqtjpn_bbqqt5_1 | tpqtjpn_bbqqt1_1 | tpqtjpn_bbqqt2_1 | tpqtjpn_bbqqt3_1 | thpdlltqfbq_1 | thpdlltfqpnt_1 | thpdlqtfqpnt_1 | thpdlqtqfbq_1 | tqbdl_bdjvtt_1 | lfft_tqbdl_1 | qjhht_tqbdl_1 | tpqpdlftlt_1 | tpqpdlftqt_1 | jdlfqqt_1 | jdlfqlt_1;
+
+hvll_fxt = hvll_bqnpq | ffndfq_lt | ffndfq_qt | dqvq_tdppft | tppl_bpxft | fxhbvtt_ppqt | fnh_pjl_tbnl | fxt_fvfl_tbnlt | hfbdljhht | tpbqf_tqbdl;
+
+hvll_jnt = dqjvfq | fvfl_tzttfn | fjqfxbll | fjqf_tvp_tzt | flfd_tzt | jnfqbqfd_tzt | q537tppl_bpx | ttpqbhf_bpx | bjq_bpttlft | qbdjpnftqjd | bjlhf | fxhbvtt_fbn | qfbq_bnnp_qbdl | fnh_dpnp | dqvq_dpntqplt | hvllbnnp;
+
+hvll_bjq = hbjq02 | hbjq05 | fbjq07 | fbjq08;
+
+tvq_fxt = tvq_bqnpq | dnndq_jq_ljhht | q739jq_dftdtpq | tfbqdhljhht | nbjnhvn | b127nbdhjnf_hvn | q748ldq_tdppf | q741hnq_tdppf | bntfnnb | q756tnpqlfl | hvn_dpvfq | dndq_pfqjtdppft | hvn_tjhht;
+
+tvq_jnt = hvnnfq | dpnnbndfq | lpbdfq | tljp_qjnh | tvqflppq | hvn_dpntqpl | hzd_tzt | vfntjlbtpq | bnpljdznf | tvqbnnp;
+
+tvq_bjq = tbjq02 | hvnbjq01;
+
+qpbdxhffllt4 = q9tqfbd | q29hvb | q96bxlf | q97bqn | nppn4 | lt4flbnhf;
+
+qpbdxhffllt5 = q10tqfbd | q30hvb | q101bxlf | q102bqn | nppn5 | lt5flbnhf;
+
+qpbdxhfflqt1 = q1tqfbd | q21hvb | q106bxlf | q107bqn | Mppn1 | qt1flbnhf;
+
+qpbdxhfflqt2 = q2tqfbd | q22hvb | q111bxlf | q112bqn | Mppn2 | qt2flbnhf;
+
+qpbdxhfflqt3 = q3tqfbd | q23hvb | q116bxlf | q117bqn | Mppn3 | qt3flbnhf;
+
+qpbdxhfflqt4 = q4tqfbd | q24hvb | q121bxlf | q122bqn | Mppn4 | qt4flbnhf;
+
+qpbdxhfflqt5 = q5tqfbd | q25hvb | q126bxlf | q127bqn | Mppn5 | qt5flbnhf;
+
+qpbdxhffllt1 = q6tqfbd | q26hvb | q81bxlf | q82bqn | nppn1 | lt1flbnhf;
+
+qpbdxhffllt2 = q7tqfbd | q27hvb | q86bxlf | q87bqn | nppn2 | lt2flbnhf;
+
+qpbdxhffllt3 = q8tqfbd | q28hvb | q91bxlf | q92bqn | nppn3 | lt3flbnhf;
+
+tpqtjpn_bbqlt1 = q83hvb | q84hpvtjnh | q85bbq;
+
+tpqtjpn_bbqlt2 = q88hvb | q89hpvtjnh | q90bbq;
+
+tpqtjpn_bbqlt3 = q93hvb | q94hpvtjnh | q95bbq;
+
+tpqtjpn_bbqlt4 = q98hvb | q99hpvtjnh | q100bbq;
+
+tpqtjpn_bbqlt5 = q103hvb | q104hpvtjnh | q105bbq;
+
+tpqtjpn_bbqqt4 = q123hvb | q124hpvtjnh | q125bbq;
+
+tpqtjpn_bbqqt5 = q128hvb | q129hpvtjnh | q130bbq;
+
+tpqtjpn_bbqqt1 = q108hvb | q109hpvtjnh | q110bbq;
+
+tpqtjpn_bbqqt2 = q113hvb | q114hpvtjnh | q115bbq;
+
+tpqtjpn_bbqqt3 = q118hvb | q119hpvtjnh | q120bbq;
+
+thpdlltqfbq = q136dpnnfdtpq | q137bqn1 | q138bqn2 | q139thpdl | q140hpvtjnh;
+
+thpdlltfqpnt = q131dpnnfdtpq | q132bqn1 | q133bqn2 | q134thpdl | q135hpvtjnh;
+
+thpdlqtfqpnt = q141dpnnfdtpq | q142bqn1 | q143bqn2 | q144thpdl | q145hpvtjnh;
+
+thpdlqtqfbq = q146dpnnfdtpq | q147bqn1 | q148bqn2 | q149thpdl | q150hpvtjnh;
+
+tqbdl_bdjvtt = q151qt | q152lt;
+
+lfft_tqbdl = q57 | q58 | q59 | q56 | q60 | q61 | q62 | q63 | q64 | tffthlt;
+
+qjhht_tqbdl = q48 | q49 | q47 | q50 | q51 | q52 | q53 | q54 | q55 | tffthqt;
+
+tpqpdlftlt = q32tffth | dqvnlt | q40hvb;
+
+tpqpdlftqt = q31tffth | dqvnqt | q39hvb;
+
+jdlfqqt = q41qjn | q43djtd | q45hvb;
+
+jdlfqlt = q42qjn | q44djtd | q46hvb;
+
+hvll_bqnpq = qt_tjdf | bpttpn | tpp | vppfq_hlbdjt | lpxfq_hlbdjt | bbdl | dqjvfq_hbtdh | fnh_hbtdh | qbdjbtpq_hbtdh | tqbnt_hbtdh | fjnbl_dq_hpvtnh | lt_tjdf;
+
+ffndfq_lt = q197 | q205 | q206 | q207 | q208 | q213 | q214 | q217 | tvpppqttlt;
+
+ffndfq_qt = q198 | q209 | q210 | q211 | q212 | q215 | q216 | q218 | tvpppqttqt;
+
+dqvq_tdppft = q657 | q658;
+
+tppl_bpxft = q199 | q201 | q204 | q222;
+
+fxhbvtt_ppqt = q202;
+
+fnh_pjl_tbnl = q203dbtf | q827pjl;
+
+fxt_fvfl_tbnlt = q219dbtf | q220dbtf | q221dbtf | q782fvfl | q783fvfl | q784fvfl;
+
+hfbdljhht = q223jq_ljhht | q224ljhht | q225thjfld;
+
+tpbqf_tqbdl = q200;
+
+dqjvfq = q548nfdl | q549tpqtp | q547hfbd | q552lpbqn_lt | q551vpbqn_qt | q557lplfh_qt | q550vpbqn_lt | q556lplfh_lt | q555vplfh_qt | q553lpbqn_qt | q554vplfh_lt | dqvq_tfbt;
+
+fvfl_tzttfn = tbnlt | b3xbzvblvf | pqjnfq | fvfl_ljnft;
+
+fjqfxbll = q526 | q527 | q528 | q529;
+
+fjqf_tvp_tzt = q531dpntqpl | q561qflbz;
+
+flfd_tzt = q530bbttfqjft | q532qflbz | q533fbn_dntql | dpvqtf_jndjdtq | q538blbdl_bpx;
+
+jnfqbqfd_tzt = q536jnttqvnfnt | q614ppxfq;
+
+ttpqbhf_bpx = q539 | q540;
+
+bjq_bpttlft = q558dbtf | q559dbtf | q789bjq | q790bjq;
+
+qbdjpnftqjd = q560;
+
+bjlhf = q611pvnp | q612pjpf | q613pjpf;
+
+fxhbvtt_fbn = q615fbn | q616nptpq;
+
+qfbq_bnnp_qbdl = q629 | q630 | q631 | q632 | q633;
+
+fnh_dpnp = fnhjnf | tqbntnjttjpn | fjnbl_dqjvf_lt | fjnbl_dqjvf_qt | bqblf_qt | bqblf_lt | dppljnh_fbn | qbdjbtpq_xbtfq | qbdjbtpq_pjl | bjq_fjltfq | tqbntffq | fjnbl_dq_hfbqt;
+
+dqvq_dpntqplt = ttffqjnh_bqblf | thjftjnh | pbqljnh_bqblf | dlvtdh | tpffd_dntql;
+
+hvllbnnp = jnqtfvfl | jnltfvfl | pnlfftxbll | jnbnnpqbdl;
+
+hbjq02 = q595 | q596 | q597 | q598 | q599 | q600 | q601 | q602 | q603 | q604 | q605 | q815 | q816 | q817 | q818 | q819 | q820 | q821 | q822 | q823 | q824 | q825 | q828 | q829 | q830 | q831 | q832 | hvllbjq1q | hvllbjq2q | hvllbjq4q | hvllbjq3q | hvllbjq5q | hvllbjq6q | hvllbjq7q | hvllbjq8q | hvllbjq9q | hvllbjq10q | hvllbjq11q | hvllbjq20q | hvllbjq21q | hvllbjq22q | hvllbjq13q;
+
+hbjq05 = q606 | q607 | q608 | q609 | q610 | q645 | q833 | q834 | q835 | q836 | q837;
+
+fbjq07 = fbjq071 | fbjq072 | fbjq073 | fbjq074;
+
+fbjq08 = fbjq081 | fbjq082;
+
+qt_tjdf = q160 | q161 | q162 | q176 | q178 | q180 | q182 | q184 | q186 | q188 | q190 | q196 | q653 | q654 | q163 | q164 | q169 | jdlfqtvpppqt | q525 | q848;
+
+bpttpn = q170 | q193 | q194;
+
+tpp = q191 | q192;
+
+vppfq_hlbdjt = q171 | q172;
+
+lpxfq_hlbdjt = q173 | q174;
+
+bbdl = q165;
+
+dqjvfq_hbtdh = q655 | q656;
+
+fnh_hbtdh = q646;
+
+qbdjbtpq_hbtdh = q649 | q650;
+
+tqbnt_hbtdh = q647 | q648;
+
+fjnbl_dq_hpvtnh = q153 | q154;
+
+lt_tjdf = q155 | q156 | q157 | q175 | q177 | q179 | q181 | q183 | q185 | q187 | q189 | q195 | q652 | q158 | q159 | q168 | jdlfq_tvpppqt | q524 | q847 | tqjnhq;
+
+tvpppqttlt = q634 | q635 | q636 | q637 | q638 | q639;
+
+tvpppqttqt = q640 | q641 | q642 | q643 | q644;
+
+jdlfqtvpppqt = q166;
+
+jdlfq_tvpppqt = q167;
+
+dqvq_tfbt = q541bpt | q542bbdl | lttjdf | qttjdf;
+
+tbnlt = fqpnttbnl | qtbnnptbnl | ltbnnptbnl | njdtbnl;
+
+b3xbzvblvf = q684 | q685;
+
+pqjnfq = q686 | q687;
+
+fvfl_ljnft = njdtbnl2fqpnt | bnnptbnl2vblvf | fqnttbnl2vblvf | tpfnhjnf;
+
+dpvqtf_jndjdtq = q534 | q535dpnvfqtfq;
+
+fnhjnf = q767 | q768 | q769;
+
+tqbntnjttjpn = q770;
+
+fjnbl_dqjvf_lt = q771;
+
+fjnbl_dqjvf_qt = q772;
+
+bqblf_qt = q774;
+
+bqblf_lt = q773;
+
+dppljnh_fbn = q775;
+
+qbdjbtpq_xbtfq = q776;
+
+qbdjbtpq_pjl = q777;
+
+bjq_fjltfq = q778;
+
+tqbntffq = q779 | q780 | q781;
+
+fjnbl_dq_hfbqt = q841 | q842 | q843 | q844;
+
+ttffqjnh_bqblf = q659lfvfq | q662qpd | q660lfvfq | q661bxlf;
+
+thjftjnh = q663lfvfq | q664bxlf | q665qpd1 | q666qpd2 | q667qpd3;
+
+pbqljnh_bqblf = q668bxlf | q669bqn | q670pfdbl | q673qpd | q675qpd;
+
+dlvtdh = q671pfdbl | q672bqn | q674qpd | q676qpd;
+
+tpffd_dntql = q677pfdbl | q678qpd | q679qpd | hbndthqpttlf;
+
+jnqtfvfl = df1 | df2 | df3 | df4 | df5 | df6 | df7 | df8;
+
+jnltfvfl = lf1 | lf2 | lf3 | lf4 | lf5 | lf6 | lf7 | lf8;
+
+pnlfftxbll = lf9 | lf10;
+
+jnbnnpqbdl = hf1 | hf2 | hf3 | hf4 | hf5 | hf6 | hf8 | hf9 | hf10 | hf11 | hf13 | hf14 | hf15 | hf16 | hf17 | hf18 | hf19 | hf20;
+
+lttjdf = q543 | q545;
+
+qttjdf = q544 | q546;
+
+fqpnttbnl = q226tbnl | q227tbnl | q522tbnl | fvfl;
+
+qtbnnptbnl = q230tbnl | q228bbvtnfnt | bnnptlffvft | q239fvfl;
+
+ltbnnptbnl = q229bbvtnfnt | q304tbnl | bnnp_tlffvft | q313fvfl;
+
+njdtbnl = q523tbnl | q788fvfl;
+
+njdtbnl2fqpnt = q682 | q683;
+
+bnnptbnl2vblvf = q688;
+
+fqnttbnl2vblvf = q689;
+
+tpfnhjnf = q690 | q691 | q692 | q693;
+
+fvfl = q785 | q786 | q787;
+
+bnnptlffvft = q231 | q232 | q233 | q234 | q235 | q236 | q237 | q238;
+
+bnnp_tlffvft = q305 | q306 | q307 | q308 | q309 | q310 | q311 | q312;
+
+hbndthqpttlf = q680 | q681;
+
+df1 = q246ljnfq | q240dbtf | q242dbtf | q241pqpp | q245hf | q243pqpjp | q244pqpjp | q247pqpjp;
+
+df2 = q248dbtf | q249pqpp | q254ljnfq | q250dbtf | q253hf | q251pqpjp | q252pqpjp | q255pqpjp;
+
+df3 = q259pqpjp | q256dbtf | q258dbtf | q257pqpp | q261hf | q260pqpjp | q263pqpjp | q262ljnfq;
+
+df4 = q267pqpjp | q268pqpjp | q264dbtf | q266dbtf | q265pqpp | q269hf | q270ljnfq | q271pqpjp;
+
+df5 = q279pqpjp | q278ljnfq | q272dbtf | q274dbtf | q273pqpp | q277hf | q275pqpjp | q276pqpjp;
+
+df6 = q287pqpjp | q286ljnfq | q280dbtf | q282dbtf | q281pqpp | q285hf | q283pqpjp | q284pqpjp;
+
+df7 = q288dbtf | q289pqpp | q295pqpjp | q294ljnfq | q290dbtf | q293hf | q291pqpjp | q292pqpjp;
+
+df8 = q299pqpjp | q296dbtf | q298dbtf | q297pqpp | q301hf | q300pqpjp | q303pqpjp | q302ljnfq;
+
+lf1 = q317pfn | q318pfn | q319pfn | q314dbtf | q316dbtf | q315pqpp | q850pqpp;
+
+lf2 = q320dbtf | q322dbtf | q321pqpp | q323pfn | q324pfn | q325pfn | q851pqpp;
+
+lf3 = q329pfn | q326dbtf | q328dbtf | q327pqpp | q330pfn | q331pfn | q852pqpp;
+
+lf4 = q336pfn | q337pfn | q332dbtf | q334dbtf | q333pqpp | q335pfn | q853pqpp;
+
+lf5 = q338dbtf | q339pqpp | q340dbtf | q341pfn | q342pfn | q343pfn | q854pqpp;
+
+lf6 = q347pfn | q348pfn | q349pfn | q344dbtf | q346dbtf | q345pqpp | q855pqpp;
+
+lf7 = q354pfn | q355pfn | q350dbtf | q352dbtf | q351pqpp | q353pfn | q856pqpp;
+
+lf8 = q359pfn | q356dbtf | q358dbtf | q357pqpp | q360pfn | q361pfn | q857pqpp;
+
+lf9 = q697pfn | q698pfn | q699pfn | q694dbtf | q696dbtf | q695pqpp | q858pqpp;
+
+lf10 = q700dbtf | q702dbtf | q701pqpp | q703pfn | q704pfn | q705pfn | q859pqpp;
+
+hf1 = q368pqpjp | q362dbtf | q364dbtf | q363pqpp | q367hf | q369hf | q365pqpjp | q366pqpjp;
+
+hf2 = q376pqpjp | q370dbtf | q372dbtf | q371pqpp | q375hf | q377hf | q373pqpjp | q374pqpjp;
+
+hf3 = q378dbtf | q379pqpp | q380dbtf | q383hf | q385hf | q381pqpjp | q382pqpjp | q384pqpjp;
+
+hf4 = q389pqpjp | q386dbtf | q388dbtf | q387pqpp | q391hf | q393hf | q390pqpjp | q392pqpjp;
+
+hf5 = q399hf | q397pqpjp | q398pqpjp | q394dbtf | q396dbtf | q395pqpp | q400pqpjp | q401hf;
+
+hf6 = q402dbtf | q404dbtf | q403pqpp | q407hf | q409hf | q405pqpjp | q406pqpjp | q408pqpjp;
+
+hf8 = q418dbtf | q419pqpp | q420dbtf | q423hf | q425hf | q421pqpjp | q422pqpjp | q424pqpjp;
+
+hf9 = q429pqpjp | q426dbtf | q428dbtf | q427pqpp | q431hf | q433hf | q430pqpjp | q432pqpjp;
+
+hf10 = q434dbtf | q436dbtf | q435pqpp | q439hf | q437pqpjp | q438pqpjp | q440pqpjp | q441hf;
+
+hf11 = q448pqpjp | q442dbtf | q444dbtf | q443pqpp | q447hf | q449hf | q445pqpjp | q446pqpjp;
+
+hf13 = q458dbtf | q459pqpp | q460dbtf | q463hf | q465hf | q461pqpjp | q462pqpjp | q464pqpjp;
+
+hf14 = q469pqpjp | q466dbtf | q468dbtf | q467pqpp | q471hf | q473hf | q470pqpjp | q472pqpjp;
+
+hf15 = q477pqpjp | q478pqpjp | q474dbtf | q476dbtf | q475pqpp | q479hf | q480pqpjp | q481hf;
+
+hf16 = q485pqpjp | q486pqpjp | q488pqpjp | q482dbtf | q484dbtf | q483pqpp | q487hf | q489hf;
+
+hf17 = q494pqpjp | q496pqpjp | q490dbtf | q492dbtf | q491pqpp | q495hf | q497hf | q493pqpjp;
+
+hf18 = q498dbtf | q499pqpp | q500dbtf | q503hf | q505hf | q501pqpjp | q502pqpjp | q504pqpjp;
+
+hf19 = q506dbtf | q508dbtf | q507pqpp | q509pqpjp | q511hf | q513hf | q510pqpjp | q512pqpjp;
+
+hf20 = q514dbtf | q516dbtf | q515pqpp | q519hf | q517pqpjp | q518pqpjp | q520pqpjp | q521hf;
+
+tvq_bqnpq = q717 | q718 | q719 | q720 | q725 | q726 | q727 | q728 | q733 | tvq_qjnh | q738jq_bbtf | hnnq_tdppf_bbtf | dndq_hbtdh_bbtf | ldq_hbtdh_bbtf | thfllhbtdh_bbtf | q746ldq_hbtdh | thfll_hbtdh | vfnt_hbtdh | q743dndq_hbtdh;
+
+dnndq_jq_ljhht = q744lbnp | bqbdlftt;
+
+tfbqdhljhht = q757lbnp | q805;
+
+nbjnhvn = bbqqfl | bqffdh | dpbx_762;
+
+b127nbdhjnf_hvn = q747 | q795 | q796 | q797 | q798 | q799 | q800;
+
+bntfnnb = q737 | q791 | q792;
+
+hvn_dpvfq = q879;
+
+dndq_pfqjtdppft = q749 | q801 | q802 | q803;
+
+hvn_tjhht = q759 | q813;
+
+hvnnfq = q562hfbd | q563nfdl | q564tpqtp | q565vpbqn_lt | q566vpbqn_qt | q567lpbqn_lt | q568lpbqn_qt | q569vplfh_lt | q570vplfh_qt | q571lplfh_lt | q572lplfh_qt | hnqtfbt;
+
+dpnnbndfq = q578lpbqn_lt | q577vpbqn_qt | q576vpbqn_lt | q574nfdl | q575tpqtp | q573hfbd | q579lpbqn_qt | q583lplfh_qt | q582lplfh_lt | q581vplfh_qt | q580vplfh_lt | dndqtfbt;
+
+lpbdfq = q588vpbqnqt | q589lpbqnlt | q585nfdl | q587vpbqnlt | q586tpqtp | q584hfbd | q591vplfhlt | q594lplfhqt | q592vplfhqt | q593lplfhlt | q590lpbqnqt | q620tfbt;
+
+tljp_qjnh = q622 | q623 | tvpppqtt;
+
+tvqflppq = q621;
+
+hvn_dpntqpl = lbzjnh_nfdh | tqbvfqtf_nfdh | flfvbtjnh_nfdh;
+
+hzd_tzt = q762pvnp | q763nptpq;
+
+vfntjlbtpq = q752blpxfq | q753dvdt | q804dvdt;
+
+bnpljdznf = q755;
+
+tvqbnnp = jntvqbbtlft | jntvqqft;
+
+tbjq02 = q721 | q722 | q723 | q724 | q729 | q730 | q731 | q732 | q734 | q736 | q765 | q766 | q838 | q839 | q862 | q880 | q881 | q882 | q883 | q884 | q845 | q846;
+
+hvnbjq01 = q849;
+
+tvq_qjnh = q735;
+
+hnnq_tdppf_bbtf = q740;
+
+dndq_hbtdh_bbtf = q742;
+
+ldq_hbtdh_bbtf = q745;
+
+thfllhbtdh_bbtf = q826;
+
+thfll_hbtdh = q750;
+
+vfnt_hbtdh = q751;
+
+bqbdlftt = q793 | q794;
+
+bbqqfl = q758 | q806 | q807fvbd | q808 | q809 | q840;
+
+bqffdh = q810 | q811;
+
+dpbx_762 = q764 | q814npvnt;
+
+hnqtfbt = q617tfbt | q628tppqt;
+
+dndqtfbt = q618 | q619;
+
+tvpppqtt = q624 | q625 | q626 | q627;
+
+lbzjnh_nfdh = q760;
+
+tqbvfqtf_nfdh = q761;
+
+flfvbtjnh_nfdh = q754;
+
+jntvqbbtlft = hf7 | hf12;
+
+jntvqqft = lf11 | lf12;
+
+hf7 = q410dbtf | q412dbtf | q411pqpp | q415hf | q417hf | q413pqpjp | q414pqpjp | q416pqpjp;
+
+hf12 = q450dbtf | q452dbtf | q451pqpp | q455hf | q457hf | q453pqpjp | q454pqpjp | q456pqpjp;
+
+lf11 = q709pfn | q706dbtf | q708dbtf | q707pqpp | q710pfn | q711pfn | q860pqpp;
+
+lf12 = q715pfn | q716pfn | q712dbtf | q714dbtf | q713pqpp | q812pfn | q861pqpp;
+
+lt4flbnhf = lt4qjnjnnfq | lt4qjnpvtfq;
+
+lt5flbnhf = lt5qjnjnnfq | lt5qjnpvtfq;
+
+qt1flbnhf = qt1qjnjnnfq | qt1qjnpvtfq;
+
+qt2flbnhf = qt2qjnjnnfq | qt2qjnpvtfq;
+
+qt3flbnhf = qt3qjnjnnfq | qt3qjnpvtfq;
+
+qt4flbnhf = qt4qjnjnnfq | qt4qjnpvtfq;
+
+qt5flbnhf = qt5qjnjnnfq | qt5qjnpvtfq;
+
+lt1flbnhf = lt1qjnjnnfq | lt1qjnpvtfq;
+
+lt2flbnhf = lt2qjnjnnfq | lt2qjnpvtfq;
+
+lt3flbnhf = lt3qjnjnnfq | lt3qjnpvtfq;
+
+tffthlt = q76 | q77 | q78 | q79 | q73 | q74 | q75 | q80;
+
+tffthqt = q66 | q67 | q68 | q69 | q65 | q70 | q71 | q72;
+
+dqvnlt = q34 | q36 | q38;
+
+dqvnqt = q33 | q35 | q37;
+
+lt4qjnjnnfq = lt4flbt | lt4dvqvf1 | lt4dvqvf2 | lt4dvqvf3 | lt4dvqvf4 | lt4dvqvf5;
+
+lt4qjnpvtfq = lt4ptflbt | lt4ptdvqvf1 | lt4ptdvqvf2 | lt4ptdvqvf3 | lt4ptdvqvf4 | lt4ptdvqvf5;
+
+lt5qjnjnnfq = lt5flbt | lt5dvqvf1 | lt5dvqvf2 | lt5dvqvf3 | lt5dvqvf4 | lt5dvqvf5;
+
+lt5qjnpvtfq = lt5ptflbt | lt5ptdvqvf1 | lt5ptdvqvf2 | lt5ptdvqvf3 | lt5ptdvqvf4 | lt5ptdvqvf5;
+
+qt1qjnjnnfq = qt1flbt | qt1dvqvf1 | qt1dvqvf2 | qt1dvqvf3 | qt1dvqvf4 | qt1dvqvf5;
+
+qt1qjnpvtfq = qt1ptflbt | qt1ptdvqvf1 | qt1ptdvqvf2 | qt1ptdvqvf3 | qt1ptdvqvf4 | qt1ptdvqvf5;
+
+qt2qjnjnnfq = qt2flbt | qt2dvqvf1 | qt2dvqvf2 | qt2dvqvf3 | qt2dvqvf4 | qt2dvqvf5;
+
+qt2qjnpvtfq = qt2ptflbt | qt2ptdvqvf1 | qt2ptdvqvf2 | qt2ptdvqvf3 | qt2ptdvqvf4 | qt2ptdvqvf5;
+
+qt3qjnjnnfq = qt3flbt | qt3dvqvf1 | qt3dvqvf2 | qt3dvqvf3 | qt3dvqvf4 | qt3dvqvf5;
+
+qt3qjnpvtfq = qt3ptflbt | qt3ptdvqvf1 | qt3ptdvqvf2 | qt3ptdvqvf3 | qt3ptdvqvf4 | qt3ptdvqvf5;
+
+qt4qjnjnnfq = qt4flbt | qt4dvqvf1 | qt4dvqvf2 | qt4dvqvf3 | qt4dvqvf4 | qt4dvqvf5;
+
+qt4qjnpvtfq = qt4ptflbt | qt4ptdvqvf1 | qt4ptdvqvf2 | qt4ptdvqvf3 | qt4ptdvqvf4 | qt4ptdvqvf5;
+
+qt5qjnjnnfq = qt5flbt | qt5dvqvf1 | qt5dvqvf2 | qt5dvqvf3 | qt5dvqvf4 | qt5dvqvf5;
+
+qt5qjnpvtfq = qt5ptflbt | qt5ptdvqvf1 | qt5ptdvqvf2 | qt5ptdvqvf3 | qt5ptdvqvf4 | qt5ptdvqvf5;
+
+lt1qjnjnnfq = lt1flbt | lt1dvqvf1 | lt1dvqvf2 | lt1dvqvf3 | lt1dvqvf4 | lt1dvqvf5;
+
+lt1qjnpvtfq = lt1ptflbt | lt1ptdvqvf1 | lt1ptdvqvf2 | lt1ptdvqvf3 | lt1ptdvqvf4 | lt1ptdvqvf5;
+
+lt2qjnjnnfq = lt2flbt | lt2dvqvf1 | lt2dvqvf2 | lt2dvqvf3 | lt2dvqvf4 | lt2dvqvf5;
+
+lt2qjnpvtfq = lt2ptflbt | lt2ptdvqvf1 | lt2ptdvqvf2 | lt2ptdvqvf3 | lt2ptdvqvf4 | lt2ptdvqvf5;
+
+lt3qjnjnnfq = lt3flbt | lt3dvqvf1 | lt3dvqvf2 | lt3dvqvf3 | lt3dvqvf4 | lt3dvqvf5;
+
+lt3qjnpvtfq = lt3ptflbt | lt3ptdvqvf1 | lt3ptdvqvf2 | lt3ptdvqvf3 | lt3ptdvqvf4 | lt3ptdvqvf5;
+
+pqptplfft_tqbntfpqn_qjnpvtfq = qjnpvtfq;
+
+pqptplfft_tqbntfpqn_qjnjnnfq = qjnjnnfq;
+
+Rjn1 = Rjn1_tqbntfpqn_pqptpqjhht;
+
+Rjn2 = Rjn2_tqbntfpqn_pqptpqjhht;
+
+Rjn3 = Rjn3_tqbntfpqn_pqptpqjhht;
+
+Rjn4 = Rjn4_tqbntfpqn_pqptpqjhht;
+
+Rjn5 = Rjn5_tqbntfpqn_pqptpqjhht;
+
+qjn1 = ltpqptplfft;
+
+qjn2 = qjn2_tqbntfpqn_ltpqptplfft;
+
+qjn3 = qjn3_tqbntfpqn_ltpqptplfft;
+
+qjn4 = qjn4_tqbntfpqn_ltpqptplfft;
+
+qjn5 = qjn5_tqbntfpqn_ltpqptplfft;
+
+qjnpvtfq = qjnpvtfq_tqbntfpqn_flbt | qjnpvtfq_tqbntfpqn_dvqvf1 | qjnpvtfq_tqbntfpqn_dvqvf2 | qjnpvtfq_tqbntfpqn_dvqvf3 | qjnpvtfq_tqbntfpqn_dvqvf4 | qjnpvtfq_tqbntfpqn_dvqvf5;
+
+qjnjnnfq = qjnjnnfq_tqbntfpqn_flbt | qjnjnnfq_tqbntfpqn_dvqvf1 | qjnjnnfq_tqbntfpqn_dvqvf2 | qjnjnnfq_tqbntfpqn_dvqvf3 | qjnjnnfq_tqbntfpqn_dvqvf4 | qjnjnnfq_tqbntfpqn_dvqvf5;
+
+qjnpvtfq_tqbntfpqn_flbt = flbt;
+
+qjnpvtfq_tqbntfpqn_dvqvf1 = dvqvf1;
+
+qjnpvtfq_tqbntfpqn_dvqvf2 = dvqvf2;
+
+qjnpvtfq_tqbntfpqn_dvqvf3 = dvqvf3;
+
+qjnpvtfq_tqbntfpqn_dvqvf4 = dvqvf4;
+
+qjnpvtfq_tqbntfpqn_dvqvf5 = dvqvf5;
+
+qjnjnnfq_tqbntfpqn_flbt = flbt_1;
+
+qjnjnnfq_tqbntfpqn_dvqvf1 = dvqvf1_1;
+
+qjnjnnfq_tqbntfpqn_dvqvf2 = dvqvf2_1;
+
+qjnjnnfq_tqbntfpqn_dvqvf3 = dvqvf3_1;
+
+qjnjnnfq_tqbntfpqn_dvqvf4 = dvqvf4_1;
+
+qjnjnnfq_tqbntfpqn_dvqvf5 = dvqvf5_1;
+
+Rjn1_tqbntfpqn_pqptpqjhht = pqptpqjhht;
+
+Rjn2_tqbntfpqn_pqptpqjhht = pqptpqjhht_1;
+
+Rjn3_tqbntfpqn_pqptpqjhht = pqptpqjhht_2;
+
+Rjn4_tqbntfpqn_pqptpqjhht = pqptpqjhht_3;
+
+Rjn5_tqbntfpqn_pqptpqjhht = pqptpqjhht_4;
+
+ltpqptplfft = ltpqptplfft_tqbntfpqn_ltqjnpvtfq | ltpqptplfft_tqbntfpqn_ltqjnjnnfq;
+
+qjn2_tqbntfpqn_ltpqptplfft = ltpqptplfft_1;
+
+qjn3_tqbntfpqn_ltpqptplfft = ltpqptplfft_2;
+
+qjn4_tqbntfpqn_ltpqptplfft = ltpqptplfft_3;
+
+qjn5_tqbntfpqn_ltpqptplfft = ltpqptplfft_4;
+
+pqptpqjhht = pqptpqjhht_tqbntfpqn_qjnpvtfq | pqptpqjhht_tqbntfpqn_qjnjnnfq;
+
+pqptpqjhht_tqbntfpqn_qjnpvtfq = qjnpvtfq_1;
+
+pqptpqjhht_tqbntfpqn_qjnjnnfq = qjnjnnfq_1;
+
+qjnpvtfq_1 = qjnpvtfq_tqbntfpqn_flbt_1 | qjnpvtfq_tqbntfpqn_dvqvf1_1 | qjnpvtfq_tqbntfpqn_dvqvf2_1 | qjnpvtfq_tqbntfpqn_dvqvf3_1 | qjnpvtfq_tqbntfpqn_dvqvf4_1 | qjnpvtfq_tqbntfpqn_dvqvf5_1;
+
+qjnjnnfq_1 = qjnjnnfq_tqbntfpqn_flbt_1 | qjnjnnfq_tqbntfpqn_dvqvf1_1 | qjnjnnfq_tqbntfpqn_dvqvf2_1 | qjnjnnfq_tqbntfpqn_dvqvf3_1 | qjnjnnfq_tqbntfpqn_dvqvf4_1 | qjnjnnfq_tqbntfpqn_dvqvf5_1;
+
+qjnpvtfq_tqbntfpqn_flbt_1 = flbt_2;
+
+qjnpvtfq_tqbntfpqn_dvqvf1_1 = dvqvf1_2;
+
+qjnpvtfq_tqbntfpqn_dvqvf2_1 = dvqvf2_2;
+
+qjnpvtfq_tqbntfpqn_dvqvf3_1 = dvqvf3_2;
+
+qjnpvtfq_tqbntfpqn_dvqvf4_1 = dvqvf4_2;
+
+qjnpvtfq_tqbntfpqn_dvqvf5_1 = dvqvf5_2;
+
+qjnjnnfq_tqbntfpqn_flbt_1 = flbt_3;
+
+qjnjnnfq_tqbntfpqn_dvqvf1_1 = dvqvf1_3;
+
+qjnjnnfq_tqbntfpqn_dvqvf2_1 = dvqvf2_3;
+
+qjnjnnfq_tqbntfpqn_dvqvf3_1 = dvqvf3_3;
+
+qjnjnnfq_tqbntfpqn_dvqvf4_1 = dvqvf4_3;
+
+qjnjnnfq_tqbntfpqn_dvqvf5_1 = dvqvf5_3;
+
+pqptpqjhht_1 = pqptpqjhht_tqbntfpqn_qjnpvtfq_1 | pqptpqjhht_tqbntfpqn_qjnjnnfq_1;
+
+pqptpqjhht_tqbntfpqn_qjnpvtfq_1 = qjnpvtfq_2;
+
+pqptpqjhht_tqbntfpqn_qjnjnnfq_1 = qjnjnnfq_2;
+
+qjnpvtfq_2 = qjnpvtfq_tqbntfpqn_flbt_2 | qjnpvtfq_tqbntfpqn_dvqvf1_2 | qjnpvtfq_tqbntfpqn_dvqvf2_2 | qjnpvtfq_tqbntfpqn_dvqvf3_2 | qjnpvtfq_tqbntfpqn_dvqvf4_2 | qjnpvtfq_tqbntfpqn_dvqvf5_2;
+
+qjnjnnfq_2 = qjnjnnfq_tqbntfpqn_flbt_2 | qjnjnnfq_tqbntfpqn_dvqvf1_2 | qjnjnnfq_tqbntfpqn_dvqvf2_2 | qjnjnnfq_tqbntfpqn_dvqvf3_2 | qjnjnnfq_tqbntfpqn_dvqvf4_2 | qjnjnnfq_tqbntfpqn_dvqvf5_2;
+
+qjnpvtfq_tqbntfpqn_flbt_2 = flbt_4;
+
+qjnpvtfq_tqbntfpqn_dvqvf1_2 = dvqvf1_4;
+
+qjnpvtfq_tqbntfpqn_dvqvf2_2 = dvqvf2_4;
+
+qjnpvtfq_tqbntfpqn_dvqvf3_2 = dvqvf3_4;
+
+qjnpvtfq_tqbntfpqn_dvqvf4_2 = dvqvf4_4;
+
+qjnpvtfq_tqbntfpqn_dvqvf5_2 = dvqvf5_4;
+
+qjnjnnfq_tqbntfpqn_flbt_2 = flbt_5;
+
+qjnjnnfq_tqbntfpqn_dvqvf1_2 = dvqvf1_5;
+
+qjnjnnfq_tqbntfpqn_dvqvf2_2 = dvqvf2_5;
+
+qjnjnnfq_tqbntfpqn_dvqvf3_2 = dvqvf3_5;
+
+qjnjnnfq_tqbntfpqn_dvqvf4_2 = dvqvf4_5;
+
+qjnjnnfq_tqbntfpqn_dvqvf5_2 = dvqvf5_5;
+
+pqptpqjhht_2 = pqptpqjhht_tqbntfpqn_qjnpvtfq_2 | pqptpqjhht_tqbntfpqn_qjnjnnfq_2;
+
+pqptpqjhht_tqbntfpqn_qjnpvtfq_2 = qjnpvtfq_3;
+
+pqptpqjhht_tqbntfpqn_qjnjnnfq_2 = qjnjnnfq_3;
+
+qjnpvtfq_3 = qjnpvtfq_tqbntfpqn_flbt_3 | qjnpvtfq_tqbntfpqn_dvqvf1_3 | qjnpvtfq_tqbntfpqn_dvqvf2_3 | qjnpvtfq_tqbntfpqn_dvqvf3_3 | qjnpvtfq_tqbntfpqn_dvqvf4_3 | qjnpvtfq_tqbntfpqn_dvqvf5_3;
+
+qjnjnnfq_3 = qjnjnnfq_tqbntfpqn_flbt_3 | qjnjnnfq_tqbntfpqn_dvqvf1_3 | qjnjnnfq_tqbntfpqn_dvqvf2_3 | qjnjnnfq_tqbntfpqn_dvqvf3_3 | qjnjnnfq_tqbntfpqn_dvqvf4_3 | qjnjnnfq_tqbntfpqn_dvqvf5_3;
+
+qjnpvtfq_tqbntfpqn_flbt_3 = flbt_6;
+
+qjnpvtfq_tqbntfpqn_dvqvf1_3 = dvqvf1_6;
+
+qjnpvtfq_tqbntfpqn_dvqvf2_3 = dvqvf2_6;
+
+qjnpvtfq_tqbntfpqn_dvqvf3_3 = dvqvf3_6;
+
+qjnpvtfq_tqbntfpqn_dvqvf4_3 = dvqvf4_6;
+
+qjnpvtfq_tqbntfpqn_dvqvf5_3 = dvqvf5_6;
+
+qjnjnnfq_tqbntfpqn_flbt_3 = flbt_7;
+
+qjnjnnfq_tqbntfpqn_dvqvf1_3 = dvqvf1_7;
+
+qjnjnnfq_tqbntfpqn_dvqvf2_3 = dvqvf2_7;
+
+qjnjnnfq_tqbntfpqn_dvqvf3_3 = dvqvf3_7;
+
+qjnjnnfq_tqbntfpqn_dvqvf4_3 = dvqvf4_7;
+
+qjnjnnfq_tqbntfpqn_dvqvf5_3 = dvqvf5_7;
+
+pqptpqjhht_3 = pqptpqjhht_tqbntfpqn_qjnpvtfq_3 | pqptpqjhht_tqbntfpqn_qjnjnnfq_3;
+
+pqptpqjhht_tqbntfpqn_qjnpvtfq_3 = qjnpvtfq_4;
+
+pqptpqjhht_tqbntfpqn_qjnjnnfq_3 = qjnjnnfq_4;
+
+qjnpvtfq_4 = qjnpvtfq_tqbntfpqn_flbt_4 | qjnpvtfq_tqbntfpqn_dvqvf1_4 | qjnpvtfq_tqbntfpqn_dvqvf2_4 | qjnpvtfq_tqbntfpqn_dvqvf3_4 | qjnpvtfq_tqbntfpqn_dvqvf4_4 | qjnpvtfq_tqbntfpqn_dvqvf5_4;
+
+qjnjnnfq_4 = qjnjnnfq_tqbntfpqn_flbt_4 | qjnjnnfq_tqbntfpqn_dvqvf1_4 | qjnjnnfq_tqbntfpqn_dvqvf2_4 | qjnjnnfq_tqbntfpqn_dvqvf3_4 | qjnjnnfq_tqbntfpqn_dvqvf4_4 | qjnjnnfq_tqbntfpqn_dvqvf5_4;
+
+qjnpvtfq_tqbntfpqn_flbt_4 = flbt_8;
+
+qjnpvtfq_tqbntfpqn_dvqvf1_4 = dvqvf1_8;
+
+qjnpvtfq_tqbntfpqn_dvqvf2_4 = dvqvf2_8;
+
+qjnpvtfq_tqbntfpqn_dvqvf3_4 = dvqvf3_8;
+
+qjnpvtfq_tqbntfpqn_dvqvf4_4 = dvqvf4_8;
+
+qjnpvtfq_tqbntfpqn_dvqvf5_4 = dvqvf5_8;
+
+qjnjnnfq_tqbntfpqn_flbt_4 = flbt_9;
+
+qjnjnnfq_tqbntfpqn_dvqvf1_4 = dvqvf1_9;
+
+qjnjnnfq_tqbntfpqn_dvqvf2_4 = dvqvf2_9;
+
+qjnjnnfq_tqbntfpqn_dvqvf3_4 = dvqvf3_9;
+
+qjnjnnfq_tqbntfpqn_dvqvf4_4 = dvqvf4_9;
+
+qjnjnnfq_tqbntfpqn_dvqvf5_4 = dvqvf5_9;
+
+pqptpqjhht_4 = pqptpqjhht_tqbntfpqn_qjnpvtfq_4 | pqptpqjhht_tqbntfpqn_qjnjnnfq_4;
+
+pqptpqjhht_tqbntfpqn_qjnpvtfq_4 = qjnpvtfq_5;
+
+pqptpqjhht_tqbntfpqn_qjnjnnfq_4 = qjnjnnfq_5;
+
+qjnpvtfq_5 = qjnpvtfq_tqbntfpqn_flbt_5 | qjnpvtfq_tqbntfpqn_dvqvf1_5 | qjnpvtfq_tqbntfpqn_dvqvf2_5 | qjnpvtfq_tqbntfpqn_dvqvf3_5 | qjnpvtfq_tqbntfpqn_dvqvf4_5 | qjnpvtfq_tqbntfpqn_dvqvf5_5;
+
+qjnjnnfq_5 = qjnjnnfq_tqbntfpqn_flbt_5 | qjnjnnfq_tqbntfpqn_dvqvf1_5 | qjnjnnfq_tqbntfpqn_dvqvf2_5 | qjnjnnfq_tqbntfpqn_dvqvf3_5 | qjnjnnfq_tqbntfpqn_dvqvf4_5 | qjnjnnfq_tqbntfpqn_dvqvf5_5;
+
+qjnpvtfq_tqbntfpqn_flbt_5 = flbt_10;
+
+qjnpvtfq_tqbntfpqn_dvqvf1_5 = dvqvf1_10;
+
+qjnpvtfq_tqbntfpqn_dvqvf2_5 = dvqvf2_10;
+
+qjnpvtfq_tqbntfpqn_dvqvf3_5 = dvqvf3_10;
+
+qjnpvtfq_tqbntfpqn_dvqvf4_5 = dvqvf4_10;
+
+qjnpvtfq_tqbntfpqn_dvqvf5_5 = dvqvf5_10;
+
+qjnjnnfq_tqbntfpqn_flbt_5 = flbt_11;
+
+qjnjnnfq_tqbntfpqn_dvqvf1_5 = dvqvf1_11;
+
+qjnjnnfq_tqbntfpqn_dvqvf2_5 = dvqvf2_11;
+
+qjnjnnfq_tqbntfpqn_dvqvf3_5 = dvqvf3_11;
+
+qjnjnnfq_tqbntfpqn_dvqvf4_5 = dvqvf4_11;
+
+qjnjnnfq_tqbntfpqn_dvqvf5_5 = dvqvf5_11;
+
+ltpqptplfft_tqbntfpqn_ltqjnpvtfq = ltqjnpvtfq;
+
+ltpqptplfft_tqbntfpqn_ltqjnjnnfq = ltqjnjnnfq;
+
+ltqjnpvtfq = ltqjnpvtfq_tqbntfpqn_ltflbt | ltqjnpvtfq_tqbntfpqn_ltdvqvf1 | ltqjnpvtfq_tqbntfpqn_ltdvqvf2 | ltqjnpvtfq_tqbntfpqn_ltdvqvf3 | ltqjnpvtfq_tqbntfpqn_ltdvqvf4 | ltqjnpvtfq_tqbntfpqn_ltdvqvf5;
+
+ltqjnjnnfq = ltqjnjnnfq_tqbntfpqn_ltflbt | ltqjnjnnfq_tqbntfpqn_ltdvqvf1 | ltqjnjnnfq_tqbntfpqn_ltdvqvf2 | ltqjnjnnfq_tqbntfpqn_ltdvqvf3 | ltqjnjnnfq_tqbntfpqn_ltdvqvf4 | ltqjnjnnfq_tqbntfpqn_ltdvqvf5;
+
+ltqjnpvtfq_tqbntfpqn_ltflbt = ltflbt;
+
+ltqjnpvtfq_tqbntfpqn_ltdvqvf1 = ltdvqvf1;
+
+ltqjnpvtfq_tqbntfpqn_ltdvqvf2 = ltdvqvf2;
+
+ltqjnpvtfq_tqbntfpqn_ltdvqvf3 = ltdvqvf3;
+
+ltqjnpvtfq_tqbntfpqn_ltdvqvf4 = ltdvqvf4;
+
+ltqjnpvtfq_tqbntfpqn_ltdvqvf5 = ltdvqvf5;
+
+ltqjnjnnfq_tqbntfpqn_ltflbt = ltflbt_1;
+
+ltqjnjnnfq_tqbntfpqn_ltdvqvf1 = ltdvqvf1_1;
+
+ltqjnjnnfq_tqbntfpqn_ltdvqvf2 = ltdvqvf2_1;
+
+ltqjnjnnfq_tqbntfpqn_ltdvqvf3 = ltdvqvf3_1;
+
+ltqjnjnnfq_tqbntfpqn_ltdvqvf4 = ltdvqvf4_1;
+
+ltqjnjnnfq_tqbntfpqn_ltdvqvf5 = ltdvqvf5_1;
+
+ltpqptplfft_1 = ltpqptplfft_tqbntfpqn_ltqjnpvtfq_1 | ltpqptplfft_tqbntfpqn_ltqjnjnnfq_1;
+
+ltpqptplfft_tqbntfpqn_ltqjnpvtfq_1 = ltqjnpvtfq_1;
+
+ltpqptplfft_tqbntfpqn_ltqjnjnnfq_1 = ltqjnjnnfq_1;
+
+ltqjnpvtfq_1 = ltqjnpvtfq_tqbntfpqn_ltflbt_1 | ltqjnpvtfq_tqbntfpqn_ltdvqvf1_1 | ltqjnpvtfq_tqbntfpqn_ltdvqvf2_1 | ltqjnpvtfq_tqbntfpqn_ltdvqvf3_1 | ltqjnpvtfq_tqbntfpqn_ltdvqvf4_1 | ltqjnpvtfq_tqbntfpqn_ltdvqvf5_1;
+
+ltqjnjnnfq_1 = ltqjnjnnfq_tqbntfpqn_ltflbt_1 | ltqjnjnnfq_tqbntfpqn_ltdvqvf1_1 | ltqjnjnnfq_tqbntfpqn_ltdvqvf2_1 | ltqjnjnnfq_tqbntfpqn_ltdvqvf3_1 | ltqjnjnnfq_tqbntfpqn_ltdvqvf4_1 | ltqjnjnnfq_tqbntfpqn_ltdvqvf5_1;
+
+ltqjnpvtfq_tqbntfpqn_ltflbt_1 = ltflbt_2;
+
+ltqjnpvtfq_tqbntfpqn_ltdvqvf1_1 = ltdvqvf1_2;
+
+ltqjnpvtfq_tqbntfpqn_ltdvqvf2_1 = ltdvqvf2_2;
+
+ltqjnpvtfq_tqbntfpqn_ltdvqvf3_1 = ltdvqvf3_2;
+
+ltqjnpvtfq_tqbntfpqn_ltdvqvf4_1 = ltdvqvf4_2;
+
+ltqjnpvtfq_tqbntfpqn_ltdvqvf5_1 = ltdvqvf5_2;
+
+ltqjnjnnfq_tqbntfpqn_ltflbt_1 = ltflbt_3;
+
+ltqjnjnnfq_tqbntfpqn_ltdvqvf1_1 = ltdvqvf1_3;
+
+ltqjnjnnfq_tqbntfpqn_ltdvqvf2_1 = ltdvqvf2_3;
+
+ltqjnjnnfq_tqbntfpqn_ltdvqvf3_1 = ltdvqvf3_3;
+
+ltqjnjnnfq_tqbntfpqn_ltdvqvf4_1 = ltdvqvf4_3;
+
+ltqjnjnnfq_tqbntfpqn_ltdvqvf5_1 = ltdvqvf5_3;
+
+ltpqptplfft_2 = ltpqptplfft_tqbntfpqn_ltqjnpvtfq_2 | ltpqptplfft_tqbntfpqn_ltqjnjnnfq_2;
+
+ltpqptplfft_tqbntfpqn_ltqjnpvtfq_2 = ltqjnpvtfq_2;
+
+ltpqptplfft_tqbntfpqn_ltqjnjnnfq_2 = ltqjnjnnfq_2;
+
+ltqjnpvtfq_2 = ltqjnpvtfq_tqbntfpqn_ltflbt_2 | ltqjnpvtfq_tqbntfpqn_ltdvqvf1_2 | ltqjnpvtfq_tqbntfpqn_ltdvqvf2_2 | ltqjnpvtfq_tqbntfpqn_ltdvqvf3_2 | ltqjnpvtfq_tqbntfpqn_ltdvqvf4_2 | ltqjnpvtfq_tqbntfpqn_ltdvqvf5_2;
+
+ltqjnjnnfq_2 = ltqjnjnnfq_tqbntfpqn_ltflbt_2 | ltqjnjnnfq_tqbntfpqn_ltdvqvf1_2 | ltqjnjnnfq_tqbntfpqn_ltdvqvf2_2 | ltqjnjnnfq_tqbntfpqn_ltdvqvf3_2 | ltqjnjnnfq_tqbntfpqn_ltdvqvf4_2 | ltqjnjnnfq_tqbntfpqn_ltdvqvf5_2;
+
+ltqjnpvtfq_tqbntfpqn_ltflbt_2 = ltflbt_4;
+
+ltqjnpvtfq_tqbntfpqn_ltdvqvf1_2 = ltdvqvf1_4;
+
+ltqjnpvtfq_tqbntfpqn_ltdvqvf2_2 = ltdvqvf2_4;
+
+ltqjnpvtfq_tqbntfpqn_ltdvqvf3_2 = ltdvqvf3_4;
+
+ltqjnpvtfq_tqbntfpqn_ltdvqvf4_2 = ltdvqvf4_4;
+
+ltqjnpvtfq_tqbntfpqn_ltdvqvf5_2 = ltdvqvf5_4;
+
+ltqjnjnnfq_tqbntfpqn_ltflbt_2 = ltflbt_5;
+
+ltqjnjnnfq_tqbntfpqn_ltdvqvf1_2 = ltdvqvf1_5;
+
+ltqjnjnnfq_tqbntfpqn_ltdvqvf2_2 = ltdvqvf2_5;
+
+ltqjnjnnfq_tqbntfpqn_ltdvqvf3_2 = ltdvqvf3_5;
+
+ltqjnjnnfq_tqbntfpqn_ltdvqvf4_2 = ltdvqvf4_5;
+
+ltqjnjnnfq_tqbntfpqn_ltdvqvf5_2 = ltdvqvf5_5;
+
+ltpqptplfft_3 = ltpqptplfft_tqbntfpqn_ltqjnpvtfq_3 | ltpqptplfft_tqbntfpqn_ltqjnjnnfq_3;
+
+ltpqptplfft_tqbntfpqn_ltqjnpvtfq_3 = ltqjnpvtfq_3;
+
+ltpqptplfft_tqbntfpqn_ltqjnjnnfq_3 = ltqjnjnnfq_3;
+
+ltqjnpvtfq_3 = ltqjnpvtfq_tqbntfpqn_ltflbt_3 | ltqjnpvtfq_tqbntfpqn_ltdvqvf1_3 | ltqjnpvtfq_tqbntfpqn_ltdvqvf2_3 | ltqjnpvtfq_tqbntfpqn_ltdvqvf3_3 | ltqjnpvtfq_tqbntfpqn_ltdvqvf4_3 | ltqjnpvtfq_tqbntfpqn_ltdvqvf5_3;
+
+ltqjnjnnfq_3 = ltqjnjnnfq_tqbntfpqn_ltflbt_3 | ltqjnjnnfq_tqbntfpqn_ltdvqvf1_3 | ltqjnjnnfq_tqbntfpqn_ltdvqvf2_3 | ltqjnjnnfq_tqbntfpqn_ltdvqvf3_3 | ltqjnjnnfq_tqbntfpqn_ltdvqvf4_3 | ltqjnjnnfq_tqbntfpqn_ltdvqvf5_3;
+
+ltqjnpvtfq_tqbntfpqn_ltflbt_3 = ltflbt_6;
+
+ltqjnpvtfq_tqbntfpqn_ltdvqvf1_3 = ltdvqvf1_6;
+
+ltqjnpvtfq_tqbntfpqn_ltdvqvf2_3 = ltdvqvf2_6;
+
+ltqjnpvtfq_tqbntfpqn_ltdvqvf3_3 = ltdvqvf3_6;
+
+ltqjnpvtfq_tqbntfpqn_ltdvqvf4_3 = ltdvqvf4_6;
+
+ltqjnpvtfq_tqbntfpqn_ltdvqvf5_3 = ltdvqvf5_6;
+
+ltqjnjnnfq_tqbntfpqn_ltflbt_3 = ltflbt_7;
+
+ltqjnjnnfq_tqbntfpqn_ltdvqvf1_3 = ltdvqvf1_7;
+
+ltqjnjnnfq_tqbntfpqn_ltdvqvf2_3 = ltdvqvf2_7;
+
+ltqjnjnnfq_tqbntfpqn_ltdvqvf3_3 = ltdvqvf3_7;
+
+ltqjnjnnfq_tqbntfpqn_ltdvqvf4_3 = ltdvqvf4_7;
+
+ltqjnjnnfq_tqbntfpqn_ltdvqvf5_3 = ltdvqvf5_7;
+
+ltpqptplfft_4 = ltpqptplfft_tqbntfpqn_ltqjnpvtfq_4 | ltpqptplfft_tqbntfpqn_ltqjnjnnfq_4;
+
+ltpqptplfft_tqbntfpqn_ltqjnpvtfq_4 = ltqjnpvtfq_4;
+
+ltpqptplfft_tqbntfpqn_ltqjnjnnfq_4 = ltqjnjnnfq_4;
+
+ltqjnpvtfq_4 = ltqjnpvtfq_tqbntfpqn_ltflbt_4 | ltqjnpvtfq_tqbntfpqn_ltdvqvf1_4 | ltqjnpvtfq_tqbntfpqn_ltdvqvf2_4 | ltqjnpvtfq_tqbntfpqn_ltdvqvf3_4 | ltqjnpvtfq_tqbntfpqn_ltdvqvf4_4 | ltqjnpvtfq_tqbntfpqn_ltdvqvf5_4;
+
+ltqjnjnnfq_4 = ltqjnjnnfq_tqbntfpqn_ltflbt_4 | ltqjnjnnfq_tqbntfpqn_ltdvqvf1_4 | ltqjnjnnfq_tqbntfpqn_ltdvqvf2_4 | ltqjnjnnfq_tqbntfpqn_ltdvqvf3_4 | ltqjnjnnfq_tqbntfpqn_ltdvqvf4_4 | ltqjnjnnfq_tqbntfpqn_ltdvqvf5_4;
+
+ltqjnpvtfq_tqbntfpqn_ltflbt_4 = ltflbt_8;
+
+ltqjnpvtfq_tqbntfpqn_ltdvqvf1_4 = ltdvqvf1_8;
+
+ltqjnpvtfq_tqbntfpqn_ltdvqvf2_4 = ltdvqvf2_8;
+
+ltqjnpvtfq_tqbntfpqn_ltdvqvf3_4 = ltdvqvf3_8;
+
+ltqjnpvtfq_tqbntfpqn_ltdvqvf4_4 = ltdvqvf4_8;
+
+ltqjnpvtfq_tqbntfpqn_ltdvqvf5_4 = ltdvqvf5_8;
+
+ltqjnjnnfq_tqbntfpqn_ltflbt_4 = ltflbt_9;
+
+ltqjnjnnfq_tqbntfpqn_ltdvqvf1_4 = ltdvqvf1_9;
+
+ltqjnjnnfq_tqbntfpqn_ltdvqvf2_4 = ltdvqvf2_9;
+
+ltqjnjnnfq_tqbntfpqn_ltdvqvf3_4 = ltdvqvf3_9;
+
+ltqjnjnnfq_tqbntfpqn_ltdvqvf4_4 = ltdvqvf4_9;
+
+ltqjnjnnfq_tqbntfpqn_ltdvqvf5_4 = ltdvqvf5_9;
+
+hvll_fxt_1 = hvll_bqnpq_1 | ffndfq_lt_1 | ffndfq_qt_1 | dqvq_tdppft_1 | tppl_bpxft_1 | fxhbvtt_ppqt_1 | fnh_pjl_tbnl_1 | fxt_fvfl_tbnlt_1 | hfbdljhht_1 | tpbqf_tqbdl_1;
+
+hvll_jnt_1 = dqjvfq_1 | fvfl_tzttfn_1 | fjqfxbll_1 | fjqf_tvp_tzt_1 | flfd_tzt_1 | jnfqbqfd_tzt_1 | q537tppl_bpx_1 | ttpqbhf_bpx_1 | bjq_bpttlft_1 | qbdjpnftqjd_1 | bjlhf_1 | fxhbvtt_fbn_1 | qfbq_bnnp_qbdl_1 | fnh_dpnp_1 | dqvq_dpntqplt_1 | hvllbnnp_1;
+
+hvll_bjq_1 = hbjq02_1 | hbjq05_1 | fbjq07_1 | fbjq08_1;
+
+tvq_fxt_1 = tvq_bqnpq_1 | dnndq_jq_ljhht_1 | q739jq_dftdtpq_1 | tfbqdhljhht_1 | nbjnhvn_1 | b127nbdhjnf_hvn_1 | q748ldq_tdppf_1 | q741hnq_tdppf_1 | bntfnnb_1 | q756tnpqlfl_1 | hvn_dpvfq_1 | dndq_pfqjtdppft_1 | hvn_tjhht_1;
+
+tvq_jnt_1 = hvnnfq_1 | dpnnbndfq_1 | lpbdfq_1 | tljp_qjnh_1 | tvqflppq_1 | hvn_dpntqpl_1 | hzd_tzt_1 | vfntjlbtpq_1 | bnpljdznf_1 | tvqbnnp_1;
+
+tvq_bjq_1 = tbjq02_1 | hvnbjq01_1;
+
+qpbdxhffllt4_1 = q9tqfbd_1 | q29hvb_1 | q96bxlf_1 | q97bqn_1 | nppn4_1 | lt4flbnhf_1;
+
+qpbdxhffllt5_1 = q10tqfbd_1 | q30hvb_1 | q101bxlf_1 | q102bqn_1 | nppn5_1 | lt5flbnhf_1;
+
+qpbdxhfflqt1_1 = q1tqfbd_1 | q21hvb_1 | q106bxlf_1 | q107bqn_1 | Mppn1_1 | qt1flbnhf_1;
+
+qpbdxhfflqt2_1 = q2tqfbd_1 | q22hvb_1 | q111bxlf_1 | q112bqn_1 | Mppn2_1 | qt2flbnhf_1;
+
+qpbdxhfflqt3_1 = q3tqfbd_1 | q23hvb_1 | q116bxlf_1 | q117bqn_1 | Mppn3_1 | qt3flbnhf_1;
+
+qpbdxhfflqt4_1 = q4tqfbd_1 | q24hvb_1 | q121bxlf_1 | q122bqn_1 | Mppn4_1 | qt4flbnhf_1;
+
+qpbdxhfflqt5_1 = q5tqfbd_1 | q25hvb_1 | q126bxlf_1 | q127bqn_1 | Mppn5_1 | qt5flbnhf_1;
+
+qpbdxhffllt1_1 = q6tqfbd_1 | q26hvb_1 | q81bxlf_1 | q82bqn_1 | nppn1_1 | lt1flbnhf_1;
+
+qpbdxhffllt2_1 = q7tqfbd_1 | q27hvb_1 | q86bxlf_1 | q87bqn_1 | nppn2_1 | lt2flbnhf_1;
+
+qpbdxhffllt3_1 = q8tqfbd_1 | q28hvb_1 | q91bxlf_1 | q92bqn_1 | nppn3_1 | lt3flbnhf_1;
+
+tpqtjpn_bbqlt1_1 = q83hvb_1 | q84hpvtjnh_1 | q85bbq_1;
+
+tpqtjpn_bbqlt2_1 = q88hvb_1 | q89hpvtjnh_1 | q90bbq_1;
+
+tpqtjpn_bbqlt3_1 = q93hvb_1 | q94hpvtjnh_1 | q95bbq_1;
+
+tpqtjpn_bbqlt4_1 = q98hvb_1 | q99hpvtjnh_1 | q100bbq_1;
+
+tpqtjpn_bbqlt5_1 = q103hvb_1 | q104hpvtjnh_1 | q105bbq_1;
+
+tpqtjpn_bbqqt4_1 = q123hvb_1 | q124hpvtjnh_1 | q125bbq_1;
+
+tpqtjpn_bbqqt5_1 = q128hvb_1 | q129hpvtjnh_1 | q130bbq_1;
+
+tpqtjpn_bbqqt1_1 = q108hvb_1 | q109hpvtjnh_1 | q110bbq_1;
+
+tpqtjpn_bbqqt2_1 = q113hvb_1 | q114hpvtjnh_1 | q115bbq_1;
+
+tpqtjpn_bbqqt3_1 = q118hvb_1 | q119hpvtjnh_1 | q120bbq_1;
+
+thpdlltqfbq_1 = q136dpnnfdtpq_1 | q137bqn1_1 | q138bqn2_1 | q139thpdl_1 | q140hpvtjnh_1;
+
+thpdlltfqpnt_1 = q131dpnnfdtpq_1 | q132bqn1_1 | q133bqn2_1 | q134thpdl_1 | q135hpvtjnh_1;
+
+thpdlqtfqpnt_1 = q141dpnnfdtpq_1 | q142bqn1_1 | q143bqn2_1 | q144thpdl_1 | q145hpvtjnh_1;
+
+thpdlqtqfbq_1 = q146dpnnfdtpq_1 | q147bqn1_1 | q148bqn2_1 | q149thpdl_1 | q150hpvtjnh_1;
+
+tqbdl_bdjvtt_1 = q151qt_1 | q152lt_1;
+
+lfft_tqbdl_1 = q57_1 | q58_1 | q59_1 | q56_1 | q60_1 | q61_1 | q62_1 | q63_1 | q64_1 | tffthlt_1;
+
+qjhht_tqbdl_1 = q48_1 | q49_1 | q47_1 | q50_1 | q51_1 | q52_1 | q53_1 | q54_1 | q55_1 | tffthqt_1;
+
+tpqpdlftlt_1 = q32tffth_1 | dqvnlt_1 | q40hvb_1;
+
+tpqpdlftqt_1 = q31tffth_1 | dqvnqt_1 | q39hvb_1;
+
+jdlfqqt_1 = q41qjn_1 | q43djtd_1 | q45hvb_1;
+
+jdlfqlt_1 = q42qjn_1 | q44djtd_1 | q46hvb_1;
+
+hvll_bqnpq_1 = qt_tjdf_1 | bpttpn_1 | tpp_1 | vppfq_hlbdjt_1 | lpxfq_hlbdjt_1 | bbdl_1 | dqjvfq_hbtdh_1 | fnh_hbtdh_1 | qbdjbtpq_hbtdh_1 | tqbnt_hbtdh_1 | fjnbl_dq_hpvtnh_1 | lt_tjdf_1;
+
+ffndfq_lt_1 = q197_1 | q205_1 | q206_1 | q207_1 | q208_1 | q213_1 | q214_1 | q217_1 | tvpppqttlt_1;
+
+ffndfq_qt_1 = q198_1 | q209_1 | q210_1 | q211_1 | q212_1 | q215_1 | q216_1 | q218_1 | tvpppqttqt_1;
+
+dqvq_tdppft_1 = q657_1 | q658_1;
+
+tppl_bpxft_1 = q199_1 | q201_1 | q204_1 | q222_1;
+
+fxhbvtt_ppqt_1 = q202_1;
+
+fnh_pjl_tbnl_1 = q203dbtf_1 | q827pjl_1;
+
+fxt_fvfl_tbnlt_1 = q219dbtf_1 | q220dbtf_1 | q221dbtf_1 | q782fvfl_1 | q783fvfl_1 | q784fvfl_1;
+
+hfbdljhht_1 = q223jq_ljhht_1 | q224ljhht_1 | q225thjfld_1;
+
+tpbqf_tqbdl_1 = q200_1;
+
+dqjvfq_1 = q548nfdl_1 | q549tpqtp_1 | q547hfbd_1 | q552lpbqn_lt_1 | q551vpbqn_qt_1 | q557lplfh_qt_1 | q550vpbqn_lt_1 | q556lplfh_lt_1 | q555vplfh_qt_1 | q553lpbqn_qt_1 | q554vplfh_lt_1 | dqvq_tfbt_1;
+
+fvfl_tzttfn_1 = tbnlt_1 | b3xbzvblvf_1 | pqjnfq_1 | fvfl_ljnft_1;
+
+fjqfxbll_1 = q526_1 | q527_1 | q528_1 | q529_1;
+
+fjqf_tvp_tzt_1 = q531dpntqpl_1 | q561qflbz_1;
+
+flfd_tzt_1 = q530bbttfqjft_1 | q532qflbz_1 | q533fbn_dntql_1 | dpvqtf_jndjdtq_1 | q538blbdl_bpx_1;
+
+jnfqbqfd_tzt_1 = q536jnttqvnfnt_1 | q614ppxfq_1;
+
+ttpqbhf_bpx_1 = q539_1 | q540_1;
+
+bjq_bpttlft_1 = q558dbtf_1 | q559dbtf_1 | q789bjq_1 | q790bjq_1;
+
+qbdjpnftqjd_1 = q560_1;
+
+bjlhf_1 = q611pvnp_1 | q612pjpf_1 | q613pjpf_1;
+
+fxhbvtt_fbn_1 = q615fbn_1 | q616nptpq_1;
+
+qfbq_bnnp_qbdl_1 = q629_1 | q630_1 | q631_1 | q632_1 | q633_1;
+
+fnh_dpnp_1 = fnhjnf_1 | tqbntnjttjpn_1 | fjnbl_dqjvf_lt_1 | fjnbl_dqjvf_qt_1 | bqblf_qt_1 | bqblf_lt_1 | dppljnh_fbn_1 | qbdjbtpq_xbtfq_1 | qbdjbtpq_pjl_1 | bjq_fjltfq_1 | tqbntffq_1 | fjnbl_dq_hfbqt_1;
+
+dqvq_dpntqplt_1 = ttffqjnh_bqblf_1 | thjftjnh_1 | pbqljnh_bqblf_1 | dlvtdh_1 | tpffd_dntql_1;
+
+hvllbnnp_1 = jnqtfvfl_1 | jnltfvfl_1 | pnlfftxbll_1 | jnbnnpqbdl_1;
+
+hbjq02_1 = q595_1 | q596_1 | q597_1 | q598_1 | q599_1 | q600_1 | q601_1 | q602_1 | q603_1 | q604_1 | q605_1 | q815_1 | q816_1 | q817_1 | q818_1 | q819_1 | q820_1 | q821_1 | q822_1 | q823_1 | q824_1 | q825_1 | q828_1 | q829_1 | q830_1 | q831_1 | q832_1 | hvllbjq1q_1 | hvllbjq2q_1 | hvllbjq4q_1 | hvllbjq3q_1 | hvllbjq5q_1 | hvllbjq6q_1 | hvllbjq7q_1 | hvllbjq8q_1 | hvllbjq9q_1 | hvllbjq10q_1 | hvllbjq11q_1 | hvllbjq20q_1 | hvllbjq21q_1 | hvllbjq22q_1 | hvllbjq13q_1;
+
+hbjq05_1 = q606_1 | q607_1 | q608_1 | q609_1 | q610_1 | q645_1 | q833_1 | q834_1 | q835_1 | q836_1 | q837_1;
+
+fbjq07_1 = fbjq071_1 | fbjq072_1 | fbjq073_1 | fbjq074_1;
+
+fbjq08_1 = fbjq081_1 | fbjq082_1;
+
+qt_tjdf_1 = q160_1 | q161_1 | q162_1 | q176_1 | q178_1 | q180_1 | q182_1 | q184_1 | q186_1 | q188_1 | q190_1 | q196_1 | q653_1 | q654_1 | q163_1 | q164_1 | q169_1 | jdlfqtvpppqt_1 | q525_1 | q848_1;
+
+bpttpn_1 = q170_1 | q193_1 | q194_1;
+
+tpp_1 = q191_1 | q192_1;
+
+vppfq_hlbdjt_1 = q171_1 | q172_1;
+
+lpxfq_hlbdjt_1 = q173_1 | q174_1;
+
+bbdl_1 = q165_1;
+
+dqjvfq_hbtdh_1 = q655_1 | q656_1;
+
+fnh_hbtdh_1 = q646_1;
+
+qbdjbtpq_hbtdh_1 = q649_1 | q650_1;
+
+tqbnt_hbtdh_1 = q647_1 | q648_1;
+
+fjnbl_dq_hpvtnh_1 = q153_1 | q154_1;
+
+lt_tjdf_1 = q155_1 | q156_1 | q157_1 | q175_1 | q177_1 | q179_1 | q181_1 | q183_1 | q185_1 | q187_1 | q189_1 | q195_1 | q652_1 | q158_1 | q159_1 | q168_1 | jdlfq_tvpppqt_1 | q524_1 | q847_1 | tqjnhq_1;
+
+tvpppqttlt_1 = q634_1 | q635_1 | q636_1 | q637_1 | q638_1 | q639_1;
+
+tvpppqttqt_1 = q640_1 | q641_1 | q642_1 | q643_1 | q644_1;
+
+jdlfqtvpppqt_1 = q166_1;
+
+jdlfq_tvpppqt_1 = q167_1;
+
+dqvq_tfbt_1 = q541bpt_1 | q542bbdl_1 | lttjdf_1 | qttjdf_1;
+
+tbnlt_1 = fqpnttbnl_1 | qtbnnptbnl_1 | ltbnnptbnl_1 | njdtbnl_1;
+
+b3xbzvblvf_1 = q684_1 | q685_1;
+
+pqjnfq_1 = q686_1 | q687_1;
+
+fvfl_ljnft_1 = njdtbnl2fqpnt_1 | bnnptbnl2vblvf_1 | fqnttbnl2vblvf_1 | tpfnhjnf_1;
+
+dpvqtf_jndjdtq_1 = q534_1 | q535dpnvfqtfq_1;
+
+fnhjnf_1 = q767_1 | q768_1 | q769_1;
+
+tqbntnjttjpn_1 = q770_1;
+
+fjnbl_dqjvf_lt_1 = q771_1;
+
+fjnbl_dqjvf_qt_1 = q772_1;
+
+bqblf_qt_1 = q774_1;
+
+bqblf_lt_1 = q773_1;
+
+dppljnh_fbn_1 = q775_1;
+
+qbdjbtpq_xbtfq_1 = q776_1;
+
+qbdjbtpq_pjl_1 = q777_1;
+
+bjq_fjltfq_1 = q778_1;
+
+tqbntffq_1 = q779_1 | q780_1 | q781_1;
+
+fjnbl_dq_hfbqt_1 = q841_1 | q842_1 | q843_1 | q844_1;
+
+ttffqjnh_bqblf_1 = q659lfvfq_1 | q662qpd_1 | q660lfvfq_1 | q661bxlf_1;
+
+thjftjnh_1 = q663lfvfq_1 | q664bxlf_1 | q665qpd1_1 | q666qpd2_1 | q667qpd3_1;
+
+pbqljnh_bqblf_1 = q668bxlf_1 | q669bqn_1 | q670pfdbl_1 | q673qpd_1 | q675qpd_1;
+
+dlvtdh_1 = q671pfdbl_1 | q672bqn_1 | q674qpd_1 | q676qpd_1;
+
+tpffd_dntql_1 = q677pfdbl_1 | q678qpd_1 | q679qpd_1 | hbndthqpttlf_1;
+
+jnqtfvfl_1 = df1_1 | df2_1 | df3_1 | df4_1 | df5_1 | df6_1 | df7_1 | df8_1;
+
+jnltfvfl_1 = lf1_1 | lf2_1 | lf3_1 | lf4_1 | lf5_1 | lf6_1 | lf7_1 | lf8_1;
+
+pnlfftxbll_1 = lf9_1 | lf10_1;
+
+jnbnnpqbdl_1 = hf1_1 | hf2_1 | hf3_1 | hf4_1 | hf5_1 | hf6_1 | hf8_1 | hf9_1 | hf10_1 | hf11_1 | hf13_1 | hf14_1 | hf15_1 | hf16_1 | hf17_1 | hf18_1 | hf19_1 | hf20_1;
+
+lttjdf_1 = q543_1 | q545_1;
+
+qttjdf_1 = q544_1 | q546_1;
+
+fqpnttbnl_1 = q226tbnl_1 | q227tbnl_1 | q522tbnl_1 | fvfl_1;
+
+qtbnnptbnl_1 = q230tbnl_1 | q228bbvtnfnt_1 | bnnptlffvft_1 | q239fvfl_1;
+
+ltbnnptbnl_1 = q229bbvtnfnt_1 | q304tbnl_1 | bnnp_tlffvft_1 | q313fvfl_1;
+
+njdtbnl_1 = q523tbnl_1 | q788fvfl_1;
+
+njdtbnl2fqpnt_1 = q682_1 | q683_1;
+
+bnnptbnl2vblvf_1 = q688_1;
+
+fqnttbnl2vblvf_1 = q689_1;
+
+tpfnhjnf_1 = q690_1 | q691_1 | q692_1 | q693_1;
+
+fvfl_1 = q785_1 | q786_1 | q787_1;
+
+bnnptlffvft_1 = q231_1 | q232_1 | q233_1 | q234_1 | q235_1 | q236_1 | q237_1 | q238_1;
+
+bnnp_tlffvft_1 = q305_1 | q306_1 | q307_1 | q308_1 | q309_1 | q310_1 | q311_1 | q312_1;
+
+hbndthqpttlf_1 = q680_1 | q681_1;
+
+df1_1 = q246ljnfq_1 | q240dbtf_1 | q242dbtf_1 | q241pqpp_1 | q245hf_1 | q243pqpjp_1 | q244pqpjp_1 | q247pqpjp_1;
+
+df2_1 = q248dbtf_1 | q249pqpp_1 | q254ljnfq_1 | q250dbtf_1 | q253hf_1 | q251pqpjp_1 | q252pqpjp_1 | q255pqpjp_1;
+
+df3_1 = q259pqpjp_1 | q256dbtf_1 | q258dbtf_1 | q257pqpp_1 | q261hf_1 | q260pqpjp_1 | q263pqpjp_1 | q262ljnfq_1;
+
+df4_1 = q267pqpjp_1 | q268pqpjp_1 | q264dbtf_1 | q266dbtf_1 | q265pqpp_1 | q269hf_1 | q270ljnfq_1 | q271pqpjp_1;
+
+df5_1 = q279pqpjp_1 | q278ljnfq_1 | q272dbtf_1 | q274dbtf_1 | q273pqpp_1 | q277hf_1 | q275pqpjp_1 | q276pqpjp_1;
+
+df6_1 = q287pqpjp_1 | q286ljnfq_1 | q280dbtf_1 | q282dbtf_1 | q281pqpp_1 | q285hf_1 | q283pqpjp_1 | q284pqpjp_1;
+
+df7_1 = q288dbtf_1 | q289pqpp_1 | q295pqpjp_1 | q294ljnfq_1 | q290dbtf_1 | q293hf_1 | q291pqpjp_1 | q292pqpjp_1;
+
+df8_1 = q299pqpjp_1 | q296dbtf_1 | q298dbtf_1 | q297pqpp_1 | q301hf_1 | q300pqpjp_1 | q303pqpjp_1 | q302ljnfq_1;
+
+lf1_1 = q317pfn_1 | q318pfn_1 | q319pfn_1 | q314dbtf_1 | q316dbtf_1 | q315pqpp_1 | q850pqpp_1;
+
+lf2_1 = q320dbtf_1 | q322dbtf_1 | q321pqpp_1 | q323pfn_1 | q324pfn_1 | q325pfn_1 | q851pqpp_1;
+
+lf3_1 = q329pfn_1 | q326dbtf_1 | q328dbtf_1 | q327pqpp_1 | q330pfn_1 | q331pfn_1 | q852pqpp_1;
+
+lf4_1 = q336pfn_1 | q337pfn_1 | q332dbtf_1 | q334dbtf_1 | q333pqpp_1 | q335pfn_1 | q853pqpp_1;
+
+lf5_1 = q338dbtf_1 | q339pqpp_1 | q340dbtf_1 | q341pfn_1 | q342pfn_1 | q343pfn_1 | q854pqpp_1;
+
+lf6_1 = q347pfn_1 | q348pfn_1 | q349pfn_1 | q344dbtf_1 | q346dbtf_1 | q345pqpp_1 | q855pqpp_1;
+
+lf7_1 = q354pfn_1 | q355pfn_1 | q350dbtf_1 | q352dbtf_1 | q351pqpp_1 | q353pfn_1 | q856pqpp_1;
+
+lf8_1 = q359pfn_1 | q356dbtf_1 | q358dbtf_1 | q357pqpp_1 | q360pfn_1 | q361pfn_1 | q857pqpp_1;
+
+lf9_1 = q697pfn_1 | q698pfn_1 | q699pfn_1 | q694dbtf_1 | q696dbtf_1 | q695pqpp_1 | q858pqpp_1;
+
+lf10_1 = q700dbtf_1 | q702dbtf_1 | q701pqpp_1 | q703pfn_1 | q704pfn_1 | q705pfn_1 | q859pqpp_1;
+
+hf1_1 = q368pqpjp_1 | q362dbtf_1 | q364dbtf_1 | q363pqpp_1 | q367hf_1 | q369hf_1 | q365pqpjp_1 | q366pqpjp_1;
+
+hf2_1 = q376pqpjp_1 | q370dbtf_1 | q372dbtf_1 | q371pqpp_1 | q375hf_1 | q377hf_1 | q373pqpjp_1 | q374pqpjp_1;
+
+hf3_1 = q378dbtf_1 | q379pqpp_1 | q380dbtf_1 | q383hf_1 | q385hf_1 | q381pqpjp_1 | q382pqpjp_1 | q384pqpjp_1;
+
+hf4_1 = q389pqpjp_1 | q386dbtf_1 | q388dbtf_1 | q387pqpp_1 | q391hf_1 | q393hf_1 | q390pqpjp_1 | q392pqpjp_1;
+
+hf5_1 = q399hf_1 | q397pqpjp_1 | q398pqpjp_1 | q394dbtf_1 | q396dbtf_1 | q395pqpp_1 | q400pqpjp_1 | q401hf_1;
+
+hf6_1 = q402dbtf_1 | q404dbtf_1 | q403pqpp_1 | q407hf_1 | q409hf_1 | q405pqpjp_1 | q406pqpjp_1 | q408pqpjp_1;
+
+hf8_1 = q418dbtf_1 | q419pqpp_1 | q420dbtf_1 | q423hf_1 | q425hf_1 | q421pqpjp_1 | q422pqpjp_1 | q424pqpjp_1;
+
+hf9_1 = q429pqpjp_1 | q426dbtf_1 | q428dbtf_1 | q427pqpp_1 | q431hf_1 | q433hf_1 | q430pqpjp_1 | q432pqpjp_1;
+
+hf10_1 = q434dbtf_1 | q436dbtf_1 | q435pqpp_1 | q439hf_1 | q437pqpjp_1 | q438pqpjp_1 | q440pqpjp_1 | q441hf_1;
+
+hf11_1 = q448pqpjp_1 | q442dbtf_1 | q444dbtf_1 | q443pqpp_1 | q447hf_1 | q449hf_1 | q445pqpjp_1 | q446pqpjp_1;
+
+hf13_1 = q458dbtf_1 | q459pqpp_1 | q460dbtf_1 | q463hf_1 | q465hf_1 | q461pqpjp_1 | q462pqpjp_1 | q464pqpjp_1;
+
+hf14_1 = q469pqpjp_1 | q466dbtf_1 | q468dbtf_1 | q467pqpp_1 | q471hf_1 | q473hf_1 | q470pqpjp_1 | q472pqpjp_1;
+
+hf15_1 = q477pqpjp_1 | q478pqpjp_1 | q474dbtf_1 | q476dbtf_1 | q475pqpp_1 | q479hf_1 | q480pqpjp_1 | q481hf_1;
+
+hf16_1 = q485pqpjp_1 | q486pqpjp_1 | q488pqpjp_1 | q482dbtf_1 | q484dbtf_1 | q483pqpp_1 | q487hf_1 | q489hf_1;
+
+hf17_1 = q494pqpjp_1 | q496pqpjp_1 | q490dbtf_1 | q492dbtf_1 | q491pqpp_1 | q495hf_1 | q497hf_1 | q493pqpjp_1;
+
+hf18_1 = q498dbtf_1 | q499pqpp_1 | q500dbtf_1 | q503hf_1 | q505hf_1 | q501pqpjp_1 | q502pqpjp_1 | q504pqpjp_1;
+
+hf19_1 = q506dbtf_1 | q508dbtf_1 | q507pqpp_1 | q509pqpjp_1 | q511hf_1 | q513hf_1 | q510pqpjp_1 | q512pqpjp_1;
+
+hf20_1 = q514dbtf_1 | q516dbtf_1 | q515pqpp_1 | q519hf_1 | q517pqpjp_1 | q518pqpjp_1 | q520pqpjp_1 | q521hf_1;
+
+tvq_bqnpq_1 = q717_1 | q718_1 | q719_1 | q720_1 | q725_1 | q726_1 | q727_1 | q728_1 | q733_1 | tvq_qjnh_1 | q738jq_bbtf_1 | hnnq_tdppf_bbtf_1 | dndq_hbtdh_bbtf_1 | ldq_hbtdh_bbtf_1 | thfllhbtdh_bbtf_1 | q746ldq_hbtdh_1 | thfll_hbtdh_1 | vfnt_hbtdh_1 | q743dndq_hbtdh_1;
+
+dnndq_jq_ljhht_1 = q744lbnp_1 | bqbdlftt_1;
+
+tfbqdhljhht_1 = q757lbnp_1 | q805_1;
+
+nbjnhvn_1 = bbqqfl_1 | bqffdh_1 | dpbx_762_1;
+
+b127nbdhjnf_hvn_1 = q747_1 | q795_1 | q796_1 | q797_1 | q798_1 | q799_1 | q800_1;
+
+bntfnnb_1 = q737_1 | q791_1 | q792_1;
+
+hvn_dpvfq_1 = q879_1;
+
+dndq_pfqjtdppft_1 = q749_1 | q801_1 | q802_1 | q803_1;
+
+hvn_tjhht_1 = q759_1 | q813_1;
+
+hvnnfq_1 = q562hfbd_1 | q563nfdl_1 | q564tpqtp_1 | q565vpbqn_lt_1 | q566vpbqn_qt_1 | q567lpbqn_lt_1 | q568lpbqn_qt_1 | q569vplfh_lt_1 | q570vplfh_qt_1 | q571lplfh_lt_1 | q572lplfh_qt_1 | hnqtfbt_1;
+
+dpnnbndfq_1 = q578lpbqn_lt_1 | q577vpbqn_qt_1 | q576vpbqn_lt_1 | q574nfdl_1 | q575tpqtp_1 | q573hfbd_1 | q579lpbqn_qt_1 | q583lplfh_qt_1 | q582lplfh_lt_1 | q581vplfh_qt_1 | q580vplfh_lt_1 | dndqtfbt_1;
+
+lpbdfq_1 = q588vpbqnqt_1 | q589lpbqnlt_1 | q585nfdl_1 | q587vpbqnlt_1 | q586tpqtp_1 | q584hfbd_1 | q591vplfhlt_1 | q594lplfhqt_1 | q592vplfhqt_1 | q593lplfhlt_1 | q590lpbqnqt_1 | q620tfbt_1;
+
+tljp_qjnh_1 = q622_1 | q623_1 | tvpppqtt_1;
+
+tvqflppq_1 = q621_1;
+
+hvn_dpntqpl_1 = lbzjnh_nfdh_1 | tqbvfqtf_nfdh_1 | flfvbtjnh_nfdh_1;
+
+hzd_tzt_1 = q762pvnp_1 | q763nptpq_1;
+
+vfntjlbtpq_1 = q752blpxfq_1 | q753dvdt_1 | q804dvdt_1;
+
+bnpljdznf_1 = q755_1;
+
+tvqbnnp_1 = jntvqbbtlft_1 | jntvqqft_1;
+
+tbjq02_1 = q721_1 | q722_1 | q723_1 | q724_1 | q729_1 | q730_1 | q731_1 | q732_1 | q734_1 | q736_1 | q765_1 | q766_1 | q838_1 | q839_1 | q862_1 | q880_1 | q881_1 | q882_1 | q883_1 | q884_1 | q845_1 | q846_1;
+
+hvnbjq01_1 = q849_1;
+
+tvq_qjnh_1 = q735_1;
+
+hnnq_tdppf_bbtf_1 = q740_1;
+
+dndq_hbtdh_bbtf_1 = q742_1;
+
+ldq_hbtdh_bbtf_1 = q745_1;
+
+thfllhbtdh_bbtf_1 = q826_1;
+
+thfll_hbtdh_1 = q750_1;
+
+vfnt_hbtdh_1 = q751_1;
+
+bqbdlftt_1 = q793_1 | q794_1;
+
+bbqqfl_1 = q758_1 | q806_1 | q807fvbd_1 | q808_1 | q809_1 | q840_1;
+
+bqffdh_1 = q810_1 | q811_1;
+
+dpbx_762_1 = q764_1 | q814npvnt_1;
+
+hnqtfbt_1 = q617tfbt_1 | q628tppqt_1;
+
+dndqtfbt_1 = q618_1 | q619_1;
+
+tvpppqtt_1 = q624_1 | q625_1 | q626_1 | q627_1;
+
+lbzjnh_nfdh_1 = q760_1;
+
+tqbvfqtf_nfdh_1 = q761_1;
+
+flfvbtjnh_nfdh_1 = q754_1;
+
+jntvqbbtlft_1 = hf7_1 | hf12_1;
+
+jntvqqft_1 = lf11_1 | lf12_1;
+
+hf7_1 = q410dbtf_1 | q412dbtf_1 | q411pqpp_1 | q415hf_1 | q417hf_1 | q413pqpjp_1 | q414pqpjp_1 | q416pqpjp_1;
+
+hf12_1 = q450dbtf_1 | q452dbtf_1 | q451pqpp_1 | q455hf_1 | q457hf_1 | q453pqpjp_1 | q454pqpjp_1 | q456pqpjp_1;
+
+lf11_1 = q709pfn_1 | q706dbtf_1 | q708dbtf_1 | q707pqpp_1 | q710pfn_1 | q711pfn_1 | q860pqpp_1;
+
+lf12_1 = q715pfn_1 | q716pfn_1 | q712dbtf_1 | q714dbtf_1 | q713pqpp_1 | q812pfn_1 | q861pqpp_1;
+
+lt4flbnhf_1 = lt4qjnjnnfq_1 | lt4qjnpvtfq_1;
+
+lt5flbnhf_1 = lt5qjnjnnfq_1 | lt5qjnpvtfq_1;
+
+qt1flbnhf_1 = qt1qjnjnnfq_1 | qt1qjnpvtfq_1;
+
+qt2flbnhf_1 = qt2qjnjnnfq_1 | qt2qjnpvtfq_1;
+
+qt3flbnhf_1 = qt3qjnjnnfq_1 | qt3qjnpvtfq_1;
+
+qt4flbnhf_1 = qt4qjnjnnfq_1 | qt4qjnpvtfq_1;
+
+qt5flbnhf_1 = qt5qjnjnnfq_1 | qt5qjnpvtfq_1;
+
+lt1flbnhf_1 = lt1qjnjnnfq_1 | lt1qjnpvtfq_1;
+
+lt2flbnhf_1 = lt2qjnjnnfq_1 | lt2qjnpvtfq_1;
+
+lt3flbnhf_1 = lt3qjnjnnfq_1 | lt3qjnpvtfq_1;
+
+tffthlt_1 = q76_1 | q77_1 | q78_1 | q79_1 | q73_1 | q74_1 | q75_1 | q80_1;
+
+tffthqt_1 = q66_1 | q67_1 | q68_1 | q69_1 | q65_1 | q70_1 | q71_1 | q72_1;
+
+dqvnlt_1 = q34_1 | q36_1 | q38_1;
+
+dqvnqt_1 = q33_1 | q35_1 | q37_1;
+
+lt4qjnjnnfq_1 = lt4flbt_1 | lt4dvqvf1_1 | lt4dvqvf2_1 | lt4dvqvf3_1 | lt4dvqvf4_1 | lt4dvqvf5_1;
+
+lt4qjnpvtfq_1 = lt4ptflbt_1 | lt4ptdvqvf1_1 | lt4ptdvqvf2_1 | lt4ptdvqvf3_1 | lt4ptdvqvf4_1 | lt4ptdvqvf5_1;
+
+lt5qjnjnnfq_1 = lt5flbt_1 | lt5dvqvf1_1 | lt5dvqvf2_1 | lt5dvqvf3_1 | lt5dvqvf4_1 | lt5dvqvf5_1;
+
+lt5qjnpvtfq_1 = lt5ptflbt_1 | lt5ptdvqvf1_1 | lt5ptdvqvf2_1 | lt5ptdvqvf3_1 | lt5ptdvqvf4_1 | lt5ptdvqvf5_1;
+
+qt1qjnjnnfq_1 = qt1flbt_1 | qt1dvqvf1_1 | qt1dvqvf2_1 | qt1dvqvf3_1 | qt1dvqvf4_1 | qt1dvqvf5_1;
+
+qt1qjnpvtfq_1 = qt1ptflbt_1 | qt1ptdvqvf1_1 | qt1ptdvqvf2_1 | qt1ptdvqvf3_1 | qt1ptdvqvf4_1 | qt1ptdvqvf5_1;
+
+qt2qjnjnnfq_1 = qt2flbt_1 | qt2dvqvf1_1 | qt2dvqvf2_1 | qt2dvqvf3_1 | qt2dvqvf4_1 | qt2dvqvf5_1;
+
+qt2qjnpvtfq_1 = qt2ptflbt_1 | qt2ptdvqvf1_1 | qt2ptdvqvf2_1 | qt2ptdvqvf3_1 | qt2ptdvqvf4_1 | qt2ptdvqvf5_1;
+
+qt3qjnjnnfq_1 = qt3flbt_1 | qt3dvqvf1_1 | qt3dvqvf2_1 | qt3dvqvf3_1 | qt3dvqvf4_1 | qt3dvqvf5_1;
+
+qt3qjnpvtfq_1 = qt3ptflbt_1 | qt3ptdvqvf1_1 | qt3ptdvqvf2_1 | qt3ptdvqvf3_1 | qt3ptdvqvf4_1 | qt3ptdvqvf5_1;
+
+qt4qjnjnnfq_1 = qt4flbt_1 | qt4dvqvf1_1 | qt4dvqvf2_1 | qt4dvqvf3_1 | qt4dvqvf4_1 | qt4dvqvf5_1;
+
+qt4qjnpvtfq_1 = qt4ptflbt_1 | qt4ptdvqvf1_1 | qt4ptdvqvf2_1 | qt4ptdvqvf3_1 | qt4ptdvqvf4_1 | qt4ptdvqvf5_1;
+
+qt5qjnjnnfq_1 = qt5flbt_1 | qt5dvqvf1_1 | qt5dvqvf2_1 | qt5dvqvf3_1 | qt5dvqvf4_1 | qt5dvqvf5_1;
+
+qt5qjnpvtfq_1 = qt5ptflbt_1 | qt5ptdvqvf1_1 | qt5ptdvqvf2_1 | qt5ptdvqvf3_1 | qt5ptdvqvf4_1 | qt5ptdvqvf5_1;
+
+lt1qjnjnnfq_1 = lt1flbt_1 | lt1dvqvf1_1 | lt1dvqvf2_1 | lt1dvqvf3_1 | lt1dvqvf4_1 | lt1dvqvf5_1;
+
+lt1qjnpvtfq_1 = lt1ptflbt_1 | lt1ptdvqvf1_1 | lt1ptdvqvf2_1 | lt1ptdvqvf3_1 | lt1ptdvqvf4_1 | lt1ptdvqvf5_1;
+
+lt2qjnjnnfq_1 = lt2flbt_1 | lt2dvqvf1_1 | lt2dvqvf2_1 | lt2dvqvf3_1 | lt2dvqvf4_1 | lt2dvqvf5_1;
+
+lt2qjnpvtfq_1 = lt2ptflbt_1 | lt2ptdvqvf1_1 | lt2ptdvqvf2_1 | lt2ptdvqvf3_1 | lt2ptdvqvf4_1 | lt2ptdvqvf5_1;
+
+lt3qjnjnnfq_1 = lt3flbt_1 | lt3dvqvf1_1 | lt3dvqvf2_1 | lt3dvqvf3_1 | lt3dvqvf4_1 | lt3dvqvf5_1;
+
+lt3qjnpvtfq_1 = lt3ptflbt_1 | lt3ptdvqvf1_1 | lt3ptdvqvf2_1 | lt3ptdvqvf3_1 | lt3ptdvqvf4_1 | lt3ptdvqvf5_1;
+
+

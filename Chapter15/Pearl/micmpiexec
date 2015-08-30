@@ -1,0 +1,25 @@
+#!/bin/sh
+if [ -n "$PBS_JOBID" -a -n "$TMPDIR" ]
+then
+    if [ -r $TMPDIR/.micssh/micssh-id_rsa ]
+    then
+        MPI_ARGS="-bootstrap ssh -bootstrap-exec micssh -genv LD_LIBRARY_PATH $TMPDIR/lib:$IMICROOT:$I_MPI_ROOT/mic/lib:$MKLMICROOT:$LD_LIBRARY_PATH"
+    fi
+fi
+export MPI_ARGS
+export EXEC=""
+if [ $1 = "-ddt" ]
+then
+    shift
+    EXEC="ddt-client $DEBUGGER_OPTIONS"
+elif [ $1 = "-tv" ]
+then
+    shift
+    EXEC="totalview -mmic -args"
+fi
+if [ -e $TMPDIR/bin/mpiexec.hydra ]
+then
+    $EXEC $TMPDIR/bin/mpiexec.hydra $MPI_ARGS $*
+else
+    $EXEC mpiexec.hydra $MPI_ARGS $*
+fi

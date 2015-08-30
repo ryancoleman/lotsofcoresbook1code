@@ -1,0 +1,16 @@
+#APP=PCA
+#EXAMPLES=30000000
+#VAR=.1
+#
+#./gen_$APP $APP.train.dat $EXAMPLES $VAR
+#./train_$APP.off $APP.train.dat $APP.param 
+#./gen_$APP $APP.pred.dat 100 $VAR
+#./pred_$APP.omp $APP.param $APP.pred.dat \
+# | tail -n +3 > plotdata.txt
+##
+#rm *.dat
+
+gnuplot -e "unset key; set term png; set output \"pca_known.png\"; plot \"plotdata.txt\" u 2:3"
+gnuplot -e "unset key; set term png; set output \"pca_pred.png\"; plot \"plotdata.txt\" u 5:6"
+ 
+

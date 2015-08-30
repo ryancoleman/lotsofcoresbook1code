@@ -1,0 +1,9 @@
+&optionlist
+  mi = 565
+  mj = 331
+  mk = 137
+  dy = 3706.52082587532
+  dx = 3706.52082587532
+  ladv = .true.
+  ldiff = .false.
+/

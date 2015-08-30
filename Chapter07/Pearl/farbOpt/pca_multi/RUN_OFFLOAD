@@ -1,0 +1,13 @@
+APP=pca
+EXAMPLES=30000000
+VAR=0.1
+
+./gen_$APP $APP.train.dat $EXAMPLES $VAR 1234
+./train_$APP.off $APP.train.dat $APP.param 
+./gen_$APP $APP.pred.dat 1000 0 1
+./pred_$APP $APP.param $APP.pred.dat > output.txt
+
+# create file for gnuplot
+tail -n +3 output.txt > plot.txt
+
+rm *.dat

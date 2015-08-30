@@ -1,0 +1,6 @@
+System1 = CompA | CompB;
+System2 = CompC  &	 CompD;
+
+
+System3 = CompE | CompF;
+

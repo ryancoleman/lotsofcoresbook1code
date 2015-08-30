@@ -1,0 +1,64 @@
+icpc -O3 -xHost -fno-alias -opt-assume-safe-padding -openmp -DX=16  -DY=16  -DZ=16  -DNUM_GROUPS=8 -std=c++11 -Wall -DFAST_FAST_MATH -c pd_main.cpp -o pd_main.o
+icpc -O3 -xHost -fno-alias -opt-assume-safe-padding -openmp -DX=16  -DY=16  -DZ=16  -DNUM_GROUPS=8 -std=c++11 -Wall -DFAST_FAST_MATH -c pd.cpp -o pd.o
+icpc -O3 -xHost -fno-alias -opt-assume-safe-padding -openmp -DX=16  -DY=16  -DZ=16  -DNUM_GROUPS=8 -std=c++11 -Wall -DFAST_FAST_MATH -vec-report=7 -c pd_force.cpp -o pd_force.o
+icpc -O3 -xHost -fno-alias -opt-assume-safe-padding -openmp -DX=16  -DY=16  -DZ=16  -DNUM_GROUPS=8 -std=c++11 -Wall -DFAST_FAST_MATH -vec-report=7 -c pd_update.cpp -o pd_update.o
+icpc -O3 -xHost -fno-alias -opt-assume-safe-padding -openmp -DX=16  -DY=16  -DZ=16  -DNUM_GROUPS=8 -std=c++11 -Wall -DFAST_FAST_MATH -vec-report=7 -c pd_energy.cpp -o pd_energy.o
+icpc -O3 -xHost -openmp -Wall -o pd.x pd_main.o pd.o pd_force.o pd_update.o pd_energy.o
+export MIC_KMP_AFFINITY=compact,granularity=thread; ./pd.x
+# __INFO: set up particle mass...done
+# __INFO: set up particle charge...done
+# __INFO: set up particle position...done
+# __INFO: set up particle velocity...done
+8.74114e+05	6.38688e+03	8.80500e+05
+8.73101e+05	7.39996e+03	8.80501e+05
+8.71467e+05	9.03302e+03	8.80501e+05
+8.69239e+05	1.12619e+04	8.80501e+05
+8.66445e+05	1.40555e+04	8.80500e+05
+8.63123e+05	1.73776e+04	8.80500e+05
+8.59312e+05	2.11888e+04	8.80500e+05
+8.55053e+05	2.54477e+04	8.80500e+05
+8.50388e+05	3.01120e+04	8.80500e+05
+8.45361e+05	3.51397e+04	8.80500e+05
+8.40012e+05	4.04888e+04	8.80500e+05
+8.34383e+05	4.61175e+04	8.80500e+05
+8.28516e+05	5.19845e+04	8.80500e+05
+8.22452e+05	5.80487e+04	8.80500e+05
+8.16231e+05	6.42696e+04	8.80500e+05
+8.09892e+05	7.06083e+04	8.80500e+05
+8.03472e+05	7.70278e+04	8.80500e+05
+7.97006e+05	8.34943e+04	8.80500e+05
+7.90522e+05	8.99783e+04	8.80500e+05
+7.84045e+05	9.64556e+04	8.80500e+05
+7.77592e+05	1.02908e+05	8.80500e+05
+7.71175e+05	1.09325e+05	8.80500e+05
+7.64800e+05	1.15701e+05	8.80500e+05
+7.58463e+05	1.22038e+05	8.80500e+05
+7.52157e+05	1.28343e+05	8.80500e+05
+7.45871e+05	1.34629e+05	8.80500e+05
+7.39589e+05	1.40911e+05	8.80500e+05
+7.33295e+05	1.47205e+05	8.80500e+05
+7.26971e+05	1.53529e+05	8.80500e+05
+7.20603e+05	1.59898e+05	8.80500e+05
+7.14177e+05	1.66324e+05	8.80500e+05
+7.07684e+05	1.72816e+05	8.80500e+05
+7.01120e+05	1.79380e+05	8.80500e+05
+6.94484e+05	1.86016e+05	8.80500e+05
+6.87779e+05	1.92721e+05	8.80500e+05
+6.81011e+05	1.99489e+05	8.80500e+05
+6.74189e+05	2.06311e+05	8.80500e+05
+6.67323e+05	2.13178e+05	8.80500e+05
+6.60422e+05	2.20078e+05	8.80500e+05
+6.53497e+05	2.27004e+05	8.80500e+05
+6.46553e+05	2.33948e+05	8.80500e+05
+6.39594e+05	2.40906e+05	8.80500e+05
+6.32622e+05	2.47878e+05	8.80500e+05
+6.25635e+05	2.54865e+05	8.80500e+05
+6.18626e+05	2.61874e+05	8.80500e+05
+6.11588e+05	2.68912e+05	8.80500e+05
+6.04511e+05	2.75989e+05	8.80500e+05
+5.97383e+05	2.83118e+05	8.80500e+05
+5.90191e+05	2.90309e+05	8.80500e+05
+# __INFO: elapsed time 2159.07311ms
+# __INFO: threads used 240
+# __INFO: gigainteractions 3.88433
+4096	240	3.88433

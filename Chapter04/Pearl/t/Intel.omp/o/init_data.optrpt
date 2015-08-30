@@ -1,0 +1,16 @@
+
+Begin optimization report for: INIT_DATA_MODULE::INIT_DATA_3D
+
+    Report from: OpenMP optimizations [openmp]
+
+OpenMP Construct at src/init_data.f90(63,11)
+   remark #16200: OpenMP DEFINED LOOP WAS PARALLELIZED
+===========================================================================
+
+Begin optimization report for: INIT_DATA_MODULE::INIT_DATA
+
+    Report from: OpenMP optimizations [openmp]
+
+OpenMP Construct at src/init_data.f90(63,11) inlined into src/init_data.f90(35,16)
+   remark #16200: OpenMP DEFINED LOOP WAS PARALLELIZED
+===========================================================================

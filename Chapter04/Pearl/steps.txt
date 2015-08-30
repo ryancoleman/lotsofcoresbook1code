@@ -1,0 +1,6 @@
+ulimit -s unlimited
+export LD_LIBRARY_PATH=/opt/intel/composer_xe_2015/lib:$LD_LIBRARY_PATH
+export KMP_STACK_SIZE=3500m
+export OMP_NUM_THREADS=1
+./main.Intel.omp.exe
+

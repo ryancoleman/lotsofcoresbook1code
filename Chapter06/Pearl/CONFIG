@@ -1,0 +1,54 @@
+
+Here are a description of CMake configuration options. These options can be set
+via the commandline when CMake is run, or can be viewed/set with GUI tools such
+as ccmake or cmake-gui.
+
+CMake configuraiton options:
+
+COMPILER - This should be set to the compiler being used for this project. By
+           default, this is set to 'GCC'. NOTE: it should be set to 'ICC' if
+           compiling for Xeon Phi.
+
+FTE_EVAL_CHUNK_SIZE - This governs the maximum size of the component buffer (in
+                      MB) that will be evaluated at one time. The driver program
+					  will subdivide the computation into N chunks based upon
+					  the provided user command-line inputs and the value of
+					  FTE_EVAL_CHUNK_SIZE. NOTE: This should always be less than
+					  the total memory available to the program.
+
+FTE_INIT_COMPONENTS - This enables/disables the use of a random number generator
+                      to create component values in the range [0.0, 1.0). When
+                      disabled, the evaluation will be done on garbage inputs.
+                      Given that we are only looking at how fast we can evaluate
+                      fault-trees, it is much faster to simply allocate a buffer
+                      of inputs instead of both allocating and initializing a
+                      list of components. The amount of work done by the tree
+                      evaluation is the same regardless of initialization. Thus
+                      disabling initialization makes it easier to compare
+                      evaluation performance on large data sets. This variable
+                      is set to 'OFF' by default.
+
+FTE_ISPC_EVAL_ENABLED - This enables/disables the use of the ISPC code path for
+                        evaluating the fault-tree. This can be used to compare
+                        scalar C++ and ISPC evaluation code to see SIMD
+                        performance gains. The comparision is the most clear
+                        when FTE_THREADING is set to 'OFF' so multi-threading
+                        does not impact the comparision between scalar and
+                        vector code. This variable is set to 'ON' by default.
+
+FTE_ISPC_PACKET_SIZE - This governs the size of ISPC packets to be evaluated
+                       by a thread at the same time. This variable is set to
+                       '16' by default and can be mostly left alone.
+
+FTE_THREADING - This variable enables/disables the use of OpenMP threads to
+                parallelize evaluations across cores. This variable is set to
+                'ON' by default.
+
+XEON_ISA - This governs the target that ISPC will compile to when not compiling
+           for Xeon Phi. It ought to be set to the most advanced instruction set
+           supported by your compiler/CPU. This variable is set to 'AVX' by
+           default.
+
+XEON_PHI_ISA - Enable/disable compiling for Xeon Phi. This is only supported
+               if compiling with the Intel Compiler. This is set to 'OFF' by
+               default.

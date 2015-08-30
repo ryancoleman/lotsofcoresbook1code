@@ -1,0 +1,293 @@
+--------------------------------------------------------------------------------
+Introduction
+--------------------------------------------------------------------------------
+High Performance Parallelism Gems - Successful Approaches for Multicore 
+and Many-core Programming, cf. http://lotsofcores.com/gems
+
+Per Berg and Jacob Weismann Poulsen (2012): "Implementation details for HBM".
+DMI Technical Report No. 12-11. DMI, Copenhagen, ISSN 1399-1388.
+http://beta.dmi.dk/fileadmin/Rapporter/TR/tr12-11.pdf
+
+Jacob Weismann Poulsen and Per Berg (2012a): "More details on HBM - general 
+modelling theory and survey of recent studies".
+DMI Technical Report No. 12-16. DMI, Copenhagen, ISSN 1399-1388.
+http://beta.dmi.dk/fileadmin/Rapporter/TR/tr12-16.pdf
+
+Jacob Weismann Poulsen and Per Berg (2012b): "Thread scaling with HBM".
+DMI Technical Report No. 12-20. DMI, Copenhagen, ISSN 1399-1388.
+www.dmi.dk/fileadmin/user_upload/Rapporter/tr12-20.pdf
+
+--------------------------------------------------------------------------------
+Acknowledgements
+--------------------------------------------------------------------------------
+Intel Corporation : 
+       Karthik Raman, Lawrence Meadows and Michael Greenfield 
+       (Performance Investigation and Optimization Discussions on 
+        Intel Xeon Phi coprocessor)
+Cray	          : 
+       John Levesque (OpenACC contribution), 
+       Bill Long (Discussions on compiler generation for mixed data types)
+
+--------------------------------------------------------------------------------
+Build instructions 
+--------------------------------------------------------------------------------
+The build system uses autoconf and the corresponding configure process is
+meant to set mandatory compiler settings and to distinguish between different 
+build incarnations. If one does not specify any configure options then one will 
+get a serial build. Note that configure generates a file with the compiler flag 
+settings called Makefile.include. In case one wishes to change compiler flags 
+one can either redo the configure or adjust the generated Makefile.include file 
+or one can pass the new flags onto make itself like make FCFLAGS="-O3". 
+Below we show some build examples in BASH-syntax. All the build examples will 
+generate a single binary called cmod.
+
+Below are some common configure examples:
+
+ --enable-contiguous
+ --enable-openmp
+ --enable-mpi
+ --enable-openmp --enable-mpi --enable-contiguous
+ --enable-openacc --enable-contiguous
+ --enable-openacc --enable-mpi
+
+Complete build examples:
+
+tar -zxvf hbm-micro-tflow-1.4.tar.gz
+cd hbm-micro-tflow-1.4
+
+serial binary
+FCFLAGS='-O1' FC=ifort ./configure && make -j <twice_nr_cores_on_build_host>
+
+openmp binary
+FCFLAGS='-O1' FC=ifort ./configure --enable-openmp && make -j <twice_nr_cores_on_build_host>
+
+mpi binary
+FCFLAGS='-O1' FC=ifort ./configure --enable-mpi && make -j <twice_nr_cores_on_build_host>
+
+openmp+mpi binary
+FCFLAGS='-O1' FC=ifort ./configure --enable-openmp --enable-mpi --enable-contiguous && make -j <twice_nr_cores_on_build_host> 
+
+openmp+openacc binary
+FCFLAGS='-Minfo=accel -fast' FC=ftn ./configure --enable-openmp --enable-openacc && make -j 
+FCFLAGS='-O2 -rm -eF -em -D_OPENACC' FC=ftn ./configure --enable-mpi --enable-contiguous --enable-openacc --host=x86_64-linux-gnu && make -j 8
+
+Intel Xeon:
+FCFLAGS='-O3 -xAVX' FC=ifort ./configure --enable-openmp --enable-mpi --enable-contiguous  && make -j <twice_nr_cores_on_build_host>
+
+Intel Xeon Phi:
+FC=mpiifort FCFLAGS='-O3 -mmic -fimf-precision=low -fimf-domain-exclusion=15  -opt-streaming-stores always -opt-streaming-cache-evict=0' ./configure  --enable-openmp --enable-mpi --enable-contiguous  --host=x86_64-k1om-linux --build=x86_64-unknown-linux && make -j <twice_nr_cores_on_build_host>
+
+
+silent make
+time make -j 64 > logfile_for_build.txt 2>&1
+
+In case one wishes to use special compiler flags for a subset of the objects 
+then one could do something like
+
+rm cmod
+
+and then adjust Makefile.manual. For instance assume that we need
+to build some files with O1 instead of O2. Then we would need to
+add these lines:
+
+$(ROOT)/src/foo.o: FCFLAGS := $(subst -O2,,$(FCFLAGS) -O1)
+$(ROOT)/src/bar.o: FCFLAGS := $(subst -O2,,$(FCFLAGS) -O3)
+
+--------------------------------------------------------------------------------
+Build instructions for Intel Xeon and Xeon Phi
+--------------------------------------------------------------------------------
+Intel Xeon:
+
+FC='mpiifort' FCFLAGS='-O3 -xAVX' ./configure --enable-openmp --enable-mpi --enable-contiguous  && make -j <twice_nr_cores_on_build_host>
+
+
+Intel Xeon Phi:
+
+FC='mpiifort' FCFLAGS='-O3 -mmic -fimf-precision=low -fimf-domain-exclusion=15  -opt-streaming-stores always -opt-streaming-cache-evict=0' ./configure  --enable-openmp --enable-mpi --enable-contiguous  --host=x86_64-k1om-linux --build=x86_64-unknown-linux && make -j <twice_nr_cores_on_build_host>
+
+Compiler Flags Used:
+
+O3:       	   				 optimize for maximum speed and enable more aggressive optimizations
+					         that may not improve performance on some programs
+
+CORE-AVX-I:         				 May generate Intel(R) Advanced Vector Extensions (Intel(R)
+				                 AVX), including instructions in Intel(R) Core 2(TM)
+				                 processors in process technology smaller than 32nm,
+				                 Intel(R) SSE4.2, SSE4.1, SSSE3, SSE3, SSE2, and SSE
+				                 instructions for Intel(R) processors.
+
+mmic:						 build an application that runs natively on Intel(R) MIC Architecture
+
+fimf-precision=low:				 equivalent to accuracy-bits = 11 (single precision); accuracy-bits = 26 (double precision)
+
+fimf-domain-exclusion=classlist[:funclist]:	 indicates the domain on which a function is evaluated
+
+opt-streaming-stores always:			 enables generation of streaming stores under the assumption that the application is memory bound
+
+opt-streaming-cache-evict=0:			 Turns off generation of the cache line eviction instructions when streaming loads/stores are used.
+						 (Intel(R) MIC Architecture specific)
+ 
+
+--------------------------------------------------------------------------------
+Run instructions
+--------------------------------------------------------------------------------
+It should be noted that the model uses big-endian input files so for
+those compilers that do not have compiler switches for this (and thus does 
+not allow the configure process to handle it) one will have to specify this 
+as runtime environment. One will also need to specify 'ulimit -s unlimited' in
+BASH-syntax or 'limit stacksize unlimited' in CSH-syntax. One may also need to 
+adjust environment variables pertaining to the system and chosen configure 
+options such as e.g.  OMP_NUM_THREADS. An example is shown below:
+
+tar -zxvf testcase.tar.gz
+cd testcase
+ulimit -s unlimited
+export OMP_NUM_THREADS=64
+<builddir>/cmod
+grep -i 'took' logfile.0000
+
+There might also be compiler specific environment settings needed, e.g. when
+using aprun placement one have to set PSC_OMP_AFFINITY for pathscale binaries 
+to false. For gfortran, one would need export GFORTRAN_CONVERT_UNIT="big_endian"
+when running with testcases with binary files. Moreover, if building with both 
+MPI and openMP one need to adjust environment variables to set 
+THREAD_SAFETY=multiple, e.g. for MPICH:
+
+  export MPICH_MAX_THREAD_SAFETY=multiple
+
+Please inspect the logfile(s) logfile.* upon completion. 
+
+Cray compiler:
+	export FILENV=.assign 
+	assign -Y on g:sf
+	assign -O -N swap_endian g:su
+	assign -O -N swap_endian g:du
+	assign -N swap_endian g:all
+	assign -V
+
+--------------------------------------------------------------------------------
+The testcases
+--------------------------------------------------------------------------------
+We provide both irregular testcases and box testcases. The irregular test
+cases are based on bathymetry data from etopo2 and contain two binary
+files nidx.bin and hz.bin.
+
+The regular box testcases are completely specified by options.nml where
+the three dimensions of the cube are set like this:
+
+&optionlist
+  mi = 100
+  mj = 100
+  mk = 50
+  cube = .true.
+/
+
+If you wish to run with MPI you must have a working mpi_decompo.txt. For a
+single task this would look like:
+
+test -f mpi_decompo_1.txt || echo "    1" > mpi_decompo_1.txt
+
+
+    1
+    1    1    1  100    1  100
+             -1   -1   -1   -1
+             -1   -1   -1   -1
+
+--------------------------------------------------------------------------------
+Example Run instructions on Intel Xeon and Intel Xeon Phi 
+(Irregular Test-cases - Single Node without MPI)
+--------------------------------------------------------------------------------
+Intel Xeon:
+
+Untar the testcase.tar.gz
+cd <path-to>/BaffinBay_*
+export OMP_NUM_THREADS=48
+export KMP_AFFINITY=compact,verbose
+set the needed environment variables for compilers (e.g. LD_LIBRARY_PATH)
+<path-to>/cmod  (Xeon executable)
+
+
+Intel Xeon Phi:
+
+Untar the testcase.tar.gz
+Copy the testcase to the Xeon Phi co-processor OR 
+cd <path-to>/BaffinBay_* on the Xeon Phi co-processor
+export OMP_NUM_THREADS=240
+export KMP_AFFINITY=compact,verbose
+set the needed environment variables for compilers (e.g. LD_LIBRARY_PATH)
+<path-to>/cmod  (Xeon Phi executable)
+
+P.S: The BaffinBay_0.5nm has higher memory requirements, so may need 
+more than 1 Xeon Phi co-processors to run them 
+
+--------------------------------------------------------------------------------
+Running with mpi
+--------------------------------------------------------------------------------
+To run with more than one task one need to use the correct decomposition
+file. Assume that one wishes to run with ${MPITASKS} tasks then one has
+to do this:
+
+  cp mpi_decompo_${MPITASKS}x1.txt mpi_decompo.txt
+
+--------------------------------------------------------------------------------
+Generating new mpi decompositions
+--------------------------------------------------------------------------------
+One can generate MPI decompositions by adding the four lines below to the
+optionslist in options.nml:
+
+  decomp_version = 1
+  nproci        = 1
+  nprocj        = 10
+  only_islices = .true.
+
+The nprocj is the number of decompositions that one will generate, i.e. the
+above setting will generate N files: mpi_decompo_Nx1.txt with N in 1...10.
+Note that one can modify the UGLY sample script 
+'select_mpi_decompo_from_pruned_gen.sh' 
+to prune the set of decompositions files generated. The aim is to select the 
+best candidate in the cases where there are multiple candidates for a certain
+number of tasks.
+
+The build must be without MPI support, i.e. without --enable-mpi. For instance
+
+./configure && make
+
+Once the decomposition files have been generated the program will exit.
+One can now use the generated files together with a build with MPI support
+as explained above.
+
+--------------------------------------------------------------------------------
+How to modify the number of iterations
+--------------------------------------------------------------------------------
+The default is 10 iterations but one can change that by a namelist setting,
+e.g. 100 iterations is obtained by setting 'niter = 100'. This may be useful
+to ensure that OS jitter will have an significant impact on the timings and
+will ensure better extrapolations.
+
+--------------------------------------------------------------------------------
+How to choose between advection and diffusion (or both)
+--------------------------------------------------------------------------------
+Note that 'options.nml' use logicals ldiff and ladv to turn on/off the
+diffusion part and the advection part, respectively. Default is to run the
+advection kernel only, i.e. ladv=.true. and ldiff=.false. Note that the
+the diffusion part takes 200*niter itereations whereas the advection part only
+take niter iterations. 
+
+--------------------------------------------------------------------------------
+Results in logs stems from runs on these platforms:
+--------------------------------------------------------------------------------
+Xeon - 2 Socket IVB
+Intel Xeon E5-2697 v2 (30Mb cache, 2.70 GHz)
+Launched Q3, 2013
+Number of cores/threads on 2 sockets: 24/48
+DDR3-1600 MHz, 8*8 GB
+Peak flops (HPL: 543 GF/s, 450 Watt)
+Peak BW (Stream: 84 GB/s, 408 Watt)
+
+Xeon Phi - KNC C0
+Intel Xeon Phi 7120A (30.5Mb cache, 1.238 GHz)
+Launched Q2, 2013
+Number of cores/threads: 60/240
+GDDR5, 5.5 GT/s, 16 GB
+Peak flops (HPL: 999 GF/s, 313 Watt)
+Peak BW (Stream: 177 GB/s, 283 Watt)

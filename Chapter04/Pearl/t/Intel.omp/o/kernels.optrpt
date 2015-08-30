@@ -1,0 +1,10 @@
+
+Begin optimization report for: KERNELS_MODULE::CHEMTERM_3D
+
+    Report from: OpenMP optimizations [openmp]
+
+OpenMP Construct at src/kernels.F90(2186,7)
+   remark #16200: OpenMP DEFINED LOOP WAS PARALLELIZED
+OpenMP Construct at src/kernels.F90(2185,7)
+   remark #16201: OpenMP DEFINED REGION WAS PARALLELIZED
+===========================================================================

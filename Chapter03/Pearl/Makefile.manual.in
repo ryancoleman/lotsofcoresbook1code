@@ -1,0 +1,4 @@
+ROOT:=@abs_srcdir@
+# You can asjust flags on an individual basis as outlined below - you must 
+# do make clean or manual clean before the take effect
+# $(ROOT)/foo.o: FCFLAGS := $(subst -O2,,$(FCFLAGS) -O1)

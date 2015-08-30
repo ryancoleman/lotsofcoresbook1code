@@ -1,0 +1,8 @@
+SystemA = SystemB | SystemC | SystemD;
+SystemB = CompA & CompB & CompC;
+SystemC = CompA | SystemF & CompC;
+SystemD = SystemE & CompB | SystemF;
+SystemE = CompD | (CompE | CompF);
+SystemF = CompE & (SystemH & SystemG);
+SystemG = (CompA | CompB) & SystemH;
+SystemH = CompD & (CompF | CompG);

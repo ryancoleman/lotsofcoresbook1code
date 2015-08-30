@@ -1,0 +1,4 @@
+scp train_xor.mic mic1:
+./gen_xor - 10000000 0.01 | ssh mic1 "export LD_LIBRARY_PATH=/tmp; ./train_xor.mic - xor.param" 
+scp mic1:xor.param .
+./gen_xor - 1 0 | ./pred_xor xor.param -

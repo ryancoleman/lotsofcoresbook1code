@@ -1,0 +1,137 @@
+#!/bin/sh
+# prologue gets 3 arguments:
+# 1 -- jobid
+# 2 -- userid
+# 3 -- grpid
+#
+jobid=$1
+user=$2
+group=$3
+node=$(hostname -s)
+export LUSTRE=/lustre/medusa
+export SCRATCH=/lustre/scratch
+
+# Disable puppet during the job
+#/usr/bin/puppet agent --disable
+
+# make sure I have root-level tools available
+export PATH=/usr/local/sbin:/usr/sbin:/sbin:$PATH
+
+# syslog start
+logger "$0 start for $jobid"
+
+# create tmpdir
+tmp=/tmp/pbstmp.$jobid
+if [ ! -e $tmp ]
+then
+    mkdir -m 700 $tmp && chown $user.$group $tmp
+fi
+
+# die, old user processes!
+reaver -k
+
+# die, /tmp/coi_procs!
+if [ -e /tmp/coi_procs ]
+then
+    rm -rf /tmp/coi_procs
+fi
+
+# disable cpuspeed service during the job
+#/sbin/service cpuspeed stop 2>&1 >/dev/null
+
+GRES=$(/global/opt/torque/default/bin/qstat -f $jobid | grep Resource_List.gres | awk '{print $3}')
+if [[ "$GRES" == "noganglia" ]]; then
+	service gmond stop
+fi
+
+# propagate ssh keys, since dropbear is stupid and
+# doesn't support host-based auth
+mkdir $tmp/.micssh
+cp /usr/local/etc/micssh/micssh-id_rsa* $tmp/.micssh
+chown -R $user.$group $tmp/.micssh
+
+# hack-y stuff for Intel MPI
+mkdir $tmp/bin
+chown -R $user.$group $tmp/bin
+if [[ "$GRES" == "betaimpi" ]] ; then
+	cp -a /global/opt/intel/impi/beta/intel64/bin/{mpiexec.hydra,pmi_proxy} $tmp/bin
+  	# build a .profile for the MICs, which we'll
+  	# need later
+  	  cat <<EOF > $tmp/profile
+export TMPDIR=$tmp
+export PATH=\$TMPDIR/bin:/usr/bin:/bin
+export LD_LIBRARY_PATH=\$TMPDIR/lib:/lib64:/lib:/global/opt/intel/impi/beta/mic/lib:/global/opt/intel/mkl/lib/mic:/global/opt/intel/composerxe/lib/mic
+ulimit -s unlimited
+alias ldd="LD_TRACE_LOADED_OBJECTS=1 "
+EOF
+  	chmod 0644 $tmp/profile
+else
+	cp -a /global/opt/intel/impi/latest/intel64/bin/{mpiexec.hydra,pmi_proxy} $tmp/bin
+  	# build a .profile for the MICs, which we'll
+  	# need later
+  	cat <<EOF > $tmp/profile
+export TMPDIR=$tmp
+export PATH=\$TMPDIR/bin:/usr/bin:/bin
+export LD_LIBRARY_PATH=\$TMPDIR/lib:/lib64:/lib:/global/opt/intel/impi/latest/mic/lib:/global/opt/intel/mkl/lib/mic:/global/opt/intel/composerxe/lib/mic
+ulimit -s unlimited
+alias ldd="LD_TRACE_LOADED_OBJECTS=1 "
+EOF
+  	chmod 0644 $tmp/profile
+fi
+
+# only do MIC stuff if there's at least one MIC present
+if [ -e /sys/class/mic/mic0 ]
+then
+  if [ $(/sbin/service mpss status | awk '{print $3}') == 'stopped' ]
+  then
+        /usr/sbin/micctrl -rw 2>&1 >/dev/null
+        /usr/sbin/micctrl -bw 2>&1 >/dev/null
+	/sbin/service mpss start 2>&1 >/dev/null
+        /sbin/service ofed-mic start 2>&1 >/dev/null
+  fi
+  if [ $(/usr/sbin/micctrl -s | grep -c online) -lt 4 ]
+  then
+   logger "WARNING: At least one MIC on $node was down when $jobid started. Restarting MICs."
+   /usr/sbin/micctrl -rfw 2>&1 >/dev/null
+   /usr/sbin/micctrl -bw 2>&1 >/dev/null
+   /sbin/service mpss start 2>&1 >/dev/null
+   /sbin/service ofed-mic start 2>&1 >/dev/null
+   if [ $(/usr/sbin/micctrl -s | grep -c online) -lt 4 ]
+     then
+     /global/opt/torque/default/bin/pbsnodes -o -N "MICs will not boot" $node
+     logger "WARNING: At least one MIC on $node was down when $jobid started and would not come back online. Marking $node offline."
+     mail -s "ERROR: The MICs on $node will not boot. Marking node offline." admin@admin.org << EOF 2>&1 >/dev/null
+ERROR: The MICs on $node will not boot. Marking node offline.
+EOF
+    fi
+   fi
+  /sbin/service ofed-mic start 2>&1 >/dev/null
+  # put user and group on MICs
+  # also mount $TMPDIR on MICs
+  for mic in $( cd /sys/class/mic && echo mic* )
+  do
+    if [ -e /sys/class/mic/$mic ]
+    then
+      mkdir -m 700 -p $tmp/$mic/{lib,bin} && chown -R $user.$group $tmp/$mic
+      # apparently exportfs doesn't like being invoked in parallel
+      /usr/sbin/exportfs -i -o rw,no_root_squash ${node}-$mic:$tmp/$mic
+      /usr/sbin/exportfs -i -o rw,no_root_squash ${node}-$mic:/opt/intel
+      if [ -e $LUSTRE/$user ]
+      then
+        /usr/sbin/exportfs -i -o fsid=42434,rw,no_root_squash ${node}-$mic:$LUSTRE/$user
+      fi
+      if [ -e $SCRATCH/$user ]
+      then
+        /usr/sbin/exportfs -i -o fsid=42424,rw,no_root_squash ${node}-$mic:$SCRATCH/$user
+      fi
+      /var/spool/torque/mom_priv/prologue.parallel.mic $jobid $user $group $node $mic $tmp $GRES &
+    fi
+    if [[ "$GRES" == "noganglia" ]]; then
+      ssh $node-$mic killall gmond
+    fi
+  done
+  wait
+fi
+
+# syslog end
+logger "$0 end for $jobid"

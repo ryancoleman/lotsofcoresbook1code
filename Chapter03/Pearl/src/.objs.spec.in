@@ -1,0 +1,19 @@
+OBJS:=\
+@abs_srcdir@/auto_decompo.o \
+@abs_srcdir@/cmod_mem.o \
+@abs_srcdir@/e_timer.o \
+@abs_srcdir@/constants.o \
+@abs_srcdir@/dmi_mpi_global.o \
+@abs_srcdir@/dmi_mpi.o \
+@abs_srcdir@/dmi_omp.o \
+@abs_srcdir@/exits_exit.o \
+@abs_srcdir@/exits.o \
+@abs_srcdir@/extreme.o \
+@abs_srcdir@/io_subs_flush.o \
+@abs_srcdir@/io_control.o \
+@abs_srcdir@/masscorr.o \
+@abs_srcdir@/main.o \
+@abs_srcdir@/tflow.o \
+@abs_srcdir@/io_miscsubs.o \
+@abs_srcdir@/io_subs.o \
+@abs_srcdir@/io_mpi.o \

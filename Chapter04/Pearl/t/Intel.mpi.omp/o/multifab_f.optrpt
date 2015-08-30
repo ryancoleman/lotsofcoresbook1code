@@ -1,0 +1,44 @@
+
+Begin optimization report for: MULTIFAB_MODULE::CPY_D
+
+    Report from: OpenMP optimizations [openmp]
+
+OpenMP Construct at src/multifab_f.f90(218,14)
+   remark #16200: OpenMP DEFINED LOOP WAS PARALLELIZED
+===========================================================================
+
+Begin optimization report for: MULTIFAB_MODULE::RESHAPE_D_4_1
+
+    Report from: OpenMP optimizations [openmp]
+
+OpenMP Construct at src/multifab_f.f90(240,11)
+   remark #16200: OpenMP DEFINED LOOP WAS PARALLELIZED
+===========================================================================
+
+Begin optimization report for: MULTIFAB_MODULE::MF_FB_FANCY_DOUBLE
+
+    Report from: OpenMP optimizations [openmp]
+
+OpenMP Construct at src/multifab_f.f90(218,14) inlined into src/multifab_f.f90(325,13)
+   remark #16200: OpenMP DEFINED LOOP WAS PARALLELIZED
+OpenMP Construct at src/multifab_f.f90(240,11) inlined into src/multifab_f.f90(337,13)
+   remark #16200: OpenMP DEFINED LOOP WAS PARALLELIZED
+===========================================================================
+
+Begin optimization report for: MULTIFAB_MODULE::RESHAPE_D_1_4
+
+    Report from: OpenMP optimizations [openmp]
+
+OpenMP Construct at src/multifab_f.f90(275,14)
+   remark #16200: OpenMP DEFINED LOOP WAS PARALLELIZED
+OpenMP Construct at src/multifab_f.f90(290,14)
+   remark #16200: OpenMP DEFINED LOOP WAS PARALLELIZED
+===========================================================================
+
+Begin optimization report for: MULTIFAB_MODULE::MF_FB_EASY_DOUBLE
+
+    Report from: OpenMP optimizations [openmp]
+
+OpenMP Construct at src/multifab_f.f90(240,11) inlined into src/multifab_f.f90(398,25)
+   remark #16200: OpenMP DEFINED LOOP WAS PARALLELIZED
+===========================================================================

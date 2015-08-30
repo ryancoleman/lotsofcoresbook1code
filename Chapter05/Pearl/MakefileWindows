@@ -1,0 +1,124 @@
+# MakefileWindows
+OPT = -O3
+# OPT = -O0 -g
+CC              =       icl
+CFLAGShost      =      -openmp $(OPT) /Qstd=c99 /Qvec-report3
+MIC_OPT         =      /Qmic
+HOST            =      /QxHost
+OUT             =      /Fe
+OBJ             =      /Fo
+CFLAGSmic       =      -openmp $(OPT) -std=c99 -vec-report=3
+
+MICDIR          =      /tmp
+LARGE           =      -DNX=512
+
+base_xphi: diffusion_base.c
+	$(CC) $(CFLAGSmic) $(MIC_OPT) diffusion_base.c -o diffusion_base_xphi
+	$(CC) $(CFLAGSmic) $(MIC_OPT) $(LARGE) diffusion_base.c -o diffusion_base_Large_xphi
+
+base_host: diffusion_base.c
+	$(CC) $(CFLAGShost) $(HOST) diffusion_base.c $(OUT)diffusion_base_host
+	$(CC) $(CFLAGShost) $(HOST) $(LARGE) diffusion_base.c $(OUT)diffusion_base_Large_host
+
+omp_xphi: diffusion_omp.c
+	$(CC) $(CFLAGSmic) $(MIC_OPT) diffusion_omp.c -o diffusion_omp_xphi
+	$(CC) $(CFLAGSmic) $(MIC_OPT) $(LARGE) diffusion_omp.c -o diffusion_omp_Large_xphi
+
+omp_host: diffusion_omp.c
+	$(CC) $(CFLAGShost) $(HOST) diffusion_omp.c $(OUT)diffusion_omp_host
+	$(CC) $(CFLAGShost) $(HOST) $(LARGE) diffusion_omp.c $(OUT)diffusion_omp_Large_host
+
+ompvect_xphi: diffusion_ompvect.c
+	$(CC) $(CFLAGSmic) $(MIC_OPT) diffusion_ompvect.c -o diffusion_ompvect_xphi
+	$(CC) $(CFLAGSmic) $(LARGE) $(MIC_OPT) diffusion_ompvect.c -o diffusion_ompvect_Large_xphi
+
+ompvect_host: diffusion_ompvect.c
+	$(CC) $(CFLAGShost) $(HOST) diffusion_ompvect.c $(OUT)diffusion_ompvect_host
+	$(CC) $(CFLAGShost) $(LARGE) $(HOST) diffusion_ompvect.c $(OUT)diffusion_ompvect_Large_host
+
+peel_xphi: diffusion_peel.c
+	$(CC) $(CFLAGSmic) $(MIC_OPT) diffusion_peel.c -o diffusion_peel_xphi
+	$(CC) $(CFLAGSmic) $(MIC_OPT) $(LARGE) diffusion_peel.c -o diffusion_peel_Large_xphi
+
+peel_host: diffusion_peel.c
+	$(CC) $(CFLAGShost) $(HOST) diffusion_peel.c $(OUT)diffusion_peel_host
+	$(CC) $(CFLAGShost) $(HOST) $(LARGE) diffusion_peel.c $(OUT)diffusion_peel_Large_host
+
+tiled_xphi: diffusion_tiled.c
+	$(CC) $(CFLAGSmic) $(MIC_OPT) diffusion_tiled.c -o diffusion_tiled_xphi
+	$(CC) $(CFLAGSmic) $(MIC_OPT) $(LARGE) diffusion_tiled.c -o diffusion_tiled_Large_xphi
+
+tiled_host: diffusion_tiled.c
+	$(CC) $(CFLAGShost) $(HOST) diffusion_tiled.c $(OUT)diffusion_tiled_host
+	$(CC) $(CFLAGShost) $(HOST) $(LARGE) diffusion_tiled.c $(OUT)diffusion_tiled_Large_host
+
+HyperThreadPhalanx_xphi.o: HyperThreadPhalanx.c HyperThreadPhalanx.h
+	$(CC) $(CFLAGSmic) $(MIC_OPT) -c HyperThreadPhalanx.c -o HyperThreadPhalanx_xphi.o
+
+HyperThreadPhalanx_host.obj: HyperThreadPhalanx.c HyperThreadPhalanx.h
+	$(CC) $(CFLAGShost) $(HOST) -c HyperThreadPhalanx.c $(OBJ)HyperThreadPhalanx_host.obj
+
+tiled_HT1_xphi: diffusion_tiled_HT1.c HyperThreadPhalanx_xphi.o
+	$(CC) $(CFLAGSmic) $(MIC_OPT) diffusion_tiled_HT1.c -o diffusion_tiled_HT1_xphi HyperThreadPhalanx_xphi.o
+	$(CC) $(CFLAGSmic) $(MIC_OPT) $(LARGE) diffusion_tiled_HT1.c -o diffusion_tiled_HT1_Large_xphi HyperThreadPhalanx_xphi.o
+
+tiled_HT1_host: diffusion_tiled_HT1.c HyperThreadPhalanx_host.obj
+	$(CC) $(CFLAGShost) $(HOST) diffusion_tiled_HT1.c -o diffusion_tiled_HT1_host HyperThreadPhalanx_host.obj
+	$(CC) $(CFLAGShost) $(HOST) $(LARGE) diffusion_tiled_HT1.c -o diffusion_tiled_HT1_Large_host HyperThreadPhalanx_host.obj
+
+tiled_HT2_xphi: diffusion_tiled_HT2.c HyperThreadPhalanx_xphi.o HyperThreadPhalanx_host.o
+	$(CC) $(CFLAGSmic) $(MIC_OPT) diffusion_tiled_HT2.c -o diffusion_tiled_HT2_xphi HyperThreadPhalanx_xphi.o
+	$(CC) $(CFLAGSmic) $(MIC_OPT) $(LARGE) diffusion_tiled_HT2.c -o diffusion_tiled_HT2_Large_xphi HyperThreadPhalanx_xphi.o
+
+tiled_HT2_host: diffusion_tiled_HT2.c HyperThreadPhalanx_host.obj
+	$(CC) $(CFLAGShost) $(HOST) diffusion_tiled_HT2.c -o diffusion_tiled_HT2_host HyperThreadPhalanx_host.obj
+	$(CC) $(CFLAGShost) $(HOST) $(LARGE) diffusion_tiled_HT2.c -o diffusion_tiled_HT2_Large_host HyperThreadPhalanx_host.obj
+
+tiled_HT3_xphi: diffusion_tiled_HT3.c HyperThreadPhalanx_xphi.o HyperThreadPhalanx_host.o
+	$(CC) $(CFLAGSmic) $(MIC_OPT) -fsource-asm diffusion_tiled_HT3.c -o diffusion_tiled_HT3_xphi HyperThreadPhalanx_xphi.o
+	$(CC) $(CFLAGSmic) $(MIC_OPT) $(LARGE) diffusion_tiled_HT3.c -o diffusion_tiled_HT3_Large_xphi HyperThreadPhalanx_xphi.o
+
+tiled_HT3_host: diffusion_tiled_HT3.c HyperThreadPhalanx_host.obj
+	$(CC) $(CFLAGShost) $(HOST) diffusion_tiled_HT3.c -o diffusion_tiled_HT3_host HyperThreadPhalanx_host.obj
+	$(CC) $(CFLAGShost) $(HOST) $(LARGE) diffusion_tiled_HT3.c -o diffusion_tiled_HT3_Large_host HyperThreadPhalanx_host.obj
+
+base: base_xphi base_host
+
+omp: omp_xphi omp_host 
+
+ompvect: ompvect_xphi ompvect_host
+
+peel: peel_xphi peel_host
+
+tiled: tiled_xphi tiled_host
+
+tiled_HT1: tiled_HT1_xphi tiled_HT1_host
+
+tiled_HT2: tiled_HT2_xphi tiled_HT2_host
+
+tiled_HT3: tiled_HT3_xphi tiled_HT3_host
+
+all_xphi: base_xphi omp_xphi ompvect_xphi peel_xphi tiled_xphi tiled_HT1_xphi tiled_HT2_xphi tiled_HT3_xphi
+
+all_host: base_host omp_host ompvect_host peel_host tiled_host tiled_HT1_host tiled_HT2_host tiled_HT3_host
+
+all: all_host all_xphi
+
+miccopy: 
+	sudo scp *_xphi mic0:$(MICDIR)
+	sudo scp *_xphi.sh mic0:$(MICDIR)
+
+miclibcopy:
+	sudo scp $(MICLIBS)/libiomp5.so mic0:$(MICDIR)
+	@echo ""
+	@echo "REMEMBER TO export LD_LIBRARY_PATH=$(MICDIR) ON THE COPROCESSOR (if needed)"
+	@echo ""
+
+
+clean: 
+	del *_xphi.
+	del *_xphi.*
+	del *_host.*
+
+
+

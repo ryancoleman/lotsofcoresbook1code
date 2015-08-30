@@ -1,0 +1,7 @@
+. ./common.sh
+NUM_NODES=2
+
+mpiexec -np $NUM_NODES ./mpiTrain_$APP.omp NameDoesNotMatter.dat $APP.param host.$APP.timing.txt
+
+
+

@@ -1,0 +1,32 @@
+
+Begin optimization report for: ADVANCE_MODULE::DUDT..0
+
+    Report from: OpenMP optimizations [openmp]
+
+OpenMP Construct at src/advance.f90(243,11)
+   remark #16201: OpenMP DEFINED REGION WAS PARALLELIZED
+===========================================================================
+
+Begin optimization report for: ADVANCE_MODULE::COMPUTE_COURNO
+
+    Report from: OpenMP optimizations [openmp]
+
+OpenMP Construct at src/advance.f90(295,11)
+   remark #16201: OpenMP DEFINED REGION WAS PARALLELIZED
+===========================================================================
+
+Begin optimization report for: ADVANCE_MODULE::UPDATE_RK3
+
+    Report from: OpenMP optimizations [openmp]
+
+OpenMP Construct at src/advance.f90(134,11)
+   remark #16201: OpenMP DEFINED REGION WAS PARALLELIZED
+===========================================================================
+
+Begin optimization report for: ADVANCE_MODULE::DUDT
+
+    Report from: OpenMP optimizations [openmp]
+
+OpenMP Construct at src/advance.f90(243,11)
+   remark #16201: OpenMP DEFINED REGION WAS PARALLELIZED
+===========================================================================

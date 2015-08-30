@@ -1,0 +1,102 @@
+This simple fault tree evaluation example was inspired by the implementation
+found in the Visual Simulation Laboratory (http://vissimlab.org). The example
+takes in fault trees defined in an input file and evalutes N of them according
+to a selected system to evaluate. See CONFIG file for various build options to
+be configured with CMake.
+
+In the most substantial sample (sample3), the system 'loadedModel' is a system
+that represents something close to a production fault tree: it contains 2156
+components (leaves in the fault-tree).
+
+It is important to note that Xeon Phi will require a large enough set of input
+data to see a performance benefit over the CPU. On a dual Sandy Bridge machine,
+the Xeon Phi starts to outperform the CPUs with #evaluations > ~1,000,000 trees
+when running the system 'loadedModel' from the sample input file 'sample3'. As
+noted in the chapter text, fault-tree evaluation is usually embedded within a
+larger application/simulation which can impact the overall performance of doing
+fault- tree evaluaions.
+
+*******************************************************************************
+
+**Host-side compile/run instructions**
+
+Compile:
+
+This project borrows some of the build system CMake code from the Intel Embree
+project for detecting gcc/icc/clang and configuring ispc. It assumes that ispc
+is on your PATH.
+
+1) Run CMake on the source directory
+
+% cd example_code
+% mkdir build
+% cd build
+% cmake ..
+
+2) Run make to build the code
+
+% make
+
+Run:
+
+% ./fte [input file] [system] [num evaluations]
+
+For example, one could run:
+
+% ./fte ../samples/sample1 System1 1
+
+This uses one of the sample tree input files and evalutes 'System1' once. Three
+different example input files are provided in the 'samples' directory.
+
+
+**Xeon Phi compile/run instructions**
+
+NOTE: Running code on the device requires a valid installation of MPSS and the
+Intel compiler. This has been tested using version 15.0.0 of the Intel compiler.
+This example will run natively on the Phi. Other methods, such as COI and MPI,
+are also available to run code on the device and are beyond the scope of this
+example.
+
+Compile:
+
+1) Run CMake on the source directory on the host
+
+% cd example_code
+% mkdir build
+% cd build
+% cmake -DCOMPILER=ICC -DCMAKE_C_COMPILER=icc -DCMAKE_CXX_COMPILER=icpc \
+-DXEON_PHI_ISA=ON ..
+
+2) Run make to build the code
+
+% make
+
+Run:
+
+3) Copy the executable to the device (will use mic0 as the target device) as
+well as the sample datasets
+
+% scp fte mic0:
+% scp -r ../samples mic0:
+
+4) Copy required runtime libraries to the device (assumes Intel compiler
+installed to /opt/intel)
+
+% scp -r /opt/intel/lib/mic mic0:
+
+4) SSH into the device
+
+% ssh mic0
+
+5) Place runtime libraries in LD_LIBRARY_PATH environment variable
+
+% export LD_LIBRARY_PATH=~/mic
+
+6) Run the binary
+
+% ./fte samples/sample3 loadedModel 10000000
+
+*******************************************************************************
+
+Any questions should be directed to Jefferson Amstutz: jeffamstutz@gmail.com
+

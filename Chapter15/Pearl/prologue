@@ -1,0 +1,13 @@
+#!/bin/sh
+# prologue gets 3 arguments:
+# 1 -- jobid
+# 2 -- userid
+# 3 -- grpid
+#
+jobid=$1
+user=$2
+group=$3
+
+# do the parallel prologue -- create tmpdir (among other things)
+/var/spool/torque/mom_priv/prologue.parallel $jobid $user $group
+

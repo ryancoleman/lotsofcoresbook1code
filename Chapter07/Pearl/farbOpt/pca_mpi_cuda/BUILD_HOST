@@ -1,0 +1,18 @@
+. ./common.sh
+
+NO_IO_TEST="-DNO_IO_EXAMPLES=$EXAMPLES"
+
+GCC_FLAGS="-D$ACTIVATION -O3 -fopenmp -std=c99 -w -msse "
+
+INC=" -I $NLOPT_DIR/include  -I $MPICH_HOME/include"
+LIB=" -L $NLOPT_DIR/lib -L $MPICH_HOME/lib "
+#INC=" -I $NLOPT_DIR/include  -I /usr/include/mpich"
+#LIB=" -L $NLOPT_DIR/lib -L /usr/lib/mpich "
+
+gcc $GCC_FLAGS genData.c -o gen_$APP
+
+gcc $NO_IO_TEST $MAX_RUN $GCC_FLAGS ../mpiTrain.c -I . $INC  $LIB -lnlopt -lm -lmpich -lmpl -o mpiTrain_$APP.omp
+
+gcc $GCC_FLAGS ../pred.c -I . -lm -o pred_$APP
+
+

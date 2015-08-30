@@ -1,0 +1,16 @@
+MaxSteps, RelaxSteps
+30000, 20000
+tStats, tDump, xjump
+100, 5000, 2
+xmin, xmax, ymin, ymax, zmin, zmax
+1, 75, 1, 75, 1, 151
+rhoL, rhoH 
+1.0D0, 1000.D0
+tauRho, taPhiu
+0.75D0, 0.70D0
+IntWidth, sigma, Gamma
+5.D0, 0.01D0, 400.D0
+Eo, pConv
+50, 0.01
+mpi_xdim, mpi_ydim, mpi_zdim
+1, 1, 2

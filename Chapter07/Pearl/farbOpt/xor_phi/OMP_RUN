@@ -1,0 +1,10 @@
+APP=xor
+EXAMPLES=30000000
+VAR=0.01
+
+./gen_$APP $APP.train.dat $EXAMPLES $VAR
+./train_$APP.omp $APP.train.dat $APP.param 
+./gen_$APP $APP.pred.dat 1000 0
+./pred_$APP.omp $APP.param $APP.pred.dat > output.txt
+
+rm *.dat

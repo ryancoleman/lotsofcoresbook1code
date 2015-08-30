@@ -1,0 +1,25 @@
+include Makefile.include
+include $(ROOT)/Makefile.manual
+
+.PHONY: all dist clean
+
+all: allobs 
+	@cd src ; $(LD) $(LDFLAGS) $(OBJS) -o $(EXE) 1>/dev/null
+
+clean:
+	@find . -follow -name '*.o' | xargs /bin/rm -f
+	@find . -follow -name "*.mod" | xargs /bin/rm -f
+
+distdir=@PACKAGE_VERSION@
+
+dist:
+	@mkdir -p $(distdir)
+	@cp -p Makefile.in Makefile.manual.in Makefile.include.in sub.mk README LICENSE.txt TODO.txt configure configure.ac aclocal.m4 $(distdir)
+	@cp -pr config src logs $(distdir)
+	@tar cvf $(distdir).tar $(distdir)
+	@gzip $(distdir).tar 
+
+dir := src
+include $(dir)/.Makefile.src
+include sub.mk
+

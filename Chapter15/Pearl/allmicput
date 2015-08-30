@@ -1,0 +1,186 @@
+#!/bin/sh
+
+usage() {
+    cat - <<"EOF"
+Usage: allmicput [[-t] FILE...] [-l LIBRARY...] [-x BINARY...] [-d DIR FILE...]
+Copy listed files to the corresponding directory on every mic card in the 
+current PBS job.
+
+  [-t] FILE...    the specified file(s) are copied to $TMPDIR on each mic
+  -T LISTFILE     the files in LISTFILE are copied to $TMPDIR on each mic
+  -l LIBRARY...   the specified file(s) are copied to $TMPDIR/lib on each mic
+  -L LISTFILE     the files in LISTFILE are copied to $TMPDIR/lib on each mic
+  -x BINARY...    the specified file(s) are copied to $TMPDIR/bin on each mic
+  -X LISTFILE     the files in LISTFILE are copied to $TMPDIR/bin on each mic
+  -d DIR FILE...  the specified file(s) are copied to $TMPDIR/DIR on each mic
+  -D DIR LISTFILE the files in LISTFILE are copied to $TMPDIR/DIR on each mic
+EOF
+}
+
+if [ $# -eq 0 ]; then
+    usage
+    exit 1
+fi
+
+if [ -z "${PBS_JOBID}" ] || [ -z "${PBS_NODEFILE}" ]
+then
+    echo "allmicput: no PBS job environment found. allmicput cannot run on the login node." 1>&2
+    exit -1
+fi
+
+tmp_files=""
+lib_files=""
+bin_files=""
+dir_files=""
+dir=""
+
+mode=0
+exit_code=0
+
+cp_commands=""
+
+add_cp_command() {
+    if [ ! -z "$1" ]; then
+    cp_commands="${cp_commands} 
+mkdir -p \"\${micdir}/$2/\";
+cp -r "$1" \"\${micdir}/$2/\";
+"
+    fi
+}
+
+while [ $# -gt 0 ]; do
+    case "$1" in
+    -t)
+        mode=0
+    ;;
+    -T)
+        if [ "$#" -lt 2 ]; then
+            echo "allmicput: -T without file. -T must be followed by the list file" 1>&2
+            exit -1
+        fi
+        if [ ! -r "$2" ]; then
+            echo "allmicput: cannot read list file '$2'" 1>&2
+            exit 3
+        fi
+        tmp_files="${tmp_files}$(cat "$2" | tr '\n' ' ') "
+        shift
+    ;;
+    -l)
+        mode=1
+    ;;
+    -L)
+        if [ "$#" -lt 2 ]; then
+            echo "allmicput: -L without file. -L must be followed by the list file" 1>&2
+            exit -1
+        fi
+        if [ ! -r "$2" ]; then
+            echo "allmicput: cannot read list file '$2'" 1>&2
+            exit 3
+        fi
+        lib_files="${lib_files}$(cat "$2" | tr '\n' ' ') "
+        shift
+    ;;
+    -x)
+        mode=2
+    ;;
+    -X)
+        if [ "$#" -lt 2 ]; then
+            echo "allmicput: -X without file. -X must be followed by the list file" 1>&2
+            exit -1
+        fi
+        if [ ! -r "$2" ]; then
+            echo "allmicput: cannot read list file '$2'" 1>&2
+            exit 3
+        fi
+        bin_files="${bin_files}$(cat "$2" | tr '\n' ' ') "
+        shift
+    ;;
+    -d)
+        mode=3
+        #do previous -d files
+        add_cp_command "${dir_files}" "${dir}"
+        dir_files=""
+        if [ $# -lt 2 ]; then
+            echo "allmicput: -d without target. -d must be followed by a target directory" 1>&2
+            exit 2
+        fi
+        dir="$2"
+        shift
+    ;;
+    -D)
+        if [ $# -lt 2 ]; then
+            echo "allmicput: -D without target. -D must be followed by a target directory and list file" 1>&2
+            exit 2
+        fi
+        if [ $# -lt 3 ]; then
+            echo "allmicput: -D without file. -D must be followed by a target directory and list file" 1>&2
+            exit -1
+        fi
+        if [ ! -r "$3" ]; then
+            echo "allmicput: cannot read list file '$3'" 1>&2
+            exit 3
+        fi
+        add_cp_command "$(cat "$3" | tr '\n' ' ') " "$2"
+        shift
+        shift
+    ;;
+    *)
+        if [ ! -e "$1" ]; then
+            echo "allmicput: cannot stat '$1': No such file or directory" 1>&2
+            exit_code=1
+        elif [ ! -r "$1" ]; then
+            echo "allmicput: cannot open '$1' for reading: Permission denied" 1>&2
+            exit_code=1
+        else
+            case $mode in
+            0)
+                tmp_files="${tmp_files}\"$1\" "
+            ;;
+            1)
+                lib_files="${lib_files}\"$1\" "
+            ;;
+            2)
+                bin_files="${bin_files}\"$1\" "
+            ;;
+            3)
+                dir_files="${dir_files}\"$1\" "
+            ;;
+            esac
+        fi
+    ;;
+    esac
+    shift
+done
+
+add_cp_command "${tmp_files}" ""
+add_cp_command "${lib_files}" lib
+add_cp_command "${bin_files}" bin
+add_cp_command "${dir_files}" "${dir}"
+
+if [ -z "${cp_commands}" ]; then
+    #do not print error message if another error is the cause of this noop
+    if [ ${exit_code} -eq 0 ]; then
+        echo "allmicput: missing argument. No files to copy" 1>&2
+        exit 1
+    else
+        exit ${exit_code}
+    fi
+fi
+
+CWD=$(pwd)
+remote_command='
+cd "'"$CWD"'"
+for i in $(seq 0 3); do
+ micdir="${TMPDIR}/mic${i}"
+ if [ -d $micdir ]; then
+  '"${cp_commands}"'
+ fi
+done
+'
+
+host_list="$( cat "${PBS_NODEFILE}" )"
+for host in $host_list; do
+    echo "${remote_command}" | micssh $host /bin/sh
+done
+
+exit ${exit_code}

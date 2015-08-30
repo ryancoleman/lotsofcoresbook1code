@@ -1,0 +1,8 @@
+APP=nlpca
+FLAGS="-g -DUSE_ELLIOTT -std=gnu99 -O3 -openmp"
+INC=$HOME/install/include
+LIB=$HOME/install/lib
+
+icc $FLAGS ../train.c -I . -I $INC  -L $LIB -lnlopt -lm -o train_$APP.off
+
+

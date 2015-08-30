@@ -1,0 +1,4 @@
+DEVICE=mic0
+ONBOOT=yes
+NM_CONTROLLED="no"
+BRIDGE=micbr0

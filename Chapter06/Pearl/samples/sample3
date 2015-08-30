@@ -1,0 +1,1391 @@
+crew = gunner | commander | loader;
+
+loadedModel = root;
+
+root = ptr | tpr | component | shelf | pt1r | tp1r | junk | compartment;
+
+component = hull | turret | suspension;
+
+shelf = nr1;
+
+junk = arsg7 | protoleft | Rim;
+
+compartment = hull_1 | turret_1 | suspension_1;
+
+hull = hull_ext | hull_int | hull_air;
+
+turret = tur_ext | tur_int | tur_air;
+
+suspension = roadwheellt4 | roadwheellt5 | roadwheelrt1 | roadwheelrt2 | roadwheelrt3 | roadwheelrt4 | roadwheelrt5 | roadwheellt1 | roadwheellt2 | roadwheellt3 | torsion_barlt1 | torsion_barlt2 | torsion_barlt3 | torsion_barlt4 | torsion_barlt5 | torsion_barrt4 | torsion_barrt5 | torsion_barrt1 | torsion_barrt2 | torsion_barrt3 | shockltrear | shockltfront | shockrtfront | shockrtrear | track_adjust | left_track | right_track | sprocketlt | sprocketrt | idlerrt | idlerlt;
+
+arsg7 = arsr1;
+
+protoleft = protoleft_transform_rimouter | protoleft_transform_riminner;
+
+Rim = Rim1 | Rim2 | Rim3 | Rim4 | Rim5 | rim1 | rim2 | rim3 | rim4 | rim5;
+
+hull_1 = hull_ext_1 | hull_int_1 | hull_air_1;
+
+turret_1 = tur_ext_1 | tur_int_1 | tur_air_1;
+
+suspension_1 = roadwheellt4_1 | roadwheellt5_1 | roadwheelrt1_1 | roadwheelrt2_1 | roadwheelrt3_1 | roadwheelrt4_1 | roadwheelrt5_1 | roadwheellt1_1 | roadwheellt2_1 | roadwheellt3_1 | torsion_barlt1_1 | torsion_barlt2_1 | torsion_barlt3_1 | torsion_barlt4_1 | torsion_barlt5_1 | torsion_barrt4_1 | torsion_barrt5_1 | torsion_barrt1_1 | torsion_barrt2_1 | torsion_barrt3_1 | shockltrear_1 | shockltfront_1 | shockrtfront_1 | shockrtrear_1 | track_adjust_1 | left_track_1 | right_track_1 | sprocketlt_1 | sprocketrt_1 | idlerrt_1 | idlerlt_1;
+
+hull_ext = hull_armor | fender_lt | fender_rt | drvr_scopes | tool_boxes | exhaust_port | eng_oil_tank | ext_fuel_tanks | headlight | spare_track;
+
+hull_int = driver | fuel_system | firewall | fire_sup_sys | elec_sys | infrared_sys | r537tool_box | storage_box | air_bottles | radiometric | bilge | exhaust_fan | rear_ammo_rack | eng_comp | drvr_controls | hullammo;
+
+hull_air = hair02 | hair05 | fair07 | fair08;
+
+tur_ext = tur_armor | cmmdr_ir_light | r739ir_detctor | searchlight | maingun | a127machine_gun | r748ldr_scope | r741gnr_scope | antenna | r756snorkel | gun_cover | cmdr_periscopes | gun_sight;
+
+tur_int = gunner | commander | loader | slip_ring | turfloor | gun_control | hyd_sys | ventilator | amplidyne | turammo;
+
+tur_air = tair02 | gunair01;
+
+roadwheellt4 = r9tread | r29hub | r96axle | r97arm | moon4 | lt4flange;
+
+roadwheellt5 = r10tread | r30hub | r101axle | r102arm | moon5 | lt5flange;
+
+roadwheelrt1 = r1tread | r21hub | r106axle | r107arm | Moon1 | rt1flange;
+
+roadwheelrt2 = r2tread | r22hub | r111axle | r112arm | Moon2 | rt2flange;
+
+roadwheelrt3 = r3tread | r23hub | r116axle | r117arm | Moon3 | rt3flange;
+
+roadwheelrt4 = r4tread | r24hub | r121axle | r122arm | Moon4 | rt4flange;
+
+roadwheelrt5 = r5tread | r25hub | r126axle | r127arm | Moon5 | rt5flange;
+
+roadwheellt1 = r6tread | r26hub | r81axle | r82arm | moon1 | lt1flange;
+
+roadwheellt2 = r7tread | r27hub | r86axle | r87arm | moon2 | lt2flange;
+
+roadwheellt3 = r8tread | r28hub | r91axle | r92arm | moon3 | lt3flange;
+
+torsion_barlt1 = r83hub | r84housing | r85bar;
+
+torsion_barlt2 = r88hub | r89housing | r90bar;
+
+torsion_barlt3 = r93hub | r94housing | r95bar;
+
+torsion_barlt4 = r98hub | r99housing | r100bar;
+
+torsion_barlt5 = r103hub | r104housing | r105bar;
+
+torsion_barrt4 = r123hub | r124housing | r125bar;
+
+torsion_barrt5 = r128hub | r129housing | r130bar;
+
+torsion_barrt1 = r108hub | r109housing | r110bar;
+
+torsion_barrt2 = r113hub | r114housing | r115bar;
+
+torsion_barrt3 = r118hub | r119housing | r120bar;
+
+shockltrear = r136connector | r137arm1 | r138arm2 | r139shock | r140housing;
+
+shockltfront = r131connector | r132arm1 | r133arm2 | r134shock | r135housing;
+
+shockrtfront = r141connector | r142arm1 | r143arm2 | r144shock | r145housing;
+
+shockrtrear = r146connector | r147arm1 | r148arm2 | r149shock | r150housing;
+
+track_adjust = r151rt | r152lt;
+
+left_track = r57 | r58 | r59 | r56 | r60 | r61 | r62 | r63 | r64 | teethlt;
+
+right_track = r48 | r49 | r47 | r50 | r51 | r52 | r53 | r54 | r55 | teethrt;
+
+sprocketlt = r32teeth | drumlt | r40hub;
+
+sprocketrt = r31teeth | drumrt | r39hub;
+
+idlerrt = r41rim | r43disc | r45hub;
+
+idlerlt = r42rim | r44disc | r46hub;
+
+hull_armor = rt_side | bottom | top | upper_glacis | lower_glacis | back | driver_hatch | eng_hatch | radiator_hatch | trans_hatch | final_dr_housng | lt_side;
+
+fender_lt = r197 | r205 | r206 | r207 | r208 | r213 | r214 | r217 | supportslt;
+
+fender_rt = r198 | r209 | r210 | r211 | r212 | r215 | r216 | r218 | supportsrt;
+
+drvr_scopes = r657 | r658;
+
+tool_boxes = r199 | r201 | r204 | r222;
+
+exhaust_port = r202;
+
+eng_oil_tank = r203case | r827oil;
+
+ext_fuel_tanks = r219case | r220case | r221case | r782fuel | r783fuel | r784fuel;
+
+headlight = r223ir_light | r224light | r225shield;
+
+spare_track = r200;
+
+driver = r548neck | r549torso | r547head | r552loarm_lt | r551uparm_rt | r557loleg_rt | r550uparm_lt | r556loleg_lt | r555upleg_rt | r553loarm_rt | r554upleg_lt | drvr_seat;
+
+fuel_system = tanks | a3wayvalve | primer | fuel_lines;
+
+firewall = r526 | r527 | r528 | r529;
+
+fire_sup_sys = r531control | r561relay;
+
+elec_sys = r530batteries | r532relay | r533fan_cntrl | course_indictr | r538black_box;
+
+infrared_sys = r536instrument | r614power;
+
+storage_box = r539 | r540;
+
+air_bottles = r558case | r559case | r789air | r790air;
+
+radiometric = r560;
+
+bilge = r611pump | r612pipe | r613pipe;
+
+exhaust_fan = r615fan | r616motor;
+
+rear_ammo_rack = r629 | r630 | r631 | r632 | r633;
+
+eng_comp = engine | transmission | final_drive_lt | final_drive_rt | brake_rt | brake_lt | cooling_fan | radiator_water | radiator_oil | air_filter | transfer | final_dr_gears;
+
+drvr_controls = steering_brake | shifting | parking_brake | clutch | speed_cntrl;
+
+hullammo = inrtfuel | inltfuel | onleftwall | inammorack;
+
+hair02 = r595 | r596 | r597 | r598 | r599 | r600 | r601 | r602 | r603 | r604 | r605 | r815 | r816 | r817 | r818 | r819 | r820 | r821 | r822 | r823 | r824 | r825 | r828 | r829 | r830 | r831 | r832 | hullair1r | hullair2r | hullair4r | hullair3r | hullair5r | hullair6r | hullair7r | hullair8r | hullair9r | hullair10r | hullair11r | hullair20r | hullair21r | hullair22r | hullair13r;
+
+hair05 = r606 | r607 | r608 | r609 | r610 | r645 | r833 | r834 | r835 | r836 | r837;
+
+fair07 = fair071 | fair072 | fair073 | fair074;
+
+fair08 = fair081 | fair082;
+
+rt_side = r160 | r161 | r162 | r176 | r178 | r180 | r182 | r184 | r186 | r188 | r190 | r196 | r653 | r654 | r163 | r164 | r169 | idlersupport | r525 | r848;
+
+bottom = r170 | r193 | r194;
+
+top = r191 | r192;
+
+upper_glacis = r171 | r172;
+
+lower_glacis = r173 | r174;
+
+back = r165;
+
+driver_hatch = r655 | r656;
+
+eng_hatch = r646;
+
+radiator_hatch = r649 | r650;
+
+trans_hatch = r647 | r648;
+
+final_dr_housng = r153 | r154;
+
+lt_side = r155 | r156 | r157 | r175 | r177 | r179 | r181 | r183 | r185 | r187 | r189 | r195 | r652 | r158 | r159 | r168 | idler_support | r524 | r847 | tringr;
+
+supportslt = r634 | r635 | r636 | r637 | r638 | r639;
+
+supportsrt = r640 | r641 | r642 | r643 | r644;
+
+idlersupport = r166;
+
+idler_support = r167;
+
+drvr_seat = r541bot | r542back | ltside | rtside;
+
+tanks = fronttank | rtammotank | ltammotank | midtank;
+
+a3wayvalve = r684 | r685;
+
+primer = r686 | r687;
+
+fuel_lines = midtank2front | ammotank2valve | frnttank2valve | toengine;
+
+course_indictr = r534 | r535converter;
+
+engine = r767 | r768 | r769;
+
+transmission = r770;
+
+final_drive_lt = r771;
+
+final_drive_rt = r772;
+
+brake_rt = r774;
+
+brake_lt = r773;
+
+cooling_fan = r775;
+
+radiator_water = r776;
+
+radiator_oil = r777;
+
+air_filter = r778;
+
+transfer = r779 | r780 | r781;
+
+final_dr_gears = r841 | r842 | r843 | r844;
+
+steering_brake = r659lever | r662rod | r660lever | r661axle;
+
+shifting = r663lever | r664axle | r665rod1 | r666rod2 | r667rod3;
+
+parking_brake = r668axle | r669arm | r670pedal | r673rod | r675rod;
+
+clutch = r671pedal | r672arm | r674rod | r676rod;
+
+speed_cntrl = r677pedal | r678rod | r679rod | handthrottle;
+
+inrtfuel = ce1 | ce2 | ce3 | ce4 | ce5 | ce6 | ce7 | ce8;
+
+inltfuel = ke1 | ke2 | ke3 | ke4 | ke5 | ke6 | ke7 | ke8;
+
+onleftwall = ke9 | ke10;
+
+inammorack = he1 | he2 | he3 | he4 | he5 | he6 | he8 | he9 | he10 | he11 | he13 | he14 | he15 | he16 | he17 | he18 | he19 | he20;
+
+ltside = r543 | r545;
+
+rtside = r544 | r546;
+
+fronttank = r226tank | r227tank | r522tank | fuel;
+
+rtammotank = r230tank | r228abutment | ammosleeves | r239fuel;
+
+ltammotank = r229abutment | r304tank | ammo_sleeves | r313fuel;
+
+midtank = r523tank | r788fuel;
+
+midtank2front = r682 | r683;
+
+ammotank2valve = r688;
+
+frnttank2valve = r689;
+
+toengine = r690 | r691 | r692 | r693;
+
+fuel = r785 | r786 | r787;
+
+ammosleeves = r231 | r232 | r233 | r234 | r235 | r236 | r237 | r238;
+
+ammo_sleeves = r305 | r306 | r307 | r308 | r309 | r310 | r311 | r312;
+
+handthrottle = r680 | r681;
+
+ce1 = r246liner | r240case | r242case | r241prop | r245he | r243projo | r244projo | r247projo;
+
+ce2 = r248case | r249prop | r254liner | r250case | r253he | r251projo | r252projo | r255projo;
+
+ce3 = r259projo | r256case | r258case | r257prop | r261he | r260projo | r263projo | r262liner;
+
+ce4 = r267projo | r268projo | r264case | r266case | r265prop | r269he | r270liner | r271projo;
+
+ce5 = r279projo | r278liner | r272case | r274case | r273prop | r277he | r275projo | r276projo;
+
+ce6 = r287projo | r286liner | r280case | r282case | r281prop | r285he | r283projo | r284projo;
+
+ce7 = r288case | r289prop | r295projo | r294liner | r290case | r293he | r291projo | r292projo;
+
+ce8 = r299projo | r296case | r298case | r297prop | r301he | r300projo | r303projo | r302liner;
+
+ke1 = r317pen | r318pen | r319pen | r314case | r316case | r315prop | r850prop;
+
+ke2 = r320case | r322case | r321prop | r323pen | r324pen | r325pen | r851prop;
+
+ke3 = r329pen | r326case | r328case | r327prop | r330pen | r331pen | r852prop;
+
+ke4 = r336pen | r337pen | r332case | r334case | r333prop | r335pen | r853prop;
+
+ke5 = r338case | r339prop | r340case | r341pen | r342pen | r343pen | r854prop;
+
+ke6 = r347pen | r348pen | r349pen | r344case | r346case | r345prop | r855prop;
+
+ke7 = r354pen | r355pen | r350case | r352case | r351prop | r353pen | r856prop;
+
+ke8 = r359pen | r356case | r358case | r357prop | r360pen | r361pen | r857prop;
+
+ke9 = r697pen | r698pen | r699pen | r694case | r696case | r695prop | r858prop;
+
+ke10 = r700case | r702case | r701prop | r703pen | r704pen | r705pen | r859prop;
+
+he1 = r368projo | r362case | r364case | r363prop | r367he | r369he | r365projo | r366projo;
+
+he2 = r376projo | r370case | r372case | r371prop | r375he | r377he | r373projo | r374projo;
+
+he3 = r378case | r379prop | r380case | r383he | r385he | r381projo | r382projo | r384projo;
+
+he4 = r389projo | r386case | r388case | r387prop | r391he | r393he | r390projo | r392projo;
+
+he5 = r399he | r397projo | r398projo | r394case | r396case | r395prop | r400projo | r401he;
+
+he6 = r402case | r404case | r403prop | r407he | r409he | r405projo | r406projo | r408projo;
+
+he8 = r418case | r419prop | r420case | r423he | r425he | r421projo | r422projo | r424projo;
+
+he9 = r429projo | r426case | r428case | r427prop | r431he | r433he | r430projo | r432projo;
+
+he10 = r434case | r436case | r435prop | r439he | r437projo | r438projo | r440projo | r441he;
+
+he11 = r448projo | r442case | r444case | r443prop | r447he | r449he | r445projo | r446projo;
+
+he13 = r458case | r459prop | r460case | r463he | r465he | r461projo | r462projo | r464projo;
+
+he14 = r469projo | r466case | r468case | r467prop | r471he | r473he | r470projo | r472projo;
+
+he15 = r477projo | r478projo | r474case | r476case | r475prop | r479he | r480projo | r481he;
+
+he16 = r485projo | r486projo | r488projo | r482case | r484case | r483prop | r487he | r489he;
+
+he17 = r494projo | r496projo | r490case | r492case | r491prop | r495he | r497he | r493projo;
+
+he18 = r498case | r499prop | r500case | r503he | r505he | r501projo | r502projo | r504projo;
+
+he19 = r506case | r508case | r507prop | r509projo | r511he | r513he | r510projo | r512projo;
+
+he20 = r514case | r516case | r515prop | r519he | r517projo | r518projo | r520projo | r521he;
+
+tur_armor = r717 | r718 | r719 | r720 | r725 | r726 | r727 | r728 | r733 | tur_ring | r738ir_base | gnnr_scope_base | cmdr_hatch_base | ldr_hatch_base | shellhatch_base | r746ldr_hatch | shell_hatch | vent_hatch | r743cmdr_hatch;
+
+cmmdr_ir_light = r744lamp | brackets;
+
+searchlight = r757lamp | r805;
+
+maingun = barrel | breech | coax_762;
+
+a127machine_gun = r747 | r795 | r796 | r797 | r798 | r799 | r800;
+
+antenna = r737 | r791 | r792;
+
+gun_cover = r879;
+
+cmdr_periscopes = r749 | r801 | r802 | r803;
+
+gun_sight = r759 | r813;
+
+gunner = r562head | r563neck | r564torso | r565uparm_lt | r566uparm_rt | r567loarm_lt | r568loarm_rt | r569upleg_lt | r570upleg_rt | r571loleg_lt | r572loleg_rt | gnrseat;
+
+commander = r578loarm_lt | r577uparm_rt | r576uparm_lt | r574neck | r575torso | r573head | r579loarm_rt | r583loleg_rt | r582loleg_lt | r581upleg_rt | r580upleg_lt | cmdrseat;
+
+loader = r588uparmrt | r589loarmlt | r585neck | r587uparmlt | r586torso | r584head | r591upleglt | r594lolegrt | r592uplegrt | r593loleglt | r590loarmrt | r620seat;
+
+slip_ring = r622 | r623 | supports;
+
+turfloor = r621;
+
+gun_control = laying_mech | traverse_mech | elevating_mech;
+
+hyd_sys = r762pump | r763motor;
+
+ventilator = r752blower | r753duct | r804duct;
+
+amplidyne = r755;
+
+turammo = inturbasket | inturret;
+
+tair02 = r721 | r722 | r723 | r724 | r729 | r730 | r731 | r732 | r734 | r736 | r765 | r766 | r838 | r839 | r862 | r880 | r881 | r882 | r883 | r884 | r845 | r846;
+
+gunair01 = r849;
+
+tur_ring = r735;
+
+gnnr_scope_base = r740;
+
+cmdr_hatch_base = r742;
+
+ldr_hatch_base = r745;
+
+shellhatch_base = r826;
+
+shell_hatch = r750;
+
+vent_hatch = r751;
+
+brackets = r793 | r794;
+
+barrel = r758 | r806 | r807evac | r808 | r809 | r840;
+
+breech = r810 | r811;
+
+coax_762 = r764 | r814mount;
+
+gnrseat = r617seat | r628spprt;
+
+cmdrseat = r618 | r619;
+
+supports = r624 | r625 | r626 | r627;
+
+laying_mech = r760;
+
+traverse_mech = r761;
+
+elevating_mech = r754;
+
+inturbasket = he7 | he12;
+
+inturret = ke11 | ke12;
+
+he7 = r410case | r412case | r411prop | r415he | r417he | r413projo | r414projo | r416projo;
+
+he12 = r450case | r452case | r451prop | r455he | r457he | r453projo | r454projo | r456projo;
+
+ke11 = r709pen | r706case | r708case | r707prop | r710pen | r711pen | r860prop;
+
+ke12 = r715pen | r716pen | r712case | r714case | r713prop | r812pen | r861prop;
+
+lt4flange = lt4riminner | lt4rimouter;
+
+lt5flange = lt5riminner | lt5rimouter;
+
+rt1flange = rt1riminner | rt1rimouter;
+
+rt2flange = rt2riminner | rt2rimouter;
+
+rt3flange = rt3riminner | rt3rimouter;
+
+rt4flange = rt4riminner | rt4rimouter;
+
+rt5flange = rt5riminner | rt5rimouter;
+
+lt1flange = lt1riminner | lt1rimouter;
+
+lt2flange = lt2riminner | lt2rimouter;
+
+lt3flange = lt3riminner | lt3rimouter;
+
+teethlt = r76 | r77 | r78 | r79 | r73 | r74 | r75 | r80;
+
+teethrt = r66 | r67 | r68 | r69 | r65 | r70 | r71 | r72;
+
+drumlt = r34 | r36 | r38;
+
+drumrt = r33 | r35 | r37;
+
+lt4riminner = lt4flat | lt4curve1 | lt4curve2 | lt4curve3 | lt4curve4 | lt4curve5;
+
+lt4rimouter = lt4otflat | lt4otcurve1 | lt4otcurve2 | lt4otcurve3 | lt4otcurve4 | lt4otcurve5;
+
+lt5riminner = lt5flat | lt5curve1 | lt5curve2 | lt5curve3 | lt5curve4 | lt5curve5;
+
+lt5rimouter = lt5otflat | lt5otcurve1 | lt5otcurve2 | lt5otcurve3 | lt5otcurve4 | lt5otcurve5;
+
+rt1riminner = rt1flat | rt1curve1 | rt1curve2 | rt1curve3 | rt1curve4 | rt1curve5;
+
+rt1rimouter = rt1otflat | rt1otcurve1 | rt1otcurve2 | rt1otcurve3 | rt1otcurve4 | rt1otcurve5;
+
+rt2riminner = rt2flat | rt2curve1 | rt2curve2 | rt2curve3 | rt2curve4 | rt2curve5;
+
+rt2rimouter = rt2otflat | rt2otcurve1 | rt2otcurve2 | rt2otcurve3 | rt2otcurve4 | rt2otcurve5;
+
+rt3riminner = rt3flat | rt3curve1 | rt3curve2 | rt3curve3 | rt3curve4 | rt3curve5;
+
+rt3rimouter = rt3otflat | rt3otcurve1 | rt3otcurve2 | rt3otcurve3 | rt3otcurve4 | rt3otcurve5;
+
+rt4riminner = rt4flat | rt4curve1 | rt4curve2 | rt4curve3 | rt4curve4 | rt4curve5;
+
+rt4rimouter = rt4otflat | rt4otcurve1 | rt4otcurve2 | rt4otcurve3 | rt4otcurve4 | rt4otcurve5;
+
+rt5riminner = rt5flat | rt5curve1 | rt5curve2 | rt5curve3 | rt5curve4 | rt5curve5;
+
+rt5rimouter = rt5otflat | rt5otcurve1 | rt5otcurve2 | rt5otcurve3 | rt5otcurve4 | rt5otcurve5;
+
+lt1riminner = lt1flat | lt1curve1 | lt1curve2 | lt1curve3 | lt1curve4 | lt1curve5;
+
+lt1rimouter = lt1otflat | lt1otcurve1 | lt1otcurve2 | lt1otcurve3 | lt1otcurve4 | lt1otcurve5;
+
+lt2riminner = lt2flat | lt2curve1 | lt2curve2 | lt2curve3 | lt2curve4 | lt2curve5;
+
+lt2rimouter = lt2otflat | lt2otcurve1 | lt2otcurve2 | lt2otcurve3 | lt2otcurve4 | lt2otcurve5;
+
+lt3riminner = lt3flat | lt3curve1 | lt3curve2 | lt3curve3 | lt3curve4 | lt3curve5;
+
+lt3rimouter = lt3otflat | lt3otcurve1 | lt3otcurve2 | lt3otcurve3 | lt3otcurve4 | lt3otcurve5;
+
+protoleft_transform_rimouter = rimouter;
+
+protoleft_transform_riminner = riminner;
+
+Rim1 = Rim1_transform_protoright;
+
+Rim2 = Rim2_transform_protoright;
+
+Rim3 = Rim3_transform_protoright;
+
+Rim4 = Rim4_transform_protoright;
+
+Rim5 = Rim5_transform_protoright;
+
+rim1 = ltprotoleft;
+
+rim2 = rim2_transform_ltprotoleft;
+
+rim3 = rim3_transform_ltprotoleft;
+
+rim4 = rim4_transform_ltprotoleft;
+
+rim5 = rim5_transform_ltprotoleft;
+
+rimouter = rimouter_transform_flat | rimouter_transform_curve1 | rimouter_transform_curve2 | rimouter_transform_curve3 | rimouter_transform_curve4 | rimouter_transform_curve5;
+
+riminner = riminner_transform_flat | riminner_transform_curve1 | riminner_transform_curve2 | riminner_transform_curve3 | riminner_transform_curve4 | riminner_transform_curve5;
+
+rimouter_transform_flat = flat;
+
+rimouter_transform_curve1 = curve1;
+
+rimouter_transform_curve2 = curve2;
+
+rimouter_transform_curve3 = curve3;
+
+rimouter_transform_curve4 = curve4;
+
+rimouter_transform_curve5 = curve5;
+
+riminner_transform_flat = flat_1;
+
+riminner_transform_curve1 = curve1_1;
+
+riminner_transform_curve2 = curve2_1;
+
+riminner_transform_curve3 = curve3_1;
+
+riminner_transform_curve4 = curve4_1;
+
+riminner_transform_curve5 = curve5_1;
+
+Rim1_transform_protoright = protoright;
+
+Rim2_transform_protoright = protoright_1;
+
+Rim3_transform_protoright = protoright_2;
+
+Rim4_transform_protoright = protoright_3;
+
+Rim5_transform_protoright = protoright_4;
+
+ltprotoleft = ltprotoleft_transform_ltrimouter | ltprotoleft_transform_ltriminner;
+
+rim2_transform_ltprotoleft = ltprotoleft_1;
+
+rim3_transform_ltprotoleft = ltprotoleft_2;
+
+rim4_transform_ltprotoleft = ltprotoleft_3;
+
+rim5_transform_ltprotoleft = ltprotoleft_4;
+
+protoright = protoright_transform_rimouter | protoright_transform_riminner;
+
+protoright_transform_rimouter = rimouter_1;
+
+protoright_transform_riminner = riminner_1;
+
+rimouter_1 = rimouter_transform_flat_1 | rimouter_transform_curve1_1 | rimouter_transform_curve2_1 | rimouter_transform_curve3_1 | rimouter_transform_curve4_1 | rimouter_transform_curve5_1;
+
+riminner_1 = riminner_transform_flat_1 | riminner_transform_curve1_1 | riminner_transform_curve2_1 | riminner_transform_curve3_1 | riminner_transform_curve4_1 | riminner_transform_curve5_1;
+
+rimouter_transform_flat_1 = flat_2;
+
+rimouter_transform_curve1_1 = curve1_2;
+
+rimouter_transform_curve2_1 = curve2_2;
+
+rimouter_transform_curve3_1 = curve3_2;
+
+rimouter_transform_curve4_1 = curve4_2;
+
+rimouter_transform_curve5_1 = curve5_2;
+
+riminner_transform_flat_1 = flat_3;
+
+riminner_transform_curve1_1 = curve1_3;
+
+riminner_transform_curve2_1 = curve2_3;
+
+riminner_transform_curve3_1 = curve3_3;
+
+riminner_transform_curve4_1 = curve4_3;
+
+riminner_transform_curve5_1 = curve5_3;
+
+protoright_1 = protoright_transform_rimouter_1 | protoright_transform_riminner_1;
+
+protoright_transform_rimouter_1 = rimouter_2;
+
+protoright_transform_riminner_1 = riminner_2;
+
+rimouter_2 = rimouter_transform_flat_2 | rimouter_transform_curve1_2 | rimouter_transform_curve2_2 | rimouter_transform_curve3_2 | rimouter_transform_curve4_2 | rimouter_transform_curve5_2;
+
+riminner_2 = riminner_transform_flat_2 | riminner_transform_curve1_2 | riminner_transform_curve2_2 | riminner_transform_curve3_2 | riminner_transform_curve4_2 | riminner_transform_curve5_2;
+
+rimouter_transform_flat_2 = flat_4;
+
+rimouter_transform_curve1_2 = curve1_4;
+
+rimouter_transform_curve2_2 = curve2_4;
+
+rimouter_transform_curve3_2 = curve3_4;
+
+rimouter_transform_curve4_2 = curve4_4;
+
+rimouter_transform_curve5_2 = curve5_4;
+
+riminner_transform_flat_2 = flat_5;
+
+riminner_transform_curve1_2 = curve1_5;
+
+riminner_transform_curve2_2 = curve2_5;
+
+riminner_transform_curve3_2 = curve3_5;
+
+riminner_transform_curve4_2 = curve4_5;
+
+riminner_transform_curve5_2 = curve5_5;
+
+protoright_2 = protoright_transform_rimouter_2 | protoright_transform_riminner_2;
+
+protoright_transform_rimouter_2 = rimouter_3;
+
+protoright_transform_riminner_2 = riminner_3;
+
+rimouter_3 = rimouter_transform_flat_3 | rimouter_transform_curve1_3 | rimouter_transform_curve2_3 | rimouter_transform_curve3_3 | rimouter_transform_curve4_3 | rimouter_transform_curve5_3;
+
+riminner_3 = riminner_transform_flat_3 | riminner_transform_curve1_3 | riminner_transform_curve2_3 | riminner_transform_curve3_3 | riminner_transform_curve4_3 | riminner_transform_curve5_3;
+
+rimouter_transform_flat_3 = flat_6;
+
+rimouter_transform_curve1_3 = curve1_6;
+
+rimouter_transform_curve2_3 = curve2_6;
+
+rimouter_transform_curve3_3 = curve3_6;
+
+rimouter_transform_curve4_3 = curve4_6;
+
+rimouter_transform_curve5_3 = curve5_6;
+
+riminner_transform_flat_3 = flat_7;
+
+riminner_transform_curve1_3 = curve1_7;
+
+riminner_transform_curve2_3 = curve2_7;
+
+riminner_transform_curve3_3 = curve3_7;
+
+riminner_transform_curve4_3 = curve4_7;
+
+riminner_transform_curve5_3 = curve5_7;
+
+protoright_3 = protoright_transform_rimouter_3 | protoright_transform_riminner_3;
+
+protoright_transform_rimouter_3 = rimouter_4;
+
+protoright_transform_riminner_3 = riminner_4;
+
+rimouter_4 = rimouter_transform_flat_4 | rimouter_transform_curve1_4 | rimouter_transform_curve2_4 | rimouter_transform_curve3_4 | rimouter_transform_curve4_4 | rimouter_transform_curve5_4;
+
+riminner_4 = riminner_transform_flat_4 | riminner_transform_curve1_4 | riminner_transform_curve2_4 | riminner_transform_curve3_4 | riminner_transform_curve4_4 | riminner_transform_curve5_4;
+
+rimouter_transform_flat_4 = flat_8;
+
+rimouter_transform_curve1_4 = curve1_8;
+
+rimouter_transform_curve2_4 = curve2_8;
+
+rimouter_transform_curve3_4 = curve3_8;
+
+rimouter_transform_curve4_4 = curve4_8;
+
+rimouter_transform_curve5_4 = curve5_8;
+
+riminner_transform_flat_4 = flat_9;
+
+riminner_transform_curve1_4 = curve1_9;
+
+riminner_transform_curve2_4 = curve2_9;
+
+riminner_transform_curve3_4 = curve3_9;
+
+riminner_transform_curve4_4 = curve4_9;
+
+riminner_transform_curve5_4 = curve5_9;
+
+protoright_4 = protoright_transform_rimouter_4 | protoright_transform_riminner_4;
+
+protoright_transform_rimouter_4 = rimouter_5;
+
+protoright_transform_riminner_4 = riminner_5;
+
+rimouter_5 = rimouter_transform_flat_5 | rimouter_transform_curve1_5 | rimouter_transform_curve2_5 | rimouter_transform_curve3_5 | rimouter_transform_curve4_5 | rimouter_transform_curve5_5;
+
+riminner_5 = riminner_transform_flat_5 | riminner_transform_curve1_5 | riminner_transform_curve2_5 | riminner_transform_curve3_5 | riminner_transform_curve4_5 | riminner_transform_curve5_5;
+
+rimouter_transform_flat_5 = flat_10;
+
+rimouter_transform_curve1_5 = curve1_10;
+
+rimouter_transform_curve2_5 = curve2_10;
+
+rimouter_transform_curve3_5 = curve3_10;
+
+rimouter_transform_curve4_5 = curve4_10;
+
+rimouter_transform_curve5_5 = curve5_10;
+
+riminner_transform_flat_5 = flat_11;
+
+riminner_transform_curve1_5 = curve1_11;
+
+riminner_transform_curve2_5 = curve2_11;
+
+riminner_transform_curve3_5 = curve3_11;
+
+riminner_transform_curve4_5 = curve4_11;
+
+riminner_transform_curve5_5 = curve5_11;
+
+ltprotoleft_transform_ltrimouter = ltrimouter;
+
+ltprotoleft_transform_ltriminner = ltriminner;
+
+ltrimouter = ltrimouter_transform_ltflat | ltrimouter_transform_ltcurve1 | ltrimouter_transform_ltcurve2 | ltrimouter_transform_ltcurve3 | ltrimouter_transform_ltcurve4 | ltrimouter_transform_ltcurve5;
+
+ltriminner = ltriminner_transform_ltflat | ltriminner_transform_ltcurve1 | ltriminner_transform_ltcurve2 | ltriminner_transform_ltcurve3 | ltriminner_transform_ltcurve4 | ltriminner_transform_ltcurve5;
+
+ltrimouter_transform_ltflat = ltflat;
+
+ltrimouter_transform_ltcurve1 = ltcurve1;
+
+ltrimouter_transform_ltcurve2 = ltcurve2;
+
+ltrimouter_transform_ltcurve3 = ltcurve3;
+
+ltrimouter_transform_ltcurve4 = ltcurve4;
+
+ltrimouter_transform_ltcurve5 = ltcurve5;
+
+ltriminner_transform_ltflat = ltflat_1;
+
+ltriminner_transform_ltcurve1 = ltcurve1_1;
+
+ltriminner_transform_ltcurve2 = ltcurve2_1;
+
+ltriminner_transform_ltcurve3 = ltcurve3_1;
+
+ltriminner_transform_ltcurve4 = ltcurve4_1;
+
+ltriminner_transform_ltcurve5 = ltcurve5_1;
+
+ltprotoleft_1 = ltprotoleft_transform_ltrimouter_1 | ltprotoleft_transform_ltriminner_1;
+
+ltprotoleft_transform_ltrimouter_1 = ltrimouter_1;
+
+ltprotoleft_transform_ltriminner_1 = ltriminner_1;
+
+ltrimouter_1 = ltrimouter_transform_ltflat_1 | ltrimouter_transform_ltcurve1_1 | ltrimouter_transform_ltcurve2_1 | ltrimouter_transform_ltcurve3_1 | ltrimouter_transform_ltcurve4_1 | ltrimouter_transform_ltcurve5_1;
+
+ltriminner_1 = ltriminner_transform_ltflat_1 | ltriminner_transform_ltcurve1_1 | ltriminner_transform_ltcurve2_1 | ltriminner_transform_ltcurve3_1 | ltriminner_transform_ltcurve4_1 | ltriminner_transform_ltcurve5_1;
+
+ltrimouter_transform_ltflat_1 = ltflat_2;
+
+ltrimouter_transform_ltcurve1_1 = ltcurve1_2;
+
+ltrimouter_transform_ltcurve2_1 = ltcurve2_2;
+
+ltrimouter_transform_ltcurve3_1 = ltcurve3_2;
+
+ltrimouter_transform_ltcurve4_1 = ltcurve4_2;
+
+ltrimouter_transform_ltcurve5_1 = ltcurve5_2;
+
+ltriminner_transform_ltflat_1 = ltflat_3;
+
+ltriminner_transform_ltcurve1_1 = ltcurve1_3;
+
+ltriminner_transform_ltcurve2_1 = ltcurve2_3;
+
+ltriminner_transform_ltcurve3_1 = ltcurve3_3;
+
+ltriminner_transform_ltcurve4_1 = ltcurve4_3;
+
+ltriminner_transform_ltcurve5_1 = ltcurve5_3;
+
+ltprotoleft_2 = ltprotoleft_transform_ltrimouter_2 | ltprotoleft_transform_ltriminner_2;
+
+ltprotoleft_transform_ltrimouter_2 = ltrimouter_2;
+
+ltprotoleft_transform_ltriminner_2 = ltriminner_2;
+
+ltrimouter_2 = ltrimouter_transform_ltflat_2 | ltrimouter_transform_ltcurve1_2 | ltrimouter_transform_ltcurve2_2 | ltrimouter_transform_ltcurve3_2 | ltrimouter_transform_ltcurve4_2 | ltrimouter_transform_ltcurve5_2;
+
+ltriminner_2 = ltriminner_transform_ltflat_2 | ltriminner_transform_ltcurve1_2 | ltriminner_transform_ltcurve2_2 | ltriminner_transform_ltcurve3_2 | ltriminner_transform_ltcurve4_2 | ltriminner_transform_ltcurve5_2;
+
+ltrimouter_transform_ltflat_2 = ltflat_4;
+
+ltrimouter_transform_ltcurve1_2 = ltcurve1_4;
+
+ltrimouter_transform_ltcurve2_2 = ltcurve2_4;
+
+ltrimouter_transform_ltcurve3_2 = ltcurve3_4;
+
+ltrimouter_transform_ltcurve4_2 = ltcurve4_4;
+
+ltrimouter_transform_ltcurve5_2 = ltcurve5_4;
+
+ltriminner_transform_ltflat_2 = ltflat_5;
+
+ltriminner_transform_ltcurve1_2 = ltcurve1_5;
+
+ltriminner_transform_ltcurve2_2 = ltcurve2_5;
+
+ltriminner_transform_ltcurve3_2 = ltcurve3_5;
+
+ltriminner_transform_ltcurve4_2 = ltcurve4_5;
+
+ltriminner_transform_ltcurve5_2 = ltcurve5_5;
+
+ltprotoleft_3 = ltprotoleft_transform_ltrimouter_3 | ltprotoleft_transform_ltriminner_3;
+
+ltprotoleft_transform_ltrimouter_3 = ltrimouter_3;
+
+ltprotoleft_transform_ltriminner_3 = ltriminner_3;
+
+ltrimouter_3 = ltrimouter_transform_ltflat_3 | ltrimouter_transform_ltcurve1_3 | ltrimouter_transform_ltcurve2_3 | ltrimouter_transform_ltcurve3_3 | ltrimouter_transform_ltcurve4_3 | ltrimouter_transform_ltcurve5_3;
+
+ltriminner_3 = ltriminner_transform_ltflat_3 | ltriminner_transform_ltcurve1_3 | ltriminner_transform_ltcurve2_3 | ltriminner_transform_ltcurve3_3 | ltriminner_transform_ltcurve4_3 | ltriminner_transform_ltcurve5_3;
+
+ltrimouter_transform_ltflat_3 = ltflat_6;
+
+ltrimouter_transform_ltcurve1_3 = ltcurve1_6;
+
+ltrimouter_transform_ltcurve2_3 = ltcurve2_6;
+
+ltrimouter_transform_ltcurve3_3 = ltcurve3_6;
+
+ltrimouter_transform_ltcurve4_3 = ltcurve4_6;
+
+ltrimouter_transform_ltcurve5_3 = ltcurve5_6;
+
+ltriminner_transform_ltflat_3 = ltflat_7;
+
+ltriminner_transform_ltcurve1_3 = ltcurve1_7;
+
+ltriminner_transform_ltcurve2_3 = ltcurve2_7;
+
+ltriminner_transform_ltcurve3_3 = ltcurve3_7;
+
+ltriminner_transform_ltcurve4_3 = ltcurve4_7;
+
+ltriminner_transform_ltcurve5_3 = ltcurve5_7;
+
+ltprotoleft_4 = ltprotoleft_transform_ltrimouter_4 | ltprotoleft_transform_ltriminner_4;
+
+ltprotoleft_transform_ltrimouter_4 = ltrimouter_4;
+
+ltprotoleft_transform_ltriminner_4 = ltriminner_4;
+
+ltrimouter_4 = ltrimouter_transform_ltflat_4 | ltrimouter_transform_ltcurve1_4 | ltrimouter_transform_ltcurve2_4 | ltrimouter_transform_ltcurve3_4 | ltrimouter_transform_ltcurve4_4 | ltrimouter_transform_ltcurve5_4;
+
+ltriminner_4 = ltriminner_transform_ltflat_4 | ltriminner_transform_ltcurve1_4 | ltriminner_transform_ltcurve2_4 | ltriminner_transform_ltcurve3_4 | ltriminner_transform_ltcurve4_4 | ltriminner_transform_ltcurve5_4;
+
+ltrimouter_transform_ltflat_4 = ltflat_8;
+
+ltrimouter_transform_ltcurve1_4 = ltcurve1_8;
+
+ltrimouter_transform_ltcurve2_4 = ltcurve2_8;
+
+ltrimouter_transform_ltcurve3_4 = ltcurve3_8;
+
+ltrimouter_transform_ltcurve4_4 = ltcurve4_8;
+
+ltrimouter_transform_ltcurve5_4 = ltcurve5_8;
+
+ltriminner_transform_ltflat_4 = ltflat_9;
+
+ltriminner_transform_ltcurve1_4 = ltcurve1_9;
+
+ltriminner_transform_ltcurve2_4 = ltcurve2_9;
+
+ltriminner_transform_ltcurve3_4 = ltcurve3_9;
+
+ltriminner_transform_ltcurve4_4 = ltcurve4_9;
+
+ltriminner_transform_ltcurve5_4 = ltcurve5_9;
+
+hull_ext_1 = hull_armor_1 | fender_lt_1 | fender_rt_1 | drvr_scopes_1 | tool_boxes_1 | exhaust_port_1 | eng_oil_tank_1 | ext_fuel_tanks_1 | headlight_1 | spare_track_1;
+
+hull_int_1 = driver_1 | fuel_system_1 | firewall_1 | fire_sup_sys_1 | elec_sys_1 | infrared_sys_1 | r537tool_box_1 | storage_box_1 | air_bottles_1 | radiometric_1 | bilge_1 | exhaust_fan_1 | rear_ammo_rack_1 | eng_comp_1 | drvr_controls_1 | hullammo_1;
+
+hull_air_1 = hair02_1 | hair05_1 | fair07_1 | fair08_1;
+
+tur_ext_1 = tur_armor_1 | cmmdr_ir_light_1 | r739ir_detctor_1 | searchlight_1 | maingun_1 | a127machine_gun_1 | r748ldr_scope_1 | r741gnr_scope_1 | antenna_1 | r756snorkel_1 | gun_cover_1 | cmdr_periscopes_1 | gun_sight_1;
+
+tur_int_1 = gunner_1 | commander_1 | loader_1 | slip_ring_1 | turfloor_1 | gun_control_1 | hyd_sys_1 | ventilator_1 | amplidyne_1 | turammo_1;
+
+tur_air_1 = tair02_1 | gunair01_1;
+
+roadwheellt4_1 = r9tread_1 | r29hub_1 | r96axle_1 | r97arm_1 | moon4_1 | lt4flange_1;
+
+roadwheellt5_1 = r10tread_1 | r30hub_1 | r101axle_1 | r102arm_1 | moon5_1 | lt5flange_1;
+
+roadwheelrt1_1 = r1tread_1 | r21hub_1 | r106axle_1 | r107arm_1 | Moon1_1 | rt1flange_1;
+
+roadwheelrt2_1 = r2tread_1 | r22hub_1 | r111axle_1 | r112arm_1 | Moon2_1 | rt2flange_1;
+
+roadwheelrt3_1 = r3tread_1 | r23hub_1 | r116axle_1 | r117arm_1 | Moon3_1 | rt3flange_1;
+
+roadwheelrt4_1 = r4tread_1 | r24hub_1 | r121axle_1 | r122arm_1 | Moon4_1 | rt4flange_1;
+
+roadwheelrt5_1 = r5tread_1 | r25hub_1 | r126axle_1 | r127arm_1 | Moon5_1 | rt5flange_1;
+
+roadwheellt1_1 = r6tread_1 | r26hub_1 | r81axle_1 | r82arm_1 | moon1_1 | lt1flange_1;
+
+roadwheellt2_1 = r7tread_1 | r27hub_1 | r86axle_1 | r87arm_1 | moon2_1 | lt2flange_1;
+
+roadwheellt3_1 = r8tread_1 | r28hub_1 | r91axle_1 | r92arm_1 | moon3_1 | lt3flange_1;
+
+torsion_barlt1_1 = r83hub_1 | r84housing_1 | r85bar_1;
+
+torsion_barlt2_1 = r88hub_1 | r89housing_1 | r90bar_1;
+
+torsion_barlt3_1 = r93hub_1 | r94housing_1 | r95bar_1;
+
+torsion_barlt4_1 = r98hub_1 | r99housing_1 | r100bar_1;
+
+torsion_barlt5_1 = r103hub_1 | r104housing_1 | r105bar_1;
+
+torsion_barrt4_1 = r123hub_1 | r124housing_1 | r125bar_1;
+
+torsion_barrt5_1 = r128hub_1 | r129housing_1 | r130bar_1;
+
+torsion_barrt1_1 = r108hub_1 | r109housing_1 | r110bar_1;
+
+torsion_barrt2_1 = r113hub_1 | r114housing_1 | r115bar_1;
+
+torsion_barrt3_1 = r118hub_1 | r119housing_1 | r120bar_1;
+
+shockltrear_1 = r136connector_1 | r137arm1_1 | r138arm2_1 | r139shock_1 | r140housing_1;
+
+shockltfront_1 = r131connector_1 | r132arm1_1 | r133arm2_1 | r134shock_1 | r135housing_1;
+
+shockrtfront_1 = r141connector_1 | r142arm1_1 | r143arm2_1 | r144shock_1 | r145housing_1;
+
+shockrtrear_1 = r146connector_1 | r147arm1_1 | r148arm2_1 | r149shock_1 | r150housing_1;
+
+track_adjust_1 = r151rt_1 | r152lt_1;
+
+left_track_1 = r57_1 | r58_1 | r59_1 | r56_1 | r60_1 | r61_1 | r62_1 | r63_1 | r64_1 | teethlt_1;
+
+right_track_1 = r48_1 | r49_1 | r47_1 | r50_1 | r51_1 | r52_1 | r53_1 | r54_1 | r55_1 | teethrt_1;
+
+sprocketlt_1 = r32teeth_1 | drumlt_1 | r40hub_1;
+
+sprocketrt_1 = r31teeth_1 | drumrt_1 | r39hub_1;
+
+idlerrt_1 = r41rim_1 | r43disc_1 | r45hub_1;
+
+idlerlt_1 = r42rim_1 | r44disc_1 | r46hub_1;
+
+hull_armor_1 = rt_side_1 | bottom_1 | top_1 | upper_glacis_1 | lower_glacis_1 | back_1 | driver_hatch_1 | eng_hatch_1 | radiator_hatch_1 | trans_hatch_1 | final_dr_housng_1 | lt_side_1;
+
+fender_lt_1 = r197_1 | r205_1 | r206_1 | r207_1 | r208_1 | r213_1 | r214_1 | r217_1 | supportslt_1;
+
+fender_rt_1 = r198_1 | r209_1 | r210_1 | r211_1 | r212_1 | r215_1 | r216_1 | r218_1 | supportsrt_1;
+
+drvr_scopes_1 = r657_1 | r658_1;
+
+tool_boxes_1 = r199_1 | r201_1 | r204_1 | r222_1;
+
+exhaust_port_1 = r202_1;
+
+eng_oil_tank_1 = r203case_1 | r827oil_1;
+
+ext_fuel_tanks_1 = r219case_1 | r220case_1 | r221case_1 | r782fuel_1 | r783fuel_1 | r784fuel_1;
+
+headlight_1 = r223ir_light_1 | r224light_1 | r225shield_1;
+
+spare_track_1 = r200_1;
+
+driver_1 = r548neck_1 | r549torso_1 | r547head_1 | r552loarm_lt_1 | r551uparm_rt_1 | r557loleg_rt_1 | r550uparm_lt_1 | r556loleg_lt_1 | r555upleg_rt_1 | r553loarm_rt_1 | r554upleg_lt_1 | drvr_seat_1;
+
+fuel_system_1 = tanks_1 | a3wayvalve_1 | primer_1 | fuel_lines_1;
+
+firewall_1 = r526_1 | r527_1 | r528_1 | r529_1;
+
+fire_sup_sys_1 = r531control_1 | r561relay_1;
+
+elec_sys_1 = r530batteries_1 | r532relay_1 | r533fan_cntrl_1 | course_indictr_1 | r538black_box_1;
+
+infrared_sys_1 = r536instrument_1 | r614power_1;
+
+storage_box_1 = r539_1 | r540_1;
+
+air_bottles_1 = r558case_1 | r559case_1 | r789air_1 | r790air_1;
+
+radiometric_1 = r560_1;
+
+bilge_1 = r611pump_1 | r612pipe_1 | r613pipe_1;
+
+exhaust_fan_1 = r615fan_1 | r616motor_1;
+
+rear_ammo_rack_1 = r629_1 | r630_1 | r631_1 | r632_1 | r633_1;
+
+eng_comp_1 = engine_1 | transmission_1 | final_drive_lt_1 | final_drive_rt_1 | brake_rt_1 | brake_lt_1 | cooling_fan_1 | radiator_water_1 | radiator_oil_1 | air_filter_1 | transfer_1 | final_dr_gears_1;
+
+drvr_controls_1 = steering_brake_1 | shifting_1 | parking_brake_1 | clutch_1 | speed_cntrl_1;
+
+hullammo_1 = inrtfuel_1 | inltfuel_1 | onleftwall_1 | inammorack_1;
+
+hair02_1 = r595_1 | r596_1 | r597_1 | r598_1 | r599_1 | r600_1 | r601_1 | r602_1 | r603_1 | r604_1 | r605_1 | r815_1 | r816_1 | r817_1 | r818_1 | r819_1 | r820_1 | r821_1 | r822_1 | r823_1 | r824_1 | r825_1 | r828_1 | r829_1 | r830_1 | r831_1 | r832_1 | hullair1r_1 | hullair2r_1 | hullair4r_1 | hullair3r_1 | hullair5r_1 | hullair6r_1 | hullair7r_1 | hullair8r_1 | hullair9r_1 | hullair10r_1 | hullair11r_1 | hullair20r_1 | hullair21r_1 | hullair22r_1 | hullair13r_1;
+
+hair05_1 = r606_1 | r607_1 | r608_1 | r609_1 | r610_1 | r645_1 | r833_1 | r834_1 | r835_1 | r836_1 | r837_1;
+
+fair07_1 = fair071_1 | fair072_1 | fair073_1 | fair074_1;
+
+fair08_1 = fair081_1 | fair082_1;
+
+rt_side_1 = r160_1 | r161_1 | r162_1 | r176_1 | r178_1 | r180_1 | r182_1 | r184_1 | r186_1 | r188_1 | r190_1 | r196_1 | r653_1 | r654_1 | r163_1 | r164_1 | r169_1 | idlersupport_1 | r525_1 | r848_1;
+
+bottom_1 = r170_1 | r193_1 | r194_1;
+
+top_1 = r191_1 | r192_1;
+
+upper_glacis_1 = r171_1 | r172_1;
+
+lower_glacis_1 = r173_1 | r174_1;
+
+back_1 = r165_1;
+
+driver_hatch_1 = r655_1 | r656_1;
+
+eng_hatch_1 = r646_1;
+
+radiator_hatch_1 = r649_1 | r650_1;
+
+trans_hatch_1 = r647_1 | r648_1;
+
+final_dr_housng_1 = r153_1 | r154_1;
+
+lt_side_1 = r155_1 | r156_1 | r157_1 | r175_1 | r177_1 | r179_1 | r181_1 | r183_1 | r185_1 | r187_1 | r189_1 | r195_1 | r652_1 | r158_1 | r159_1 | r168_1 | idler_support_1 | r524_1 | r847_1 | tringr_1;
+
+supportslt_1 = r634_1 | r635_1 | r636_1 | r637_1 | r638_1 | r639_1;
+
+supportsrt_1 = r640_1 | r641_1 | r642_1 | r643_1 | r644_1;
+
+idlersupport_1 = r166_1;
+
+idler_support_1 = r167_1;
+
+drvr_seat_1 = r541bot_1 | r542back_1 | ltside_1 | rtside_1;
+
+tanks_1 = fronttank_1 | rtammotank_1 | ltammotank_1 | midtank_1;
+
+a3wayvalve_1 = r684_1 | r685_1;
+
+primer_1 = r686_1 | r687_1;
+
+fuel_lines_1 = midtank2front_1 | ammotank2valve_1 | frnttank2valve_1 | toengine_1;
+
+course_indictr_1 = r534_1 | r535converter_1;
+
+engine_1 = r767_1 | r768_1 | r769_1;
+
+transmission_1 = r770_1;
+
+final_drive_lt_1 = r771_1;
+
+final_drive_rt_1 = r772_1;
+
+brake_rt_1 = r774_1;
+
+brake_lt_1 = r773_1;
+
+cooling_fan_1 = r775_1;
+
+radiator_water_1 = r776_1;
+
+radiator_oil_1 = r777_1;
+
+air_filter_1 = r778_1;
+
+transfer_1 = r779_1 | r780_1 | r781_1;
+
+final_dr_gears_1 = r841_1 | r842_1 | r843_1 | r844_1;
+
+steering_brake_1 = r659lever_1 | r662rod_1 | r660lever_1 | r661axle_1;
+
+shifting_1 = r663lever_1 | r664axle_1 | r665rod1_1 | r666rod2_1 | r667rod3_1;
+
+parking_brake_1 = r668axle_1 | r669arm_1 | r670pedal_1 | r673rod_1 | r675rod_1;
+
+clutch_1 = r671pedal_1 | r672arm_1 | r674rod_1 | r676rod_1;
+
+speed_cntrl_1 = r677pedal_1 | r678rod_1 | r679rod_1 | handthrottle_1;
+
+inrtfuel_1 = ce1_1 | ce2_1 | ce3_1 | ce4_1 | ce5_1 | ce6_1 | ce7_1 | ce8_1;
+
+inltfuel_1 = ke1_1 | ke2_1 | ke3_1 | ke4_1 | ke5_1 | ke6_1 | ke7_1 | ke8_1;
+
+onleftwall_1 = ke9_1 | ke10_1;
+
+inammorack_1 = he1_1 | he2_1 | he3_1 | he4_1 | he5_1 | he6_1 | he8_1 | he9_1 | he10_1 | he11_1 | he13_1 | he14_1 | he15_1 | he16_1 | he17_1 | he18_1 | he19_1 | he20_1;
+
+ltside_1 = r543_1 | r545_1;
+
+rtside_1 = r544_1 | r546_1;
+
+fronttank_1 = r226tank_1 | r227tank_1 | r522tank_1 | fuel_1;
+
+rtammotank_1 = r230tank_1 | r228abutment_1 | ammosleeves_1 | r239fuel_1;
+
+ltammotank_1 = r229abutment_1 | r304tank_1 | ammo_sleeves_1 | r313fuel_1;
+
+midtank_1 = r523tank_1 | r788fuel_1;
+
+midtank2front_1 = r682_1 | r683_1;
+
+ammotank2valve_1 = r688_1;
+
+frnttank2valve_1 = r689_1;
+
+toengine_1 = r690_1 | r691_1 | r692_1 | r693_1;
+
+fuel_1 = r785_1 | r786_1 | r787_1;
+
+ammosleeves_1 = r231_1 | r232_1 | r233_1 | r234_1 | r235_1 | r236_1 | r237_1 | r238_1;
+
+ammo_sleeves_1 = r305_1 | r306_1 | r307_1 | r308_1 | r309_1 | r310_1 | r311_1 | r312_1;
+
+handthrottle_1 = r680_1 | r681_1;
+
+ce1_1 = r246liner_1 | r240case_1 | r242case_1 | r241prop_1 | r245he_1 | r243projo_1 | r244projo_1 | r247projo_1;
+
+ce2_1 = r248case_1 | r249prop_1 | r254liner_1 | r250case_1 | r253he_1 | r251projo_1 | r252projo_1 | r255projo_1;
+
+ce3_1 = r259projo_1 | r256case_1 | r258case_1 | r257prop_1 | r261he_1 | r260projo_1 | r263projo_1 | r262liner_1;
+
+ce4_1 = r267projo_1 | r268projo_1 | r264case_1 | r266case_1 | r265prop_1 | r269he_1 | r270liner_1 | r271projo_1;
+
+ce5_1 = r279projo_1 | r278liner_1 | r272case_1 | r274case_1 | r273prop_1 | r277he_1 | r275projo_1 | r276projo_1;
+
+ce6_1 = r287projo_1 | r286liner_1 | r280case_1 | r282case_1 | r281prop_1 | r285he_1 | r283projo_1 | r284projo_1;
+
+ce7_1 = r288case_1 | r289prop_1 | r295projo_1 | r294liner_1 | r290case_1 | r293he_1 | r291projo_1 | r292projo_1;
+
+ce8_1 = r299projo_1 | r296case_1 | r298case_1 | r297prop_1 | r301he_1 | r300projo_1 | r303projo_1 | r302liner_1;
+
+ke1_1 = r317pen_1 | r318pen_1 | r319pen_1 | r314case_1 | r316case_1 | r315prop_1 | r850prop_1;
+
+ke2_1 = r320case_1 | r322case_1 | r321prop_1 | r323pen_1 | r324pen_1 | r325pen_1 | r851prop_1;
+
+ke3_1 = r329pen_1 | r326case_1 | r328case_1 | r327prop_1 | r330pen_1 | r331pen_1 | r852prop_1;
+
+ke4_1 = r336pen_1 | r337pen_1 | r332case_1 | r334case_1 | r333prop_1 | r335pen_1 | r853prop_1;
+
+ke5_1 = r338case_1 | r339prop_1 | r340case_1 | r341pen_1 | r342pen_1 | r343pen_1 | r854prop_1;
+
+ke6_1 = r347pen_1 | r348pen_1 | r349pen_1 | r344case_1 | r346case_1 | r345prop_1 | r855prop_1;
+
+ke7_1 = r354pen_1 | r355pen_1 | r350case_1 | r352case_1 | r351prop_1 | r353pen_1 | r856prop_1;
+
+ke8_1 = r359pen_1 | r356case_1 | r358case_1 | r357prop_1 | r360pen_1 | r361pen_1 | r857prop_1;
+
+ke9_1 = r697pen_1 | r698pen_1 | r699pen_1 | r694case_1 | r696case_1 | r695prop_1 | r858prop_1;
+
+ke10_1 = r700case_1 | r702case_1 | r701prop_1 | r703pen_1 | r704pen_1 | r705pen_1 | r859prop_1;
+
+he1_1 = r368projo_1 | r362case_1 | r364case_1 | r363prop_1 | r367he_1 | r369he_1 | r365projo_1 | r366projo_1;
+
+he2_1 = r376projo_1 | r370case_1 | r372case_1 | r371prop_1 | r375he_1 | r377he_1 | r373projo_1 | r374projo_1;
+
+he3_1 = r378case_1 | r379prop_1 | r380case_1 | r383he_1 | r385he_1 | r381projo_1 | r382projo_1 | r384projo_1;
+
+he4_1 = r389projo_1 | r386case_1 | r388case_1 | r387prop_1 | r391he_1 | r393he_1 | r390projo_1 | r392projo_1;
+
+he5_1 = r399he_1 | r397projo_1 | r398projo_1 | r394case_1 | r396case_1 | r395prop_1 | r400projo_1 | r401he_1;
+
+he6_1 = r402case_1 | r404case_1 | r403prop_1 | r407he_1 | r409he_1 | r405projo_1 | r406projo_1 | r408projo_1;
+
+he8_1 = r418case_1 | r419prop_1 | r420case_1 | r423he_1 | r425he_1 | r421projo_1 | r422projo_1 | r424projo_1;
+
+he9_1 = r429projo_1 | r426case_1 | r428case_1 | r427prop_1 | r431he_1 | r433he_1 | r430projo_1 | r432projo_1;
+
+he10_1 = r434case_1 | r436case_1 | r435prop_1 | r439he_1 | r437projo_1 | r438projo_1 | r440projo_1 | r441he_1;
+
+he11_1 = r448projo_1 | r442case_1 | r444case_1 | r443prop_1 | r447he_1 | r449he_1 | r445projo_1 | r446projo_1;
+
+he13_1 = r458case_1 | r459prop_1 | r460case_1 | r463he_1 | r465he_1 | r461projo_1 | r462projo_1 | r464projo_1;
+
+he14_1 = r469projo_1 | r466case_1 | r468case_1 | r467prop_1 | r471he_1 | r473he_1 | r470projo_1 | r472projo_1;
+
+he15_1 = r477projo_1 | r478projo_1 | r474case_1 | r476case_1 | r475prop_1 | r479he_1 | r480projo_1 | r481he_1;
+
+he16_1 = r485projo_1 | r486projo_1 | r488projo_1 | r482case_1 | r484case_1 | r483prop_1 | r487he_1 | r489he_1;
+
+he17_1 = r494projo_1 | r496projo_1 | r490case_1 | r492case_1 | r491prop_1 | r495he_1 | r497he_1 | r493projo_1;
+
+he18_1 = r498case_1 | r499prop_1 | r500case_1 | r503he_1 | r505he_1 | r501projo_1 | r502projo_1 | r504projo_1;
+
+he19_1 = r506case_1 | r508case_1 | r507prop_1 | r509projo_1 | r511he_1 | r513he_1 | r510projo_1 | r512projo_1;
+
+he20_1 = r514case_1 | r516case_1 | r515prop_1 | r519he_1 | r517projo_1 | r518projo_1 | r520projo_1 | r521he_1;
+
+tur_armor_1 = r717_1 | r718_1 | r719_1 | r720_1 | r725_1 | r726_1 | r727_1 | r728_1 | r733_1 | tur_ring_1 | r738ir_base_1 | gnnr_scope_base_1 | cmdr_hatch_base_1 | ldr_hatch_base_1 | shellhatch_base_1 | r746ldr_hatch_1 | shell_hatch_1 | vent_hatch_1 | r743cmdr_hatch_1;
+
+cmmdr_ir_light_1 = r744lamp_1 | brackets_1;
+
+searchlight_1 = r757lamp_1 | r805_1;
+
+maingun_1 = barrel_1 | breech_1 | coax_762_1;
+
+a127machine_gun_1 = r747_1 | r795_1 | r796_1 | r797_1 | r798_1 | r799_1 | r800_1;
+
+antenna_1 = r737_1 | r791_1 | r792_1;
+
+gun_cover_1 = r879_1;
+
+cmdr_periscopes_1 = r749_1 | r801_1 | r802_1 | r803_1;
+
+gun_sight_1 = r759_1 | r813_1;
+
+gunner_1 = r562head_1 | r563neck_1 | r564torso_1 | r565uparm_lt_1 | r566uparm_rt_1 | r567loarm_lt_1 | r568loarm_rt_1 | r569upleg_lt_1 | r570upleg_rt_1 | r571loleg_lt_1 | r572loleg_rt_1 | gnrseat_1;
+
+commander_1 = r578loarm_lt_1 | r577uparm_rt_1 | r576uparm_lt_1 | r574neck_1 | r575torso_1 | r573head_1 | r579loarm_rt_1 | r583loleg_rt_1 | r582loleg_lt_1 | r581upleg_rt_1 | r580upleg_lt_1 | cmdrseat_1;
+
+loader_1 = r588uparmrt_1 | r589loarmlt_1 | r585neck_1 | r587uparmlt_1 | r586torso_1 | r584head_1 | r591upleglt_1 | r594lolegrt_1 | r592uplegrt_1 | r593loleglt_1 | r590loarmrt_1 | r620seat_1;
+
+slip_ring_1 = r622_1 | r623_1 | supports_1;
+
+turfloor_1 = r621_1;
+
+gun_control_1 = laying_mech_1 | traverse_mech_1 | elevating_mech_1;
+
+hyd_sys_1 = r762pump_1 | r763motor_1;
+
+ventilator_1 = r752blower_1 | r753duct_1 | r804duct_1;
+
+amplidyne_1 = r755_1;
+
+turammo_1 = inturbasket_1 | inturret_1;
+
+tair02_1 = r721_1 | r722_1 | r723_1 | r724_1 | r729_1 | r730_1 | r731_1 | r732_1 | r734_1 | r736_1 | r765_1 | r766_1 | r838_1 | r839_1 | r862_1 | r880_1 | r881_1 | r882_1 | r883_1 | r884_1 | r845_1 | r846_1;
+
+gunair01_1 = r849_1;
+
+tur_ring_1 = r735_1;
+
+gnnr_scope_base_1 = r740_1;
+
+cmdr_hatch_base_1 = r742_1;
+
+ldr_hatch_base_1 = r745_1;
+
+shellhatch_base_1 = r826_1;
+
+shell_hatch_1 = r750_1;
+
+vent_hatch_1 = r751_1;
+
+brackets_1 = r793_1 | r794_1;
+
+barrel_1 = r758_1 | r806_1 | r807evac_1 | r808_1 | r809_1 | r840_1;
+
+breech_1 = r810_1 | r811_1;
+
+coax_762_1 = r764_1 | r814mount_1;
+
+gnrseat_1 = r617seat_1 | r628spprt_1;
+
+cmdrseat_1 = r618_1 | r619_1;
+
+supports_1 = r624_1 | r625_1 | r626_1 | r627_1;
+
+laying_mech_1 = r760_1;
+
+traverse_mech_1 = r761_1;
+
+elevating_mech_1 = r754_1;
+
+inturbasket_1 = he7_1 | he12_1;
+
+inturret_1 = ke11_1 | ke12_1;
+
+he7_1 = r410case_1 | r412case_1 | r411prop_1 | r415he_1 | r417he_1 | r413projo_1 | r414projo_1 | r416projo_1;
+
+he12_1 = r450case_1 | r452case_1 | r451prop_1 | r455he_1 | r457he_1 | r453projo_1 | r454projo_1 | r456projo_1;
+
+ke11_1 = r709pen_1 | r706case_1 | r708case_1 | r707prop_1 | r710pen_1 | r711pen_1 | r860prop_1;
+
+ke12_1 = r715pen_1 | r716pen_1 | r712case_1 | r714case_1 | r713prop_1 | r812pen_1 | r861prop_1;
+
+lt4flange_1 = lt4riminner_1 | lt4rimouter_1;
+
+lt5flange_1 = lt5riminner_1 | lt5rimouter_1;
+
+rt1flange_1 = rt1riminner_1 | rt1rimouter_1;
+
+rt2flange_1 = rt2riminner_1 | rt2rimouter_1;
+
+rt3flange_1 = rt3riminner_1 | rt3rimouter_1;
+
+rt4flange_1 = rt4riminner_1 | rt4rimouter_1;
+
+rt5flange_1 = rt5riminner_1 | rt5rimouter_1;
+
+lt1flange_1 = lt1riminner_1 | lt1rimouter_1;
+
+lt2flange_1 = lt2riminner_1 | lt2rimouter_1;
+
+lt3flange_1 = lt3riminner_1 | lt3rimouter_1;
+
+teethlt_1 = r76_1 | r77_1 | r78_1 | r79_1 | r73_1 | r74_1 | r75_1 | r80_1;
+
+teethrt_1 = r66_1 | r67_1 | r68_1 | r69_1 | r65_1 | r70_1 | r71_1 | r72_1;
+
+drumlt_1 = r34_1 | r36_1 | r38_1;
+
+drumrt_1 = r33_1 | r35_1 | r37_1;
+
+lt4riminner_1 = lt4flat_1 | lt4curve1_1 | lt4curve2_1 | lt4curve3_1 | lt4curve4_1 | lt4curve5_1;
+
+lt4rimouter_1 = lt4otflat_1 | lt4otcurve1_1 | lt4otcurve2_1 | lt4otcurve3_1 | lt4otcurve4_1 | lt4otcurve5_1;
+
+lt5riminner_1 = lt5flat_1 | lt5curve1_1 | lt5curve2_1 | lt5curve3_1 | lt5curve4_1 | lt5curve5_1;
+
+lt5rimouter_1 = lt5otflat_1 | lt5otcurve1_1 | lt5otcurve2_1 | lt5otcurve3_1 | lt5otcurve4_1 | lt5otcurve5_1;
+
+rt1riminner_1 = rt1flat_1 | rt1curve1_1 | rt1curve2_1 | rt1curve3_1 | rt1curve4_1 | rt1curve5_1;
+
+rt1rimouter_1 = rt1otflat_1 | rt1otcurve1_1 | rt1otcurve2_1 | rt1otcurve3_1 | rt1otcurve4_1 | rt1otcurve5_1;
+
+rt2riminner_1 = rt2flat_1 | rt2curve1_1 | rt2curve2_1 | rt2curve3_1 | rt2curve4_1 | rt2curve5_1;
+
+rt2rimouter_1 = rt2otflat_1 | rt2otcurve1_1 | rt2otcurve2_1 | rt2otcurve3_1 | rt2otcurve4_1 | rt2otcurve5_1;
+
+rt3riminner_1 = rt3flat_1 | rt3curve1_1 | rt3curve2_1 | rt3curve3_1 | rt3curve4_1 | rt3curve5_1;
+
+rt3rimouter_1 = rt3otflat_1 | rt3otcurve1_1 | rt3otcurve2_1 | rt3otcurve3_1 | rt3otcurve4_1 | rt3otcurve5_1;
+
+rt4riminner_1 = rt4flat_1 | rt4curve1_1 | rt4curve2_1 | rt4curve3_1 | rt4curve4_1 | rt4curve5_1;
+
+rt4rimouter_1 = rt4otflat_1 | rt4otcurve1_1 | rt4otcurve2_1 | rt4otcurve3_1 | rt4otcurve4_1 | rt4otcurve5_1;
+
+rt5riminner_1 = rt5flat_1 | rt5curve1_1 | rt5curve2_1 | rt5curve3_1 | rt5curve4_1 | rt5curve5_1;
+
+rt5rimouter_1 = rt5otflat_1 | rt5otcurve1_1 | rt5otcurve2_1 | rt5otcurve3_1 | rt5otcurve4_1 | rt5otcurve5_1;
+
+lt1riminner_1 = lt1flat_1 | lt1curve1_1 | lt1curve2_1 | lt1curve3_1 | lt1curve4_1 | lt1curve5_1;
+
+lt1rimouter_1 = lt1otflat_1 | lt1otcurve1_1 | lt1otcurve2_1 | lt1otcurve3_1 | lt1otcurve4_1 | lt1otcurve5_1;
+
+lt2riminner_1 = lt2flat_1 | lt2curve1_1 | lt2curve2_1 | lt2curve3_1 | lt2curve4_1 | lt2curve5_1;
+
+lt2rimouter_1 = lt2otflat_1 | lt2otcurve1_1 | lt2otcurve2_1 | lt2otcurve3_1 | lt2otcurve4_1 | lt2otcurve5_1;
+
+lt3riminner_1 = lt3flat_1 | lt3curve1_1 | lt3curve2_1 | lt3curve3_1 | lt3curve4_1 | lt3curve5_1;
+
+lt3rimouter_1 = lt3otflat_1 | lt3otcurve1_1 | lt3otcurve2_1 | lt3otcurve3_1 | lt3otcurve4_1 | lt3otcurve5_1;
+
+

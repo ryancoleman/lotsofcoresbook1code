@@ -1,0 +1,36 @@
+v1.5 (2014-09-02) Carlos Rosales Fernandez
+==========================================
+* Bugfix revision.
+* In src/opt/lbs3d-mpi fixed line 66 in postcollision.F90
+
+v1.4 (2013-12-05) Carlos Rosales Fernandez
+==========================================
+* Bugfix revision.
+* In all "devel" codes, corrected "init.F90", "collision.F90", "finalsave.F90",
+  and "stream.F90"
+
+v1.3 (2013-11-12) Carlos Rosales Fernandez
+==========================================
+* Added MPI version of LBS3D
+* Corrected compiler name to FC/MPIFC in Makefiles
+
+v1.2 (2013-09-10) Carlos Rosales Fernandez
+==========================================
+* Changed extension from .f to .F90 to automate preprocessing
+
+* Added performance focused version of ZSC-3D code
+
+* Divided src directory into optimized and standard
+
+* New installation procedure using Make instad of shell script
+
+v1.1 (2008-11-10) Carlos Rosales Fernandez
+==========================================
+
+* In "ll-dgr-src": Corrected "update_f.f", "vgrid.f" and
+  "common.f" to make sure periodic boundary conditions 
+  are treated poperly in the refined mesh.
+
+* In "zsc-dgr-src": Corrected "update.f", "vgrid.f" and
+  "common.f" to make sure periodic boundary conditions 
+  are treated poperly in the refined mesh.

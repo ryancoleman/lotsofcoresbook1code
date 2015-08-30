@@ -1,0 +1,16 @@
+APP=pca
+DEV=mic1
+
+scp train_$APP.mic $DEV:
+./gen_$APP - 30000000 0.1 1234 \
+   | ssh $DEV "export LD_LIBRARY_PATH=/tmp; ./train_$APP.mic - $APP.param" 
+
+scp $DEV:$APP.param .
+
+#clean up
+ssh $DEV "rm train_$APP.mic $APP.param"
+./gen_$APP - 1000 0 1 | ./pred_$APP $APP.param - > output.txt
+
+# create file for gnuplot
+tail -n +3 output.txt > plot.txt
+

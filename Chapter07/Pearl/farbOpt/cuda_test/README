@@ -1,0 +1,3 @@
+cudaTime.cu: a test case for a reduction on K20
+fcn.h: a generated autoencoder that acheives 1 TF/s on MIC
+myFunc.h: an example of how the objective funcion is implemented in the real code.

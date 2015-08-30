@@ -1,0 +1,11 @@
+APP=pca
+FLAGS="-DUSE_LINEAR -Xcompiler -std=c99,-fopenmp -O3 "
+INC=$HOME/install/include
+LIB=$HOME/install/lib
+
+
+nvcc $FLAGS ../train.cu -I . -I $INC -L $LIB -lnlopt -lm -o train_$APP.cuda
+
+#nvcc $FLAGS genData.c -o gen_$APP
+#nvcc $FLAGS ../pred.c -I . -lm -o pred_$APP
+

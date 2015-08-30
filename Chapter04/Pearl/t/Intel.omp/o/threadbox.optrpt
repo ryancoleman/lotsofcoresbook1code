@@ -1,0 +1,32 @@
+
+Begin optimization report for: THREADBOX_MODULE::BUILD_THREADBOX
+
+    Report from: OpenMP optimizations [openmp]
+
+OpenMP Construct at src/threadbox.f90(108,11)
+   remark #16205: OpenMP multithreaded code generation for MASTER was successful
+OpenMP Construct at src/threadbox.f90(111,11)
+   remark #16207: OpenMP multithreaded code generation for BARRIER was successful
+OpenMP Construct at src/threadbox.f90(100,11)
+   remark #16204: OpenMP multithreaded code generation for SINGLE was successful
+OpenMP Construct at src/threadbox.f90(91,11)
+   remark #16201: OpenMP DEFINED REGION WAS PARALLELIZED
+===========================================================================
+
+Begin optimization report for: THREADBOX_MODULE::DESTROY_THREADBOX
+
+    Report from: OpenMP optimizations [openmp]
+
+OpenMP Construct at src/threadbox.f90(40,11)
+   remark #16201: OpenMP DEFINED REGION WAS PARALLELIZED
+===========================================================================
+
+Begin optimization report for: THREADBOX_MODULE::TB_MULTIFAB_SETVAL
+
+    Report from: OpenMP optimizations [openmp]
+
+OpenMP Construct at src/threadbox.f90(550,14)
+   remark #16201: OpenMP DEFINED REGION WAS PARALLELIZED
+OpenMP Construct at src/threadbox.f90(560,14)
+   remark #16201: OpenMP DEFINED REGION WAS PARALLELIZED
+===========================================================================

@@ -1,0 +1,16 @@
+APP=nlpca
+FLAGS="-DUSE_ELLIOTT -c99 -O3 "
+INC=" -I $HOME/install/include "
+LIB=$HOME/install/lib
+
+pgcc $FLAGS genData.c -o gen_$APP
+
+pgcc $FLAGS ../train.c -I . $INC  -L $LIB -lnlopt -lm -o train_$APP.omp
+
+#pgcc -ta=nvidia,5.0,cc35 -Minfo -Minline=myFunc -acc $FLAGS ../train.c -I . $INC \
+#	-L $LIB -lnlopt -lm -o train_$APP.acc
+pgcc -Minline=myFunc -acc $FLAGS ../train.c -I . $INC \
+	-L $LIB -lnlopt -lm -o train_$APP.acc
+
+pgcc $FLAGS ../pred.c -I . -lm -o pred_$APP
+

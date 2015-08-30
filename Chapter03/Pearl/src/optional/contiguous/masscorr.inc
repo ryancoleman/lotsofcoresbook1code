@@ -1,0 +1,2 @@
+    contiguous :: t, s
+

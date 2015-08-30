@@ -1,0 +1,2 @@
+    contiguous :: mcol,kh,idx
+

@@ -1,0 +1,20 @@
+
+Begin optimization report for: TRANSPORT_PROPERTIES::GET_TRANSPORT_PROPERTIES
+
+    Report from: OpenMP optimizations [openmp]
+
+OpenMP Construct at src/transport_properties.f90(66,11) inlined into src/transport_properties.f90(43,13)
+   remark #16200: OpenMP DEFINED LOOP WAS PARALLELIZED
+OpenMP Construct at src/transport_properties.f90(61,11) inlined into src/transport_properties.f90(43,13)
+   remark #16201: OpenMP DEFINED REGION WAS PARALLELIZED
+===========================================================================
+
+Begin optimization report for: TRANSPORT_PROPERTIES::GET_TRANS_PROP_3D
+
+    Report from: OpenMP optimizations [openmp]
+
+OpenMP Construct at src/transport_properties.f90(66,11)
+   remark #16200: OpenMP DEFINED LOOP WAS PARALLELIZED
+OpenMP Construct at src/transport_properties.f90(61,11)
+   remark #16201: OpenMP DEFINED REGION WAS PARALLELIZED
+===========================================================================

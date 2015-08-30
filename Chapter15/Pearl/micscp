@@ -1,0 +1,17 @@
+#!/bin/sh
+if [ -n "$PBS_JOBID" -a -n "$TMPDIR" ]
+then
+  if [ -r $TMPDIR/.micssh/micssh-id_rsa ]
+  then
+    SSH_ARGS="-i $TMPDIR/.micssh/micssh-id_rsa"
+  fi
+fi
+isroot=$(echo $* | grep -c root)
+if [ $isroot -gt 0 ]
+then
+  echo This program may not be used to log into MICs as root
+  exit -1
+fi
+export SSH_ARGS
+scp $SSH_ARGS $*
+

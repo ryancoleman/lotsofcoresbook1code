@@ -1,0 +1,7 @@
+. ./common.sh
+NUM_NODES=2
+
+mpiexec -np $NUM_NODES ./mpiTrain_$APP.cuda NameDoesNotMatter.dat $APP.param gpu.$APP.timing.txt
+
+
+

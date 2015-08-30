@@ -1,0 +1,14 @@
+MaxSteps, RelaxSteps
+100, 20
+tStats, tSave
+250, 10000
+xmin, xmax, ymin, ymax, zmin, zmax
+1, 240, 1, 240, 1, 240
+rhoL, rhoH 
+1.0, 1000.0
+tauRho, taPhiu
+0.85, 0.70
+IntWidth, sigma, Gamma
+4.0, 0.01, 400.0
+Eo, pConv
+5.0, 0.01

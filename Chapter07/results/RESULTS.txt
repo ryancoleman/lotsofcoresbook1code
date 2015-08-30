@@ -1,0 +1,5 @@
+Latest results can be seen here:
+http://techenablement.com/deep-learning-teaching-code-achieves-13-pfs-on-the-ornl-titan-supercomputer/
+
+
+

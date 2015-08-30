@@ -1,0 +1,3 @@
+t/Intel.omp/o/src.o: ./src
+t/Intel.omp/o/timer_c.o: ./src/timer_c.c
+t/Intel.omp/o/LiDryer.o: ./src/LiDryer.c

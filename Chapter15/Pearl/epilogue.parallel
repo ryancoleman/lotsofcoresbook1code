@@ -1,0 +1,145 @@
+#!/bin/sh
+# epilogue gets 9 arguments:
+# 1 -- jobid
+# 2 -- userid
+# 3 -- grpid
+# 4 -- job name
+# 5 -- sessionid
+# 6 -- resource limits
+# 7 -- resources used
+# 8 -- queue
+# 9 -- account
+#
+jobid=$1
+user=$2
+tmp=/tmp/pbstmp.$jobid
+node=$(hostname -s)
+
+# make sure I have root-level tools available
+export PATH=/usr/local/sbin:/usr/sbin:/sbin:$PATH
+
+# Change MSR permissions back
+chmod 660 /dev/cpu/*/msr
+if [ -e /dev/cpuset/tasks ]
+then
+  for pid in $(cat /dev/cpuset/OS/tasks)
+  do
+    /bin/echo $pid >> /dev/cpuset/tasks
+  done
+  rmdir /dev/cpuset/OS
+  rmdir /dev/cpuset/$user
+  umount /dev/cpuset
+fi
+
+#  make sure only one copy of this runs
+if [ -e /tmp/.lck.$jobid ]
+then
+  logger "$0 aborting extraneous invocation"
+  exit 0
+else
+  touch /tmp/.lck.$jobid
+  logger "$0 start for $jobid"
+fi
+
+# make sure ssh times out
+export SSH="ssh -o ConnectTimeout=10"
+
+# kill off any stray processes by job owner, which is
+# safe since users can't share nodes
+reaver -k
+
+# only do MIC stuff if there's at least one MIC present
+if [ -e /sys/class/mic/mic0 ]
+then
+  # unexport any FSes exported to MICs and
+  # reboot MICs in case the user left behind
+  # any cruft on them
+  for mic in $( cd /sys/class/mic && echo mic* )
+  do
+    if [ -e /sys/class/mic/$mic ]
+    then
+      pids=$($SSH ${node}-$mic ps -el | grep -v root | grep $user | awk '{print $1}')
+      if [ -n "$pids" ]
+      then
+        $SSH ${node}-$mic kill -9 $pids
+      fi
+      $SSH ${node}-$mic umount -f $tmp \; umount -f /opt/intel \; umount -f /global/opt \; umount -f /sw/beacon >/dev/null 2>&1
+      export LUSTRE=/lustre/medusa
+      if [ -e $LUSTRE/$user ]
+      then
+        $SSH ${node}-$mic umount -f $LUSTRE/$user >/dev/null 2>&1
+      fi
+      /usr/sbin/exportfs -u ${node}-$mic:$tmp/$mic
+      /usr/sbin/exportfs -u ${node}-$mic:/opt/intel
+      if [ -e $LUSTRE/$user ]
+      then
+        /usr/sbin/exportfs -u ${node}-$mic:$LUSTRE/$user
+      fi
+    fi
+  done
+ # reboot the MICs
+ /usr/sbin/micctrl -Rw 2>&1 >/dev/null
+ if [ $(micctrl -s | grep -c online) -lt 4 ]
+ then
+    logger "$0 MIC restart failed, retrying"
+    /usr/sbin/micctrl -rfw 2>&1 >/dev/null
+    /usr/sbin/micctrl -bw 2>&1 >/dev/null
+    /sbin/service mpss start 2>&1 >/dev/null
+    if [ $(micctrl -s | grep -c online) -lt 4 ]
+    then
+        logger "$0 MIC restart failed twice, marking offline"
+        mail -s "$node MIC restart failed twice" beacon-alerts@nics.utk.edu << EOF 2>&1 >/dev/null
+MIC restart failed twice in $0, marking offline
+EOF
+        /global/opt/torque/default/bin/pbsnodes -o $node -N "$(date):  MIC restart failed twice" 2>&1 >/dev/null
+    else
+        logger "$0 second MIC restart succeeded"
+    fi
+ fi
+fi
+
+# restart OFED-MIC
+/sbin/service ofed-mic start 2>&1 >/dev/null
+
+# fix the MIC side MTU
+for mic in $( cd /sys/class/mic && echo mic* )
+do
+  $SSH $(hostname -s)-$mic /sbin/ifconfig mic0 mtu 9000
+done
+
+# Reset GPUs
+if [ -e /dev/nvidia0 ]
+then
+  for gpu in $( /usr/bin/nvidia-smi -L | awk -F: '{print $1}' | awk '{print $2}' )
+  do
+    /usr/bin/nvidia-smi -r -i $gpu 2>&1 >/dev/null
+  done
+fi
+
+# delete tmpdir
+tmp=/tmp/pbstmp.$jobid
+if [ -d $tmp ]
+then
+    rm -rf $tmp
+fi
+
+# delete coi_procs directory
+if [ -d /tmp/coi_procs ]
+then
+    rm -rf /tmp/coi_procs
+fi
+
+# enable cpuspeed service between jobs
+#/sbin/service cpuspeed start 2>&1 >/dev/null
+
+# Enable puppet
+/usr/bin/puppet agent --enable
+
+# Enable gmond if it was disabled
+/sbin/service gmond start 2>&1 >/dev/null
+
+# syslog end
+rm -f /tmp/.lck.$jobid
+logger "$0 end for $jobid"
+
+exit 0

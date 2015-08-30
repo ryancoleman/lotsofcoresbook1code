@@ -1,0 +1,18 @@
+ifeq (@ac_want_mkl@,yes)
+MKLROOT=@MKLROOT@
+MKLINCL=-I$(MKLROOT)/include/intel64/lp64 -I$(MKLROOT)/include
+MKLLINK=-L$(MKLROOT)/lib/intel64/ -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -lpthread
+else
+MKLROOT=
+MKLINCL=
+MKLLINK=
+endif
+ROOT:=@abs_srcdir@
+ROOTSRC:=@abs_srcdir@/src
+BYTESWAPIO:=@BYTESWAPIO@
+FC:=@FC@
+LD:=$(FC)
+FCFLAGS:=$(BYTESWAPIO) @FCFLAGS@ $(MKLINCL)
+FCCPP:=@FCCPP@
+LDFLAGS:=@FCFLAGS@ $(MKLLINK)
+EXE:=$(ROOT)/cmod

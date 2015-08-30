@@ -1,0 +1,10 @@
+sp 		:= $(sp).x
+dirstack_$(sp)	:= $(d)
+d		:= $(dir)
+include $(d)/.objs.spec
+include $(d)/.dependencies
+$(OBJS): $(d)/.Makefile.src
+allobs: $(OBJS)
+d		:= $(dirstack_$(sp))
+sp		:= $(basename $(sp))
+

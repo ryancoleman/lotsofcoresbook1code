@@ -1,0 +1,109 @@
+--------------------------------------------------------------------------------
+Cache improvement
+--------------------------------------------------------------------------------
+Go through all subroutines and ensure that we split the outermost
+iw-loop into two subloops to improve cache pattern, i.e. instead of
+
+    do iw = nl,nu
+      ! handle surface
+       ...
+      ! handle subsurface
+       ...
+    enddo
+
+    The we do:
+
+    do iw = nl,nu
+      ! handle surface
+    enddo
+    do iw = nl,nu
+      ! handle subsurface
+    enddo
+
+  STATUS FOR:
+  tflow_assign           
+  tflow_alloc_simd       
+  tflow_ft_simd          
+  diffusion_hx
+  diffusion_vi
+  copy_t2tt
+  c_delta                NOT DONE
+  c_tt                   NOT DONE
+  c_tw                   NOT DONE
+  c_tu                   NOT DONE
+  c_tv                   NOT DONE
+  advection 
+  c_rin_rout
+  c_cx_cy_cz
+  c_dtz                  NOT DONE
+  c_dty
+  c_dtx
+  tflow_up_ext
+  tflow_int_simd
+
+  Once, we have that then we ought to take another optional argument (0,1)
+
+   0: do only surface 
+   1: do only subsurface 
+
+   Once we support that in the subroutines we can get a better cache REuse by modifying tflow_int from
+  
+   call foo
+   call bar
+   call baz
+
+   call foo(...,0)
+   call bar(...,0)
+   call baz(...,0)
+   call foo(...,1)
+   call bar(...,1)
+   call baz(...,1)
+
+   and so forth. We can add this support incrementally, first split outer loop,
+   then add support for optional argument and then do the calls so that blocks
+   of code can take advantage of this
+
+
+--------------------------------------------------------------------------------
+Remaining vector issues to look into
+--------------------------------------------------------------------------------
+c_tt
+ 1557.    1                   ! fixme: consider moving IF(abs(krz...) branches
+outside loop
+ 1558.    1                   !        and merge with above IF branches
+ 1559.  + 1 Vpr4--<           do k=2,min(kb,kh(msrf(i,j+1)))
+ 1560.    1 Vpr4                nue = mcol(msrf(i,j)) + k - 2
+ 1561.    1 Vpr4                fac = hx(nue)*facx
+ 1562.    1 Vpr4                uuu = u(nue)
+ 1563.    1 Vpr4                if (abs(krz(3,n)) == 3 .and. uuu > zero) then
+ 1564.    1 Vpr4                  !rwzkout(k,n)=rwzkout(k,n)
+ 1565.    1 Vpr4                  rwzkin (k)=rwzkin (k) + fac*uuu
+ ... (but in if block that is never activated in this wrap of the source)
+
+c_tt
+ 1647.    Vpr2----<     do n=n2dl,n2du
+ 1648.    Vpr2            fac = ddxdy/cosphi(1,ind(1,n))/h_new(n)
+ 1649.    Vpr2            tt01(n) = tt01(n)*fac
+ 1650.    Vpr2            tt02(n) = tt02(n)*fac
+ 1651.    Vpr2---->     enddo
+
+c_rin_rout
+ 3735.  + Vp------<     do n = n2dl,n2du
+ 3736.    Vp              kb = kh(n)
+ 3737.    Vp              i = ind(1,n)
+ 3738.    Vp              j = ind(2,n)
+ 3739.    Vp
+ 3740.  + Vp              fac0  = one/cosphi(1,i)
+...
+
+tflow_up_ext
+ 6286.  + Vp------<     do n=nl,nu  ! k=1
+ 6287.    Vp              i = ind(1,n)
+ 6288.    Vp              j = ind(2,n)
+ 6289.    Vp
+ 6290.    Vp              dv  = cosphi(1,i)*dxdy
+ 6291.    Vp
+
+
+
+

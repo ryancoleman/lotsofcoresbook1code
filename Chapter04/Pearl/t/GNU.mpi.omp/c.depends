@@ -1,0 +1,3 @@
+t/GNU.mpi.omp/o/src.o: ./src
+t/GNU.mpi.omp/o/timer_c.o: ./src/timer_c.c
+t/GNU.mpi.omp/o/LiDryer.o: ./src/LiDryer.c

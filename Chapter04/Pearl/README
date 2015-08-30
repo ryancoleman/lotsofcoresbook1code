@@ -1,0 +1,146 @@
+
+This is a minimalist version of SMC, a combustion code that solves
+compressible Navier-Stokes equations for viscous multi-component
+reacting flows.  SMC is developed at the Center for Computational
+Sciences and Engineering (CCSE) at Lawrence Berkeley National
+Laboratory.  It uses the BoxLib library
+(https://ccse.lbl.gov/BoxLib/), also developed at CCSE.  This
+minimalist version of SMC includes a stripped down version of BoxLib.
+Therefore, the full version of BoxLib is not needed.
+
+The code is mainly written in Fortran 90, with some parts in C.
+Parallelization is implemented with hybrid MPI/OpenMP.  However, SMC
+can also be built with pure MPI, or pure OpenMP, or neither.
+
+GNU make is used to build the code.  The following options can be
+specified in the GNUmakefile:
+
+* MPI := t 
+  This determines whether we are using the Message Passing
+  Interface (MPI) library.  Leaving this option empty will disable
+  MPI.  If MPI is enabled, you need to specify how to link to the MPI
+  library.  You can set USE_MPI_WRAPPERS := t, then mpif90 will be
+  used.  Or you can set "mpi_include_dir", "mpi_lib_dir", and
+  "mpi_libraries" to appropriate values in GNUmakefile.
+
+* OMP := 
+  This determines whether we are using OpenMP.  Leaving this option
+  empty disables OpenMP.
+
+* NDEBUG := 
+  This option determines whether we compile with support for debugging
+  (usually also enabling some runtime checks). Setting NDEBUG := t
+  turns off debugging.
+
+* COMP := GNU
+  Set this to your compiler of choice (e.g., GNU).  Specific options
+  for a certain compiler are stored in the comps/$(COMP).mak file.   
+
+* MIC :=
+  Set this if compiling for Intel Xeon Phi.
+  (See RUN_ON_MIC below)
+
+* K_USE_AUTOMATIC := t
+  This determines whether some arrays in kernels.F90 will be automatic
+  or allocatable.  Automatic arrays are usually on the stack.
+  When OpenMP is used, allocating memory on the stack is usually
+  faster than on the heap.  However, one must make sure there is
+  adequate space on the stack; otherwise a segmentation fault might
+  occur.  Note that the size of the stack for threads can be adjusted
+  by the OMP_STACKSIZE environment variable and the shell might also
+  impose a limit on stack size.
+
+* MKVERBOSE := t
+  This determines the verbosity of the building process.
+
+To build an executable, type "make" in the SMC directory.  The
+executable will have a name like main.GNU.debug.mpi.exe depending
+on the compiler and some other options specified in the GNUmakefile.
+There are some other options provided by the GNUmakefile.  You can
+type "make TAGS" or "make tags" to generate tag file for Email or vi.
+You can type "make clean" or "make realclean" to remove files
+generated during the make process.
+
+Runtime parameters can be specified in the inputs_SMC file, which must
+be placed in the directory where the executable is run.  Below are a
+list of selected runtime parameters and default values.
+
+* n_cellx = -1
+* n_celly = -1
+* n_cellz = -1
+
+  Number of cells in the x, y, and z-directions.  They must be greater than 4.
+
+* max_grid_size = 64 
+
+  This determines the largest grid size of a box.  If max_grid_size is
+  too big, there might be fewer boxes than MPI tasks, and then some
+  processors will be idle.  However, if it is too small, each MPI task
+  may have too many small boxes, and the performance will be affected.
+  Thus, max_grid_size must be chosen according to the number of cells
+  and the number of MPI tasks.  Ideally, you would like to have one
+  box for each MPI task to minimize the communication cost.
+
+* tb_split_dim = 2
+
+  This determines how domain decomposition in some subroutines is done
+  for threads.  When OpenMP is used, each box is "virtually" divided
+  into "nthreads" boxes and each OpenMP thread works on one
+  thread-box.  This parameter can be either 2 or 3. When it is 2, the
+  domain decomposition is in y and z-directions; when it is 3, the
+  domain decomposition is in 3D.
+
+* tb_blocksize_x = -1
+* tb_blocksize_y = 16
+* tb_blocksize_z = 16
+
+  SMC uses a blocking strategy.  These parameters determines blocking
+  size in x, y and z-directions.  The value should be either greater
+  than or equal to 4, or less than 0.  If it is less than 0, no
+  blocking is used in that direction.
+
+* verbose = 0
+
+  This determines verbosity.
+
+* stop_time = -1.d0
+
+  Simulation stop time.
+
+* max_step = 1
+
+  Maximum number of timesteps in the simulation.
+
+Note that there are a number of OMP COLLAPSE clauses in the code.
+These tend to trigger compiler bugs.  If the code crashes, try to run
+it without "COLLAPSE". 
+
+More information about SMC can be found in the paper "High-Order
+Algorithms for Compressible Reacting Flow with Complex Chemistry" by
+M. Emmett, W. Zhang, and J.B. Bell
+(http://arxiv.org/abs/1309.7327). If you have any questions, please
+contact Weiqun Zhang (WeiqunZhang@lbl.gov).
+
+RUN_ON_XEON
+* OpenMP Only:
+    make -f GNUmakefile.intel clean
+    make -f GNUmakefile.intel
+    ./runXeonOMP.sh <number of OpenMP Threads>
+* MPI+OpenMP:
+    make -f GNUmakefile.intel MPI:=t clean
+    make -f GNUmakefile.intel MPI:=t
+    #Runscript assumes 1 MPI rank is desired as discussed in Chapter
+    ./runXeonMPI.sh <number of OpenMP Threads>
+
+RUN_ON_XEONPHI
+* OpenMP Only:
+    make -f GNUmakefile.mic clean
+    make -f GNUmakefile.mic
+    ./runXeonPhiOMP.sh <number of OpenMP Threads>
+* MPI+OpenMP:
+    make -f GNUmakefile.mic MPI:=t clean
+    make -f GNUmakefile.mic MPI:=t
+    #Runscript assumes 1 MPI rank is desired as discussed in Chapter
+    ./runXeonPhiMPI.sh <number of OpenMP Threads>
+
+NOTE: Not all OpenMP thread numbers will run; This workload requires thread numbers not to be large prime numbers.

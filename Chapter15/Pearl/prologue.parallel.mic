@@ -1,0 +1,70 @@
+#!/bin/sh
+# prologue gets 3 arguments:
+# 1 -- jobid
+# 2 -- user
+# 3 -- group
+# 4 -- node name
+# 5 -- mic name
+# 6 -- tmpdir
+#
+jobid=$1
+user=$2
+group=$3
+node=$4
+mic=$5
+tmp=$6
+GRES=$7
+export LUSTRE=/lustre/medusa
+export SCRATCH=/lustre/scratch
+
+# fix /etc/hosts on MIC if needed
+hostck=$(md5sum /etc/hosts)
+micck=$(ssh ${node}-$mic md5sum /etc/hosts)
+if [ "$hostck" != "$micck" ]
+then
+    logger "${node}-${mic}:/etc/hosts broken, fixing"
+    scp -q /etc/hosts ${node}-${mic}:/etc/hosts
+fi
+
+# put user info on MIC
+getent passwd $user | sed "s:/nics/.*/$user:/User:" | sed 's:/bin/.*sh:/bin/sh:' | ssh ${node}-$mic "cat >> /etc/passwd"
+getent group $group | ssh ${node}-$mic "cat >> /etc/group"
+
+# set up keys for micssh + performance tweak
+ssh ${node}-$mic mkdir -p /User/.ssh
+scp -q /usr/local/etc/micssh/micssh-id_rsa ${node}-$mic:/User/.ssh/id_rsa
+scp -q /usr/local/etc/micssh/micssh-id_rsa.pub ${node}-$mic:/User/.ssh/id_rsa.pub
+scp -q /usr/local/etc/micssh/micssh-id_rsa.pub ${node}-$mic:/User/.ssh/authorized_keys
+ssh ${node}-$mic chown -R $user /User \; echo tsc \> /sys/devices/system/clocksource/clocksource0/current_clocksource
+
+# setup /etc/profile on MICs
+scp -p -q $tmp/profile ${node}-$mic:/etc/profile
+
+# set up $TMPDIR on MIC
+ssh ${node}-$mic chmod go+rx /tmp \; mkdir $tmp/ \; mount ${node}:$tmp/$mic $tmp -t nfs -o vers=3,nolock,noac,tcp > /dev/null 2>&1
+
+# mount $node:/opt/intel and mgmt:/global/opt on MICs
+ssh ${node}-$mic mkdir -p /opt/intel /global/opt/ \; mount ${node}:/opt/intel /opt/intel -t nfs -o vers=3,nolock,tcp \; mount mgmt:/ha_cluster/global/opt/ /global/opt/ -t nfs -o vers=3,nolock,tcp > /dev/null 2>&1
+
+# mount nicsnfs:/nics/e/sw/beacon
+ssh ${node}-$mic route add 10.39.21.254 mic0 \; route add -net 192.249.6.0 netmask 255.255.255.0 gw 10.39.21.254 > /dev/null 2>&1
+ssh ${node}-$mic mkdir -p /sw/beacon \; mount nicsnfs:/nics/e/sw/beacon /sw/beacon -t nfs -o vers=3,nolock,tcp > /dev/null 2>&1
+
+# mount /lustre/medusa/$user on MICs
+if [ -e $LUSTRE/$user ]
+then
+    ssh ${node}-$mic mkdir -p $LUSTRE/$user \; mount ${node}:$LUSTRE/$user $LUSTRE/$user -t nfs -o vers=3,nolock,noac,tcp > /dev/null 2>&1
+fi
+
+# mount /lustre/scratch/$user on MICs
+if [ -e $SCRATCH/$user ]
+then
+    ssh ${node}-$mic mkdir -p $SCRATCH/$user \; mount ${node}:$SCRATCH/$user $SCRATCH/$user -t nfs -o vers=3,nolock,noac,tcp > /dev/null 2>&1
+fi
+## stage in files needed for Intel MPI and OpenMPI
+if [[ "$GRES" == "betaimpi" ]]
+then
+	scp -p -q /global/opt/intel/impi/beta/mic/bin/{mpiexec.hydra,pmi_proxy} ${node}-${mic}:$tmp/bin
+else
+	scp -p -q /global/opt/intel/impi/latest/mic/bin/{mpiexec.hydra,pmi_proxy} ${node}-${mic}:$tmp/bin
+fi

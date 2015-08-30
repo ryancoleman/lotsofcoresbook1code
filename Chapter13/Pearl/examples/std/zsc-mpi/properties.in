@@ -1,0 +1,16 @@
+MaxSteps
+1000
+tStats, tDump
+100, 10000
+xmin, xmax, ymin, ymax
+1, 101, 1, 101
+rhoL, rhoH 
+1.0D0, 1000.D0
+tauRho, taPhiu
+0.75D0, 0.70D0
+IntWidth, sigma, Gamma
+5.D0, 0.01D0, 400.D0
+pConv
+0.01
+mpi_xdim, mpi_ydim
+1, 2

@@ -1,0 +1,14 @@
+MaxSteps
+50000
+tStats, tDump
+100, 5000
+xmin, xmax, ymin, ymax
+1, 101, 1, 101
+rhoL, rhoH
+0.1D0, 1.D0
+tauL, tauH
+1.25D0, 1.10D0
+IntWidth, sigma
+4.D0, 0.0001D0
+pConv
+0.01

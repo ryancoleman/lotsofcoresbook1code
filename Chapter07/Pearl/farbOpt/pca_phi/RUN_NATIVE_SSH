@@ -1,0 +1,10 @@
+DEV=mic0
+SEED=1234
+. ./common.sh
+
+scp /opt/intel/composer_xe_2013_sp1.3.174/compiler/lib/mic/libiomp5.so $DEV:/tmp
+scp train_$APP.mic $DEV:
+
+./gen_$APP - $EXAMPLES $DEV $SEED | ssh $DEV "export LD_LIBRARY_PATH=/tmp; ./train_$APP.mic - $APP.param " 
+
+

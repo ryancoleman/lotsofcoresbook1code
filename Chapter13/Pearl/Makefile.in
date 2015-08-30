@@ -1,0 +1,41 @@
+#!/bin/sh
+#
+# Installation script for MP-LABS
+#
+# Change FC, MPIFC and the corresponding flags to match your own compiler.
+# For example, the Intel compiler options would be:
+#
+# Intel Compiler
+# ---------------
+#   export FC=ifort
+#   export MPIFC=mpif90
+#   export CFLAGS="-c -O3 -free"
+#   export LFLAGS="   -O3"
+#   export ARCH_FLAGS="-xHOST"
+#   export OMP_FLAGS="-openmp"
+#
+# In some systems you may have to use mpiifort instead of ifort for MPICC.
+#
+# v1.3                                  (2013-11-12)  Carlos Rosales Fernandez
+
+# Set the compilation flags depending on the input options
+
+# GNU gfortran
+#-------------
+export FC=gfortran
+export MPIFC=mpif90
+export CFLAGS=-c -O3 -ffree-form
+export LFLAGS=-O3 
+export ARCH_FLAGS=-march=native
+export OMP_FLAGS=-fopenmp -ffree-line-length-none
+
+# Uncomment this to get regular IO output from the optimized LBS3D 
+# and LBS3D-MPI codes
+# export CPP_FLAGS=-DLBMIO
+
+# Uncomment this to add a suffix to each binary
+# This is useful for multiple builds on different architectures (cpu/mic)
+# export BIN_SUFFIX=.cpu
+
+# Installation directory
+export INSTALL_DIR=../../../bin

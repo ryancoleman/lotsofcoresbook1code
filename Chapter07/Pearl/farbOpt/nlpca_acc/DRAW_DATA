@@ -1,0 +1,4 @@
+gnuplot -e "unset key; set term png; set output \"nlpca_known.png\"; plot \"plot.txt\" u 2:3"
+gnuplot -e "unset key; set term png; set output \"nlpca_pred.png\"; plot \"plot.txt\" u 5:6"
+ 
+

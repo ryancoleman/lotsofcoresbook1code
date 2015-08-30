@@ -1,0 +1,11 @@
+DEVICE=micbr0
+TYPE=Bridge
+BOOTPROTO=static
+IPV6INIT=no
+MTU=9000
+NM_CONTROLLED=no
+ONBOOT=yes
+TYPE=Ethernet
+IPADDR=$(grep `hostname -s`-eth0 /etc/hosts | awk '{print $1}')
+NETMASK=255.255.254.0
+USERCTL=no

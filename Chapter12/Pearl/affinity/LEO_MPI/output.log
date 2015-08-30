@@ -1,0 +1,16 @@
+thread(hostId=0,phiId=0): 1
+thread(hostId=0,phiId=1): 2
+thread(hostId=0,phiId=2): 3
+thread(hostId=0,phiId=3): 4
+thread(hostId=1,phiId=0): 5
+thread(hostId=1,phiId=1): 6
+thread(hostId=1,phiId=2): 7
+thread(hostId=1,phiId=3): 8
+thread(hostId=2,phiId=0): 9
+thread(hostId=2,phiId=1): 10
+thread(hostId=2,phiId=2): 11
+thread(hostId=2,phiId=3): 12
+thread(hostId=3,phiId=0): 13
+thread(hostId=3,phiId=1): 14
+thread(hostId=3,phiId=2): 15
+thread(hostId=3,phiId=3): 16
