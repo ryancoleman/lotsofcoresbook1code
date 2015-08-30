@@ -1,0 +1,85 @@
+#!/bin/sh
+
+#
+#	$Id: lockfile 19708 2010-10-29 18:04:21Z d3y133 $
+#
+
+#
+# lockfile [-steal] filename
+#
+# Simluate a lock by creating and writing the specified file.
+# The lock may be released by deleting the file.  If -steal
+# is specified then the lock is stolen instead of exiting on timeout.
+#
+# On sucess exits with status zero and access to the lock
+#
+# All other conditions exit with status one and undefined lock state.
+#
+# Some race conditions exist but deadlock is avoided by exiting/stealing
+# if the lock is not acquired in TIMEOUT*SECS seconds
+#
+# SECS is the time in seconds to sleep between tries to get the lock
+# TIMEOUT*SECS is the time in seconds before waiting is abandonned.
+#
+# BGJ - rewritten in Bourne shell for Cygnus NT port
+#
+
+TIMEOUT=12
+SECS=2
+
+unset STEAL
+unset USAGE
+
+if [ $# -eq 2 ] ; then
+  if [ "$1" = "-steal" ] ; then
+    STEAL=1
+    shift
+  else
+    USAGE=1
+  fi
+elif [ $# -ne 1 -o "$1" = "-steal" ] ; then
+  USAGE=1
+fi
+
+if [ $USAGE ] ; then
+  echo 'usage: lockfile [-steal] filename'
+  exit 1
+fi
+
+file=$1
+
+DOWAIT=1
+nspin=0
+
+while [ $DOWAIT ] ; do
+
+  while [ -f $file ] ; do
+    if [ $nspin -ge $TIMEOUT ] ; then
+      if [ $STEAL ] ; then
+        echo lockfile: stealing $file
+        /bin/rm -f $file
+      else
+        echo lockfile: timeout waiting for $file ... delete it\!
+        exit 1
+      fi
+    else
+      nspin=`expr $nspin + 1`
+      echo lockfile: waiting for $file
+      sleep $SECS
+    fi
+  done
+
+  echo $$ " " > $file
+  id="`cat $file`"
+
+  if [ $id -ne $$ ] ; then
+    echo lockfile: not fast enough on $file
+  else
+    unset DOWAIT
+  fi
+
+done
+
+echo Got lock on $file
+
+exit 0

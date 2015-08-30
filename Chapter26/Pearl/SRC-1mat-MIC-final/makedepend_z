@@ -1,0 +1,71 @@
+Cpzgecopy_d2h_async.o: Cpzgecopy_d2h_async.cpp
+	$(CC) $(CFLAGS) -c Cpzgecopy_d2h_async.cpp
+
+Cpzgecopy_d2h.o: Cpzgecopy_d2h.cpp
+	$(CC) $(CFLAGS) -c Cpzgecopy_d2h.cpp
+
+Cpzgemm_hhd.o: Cpzgemm_hhd.cpp
+	$(CC) $(CFLAGS) -c Cpzgemm_hhd.cpp
+
+Cpzlaprnt.o: Cpzlaprnt.cpp
+	$(CC) $(CFLAGS) -c Cpzlaprnt.cpp
+
+pzgetrf_gpu2.o: pzgetrf_gpu2.cpp
+	$(CC) $(CFLAGS) -c pzgetrf_gpu2.cpp
+
+pzgetrf_gpu.o: pzgetrf_gpu.cpp
+	$(CC) $(CFLAGS) -c pzgetrf_gpu.cpp
+
+Cpzswap_gpu.o: Cpzswap_gpu.cpp
+	$(CC) $(CFLAGS) -c Cpzswap_gpu.cpp
+
+Cpzlaswp_gpu.o: Cpzlaswp_gpu.cpp
+	$(CC) $(CFLAGS) -c Cpzlaswp_gpu.cpp
+
+pzgetrf_ooc2.o: pzgetrf_ooc2.cpp
+	$(CC) $(CFLAGS) -c pzgetrf_ooc2.cpp
+
+pzgetrf_ooc.o: pzgetrf_ooc.cpp
+	$(CC) $(CFLAGS) -c pzgetrf_ooc.cpp
+
+
+pzludriver.o: pzludriver.F
+	$(FC) $(FFLAGS) -c pzludriver.F
+
+pzludriver.exe: pzludriver.o liblin.a lib.a
+	$(CC) $(CFLAGS) -DUSE_CUDA_MALLOC_HOST=1 -c MallocHost.cpp
+	$(FC) $(FFLAGS) -o pzludriver.exe \
+	  	pzludriver.F \
+		print_desc.f \
+		MallocHost.o \
+		liblin.a lib.a $(LIBS)
+
+
+pzludriver_org.exe: pzludriver_org.o liblin.a lib.a
+	$(CC) $(CFLAGS) -UUSE_CUDA_MALLOC_HOST -c MallocHost.cpp
+	$(FC) $(FFLAGS) -o pzludriver_org.exe \
+	  	pzludriver_org.F \
+		print_desc.f \
+		MallocHost.o \
+		liblin.a lib.a $(LIBS)
+
+pzludriver2.o: pzludriver2.F
+	$(FC) $(FFLAGS) -c pzludriver2.F
+
+pzludriver2.exe: pzludriver2.o liblin.a lib.a
+	$(CC) $(CFLAGS) -DUSE_CUDA_MALLOC_HOST=1 -c MallocHost.cpp
+	$(FC) $(FFLAGS) -o pzludriver2.exe \
+	  	pzludriver2.F \
+		print_desc.f \
+		MallocHost.o \
+		liblin.a lib.a $(LIBS)
+
+pzludriver_fake.exe:  $(SRC) fake_cublas.cpp pzludriver.F 
+	$(CC) $(CFLAGS) -DUSE_FAKE_CUBLAS -c  $(SRC) fake_cublas.cpp
+	$(FC) $(FFLAGS) -DUSE_FAKE_CUBLAS -o pzludriver_fake.exe \
+	  	pzludriver.F \
+		print_desc.f \
+		idamax.f \
+		xerbla.f \
+		fake_cublas.o \
+		$(OBJECTS) $(LIBS)

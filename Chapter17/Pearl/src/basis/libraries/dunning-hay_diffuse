@@ -1,0 +1,44 @@
+#  Dunning-Hay Diffuse  EMSL  Basis Set Exchange Library  3/15/13 10:18 AM
+# T.H. DUNNING JR. AND P.J. HAY, IN METHODS OF ELECTRONIC STRUCTURE THEORY, 
+#  VOL. 2, H.F. SCHAEFER III, ED., PLENUM PRESS (1977).
+#   
+
+
+basis "H_Dunning-Hay Diffuse" CARTESIAN
+H    S
+      0.0482730              1.0000000        
+end
+basis "Li_Dunning-Hay Diffuse" CARTESIAN
+Li    S
+      0.0107000              1.0000000        
+Li    P
+      0.0078000              1.0000000        
+end
+basis "Be_Dunning-Hay Diffuse" CARTESIAN
+Be    P
+      0.0173420              1.0000000        
+end
+basis "B_Dunning-Hay Diffuse" CARTESIAN
+B    P
+      0.0190000              1.0000000        
+end
+basis "C_Dunning-Hay Diffuse" CARTESIAN
+C    P
+      0.0340000              1.0000000        
+end
+basis "N_Dunning-Hay Diffuse" CARTESIAN
+N    P
+      0.0480000              1.0000000        
+end
+basis "O_Dunning-Hay Diffuse" CARTESIAN
+O    P
+      0.0590000              1.0000000        
+end
+basis "F_Dunning-Hay Diffuse" CARTESIAN
+F    P
+      0.0740000              1.0000000        
+end
+basis "Ne_Dunning-Hay Diffuse" CARTESIAN
+Ne    P
+      0.0890000              1.0000000        
+end

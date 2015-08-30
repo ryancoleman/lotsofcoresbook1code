@@ -1,0 +1,34 @@
+c
+c     $Id: bgj.fh 19707 2010-10-29 17:59:36Z d3y133 $
+c
+c     Information-hiding routines used by BGJ
+c
+      external bgj_print
+      integer bgj_print
+c
+      external bgj_get_rtdb_handle
+      integer bgj_get_rtdb_handle
+c
+      external bgj_get_scf_method
+      logical bgj_get_scf_method
+c
+      external bgj_have_xc
+      logical bgj_have_xc
+c
+      external bgj_kfac
+      double precision bgj_kfac
+c
+      external bgj_have_j_fit
+      logical bgj_have_j_fit
+c
+      external bgj_cd_bas_han
+      integer bgj_cd_bas_han
+c
+      external bgj_restricted
+      logical bgj_restricted
+c
+      external bgj_get_scf_dens
+      logical bgj_get_scf_dens
+c
+      external bgj_check_xc_u2d
+c

@@ -1,0 +1,6 @@
+c
+c     Common for xc parameters 
+c
+      integer numfunc
+      parameter(numfunc=63) 
+c $Id: xc.fh 23554 2013-02-09 16:41:27Z mswart $

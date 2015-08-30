@@ -1,0 +1,12 @@
+      logical sym_shell, sym_shell_pair, sym_atom, sym_atom_pair
+      logical sym_char_table, sym_abelian_group
+C      logical sym_shell_quartet, sym_atom_quartet
+C$Id: sym.fh 19708 2010-10-29 18:04:21Z d3y133 $
+      logical  sym_atom_quartet
+      integer sym_center_map, sym_number_ops
+      external sym_shell, sym_atom
+      external sym_center_map, sym_number_ops
+      external sym_shell_pair, sym_atom_pair
+      external  sym_atom_quartet, sym_char_table
+      external sym_abelian_group
+C      external sym_shell_quartet, sym_atom_quartet

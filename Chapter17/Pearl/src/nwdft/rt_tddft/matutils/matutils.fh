@@ -1,0 +1,16 @@
+      logical, external :: mat_is_symmetric
+      logical, external :: mat_is_idempotent
+      logical, external :: mat_is_hermitian
+      logical, external :: mat_is_tracex
+      logical, external :: mat_is_same
+      logical, external :: mat_is_ident
+      logical, external :: mat_is_purereal
+      logical, external :: mat_is_unitary
+
+      logical, external :: dmat_io_dump
+      logical, external :: dmat_io_read
+
+      double precision, external        :: mat_norm
+      double precision, external        :: zmat_checksum
+
+c $Id: matutils.fh 24344 2013-06-22 06:15:21Z d3y133 $

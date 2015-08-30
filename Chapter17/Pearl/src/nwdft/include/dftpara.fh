@@ -1,0 +1,12 @@
+c
+C$Id: dftpara.fh 19696 2010-10-29 16:53:42Z d3y133 $
+c
+      logical xcreplicated,truerep,truerepdm,truerepxc
+      integer k_repxc(2),l_repxc(2),k_repdm(2),l_repdm(2)
+      integer g_repdm(2)
+      integer nbf_ld
+      logical dorepxc, dorepdm, dftnbget,dftnbacc
+      common /xcpara/ xcreplicated,k_repxc,l_repxc,nbf_ld,
+     ,  dorepxc, dorepdm,
+     ,	g_repdm, dftnbget,dftnbacc,
+     ,	truerepdm,truerepxc,truerep,k_repdm,l_repdm

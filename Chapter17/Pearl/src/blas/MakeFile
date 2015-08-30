@@ -1,0 +1,13 @@
+#
+#	$Id: MakeFile 19695 2010-10-29 16:51:02Z d3y133 $	
+#
+
+#!MESSAGE *** Unresolved issues in this nmake file ***
+
+SUBDIRS = double
+
+
+LIBRARY = blas.lib
+
+!INCLUDE ..\config\NTmakefile.h
+!INCLUDE ..\config\NTmakelib.h

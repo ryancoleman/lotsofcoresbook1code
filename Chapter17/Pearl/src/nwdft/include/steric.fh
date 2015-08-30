@@ -1,0 +1,6 @@
+c
+c     Steric energy quantities and flags
+c
+      logical lsteric
+      common/steric/lsteric
+c $Id: steric.fh 21176 2011-10-10 06:35:49Z d3y133 $

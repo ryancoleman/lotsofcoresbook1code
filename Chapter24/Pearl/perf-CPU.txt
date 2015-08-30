@@ -1,0 +1,30 @@
+# The results listed below were obtained in a Colfax SXP7450 workstation
+# with the following system configuration:
+#
+# - Dual Intel Xeon E5-2630 v2 CPU
+# - 128 GB of DDR3 RAM at 1066 MHz in 16 GB modules
+# - Two Intel Xeon Phi 3110A coprocessors (only one used in benchmarks)
+# - CentOS 6.5 Linux with kernel 2.6.32-431.el6.x86_64
+# - Intel MPSS 3.3
+# - Intel C++ Compiler XE version 14.0.2.144
+#
+
+# Benchmarking in-place transposition of [4000 x 4000] matrix
+# Platform: CPU, threads: 24, trials: 32, method: 1
+n=  4000  rate=    4.3 +-  0.2 GB/s    range=[    3.8 ...    4.4 ]
+
+# Benchmarking in-place transposition of [4000 x 4000] matrix
+# Platform: CPU, threads: 24, trials: 32, method: 2
+n=  4000  rate=   28.6 +-  3.0 GB/s    range=[   13.1 ...   30.0 ]
+
+# Benchmarking in-place transposition of [4000 x 4000] matrix
+# Platform: CPU, threads: 24, trials: 32, method: 3
+n=  4000  rate=   29.3 +-  2.9 GB/s    range=[   13.5 ...   30.3 ]
+
+# Benchmarking in-place transposition of [4000 x 4000] matrix
+# Platform: CPU, threads: 24, trials: 32, method: 4
+n=  4000  rate=   29.4 +-  3.6 GB/s    range=[   11.3 ...   30.4 ]
+
+# Benchmarking in-place transposition of [4000 x 4000] matrix
+# Platform: CPU, threads: 24, trials: 32, method: 5
+n=  4000  rate=   41.4 +-  1.4 GB/s    range=[   39.2 ...   43.2 ]

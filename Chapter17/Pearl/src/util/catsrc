@@ -1,0 +1,18 @@
+#!/bin/csh
+
+# $Id: catsrc 19707 2010-10-29 17:59:36Z d3y133 $
+
+cd ..
+
+foreach dir ( $* )
+
+   echo 'module ' $dir
+
+   find $dir \( -name "*.F" -o \
+                -name "*.f" -o \
+                -name "*.c" -o \
+                -name "*.fh" -o \
+                -name "*.h" -o \
+                -name "makefile" \) -exec grep '$Id' "{}" ";"
+
+end

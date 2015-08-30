@@ -1,0 +1,16 @@
+c
+C$Id: oep.fh 19696 2010-10-29 16:53:42Z d3y133 $
+C
+c     Common for parameters to do with the OEP precedure proposed by 
+c     Yang and Wu
+
+      double precision
+     $       qe_conv, qx_conv, qg_conv, qdamp, qthres
+      logical
+     $       loep, qdodiis, lsvd
+      integer
+     $       coep, ioep, qiterations
+      common /oep/
+     $       qe_conv, qx_conv, qg_conv, qdamp, qthres,
+     $       loep, qdodiis, lsvd,
+     $       coep, ioep, qiterations

@@ -1,0 +1,13 @@
+      subroutine schwarz_tidy()
+C$Id: schwarz_tidy.F 19707 2010-10-29 17:59:36Z d3y133 $
+      implicit none
+#include "errquit.fh"
+#include "cschwarz.fh"
+#include "mafdecls.fh"
+c
+      if (.not. MA_free_heap(l_cat))
+     $     call errquit('schwarz_tidy: ma_free_heap failed', 0, MA_ERR)
+      if (.not. MA_free_heap(l_csh))
+     $     call errquit('schwarz_tidy: ma_free_heap failed', 0, MA_ERR)
+c
+      end

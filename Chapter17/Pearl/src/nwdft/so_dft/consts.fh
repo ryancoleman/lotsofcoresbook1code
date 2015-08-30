@@ -1,0 +1,6 @@
+c
+c     Some constant definitions
+c
+      double precision zero, onem, one, mone
+      parameter(zero = 0.d0, one = 1.d0, mone=-1.0d0, onem = -one)
+c $Id: consts.fh 21176 2011-10-10 06:35:49Z d3y133 $

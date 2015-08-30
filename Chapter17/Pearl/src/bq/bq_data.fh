@@ -1,0 +1,22 @@
+*
+* $Id: bq_data.fh 19697 2010-10-29 16:57:34Z d3y133 $
+*
+
+      integer max_bq
+      parameter(max_bq=10)
+     
+      logical bq_active(max_bq)
+      logical bq_mem(max_bq)
+      integer bq_ncent(max_bq) 
+      integer bq_charge(max_bq) 
+      integer bq_coord(max_bq) 
+      character bq_name(max_bq)*72
+
+      common /bq_data/ 
+     &                   bq_ncent,
+     &                   bq_active,
+     &                   bq_mem,
+     &                   bq_charge,
+     &                   bq_coord,
+     &                   bq_name
+

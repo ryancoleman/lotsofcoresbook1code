@@ -1,0 +1,8 @@
+*
+* $Id: bq_params.fh 22628 2012-07-09 06:35:27Z niri $
+*
+      character*(*) bq_default
+      parameter(bq_default="default")
+
+      double precision bq_smalldist
+      parameter (bq_smalldist = 1.0d-06)

@@ -1,0 +1,169 @@
+For help with compiling the library or attached tools,
+type 'make help'. Changelog follows:
+
+1.5.3
+	-Added a wrapper for CUDA CuSparse Hybrid format (for
+	 NVIDIA GPUs only).
+	-Now also reports compute speeds (flops and bandwidth)
+	-Now properly allows for 32-bit index values.
+	-Fixed some GCC compiler warnings.
+
+1.5.2
+	-Cleanly compiles with GCC versions 4.4.3 & 4.4.6.
+	-Cleanly compiles with ICC version 12.1.3; see Makefile.
+	-Added interface to Intel MKL; see Makefile.
+	-Can now read simple text files containing CRS-
+	 encoded matrices.
+	-Improved performance of McCRS on NUMA systems.
+	-Bugfix in McCRS.
+	-Added option to remove libNUMA dependencies.
+	-RDBHilbert now can handle overpartitioning correctly.
+	-Destructor of FBICRS is cleaner
+	-McDMV now uses spinlocks for barrier synchronisation.
+	-`make all' now prints its active target to stdout.
+	-Fixed some errors and omissions in documentation.
+
+1.5.1
+	-Updated `make help' info.
+	-Cleaned up McShared code, and removed experimental
+	 parts. McShared is now a default target.
+	-Cleaned up McDMV code.
+	-Fixed GCC 4.7 compatability.
+	-Cleaned up and updated Makefile.
+	-Minor changes to mmio.cpp and mmio.h for better C++
+	 compatability.
+	-Added missing doxygen documentation.
+
+1.5.0
+	-Added McDMV: does a fully multi-threaded two-
+	 dimensional cache-oblivious SpMV. Requires Extended
+	 Matrix-Market (EMM) formatted pre-partitioned matrices,
+	 as for instance returned by the Mondriaan partitioner.
+	 It makes use of CBICRS and HBICRS schemes of this
+	 library. HBICRS functions essentially the same way as
+	 it does for the sbdmv application, with the difference
+	 that it is applied only on a subset of the partitioned
+	 matrix. CBICRS is used for the parts of the matrix
+	 where inter-thread communication is required. The
+	 SpMV algorithm is executed in the Bulk Synchronous
+	 Parallel (BSP) style (fan-in, local SpMV, fan-out).
+	-Added RDCSB; same as RDBHilbert, but instead of using
+	 the Hilbert curve, CSB's implementation of the Morton
+	 curve is used instead. Requires CSB source code to be
+	 available in ./csb/, enable via the appropriate flag
+	 in driver.cpp and compile as usual.
+	-Added RDBHilbert; a cache-oblivious parallel Hilbert-
+	 curve based SpMV scheme. Similar to BetaHilbert, but
+	 employs a global row-distribution before blocking or
+	 the Hilbert curve are used.
+	-Added BetaHilbert; a fully cache-oblivious parallel
+	 Hilbert-curve based SpMV scheme.
+	-Bugfix in ZZ-CRS.
+	-Speedup for zax and zxa for ZZ-CRS.
+	-Driver now uses CLOCK_MONOTONIC to obtain running times.
+	-Driver now outputs max absolute error as well.
+	-Driver now outputs MSE compared to SpMV with TS.
+	-Driver now can take the number of repeats of SpMVs and
+	 complete experiment repitition separately, instead of
+	 it being fixed as the square root of a user-defined value.
+	-BICRS now handles data more efficiently, can store up to
+	 two times larger matrices with the same index data types.
+	-Bugfix in BlockOrderer: it now detects errors due to empty
+	 separator blocks. Previously the sbdmv and sbd2trp apps 
+	 might result in erroneous nonzero removal.
+	-Bugfix in driver: when requesting column-major CBICCS, it
+	 now actually returns just that (and not CBICRS).
+
+1.4.0
+	-Supports a new operation: z=xA, with z the output vector.
+	-Added a CCS wrapper to easily transform CRS-classes into a
+	 CCS counterpart. Takes O(nnz) more construction time than
+	 a clean CCS implementation, but reduces maintanance (for me).
+
+	 Wrapper is accessible via the driver tool; scheme 1 is CRS,
+	 -1 is CCS; scheme 2 is ICRS, scheme -2 is ICCS, et cetera.
+	 Reading in is done on a transposed matrix and the  zax 
+	 operation translates to the zxa operation on that transposed
+	 matrix, and vice versa.
+	 Therefore, it does have some effect in case of `CCS' Hilbert
+	 TS (-6) but other than changing the build-up order, no 
+	 performance improvement would be expected.
+	-Added the sbd2trp utility, converting a matrix in Separated
+	 Block Diagonal (SBD) into cache-obliviously ordered
+	 triplets. In the singly (1D) SBD case this corresponds to a
+	 CRS order. The doubly (2D) SBD form yields (in general) a 
+	 non-CRS order, depending on the block order chosen. 
+	 Cache-oblivious SpMV can then be executed by loading in the
+	 triplets using *plain* BICRS.
+	-Added the Hilbert scheme, now effeciently using the BICRS
+	 storage as backing instead of the TS. Should improve over
+	 HTS significantly.
+	-Added the sbdmv utility, loading in a 2D SBD matrix into 
+	 HBICRS and benchmarks SpMV speed.
+	-Fixed some HTS errors (regarding explicit zero removals).
+	-Added tool to reorder matrix files to CRS order.
+	-Added a hierarchical scheme (HBICRS), allowing to store 
+	 entire data schemes into a BICRS structure, instead of 
+	 nonzeroes. When using the automatic build constructor,
+	 datastructures are not offset to save construction time, 
+	 effectively not using BICRS (all starting points of the 
+	 sublevel structures are set to 0,0).
+	-Resolved some compilation warnings.
+	-Makefile fix.
+
+1.3.1
+	Documentation fixes.
+	Fixed bug in driver timing code.
+
+1.3.0
+	The driver application now has an option to calculate an average
+	running time. It now can also read in from binary triplet files.
+
+	Added new format: Dense Diagonal matrix. Uses template parameters
+	to specify the number of dense diagonals in the sparse matrix, as
+	well as the offset of each such diagonal. This is done to ensure 
+	efficient code. This does mean the format is not dynamic and 
+	needs be tailored for use on specific matrices; DD_MATRIX format
+	thus is not usable from the driver application.
+
+1.2.0
+	Makefile builds both a static & shared driver application.
+	Added a command-line driver application for starting benchmarks.
+	Debugged CRS scheme.
+	Made sparse storage schemes more uniform by letting them be derived
+	from a superclass SparseMatrix. Common functions:
+		-m()		gets number of matrix rows
+		-n()		gets number of matrix columns
+		-mv(x)  	allocates new z, zeroes it, and calls zax(x,y)
+		-zax(x,y)	calculates z=Ax.
+		-load(file)	loads from a matrix market file
+				(also in constructor).
+	Library compilation now uses -DNDEBUG flags.
+	Constructors now accept a matrix-market file as argument.
+
+1.1.0
+	Added new formats: ZZ-CRS, Bi-ICRS, Hilbert TS. See documentation. Various bugfixes. 
+	Now uses more standard interface calls for matrix-vector multiplication:
+		double *y = A.mv(x); //with A a sparse matrix stored in one of the 
+		                     //implemented schemes, x of appropiate size 
+				     //initialised, y uninitialised.
+	or
+		A.mv(x,y); //with x of appropiate size initialised, y of appropiate 
+		           //size intialised and its elements set to zero.
+			   
+	NOTE: 	stepped down from this in V1.2.0 since method overloading within
+		templates caused SparseMatrix::mv(x) to become invisible.
+
+1.0.0
+	Initial release of the Sparse Library. Supports the simple Triplet Scheme (TS), 
+	Compressed Row Storage (CRS), Incremental CRS, and Zig-Zag ICRS.
+	The Triplet class contains functionality to load and save a vector of 'Triplet' 
+	objects (std::vector< Triplet >) in binary format. Also contains a utility 
+	(mm2cotrp) able to transform matrix-market files (.mtx) to binary format, 
+	with the order of nonzeros determined by using the Hilbert curve.
+	Currently only supports matrix-vector multiplication y=Ax, y unallocated, 
+	A (in TS, CRS, ICRS, ZZ-ICRS format) and x given by:
+		double *y = A.MV(x);
+	or z=Ax, z pre-allocated, and pre-initialised to zero:
+		A.zax(x,z);
+

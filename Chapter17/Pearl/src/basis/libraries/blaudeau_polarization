@@ -1,0 +1,16 @@
+#  Blaudeau Polarization  EMSL  Basis Set Exchange Library  3/15/13 10:19 AM
+# Elements                             References
+# --------                             ----------
+# K  - Ca: J-P. Blaudeau, M. P. McGrath, L.A. Curtiss and L. Radom, J. Chem. Phys.
+#          107, 5016 (1997)
+#   
+
+
+basis "K_Blaudeau Polarization" CARTESIAN
+K    D
+      0.2350000              1.0000000        
+end
+basis "Ca_Blaudeau Polarization" CARTESIAN
+Ca    D
+      0.2160000              1.0000000        
+end

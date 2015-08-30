@@ -1,0 +1,7 @@
+c
+c $Id: ginf.fh 19696 2010-10-29 16:53:42Z d3y133 $
+c
+      double precision ga, gb, gc, gd, sa, sb, sc, sd
+      double precision pa, pb, pc, pd, gab, gcd
+      common /ginf/ ga,gb,gc,gd,sa,sb,sc,sd,pa,pb,pc,pd,gab,gcd
+c

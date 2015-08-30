@@ -1,0 +1,39 @@
+c $Id: hnd_giao_init.F 21221 2011-10-20 14:30:56Z niri $
+cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+c
+c     hondo : giao initialization routine
+c
+cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+      subroutine hnd_giao_init(bases,nbas)
+      implicit none
+#include "hnd_tol.fh"
+#include "bas.fh"
+#include "errquit.fh"
+c
+      integer nbas         ! [input] number of basis sets to be used
+      integer bases(nbas)  ! [input] basis set handles
+c
+      integer ibas,maxang,angm
+c
+c     set default tolerance
+c
+      itol = 15
+c
+c     set up the HONDO hermit and wermit arrays
+c
+      call hnd_whermt
+c
+c     set up memory requirements: get max L first
+c
+      maxang = -1
+      do 00300 ibas = 1,nbas
+        if(.not.bas_high_angular(bases(ibas),angm))
+     &         call errquit('hnd_giao_init: angm error',angm, INT_ERR)
+        maxang = max(maxang,angm)
+00300 continue
+c
+      call hnd_giao_1emem(maxang)
+      call hnd_giao_2emem(maxang)
+c
+      return
+      end

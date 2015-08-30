@@ -1,0 +1,36 @@
+#
+#	$Id: MakeFile 19696 2010-10-29 16:53:42Z d3y133 $	
+#
+
+OBJ_ENERGY =   $(OBJDIR)\rel_onel.obj \
+               $(OBJDIR)\rel_mpole.obj \
+               $(OBJDIR)\rel_pot.obj \
+               $(OBJDIR)\rel_pot2.obj \
+               $(OBJDIR)\rel_2e4c_sf.obj \
+               $(OBJDIR)\rel_LLSS.obj \
+               $(OBJDIR)\rel_SSLL.obj \
+               $(OBJDIR)\rel_SSSS.obj \
+               $(OBJDIR)\rel_init_con.obj \
+               $(OBJDIR)\rel_oneld.obj \
+               $(OBJDIR)\rel_2e4cd_sf.obj \
+               $(OBJDIR)\rel_LLSSd.obj \
+               $(OBJDIR)\rel_SSLLd.obj \
+               $(OBJDIR)\rel_SSSSd.obj \
+               $(OBJDIR)\rel_pvp.obj \
+               $(OBJDIR)\int_rel_init.obj \
+               $(OBJDIR)\dmd_input.obj
+
+!IFDEF NWCHEM_DEBUG
+OBJ = $(OBJ_ENERGY)
+!ELSE
+OBJ_OPTIMIZE = $(OBJ_ENERGY)
+!ENDIF
+
+HEADERS =      rel_consts.fh \
+               rel_nwc.fh \
+               zora.fh
+
+LIBRARY = nwints.lib
+
+!INCLUDE ..\..\config\NTmakefile.h
+!INCLUDE ..\..\config\NTmakelib.h

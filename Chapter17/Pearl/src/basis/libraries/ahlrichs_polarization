@@ -1,0 +1,155 @@
+#  Ahlrichs Polarization  EMSL  Basis Set Exchange Library  3/15/13 10:19 AM
+# Elements                             References
+# --------                             ----------
+# H - Kr: R. Ahlrichs and coworkers, (mostly unpublished)
+#   
+
+
+basis "H_Ahlrichs Polarization" SPHERICAL
+H    P
+      0.8000000              1.0000000        
+end
+basis "He_Ahlrichs Polarization" SPHERICAL
+He    P
+      1.0000000              1.0000000        
+end
+basis "Li_Ahlrichs Polarization" SPHERICAL
+Li    P
+      0.1700000              1.0000000        
+end
+basis "Be_Ahlrichs Polarization" SPHERICAL
+Be    P
+      3.6316917145          -0.029033998305   
+      0.71695694366         -0.16877854032    
+      0.19541932860         -0.51403419628    
+Be    P
+      0.06051546589          1.0000000        
+end
+basis "B_Ahlrichs Polarization" SPHERICAL
+B    D
+      0.5000000              1.0000000        
+end
+basis "C_Ahlrichs Polarization" SPHERICAL
+C    D
+      0.8000000              1.0000000        
+end
+basis "N_Ahlrichs Polarization" SPHERICAL
+N    D
+      1.0000000              1.0000000        
+end
+basis "O_Ahlrichs Polarization" SPHERICAL
+O    D
+      1.2000000              1.0000000        
+end
+basis "F_Ahlrichs Polarization" SPHERICAL
+F    D
+      1.4000000              1.0000000        
+end
+basis "Ne_Ahlrichs Polarization" SPHERICAL
+Ne    D
+      1.8880000              1.0000000        
+end
+basis "Na_Ahlrichs Polarization" SPHERICAL
+Na    P
+      0.0520000              1.0000000        
+end
+basis "Mg_Ahlrichs Polarization" SPHERICAL
+Mg    P
+      0.18914796195          1.0000000        
+end
+basis "Al_Ahlrichs Polarization" SPHERICAL
+Al    D
+      0.3000000              1.0000000        
+end
+basis "Si_Ahlrichs Polarization" SPHERICAL
+Si    D
+      0.3500000              1.0000000        
+end
+basis "P_Ahlrichs Polarization" SPHERICAL
+P    D
+      0.4500000              1.0000000        
+end
+basis "S_Ahlrichs Polarization" SPHERICAL
+S    D
+      0.5500000              1.0000000        
+end
+basis "Cl_Ahlrichs Polarization" SPHERICAL
+Cl    D
+      0.6500000              1.0000000        
+end
+basis "Ar_Ahlrichs Polarization" SPHERICAL
+Ar    D
+      0.9690000              1.0000000        
+end
+basis "K_Ahlrichs Polarization" SPHERICAL
+K    P
+      0.0417370              1.0000000        
+end
+basis "Ca_Ahlrichs Polarization" SPHERICAL
+Ca    P
+      0.0749790              1.0000000        
+end
+basis "Sc_Ahlrichs Polarization" SPHERICAL
+Sc    P
+      0.0897480              1.0000000        
+end
+basis "Ti_Ahlrichs Polarization" SPHERICAL
+Ti    P
+      0.1015610              1.0000000        
+end
+basis "V_Ahlrichs Polarization" SPHERICAL
+V    P
+      0.1112480              1.0000000        
+end
+basis "Cr_Ahlrichs Polarization" SPHERICAL
+Cr    P
+      0.1206750              1.0000000        
+end
+basis "Mn_Ahlrichs Polarization" SPHERICAL
+Mn    P
+      0.1276500              1.0000000        
+end
+basis "Fe_Ahlrichs Polarization" SPHERICAL
+Fe    P
+      0.1349150              1.0000000        
+end
+basis "Co_Ahlrichs Polarization" SPHERICAL
+Co    P
+      0.1413080              1.0000000        
+end
+basis "Ni_Ahlrichs Polarization" SPHERICAL
+Ni    P
+      0.1465880              1.0000000        
+end
+basis "Cu_Ahlrichs Polarization" SPHERICAL
+Cu    P
+      0.1550650              1.0000000        
+end
+basis "Zn_Ahlrichs Polarization" SPHERICAL
+Zn    P
+      0.1624550              1.0000000        
+end
+basis "Ga_Ahlrichs Polarization" SPHERICAL
+Ga    D
+      0.2070000              1.0000000        
+end
+basis "Ge_Ahlrichs Polarization" SPHERICAL
+Ge    D
+      0.2460000              1.0000000        
+end
+basis "As_Ahlrichs Polarization" SPHERICAL
+As    D
+      0.2930000              1.0000000        
+end
+basis "Se_Ahlrichs Polarization" SPHERICAL
+Se    D
+      0.3380000              1.0000000        
+end
+basis "Br_Ahlrichs Polarization" SPHERICAL
+Br    D
+      0.3890000              1.0000000        
+end
+basis "Kr_Ahlrichs Polarization" SPHERICAL
+Kr    D
+      0.4430000              1.0000000        
+end

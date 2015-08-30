@@ -1,0 +1,184 @@
+c
+C$Id: cdft.fh 25408 2014-03-31 18:03:35Z edo $
+C
+c     Common for parameters to do with convergence and common details
+c     of the DFT module
+c
+c     variables related to "vectors" input,
+c     variables related to "convergence" input,
+c     variables related to "xc" input,
+c     variables related to "tolerances" input,
+c     variables related to "grid" input, and
+c     other misc variables.
+c
+
+c Exchange-Correlation related
+c
+c     Common for xc parameters
+c     Note: This is repeated in xc.fh
+c     It is duplicated here to address some build issues
+c
+      integer numfunc
+      parameter(numfunc=63)
+c
+      character*256 title
+      character*16 grtagin
+      character*10 gridtype
+      character*8 whichssw
+      character*40 xname, cname, xcname
+      double precision
+     &     rlshift, dampon, dampoff, levlon, levloff, diison, diisoff, 
+     &     rcharge, rscale, cfac, xfac, tol_rho, radius, hl_tol,
+     &     e_conv, d_conv, g_conv, delta_ac, e_homo
+      logical
+     &     nodamping, nolevelshifting, nodiis, ltight, lmaxov, incore,
+     &     XCFIT, CDFIT, store_wght, ldelley, lcfac, nlcfac, lxfac, 
+     &     nlxfac, xccomb, levelshift, damp, diis, direct, oskel, 
+     &     oadapt, lssw, lkeeps,trunc_neigh, lb94, cs00
+      integer
+     &     iAOacc, iCDacc, iXCacc, itol2e, imull, iangquad, 
+     &     iterations, iguess, mult, noc(2), ipol, nfock, ncydp, ncysh, 
+     &     ncyds, idirect, noio, ndamp, idecomp, nagrid, nquad_task,
+     &     nrinc, nrmax, geom, ncenters, nbf, nradpts, nang_leb_pts, 
+     &     nbf_ao, nbf_ao_mxprim, nbf_ao_mxang, nbf_ao_mxcont, 
+     &     nbf_ao_mxnbf_cn, nbf_ao_mxnbf_ce, nshells_ao,
+     &     nbf_cd, nbf_cd_mxprim, nbf_cd_mxang, nbf_cd_mxcont, 
+     &     nbf_cd_mxnbf_cn, nbf_cd_mxnbf_ce, nshells_cd,
+     &     nbf_xc, nbf_xc_mxprim, nbf_xc_mxang, nbf_xc_mxcont, 
+     &     nbf_xc_mxnbf_cn, nbf_xc_mxnbf_ce, nshells_xc,
+     L	   lxdm,
+c
+c     old common handles 
+c
+     &     AO_bas_han, CD_bas_han, XC_bas_han,
+     ,     lrchi,irchi,lrdelchi,irdelchi,
+     ,     g_cdinv, g_2ceri, sic_orb_spin, sic_orb_occ, sic_orb_index,
+     ,     g_sic_dens(2), aux_ik, g_s12m,g_s12p
+c
+      character*256 movecs_in, movecs_out
+      character*8 movecs_guess
+      common /cdft/
+c
+c     Doubles
+c
+     &     rlshift, dampon, dampoff, levlon, levloff, diison, diisoff, 
+     &     rcharge, rscale, cfac(numfunc), xfac(numfunc),
+     &     tol_rho, radius, hl_tol, e_conv, d_conv, g_conv,
+     &     delta_ac, e_homo, 
+c
+c     Logicals
+c
+     &     nodamping, nolevelshifting, nodiis, ltight, lmaxov, incore,
+     &     XCFIT, CDFIT, store_wght, ldelley, lcfac(numfunc), 
+     ,     nlcfac(numfunc),lxfac(numfunc), nlxfac(numfunc), 
+     ,     xccomb(numfunc), levelshift, damp, diis, 
+     &     direct, oskel, oadapt, lssw, lkeeps,trunc_neigh, 
+     &     lb94, cs00, 
+c
+c     Integers
+c
+     &     iAOacc, iCDacc, iXCacc,  itol2e, imull, iangquad, 
+     &     iterations, iguess, mult, noc, ipol, nfock, ncydp, ncysh, 
+     &     ncyds, idirect, noio, ndamp, idecomp, nagrid, nquad_task,
+     &     nrinc, nrmax, geom, ncenters, nbf, nradpts, nang_leb_pts, 
+     &     nbf_ao, nbf_ao_mxprim, nbf_ao_mxang, nbf_ao_mxcont, 
+     &     nbf_ao_mxnbf_cn, nbf_ao_mxnbf_ce, nshells_ao,
+     &     nbf_cd, nbf_cd_mxprim, nbf_cd_mxang, nbf_cd_mxcont, 
+     &     nbf_cd_mxnbf_cn, nbf_cd_mxnbf_ce, nshells_cd,
+     &     nbf_xc, nbf_xc_mxprim, nbf_xc_mxang, nbf_xc_mxcont, 
+     &     nbf_xc_mxnbf_cn, nbf_xc_mxnbf_ce, nshells_xc,
+     L	   lxdm, 
+c
+c     old common handles 
+c
+     &     AO_bas_han, CD_bas_han, XC_bas_han,
+     ,     lrchi,irchi,lrdelchi,irdelchi,
+     ,     g_cdinv, g_2ceri, sic_orb_spin, sic_orb_occ, sic_orb_index,
+     ,     g_sic_dens, aux_ik, g_s12m,g_s12p
+c
+c     Characters
+c
+      common /ccdft/ 
+     &     title, gridtype, xname(numfunc), cname(numfunc), 
+     .     xcname(numfunc),
+     &     movecs_in, movecs_out, movecs_guess,whichssw
+c
+c-->  old dimensions.fh
+c
+      integer MXqshells, MXrad, MXagrid, MXtheta, MXphi
+C
+      Parameter (MXqshells=90000,MXrad=999)
+      Parameter (MXagrid=48,MXtheta=MXagrid,MXphi=2*MXtheta)
+c
+c-->  old quad.fh; Quadrature Points & Weights
+c
+c     MX_l_ang = Lebedev max no. of pts
+c     IAC_MAX = Lebedev max accuracy
+c
+      double precision 
+     &     bsrad_atom_type, znuc_atom_type, 
+     &     rpts, rwghts, aratio, costheta, sintheta, cosphi, sinphi,
+     &     awghts, qrot, wa_leb, za_leb
+      logical 
+     &     iatype_pt_chg,leb
+      integer 
+     &     iqshell, nqshells, nqmax, nrad, nang, ntheta, nphi, 
+     &     iatype,ityp2ctr, iqrot, ntypes,
+     &     max_mbf, max_pr_mbfnq, max_pr_mbf, max_pr_nq, nq_chunk,
+     &     rad_cutoff,n_tot_tasks,
+     &     nradin, nangin, 
+     &     ngridin,wradgrid
+c
+      integer MX_l_ang, IAC_MAX
+c
+      parameter(MX_l_ang = 5810, IAC_MAX = 29)
+c
+c     The following parameters must match those in geomP.fh and 
+c     bas_staticP.fh e.g., dft_max_cent = max_cent, and 
+c     dft_ntags_bsmx = ntags_bsmx
+c
+#include "nwc_const.fh"
+      integer dft_ntags_bsmx, dft_max_cent, max_constr
+      parameter (dft_ntags_bsmx = 200, dft_max_cent = nw_max_atom)
+      parameter (max_constr = 10)
+      integer ncubes_type,ncubesmx
+      integer l_nxyz,k_nxyz ! MA handler
+      double precision lcube,minexp
+      integer ldiff
+      character*10 radgrid
+c
+      Common /quad/
+c
+c     Doubles
+c
+     & bsrad_atom_type(dft_ntags_bsmx), znuc_atom_type(dft_ntags_bsmx),
+     & rpts(MXrad,dft_ntags_bsmx), rwghts(MXrad,dft_ntags_bsmx),
+     & aratio(dft_ntags_bsmx,dft_ntags_bsmx), costheta(MXtheta,MXagrid),
+     & sintheta(MXtheta,MXagrid), cosphi(MXphi,MXagrid),
+     & sinphi(MXphi,MXagrid), awghts(MXtheta,MXagrid), qrot(3,3),
+     & wa_leb(MX_l_ang,IAC_MAX), za_leb(3,MX_l_ang,IAC_MAX),
+     , lcube(dft_ntags_bsmx),minexp(dft_max_cent),
+c
+c     Logicals
+c
+     & iatype_pt_chg(dft_max_cent), leb,
+c
+c     Integers
+c
+     & iqshell(4,MXqshells), nqshells, nqmax, 
+     & nrad(dft_ntags_bsmx), nang(dft_ntags_bsmx), 
+     & ntheta(MXagrid), nphi(MXagrid), iatype(dft_max_cent), iqrot, 
+     & ntypes, max_mbf, max_pr_mbfnq, max_pr_mbf, max_pr_nq, nq_chunk,
+     & rad_cutoff(2,dft_max_cent),n_tot_tasks,
+     & nradin(dft_ntags_bsmx), nangin(dft_ntags_bsmx), 
+     & grtagin(dft_ntags_bsmx),ngridin,
+     . l_nxyz,k_nxyz,ityp2ctr(dft_ntags_bsmx),wradgrid,
+     .     ncubes_type(nw_max_atom),ncubesmx,ldiff(dft_max_cent),
+c
+c     char
+c
+     .     radgrid
+Cedo      character*10 radgrids(6)
+Cedo      data radgrids /'eumac','murakn','tarad','gausslag','gcinterv',
+Cedo     ,'rlindh'/
+

@@ -1,0 +1,5 @@
+	double precision util_drand, util_timer
+	integer util_mitob, util_mdtob
+	external util_drand, util_timer
+	external util_mitob, util_mdtob
+c $Id: testutil.fh 21176 2011-10-10 06:35:49Z d3y133 $

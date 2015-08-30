@@ -1,0 +1,9 @@
+c
+c     $Id: bgj_common.fh 19707 2010-10-29 17:59:36Z d3y133 $
+c
+c     Common block used "behind the scenes" by BGJ
+c
+      integer
+     &     bgj_rtdb
+      common /bgj/
+     &     bgj_rtdb

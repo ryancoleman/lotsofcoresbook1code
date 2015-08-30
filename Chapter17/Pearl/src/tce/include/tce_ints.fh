@@ -1,0 +1,93 @@
+c     =====================================================
+c               CC Integral and Energy Amplitudes
+c     =====================================================
+      integer d_e              ! SF handle for e file
+      integer l_e_offset       ! Offset for e file
+      integer k_e_offset       ! Offset for e file
+      integer size_e           ! File size in doubles
+      integer g_ao1e(2)        ! GA handle for AO Fock matrices
+      integer d_ao2e           ! SF handle for AO 2e integrals
+      integer d_f1             ! SF handle for MO 1e integrals
+      integer l_f1_offset      ! Offset for 1e integral file
+      integer k_f1_offset      ! Offset for 1e integral file
+      integer size_1e          ! File size in doubles
+      integer d_v2             ! SF handle for MO 2e integrals
+      integer l_v2_offset      ! Offset for 2e integral file
+      integer k_v2_offset      ! Offset for 2e integral file
+      integer size_2e          ! File size in doubles
+c     =====================================================
+c               Old Dipole Stuff
+c     =====================================================
+      integer g_aod1(3)        ! GA handle for AO dipole matrices
+      integer d_d1(3)          ! MO dipole integral file
+      integer l_d1_offset(3)   ! Offset for d1 integral file
+      integer k_d1_offset(3)   ! Offset for d1 integral file
+      integer size_d1(3)       ! File size in doubles
+      character*3 dfilename(3) ! File name stub
+      data dfilename/'d1x','d1y','d1z'/
+      character*3 axisname(19)  ! Axis
+      data axisname/'X','Y','Z','XX','YY','ZZ','XY','XZ','YZ',
+     & 'XXX','YYY','ZZZ','XXY','XXZ','YYX','YYZ','ZZX','ZZY','XYZ'/
+c      double precision debye   ! Hartree to Debye
+c      parameter (debye=-2.541766d0)
+      integer d_d0             ! Dipole moment
+      integer l_d0_offset      ! Offset for d0 file
+      integer k_d0_offset      ! Offset for d0 file
+      integer size_d0          ! File size in doubles
+      integer axis             ! X=1, Y=2, & Z=3
+c     =====================================================
+c               New Multipole Stuff
+c     =====================================================
+c
+c     Conventions (matches sym_abelian_axis.F)
+c
+c     Dipole:
+c     x=1 y=2 z=3
+c
+c     Quadrupole:
+c     xx=4 yy=5 zz=6 xy=7 xz=8 yz=9
+c
+c     Octupole:
+c     xxx=10 yyy=11 zzz=12 xxy=13 xxz=14 yyx=15 yyz=16 zzx=17 zzy=18 xyz=19
+c
+c     =====================================================
+      integer irrep_mp(19)                ! This is setup somewhere else
+      integer g_ao_mp1(19)                ! GA handle for AO dipole matrices
+      integer d_mo_mp1(19)                ! MO dipole integral file
+      integer l_mo_mp1_offset(19)         ! Offset for d1 integral file
+      integer k_mo_mp1_offset(19)         ! Offset for d1 integral file
+      integer size_mo_mp1(19)             ! File size in doubles
+      character*8 mpfilename(19)          ! File name stub
+      double precision mp_moments_scf(19)
+      double precision mp_moments_cor(19)
+      double precision debye,buck,octo
+      parameter (octo=0.711688d0)
+      parameter (buck=1.344911d0)
+      parameter (debye=2.54176568d0)
+      integer d_mp0                       ! Multipole moment
+      integer l_mp0_offset                ! Offset for mp0 file
+      integer k_mp0_offset                ! Offset for mp0 file
+      integer size_mp0                    ! File size in doubles
+c     =====================================================
+c
+c     Integers
+c
+c      common /tceintsinteger/
+c     1 
+c
+c     Doubles
+c
+c      common /tceintsdouble/
+c     1  
+c
+c     Characters
+c
+c      common /tceintschar/
+c     1  
+c
+c     Logicals
+c
+c      common /tceintslogical/
+c     1 
+
+c $Id: tce_ints.fh 21176 2011-10-10 06:35:49Z d3y133 $

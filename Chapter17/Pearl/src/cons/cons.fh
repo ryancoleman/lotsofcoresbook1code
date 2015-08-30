@@ -1,0 +1,65 @@
+       integer cons_get_h_c
+       external cons_get_h_c
+
+       integer cons_get_i_c
+       external cons_get_i_c
+
+       integer cons_get_h_hbond_id
+       external cons_get_h_hbond_id
+
+       integer  cons_get_h_hbond_k
+       external cons_get_h_hbond_k
+
+       integer cons_get_h_hbond_r
+       external cons_get_h_hbond_r
+
+       integer cons_get_i_hbond_id
+       external cons_get_i_hbond_id
+
+       integer cons_get_irtdb
+       external cons_get_irtdb
+
+       integer  cons_get_i_hbond_k
+       external cons_get_i_hbond_k
+
+       integer cons_get_i_hbond_r
+       external cons_get_i_hbond_r
+
+       logical cons_inquire
+       external cons_inquire
+
+       logical cons_print
+       external cons_print
+
+       logical cons_hdihed
+       external cons_hdihed
+
+       logical cons_hbonds
+       external cons_hbonds
+
+       logical cons_fixed_atoms
+       external cons_fixed_atoms
+
+       logical cons_status
+       external cons_status
+
+       integer cons_get_h_hdihed_id
+       external cons_get_h_hdihed_id
+
+       integer  cons_get_h_hdihed_k
+       external cons_get_h_hdihed_k
+
+       integer cons_get_h_hdihed_r
+       external cons_get_h_hdihed_r
+
+       integer cons_get_i_hdihed_id
+       external cons_get_i_hdihed_id
+
+       integer  cons_get_i_hdihed_k
+       external cons_get_i_hdihed_k
+
+       integer cons_get_i_hdihed_r
+       external cons_get_i_hdihed_r
+
+
+c $Id: cons.fh 21176 2011-10-10 06:35:49Z d3y133 $

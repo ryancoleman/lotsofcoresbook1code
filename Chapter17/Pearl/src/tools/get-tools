@@ -1,0 +1,8 @@
+#!/bin/bash
+#
+# $Id: get-tools 26138 2014-09-02 23:42:51Z edo $
+#
+
+unalias -a
+wget http://www.nwchem-sw.org/images/Ga-5-3.sep022014.tar.gz
+tar xzf Ga-5-3.sep022014.tar.gz

@@ -1,0 +1,9 @@
+c
+c $Id: auxvar.fh 19696 2010-10-29 16:53:42Z d3y133 $
+c
+c     auxvar ... something to do with sp incomplete gamma function ?
+c     var ?
+c
+      double precision auxvar, var
+      common /auxvar/ auxvar,var(2)
+c

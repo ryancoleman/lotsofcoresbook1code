@@ -1,0 +1,136 @@
+#ifndef OOCLU_H
+#define OOCLU_H 1
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <assert.h>
+#include <string.h>
+#include <math.h>
+#include <complex.h>
+
+#include "ooc_offload.h"
+
+#include "scalapack.h"
+//#include <mkl_scalapack.h>
+#include <mkl_pblas.h>
+
+#ifdef USE_PROFILE
+#include "profinit.h"
+#define cudaThreadSynchronize() 
+
+#define PROFSTART(name) { char buf[] = name; profstart(buf); }
+#define PROFEND(name) { char buf[] = name; profend(buf); }
+#define PROFINIT() { profinit(); }
+#define PROFSTAT() { profstat(); }
+#else
+#define PROFSTART(name) {}
+#define PROFEND(name) {}
+#define PROFINIT() {}
+#define PROFSTAT() {}
+#endif
+
+
+#ifndef TRUE
+#define TRUE (1 == 1)
+#endif
+
+#ifndef FALSE
+#define FALSE (1 == 0)
+#endif
+
+
+#ifndef IDX1F
+#define IDX1F(i)  ((i)-1)
+#endif
+
+#ifndef IDX2F
+#define IDX2F(i,j,lld)  (( (i) + ((j)-1)*(lld) ) - 1)
+#endif
+
+#ifndef MIN
+#define MIN(x,y)  (((x) < (y)) ? (x) : (y) )
+#endif
+
+#ifndef MAX
+#define MAX(x,y)  (((x) > (y)) ? (x) : (y) )
+#endif
+
+#ifndef MOD
+#define MOD(x,y)  ((x) % (y))
+#endif
+
+#define REAL_PART 0
+#define IMAG_PART 1
+
+#define    BLOCK_CYCLIC_2D     1
+
+#define    DTYPE_             0                   /* Descriptor Type */
+#define    CTXT_              1                     /* BLACS context */
+#define    M_                 2             /* Global Number of Rows */
+#define    N_                 3          /* Global Number of Columns */
+#define    MB_                4                 /* Row Blocking Size */
+#define    NB_                5              /* Column Blocking Size */
+#define    RSRC_              6            /* Starting Processor Row */
+#define    CSRC_              7         /* Starting Processor Column */
+#define    LLD_               8           /* Local Leading Dimension */
+#define    DLEN_              9                 /* Descriptor Length */
+
+
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+int Cindxl2g( int indxloc, int nb, int iproc, int isrcproc, int nprocs );
+
+int Cindxg2p(int indxglob, int nb, int iproc, int isrcproc, int nprocs );
+
+
+void setup_desc( int m, int n, int ia, int ja, int *descA,  
+                  int *isize, int *descB );
+
+void Cdescinit( int *desc, int m, int n, int mb, int nb,
+                int irsrc, int icsrc, int ictxt, int lld, int *info);
+
+void Cdescset( int *desc, int m, int n, int mb, int nb,
+                int irsrc, int icsrc, int ictxt, int lld );
+
+int Cnumroc( int n, int nb, int iproc, int isrcproc, int nprocs );
+
+int Cnumroc2( int ia, int n, int nb, int iproc, int isrcproc, int nprocs );
+
+void Cinfog1l( int gindx, int nb, int nprocs, int myroc, int isrcproc,
+               int *lindx, int *rocsrc );
+
+void local_extent( int m, int n, int ia, int ja, int *descA,
+              int *msize, int *nsize,
+              int *lrA1, int *lcA1,  int *lrA2, int *lcA2 );
+
+
+void Cinfog2l( int grindx, int gcindx, int *desc, int nprow, int npcol,
+               int myrow, int mycol, 
+               int *lrindx, int *lcindx, int *rsrc, int *csrc );
+
+
+void Cpilaprnt( int m, int n,  int *A, int ia, int ja, int *descA, char *cmatnm );
+
+int Ciafirst(int ia,int mb,int myprow,int rsrc,int nprow);
+
+int Cialast(int ia,int mb,int myprow,int rsrc,int nprow);
+
+
+void *MallocHost( size_t nbytes );
+void FreeHost( void *ptr );
+
+#ifdef __cplusplus
+}
+#endif
+
+
+//#include "ooclu_z.h"
+//#include "ooclu_c.h"
+#include "ooclu_d.h"
+//#include "ooclu_s.h"
+
+
+#endif

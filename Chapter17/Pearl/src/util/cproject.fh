@@ -1,0 +1,10 @@
+      integer max_proj
+C$Id: cproject.fh 19707 2010-10-29 17:59:36Z d3y133 $
+      parameter (max_proj = 100)
+      logical oproject          ! True if supposed to project
+      double precision e_proj   ! Eigenvalues for projection
+      integer g_proj            ! Handle to GA with evecs
+      integer nroot_proj        ! No. of roots to project
+      integer n_proj            ! Length of vectors
+      common /cproduct/ e_proj(max_proj), g_proj, nroot_proj, n_proj,
+     $     oproject

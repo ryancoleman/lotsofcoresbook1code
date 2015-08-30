@@ -1,0 +1,43 @@
+#  Binning-Curtiss (df) Polarization  EMSL  Basis Set Exchange Library  3/15/13 10:18 AM
+# R. C. BINNING AND L. A. CURTISS, J. COMP. CHEM. 11, 1206 (1990).
+# T. H. DUNNING, JR. J. CHEM. PHYS. 66, 1382 (1977).
+# 
+
+
+
+basis "Ga_Binning-Curtiss (df) Polarization" SPHERICAL
+Ga    D
+      0.1410000              1.0000000        
+Ga    F
+      0.1670000              1.0000000        
+end
+basis "Ge_Binning-Curtiss (df) Polarization" SPHERICAL
+Ge    D
+      0.2020000              1.0000000        
+Ge    F
+      0.2670000              1.0000000        
+end
+basis "As_Binning-Curtiss (df) Polarization" SPHERICAL
+As    D
+      0.2730000              1.0000000        
+As    F
+      0.3720000              1.0000000        
+end
+basis "Se_Binning-Curtiss (df) Polarization" SPHERICAL
+Se    D
+      0.3150000              1.0000000        
+Se    F
+      0.4000000              1.0000000        
+end
+basis "Br_Binning-Curtiss (df) Polarization" SPHERICAL
+Br    D
+      0.3380000              1.0000000        
+Br    F
+      0.4010000              1.0000000        
+end
+basis "Kr_Binning-Curtiss (df) Polarization" SPHERICAL
+Kr    D
+      0.3180000              1.0000000        
+Kr    F
+      0.4010000              1.0000000        
+end

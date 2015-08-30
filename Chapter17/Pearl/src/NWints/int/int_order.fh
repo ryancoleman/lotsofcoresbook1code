@@ -1,0 +1,7 @@
+* $Id: int_order.fh 19696 2010-10-29 16:53:42Z d3y133 $
+c
+      integer num_types
+      parameter (num_types = 10)
+      character*2 shell_types(-1:(num_types-2))
+      common /c_int_order/shell_types
+c

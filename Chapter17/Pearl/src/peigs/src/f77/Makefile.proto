@@ -1,0 +1,56 @@
+#
+# $Id: Makefile.proto 19708 2010-10-29 18:04:21Z d3y133 $
+#
+
+ifeq ($(peigs_CODEOBJ),DBLE)
+FOBJ = damax.o \
+       dlaebz2.o \
+       dstebz3.o \
+       heapsort.o \
+       neblw2.o\
+       dspevx2.o \
+	dgetavec.o \
+	dgetavec2.o \
+	dgetavec3.o \
+	types1.o 
+endif
+
+ifeq ($(peigs_CODEOBJ),SINGLE)
+FOBJ = samax.o \
+       slaebz2.o \
+       sstebz3.o \
+       sheapsort.o \
+       sneblw2.o \
+       dspevx2.o \
+	dgetavec.o \
+	dgetavec2.o \
+	dgetavec3.o \
+	types1.o 
+endif
+
+
+EOBJ	= xerbl2.o ilaenv1.o menode.o pairup.o xstop.o
+
+all:		$(FOBJ) $(EOBJ)
+
+.EXPORT_ALL_VARIABLES:
+
+.PHONY :	clean
+
+
+		-rm -f F*.f
+
+realclean:
+		clean
+
+clean:
+		-rm -f *.o
+		-rm -f *.s
+		-rm -f dgetavec.f dlaebz2.f dlagtf1.f \
+		dlasy2.f dlasyf.f dspevx2.f dstebz3.f \
+		neblw2.f sneblw2.f sstebz3.f
+		-rm -f F*.f
+
+.f.o:; $(peigs_FC) -c $<
+.F.o:; $(peigs_FC) -c $<
+.c.o:; $(peigs_CC) -c $<

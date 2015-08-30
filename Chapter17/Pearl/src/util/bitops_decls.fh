@@ -1,0 +1,27 @@
+*
+* $Id: bitops_decls.fh 22340 2012-04-25 22:02:33Z edo $
+*
+c
+c     Machine dependent defintion of the standard
+c     iand/ior/ieor/rshift/lshift bit operations
+c
+#if defined(LINUX) && defined(USE_F2C)
+      integer iand, ior, ieor
+      integer and, or, xor, rshift, lshift
+      intrinsic and, or, xor, rshift, lshift
+      integer iiibit, jjjbit
+      external ishft
+#endif
+#ifdef CRAY
+      integer lshift, rshift, shiftr, shiftL
+      intrinsic shiftr, shiftl
+      integer iiibit, jjjbit
+#endif
+#if (defined(SGI) && defined(_LANGUAGE_FORTRAN90)) || ( __GNUC__ >= 4)
+      integer rshift, lshift
+      integer iiibit, jjjbit
+#endif
+#if defined(HPUX)
+      integer*8 rshift, lshift
+      integer iiibit, jjjbit
+#endif

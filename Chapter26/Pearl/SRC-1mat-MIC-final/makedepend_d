@@ -1,0 +1,141 @@
+Cpdgecopy_d2h_async.o: Cpdgecopy_d2h_async.cpp
+	$(CC) $(CFLAGS) -c Cpdgecopy_d2h_async.cpp
+
+Cpdgecopy_d2h.o: Cpdgecopy_d2h.cpp
+	$(CC) $(CFLAGS) -c Cpdgecopy_d2h.cpp
+
+Cpdgemm_hhd.o: Cpdgemm_hhd.cpp
+	$(CC) $(CFLAGS) -c Cpdgemm_hhd.cpp
+
+Cpdsyrk_hhd.o: Cpdsyrk_hhd.cpp
+	$(CC) $(CFLAGS) -c Cpdsyrk_hhd.cpp
+
+Cpdlaprnt.o: Cpdlaprnt.cpp
+	$(CC) $(CFLAGS) -c Cpdlaprnt.cpp
+
+pdpotrf_gpu2.o: pdpotrf_gpu2.cpp
+	$(CC) $(CFLAGS) -c pdpotrf_gpu2.cpp
+
+pdgetrf_gpu2.o: pdgetrf_gpu2.cpp
+	$(CC) $(CFLAGS) -c pdgetrf_gpu2.cpp
+
+pdgetrf_gpu.o: pdgetrf_gpu.cpp
+	$(CC) $(CFLAGS) -c pdgetrf_gpu.cpp
+
+Cpdswap_gpu.o: Cpdswap_gpu.cpp
+	$(CC) $(CFLAGS) -c Cpdswap_gpu.cpp
+
+Cpdlaswp_gpu.o: Cpdlaswp_gpu.cpp
+	$(CC) $(CFLAGS) -c Cpdlaswp_gpu.cpp
+
+pdpotrf_ooc2.o: pdpotrf_ooc2.cpp
+	$(CC) $(CFLAGS) -c pdpotrf_ooc2.cpp
+
+pdgetrf_ooc2.o: pdgetrf_ooc2.cpp
+	$(CC) $(CFLAGS) -c pdgetrf_ooc2.cpp
+
+pdgetrf_ooc.o: pdgetrf_ooc.cpp
+	$(CC) $(CFLAGS) -c pdgetrf_ooc.cpp
+
+pdcopymatrix.o: pdcopymatrix.cpp
+	$(CC) $(CFLAGS) -c pdcopymatrix.cpp
+
+pdludriver.o: pdludriver.F
+	$(FC) $(FFLAGS) -c pdludriver.F
+
+pdludriver.exe: pdludriver.o liblin.a lib.a
+	$(CC) $(CFLAGS) -DUSE_CUDA_MALLOC_HOST=1 -c MallocHost.cpp
+	$(FC) $(FFLAGS) -o pdludriver.exe \
+	  	pdludriver.F \
+		print_desc.f \
+		MallocHost.o \
+		liblin.a lib.a $(LIBS)
+
+pdludriver_org.exe: pdludriver_org.o liblin.a lib.a
+	$(CC) $(CFLAGS) -UUSE_CUDA_MALLOC_HOST -c MallocHost.cpp
+	$(FC) $(FFLAGS) -o pdludriver_org.exe \
+	  	pdludriver_org.F \
+		print_desc.f \
+		MallocHost.o \
+		liblin.a lib.a $(LIBS)
+
+pdludriver2.o: pdludriver2.F
+	$(FC) $(FFLAGS) -c pdludriver2.F
+
+pdludriver2.exe: pdludriver2.o liblin.a lib.a
+	$(CC) $(CFLAGS) -DUSE_CUDA_MALLOC_HOST=1 -c MallocHost.cpp
+	$(FC) $(FFLAGS) -o pdludriver2.exe \
+	  	pdludriver2.F \
+		print_desc.f \
+		MallocHost.o \
+		liblin.a lib.a $(LIBS)
+
+pdludriver_fake.exe:  $(SRC) fake_cublas.cpp pdludriver.F 
+	$(CC) $(CFLAGS) -DUSE_FAKE_CUBLAS -c  $(SRC) fake_cublas.cpp
+	$(FC) $(FFLAGS) -DUSE_FAKE_CUBLAS -o pdludriver_fake.exe \
+	  	pdludriver.F \
+		print_desc.f \
+		idamax.f \
+		xerbla.f \
+		fake_cublas.o \
+		$(OBJECTS) $(LIBS)
+
+pdlltdriver2.o: pdlltdriver2.F
+	$(FC) $(FFLAGS) -c pdlltdriver2.F
+
+pdlltdriver2.exe: pdlltdriver2.o liblin.a lib.a
+	$(CC) $(CFLAGS) -c ooc_offload.cpp
+	$(CC) $(CFLAGS) -c MallocHost.cpp
+	$(FC) $(FFLAGS) -o pdlltdriver2.exe \
+	  	pdlltdriver2.F \
+                ooc_offload.o \
+		MallocHost.o \
+		liblin.a lib.a $(LIBS) \
+                -lstdc++
+
+pdlltdriver3.o: pdlltdriver3.cpp
+	$(CC) $(CFLAGS) -c pdlltdriver3.cpp
+
+pdlltdriver3.exe: pdlltdriver3.o liblin.a lib.a
+	$(CC) $(CFLAGS) -c ooc_offload.cpp
+	$(CC) $(CFLAGS) -c pdlltinfo.cpp
+	$(CC) $(CFLAGS) -c MallocHost.cpp
+	$(CC) $(CFLAGS) -o pdlltdriver3.exe \
+            pdlltdriver3.o \
+            ooc_offload.o \
+            pdlltinfo.o \
+            MallocHost.o \
+            liblin.a lib.a $(LIBS) \
+            -lstdc++ -lifcore
+
+pdlltdriver4.o: pdlltdriver4.cpp
+	$(CC) $(CFLAGS) -c pdlltdriver4.cpp
+
+pdlltdriver4.exe: pdlltdriver4.o liblin.a lib.a
+	$(CC) $(CFLAGS) -c ooc_offload.cpp
+	$(CC) $(CFLAGS) -c pdlltinfo.cpp
+	$(CC) $(CFLAGS) -c MallocHost.cpp
+	$(CC) $(CFLAGS) -o pdlltdriver4.exe \
+            pdlltdriver4.o \
+            ooc_offload.o \
+            pdlltinfo.o \
+            MallocHost.o \
+            liblin.a lib.a $(LIBS) \
+            -lstdc++ -lifcore
+
+cudamvapich2driver.o: cudamvapich2driver.F
+	$(FC) $(FFLAGS) -c cudamvapich2driver.F
+
+cudamvapich2driver.exe: cudamvapich2driver.o liblin.a lib.a
+	$(CC) $(CFLAGS) -DUSE_CUDA_MALLOC_HOST=1 -c MallocHost.cpp
+	$(FC) $(FFLAGS) -o cudamvapich2driver.exe \
+                cudamvapich2driver.F \
+                print_desc.f \
+                MallocHost.o \
+                liblin.a lib.a $(LIBS)
+
+test_pdgeadd.exe: test_pdgeadd.c
+	$(CC) -us -g -I$(PBLAS_DIR) -Wno-deprecated -c test_pdgeadd.c
+	$(CC) -O2 -o test_pdgeadd.exe \
+        $(MPILIB) -L$(MKLDIR) $(SCALAPACKLIB) $(BLASLIB) \
+	test_pdgeadd.o

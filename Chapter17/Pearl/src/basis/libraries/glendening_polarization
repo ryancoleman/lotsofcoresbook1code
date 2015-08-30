@@ -1,0 +1,17 @@
+#  Glendening Polarization  EMSL  Basis Set Exchange Library  3/15/13 10:19 AM
+# !
+#   
+
+
+basis "K_Glendening Polarization" SPHERICAL
+K    D
+      0.4800000              1.0000000        
+end
+basis "Rb_Glendening Polarization" SPHERICAL
+Rb    D
+      0.2400000              1.0000000        
+end
+basis "Cs_Glendening Polarization" SPHERICAL
+Cs    D
+      0.1900000              1.0000000        
+end

@@ -1,0 +1,108 @@
+*
+* $Id: cint2efile.fh 19707 2010-10-29 17:59:36Z d3y133 $
+*
+c
+c     Internal common for int2e routines
+c     
+c     want to dynamically allocate most of this soon
+c     
+      integer labels            ! Buffer for integral labels
+      integer labels4(1)        ! 1-d array equiv. to labels
+      double precision values   ! Buffer for integral values
+      integer n_in_rec          ! No. of entries in buffer
+      integer next_value        ! Next value to be read/inserted
+      integer n_rec_in_file     ! No. of records in file
+      integer cur_rec           ! Current record no. (1, 2, ...)
+      integer buffer_size       ! Size of buffer ... MUST BE EVEN
+      integer n_per_rec         ! No. of integrals a buffer can hold
+      integer rec_len_in_dbl    ! Size of total record in doubles
+      character*256 actualname  ! Name of file
+      logical ocompress         ! True if value compression is enabled
+      logical otrace            ! True if debugging enabled
+      logical oinfo             ! True if to print brief info
+      integer l_cache, k_cache  ! MA space for integral cache
+      integer max_file_rec      ! Max no. of records to put in file
+      integer max_cache_rec     ! Max no. of records to put in cache
+      logical file_opened       ! True if a physical file is open
+      integer lab_pack_len      ! Length of packed labels (8/16 bits)
+      integer laboff            ! Integer offset of packed labels in ibuf
+      integer nint_per_dbl      ! No. of integers per double precision
+c
+      logical oasyncio          ! If true use asynchronous IO
+      logical oiopending        ! If true asynchronous IO is pending
+      integer aioreq            ! EAF handle to AIO request
+c
+      integer range(4,2)        ! Current bf range (i/j/k/l,lo/hi)
+      integer nleft_in_range    ! No. of ints to be processed in range
+      integer cntr_ptr          ! Pointer to counter of integs in range
+      double precision precision ! Required accuracy
+      double precision scale    ! Scaling for integrals before int()
+      double precision maxvalue ! Max value of compressed integral
+      integer nlarge            ! Counts no. of large integrals
+c
+      integer fd                ! CHEMIO fd
+c
+      integer posinfo           ! Used to record current position
+c
+      double precision buf      ! Compressed buffer for IO only
+      integer ibuf(1)           ! Equivalenced integer array
+      integer n_in_buf          ! n_in_rec info for this buf
+      integer pad               ! Padding for 32 bit machines
+c
+      double precision buf2     ! Compressed buffer for IO only - ASYNC
+      integer n_in_buf2         ! n_in_rec info for this buf    - ASYNC
+      integer pad2              ! Padding for 32 bit machines   - ASYNC
+c
+*      parameter (buffer_size = 16) ! About the minimum
+#ifdef CRAY_T3D
+c     save on memory since have only physical memory
+      parameter (buffer_size = 8192    - 2)
+#else
+      parameter (buffer_size = 32768*2 - 2)
+#endif
+c
+      common/cint2ebuf/
+     $     buf(buffer_size),
+     $     n_in_buf, pad(3)
+      equivalence(ibuf(1),buf(1))
+c
+      common/cint2ebuf2/
+     $     buf2(buffer_size),
+     $     n_in_buf2, pad2(3)
+c
+      common/cint2efile/
+     $     values(buffer_size),
+     $     labels(4,buffer_size),
+     $     n_in_rec
+      equivalence (labels4(1),labels(1,1))
+c
+      common/cintinfo/
+     $     precision, scale, maxvalue,
+     $     n_rec_in_file,
+     $     n_per_rec,
+     $     cur_rec,
+     $     rec_len_in_dbl,
+     $     next_value,
+     $     otrace,
+     $     oinfo,
+     $     ocompress,
+     $     file_opened,
+     $     l_cache, k_cache,
+     $     max_file_rec, max_cache_rec,
+     $     range,
+     $     nleft_in_range,
+     $     cntr_ptr,
+     $     nlarge,
+     $     lab_pack_len,
+     $     laboff,
+     $     nint_per_dbl,
+     $     fd,
+     $     oasyncio,
+     $     oiopending,
+     $     aioreq,
+     $     posinfo(16)
+c
+      common/ccintinfo/
+     $     actualname
+c
+

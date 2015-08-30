@@ -1,0 +1,84 @@
+#  Pople-style Diffuse  EMSL  Basis Set Exchange Library  3/15/13 10:18 AM
+# Elements                             Reference
+# --------                             ----------
+# H, Li-Cl: T. Clark, J. Chandrasekhar,  G.W. Spitznagel, P.V.R. Schleyer, 
+#           J. Comp. Chem. 4, 294 (1983).
+#   
+
+
+basis "H_Pople-style Diffuse" SPHERICAL
+H    S
+      0.0360000              1.0000000        
+end
+basis "Li_Pople-style Diffuse" SPHERICAL
+Li    SP
+      0.0074000              1.0000000              1.0000000        
+end
+basis "Be_Pople-style Diffuse" SPHERICAL
+Be    SP
+      0.0207000              1.0000000              1.0000000        
+end
+basis "B_Pople-style Diffuse" SPHERICAL
+B    SP
+      0.0315000              1.0000000              1.0000000        
+end
+basis "C_Pople-style Diffuse" SPHERICAL
+C    SP
+      0.0438000              1.0000000              1.0000000        
+end
+basis "N_Pople-style Diffuse" SPHERICAL
+N    SP
+      0.0639000              1.0000000              1.0000000        
+end
+basis "O_Pople-style Diffuse" SPHERICAL
+O    SP
+      0.0845000              1.0000000              1.0000000        
+end
+basis "F_Pople-style Diffuse" SPHERICAL
+F    SP
+      0.1076000              1.0000000              1.0000000        
+end
+basis "Ne_Pople-style Diffuse" SPHERICAL
+Ne    SP
+      0.1300000              1.0000000              1.0000000        
+end
+basis "Na_Pople-style Diffuse" SPHERICAL
+Na    SP
+      0.0076000              1.0000000              1.0000000        
+end
+basis "Mg_Pople-style Diffuse" SPHERICAL
+Mg    SP
+      0.0146000              1.0000000              1.0000000        
+end
+basis "Al_Pople-style Diffuse" SPHERICAL
+Al    SP
+      0.0318000              1.0000000              1.0000000        
+end
+basis "Si_Pople-style Diffuse" SPHERICAL
+Si    SP
+      0.0331000              1.0000000              1.0000000        
+end
+basis "P_Pople-style Diffuse" SPHERICAL
+P    SP
+      0.0348000              1.0000000              1.0000000        
+end
+basis "S_Pople-style Diffuse" SPHERICAL
+S    SP
+      0.0405000              1.0000000              1.0000000        
+end
+basis "Cl_Pople-style Diffuse" SPHERICAL
+Cl    SP
+      0.0483000              1.0000000              1.0000000        
+end
+basis "Ar_Pople-style Diffuse" SPHERICAL
+Ar    SP
+      0.0600000              1.0000000              1.0000000        
+end
+basis "K_Pople-style Diffuse" SPHERICAL
+K    SP
+      0.0047000              1.0000000              1.0000000        
+end
+basis "Ca_Pople-style Diffuse" SPHERICAL
+Ca    SP
+      0.0071000              1.0000000              1.0000000        
+end

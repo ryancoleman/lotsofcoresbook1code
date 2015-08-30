@@ -1,0 +1,9 @@
+*
+* $Id: pottimes.fh 19707 2010-10-29 17:59:36Z d3y133 $
+*
+      double precision time_init, time_make_poles, time_poles,
+     $     time_direct
+      logical otime
+      common/cfreddy/ time_init, time_make_poles, time_poles,
+     $     time_direct, otime
+

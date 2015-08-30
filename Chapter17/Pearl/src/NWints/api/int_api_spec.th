@@ -1,0 +1,27 @@
+*:tex-begin
+*:tex-cvsid
+%
+%-----------------------------------------------------------------% 
+%                                                                 %
+%                                                                 %
+%  This latex source file should NOT be edited.  It is generated  %
+%  automatically from the integral API source code using "seetex" %
+%  modifications required sould be made in the source code which  %
+%  is in the source directory ".../nwchem/src/NWints/api" from    %
+%  the standard repository. If you have questions or problems     %
+%  contact Ricky Kendall at ra_kendall@pnl.gov or (509)375-2602   %
+%                                                                 %
+%  To make the ``current version'' of these files:                %
+%  1) cd ${NWCHEM_TOP}/src/NWints/api                            $%
+%  2) make doc                                                    %
+%                                                                 %
+%-----------------------------------------------------------------% 
+%
+\chapter{Integral Application Programmer's Interface}
+\label{appendix_intapi}
+This appendix describes the interface to all routines for the NWChem
+integral API. This includes the actual subroutine documentation and
+design specifications.
+
+
+*:tex-end

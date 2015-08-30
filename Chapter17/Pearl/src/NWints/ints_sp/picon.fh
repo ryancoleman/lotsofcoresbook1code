@@ -1,0 +1,6 @@
+c
+c $Id: picon.fh 19696 2010-10-29 16:53:42Z d3y133 $
+c
+      double precision pito52, pidiv4, root3, root5
+      common /picon/ pito52,pidiv4,root3,root5
+c

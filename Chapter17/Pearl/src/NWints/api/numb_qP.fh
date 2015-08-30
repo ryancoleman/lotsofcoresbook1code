@@ -1,0 +1,8 @@
+c
+* $Id: numb_qP.fh 19696 2010-10-29 16:53:42Z d3y133 $
+c
+      logical more_ints_txs, txs_b2e4c
+      integer num_q_start, num_q_last, nsp
+      common /c_intb/ num_q_start, num_q_last, nsp,
+     &    more_ints_txs, txs_b2e4c
+c

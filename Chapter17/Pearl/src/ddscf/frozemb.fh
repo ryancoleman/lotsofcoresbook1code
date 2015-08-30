@@ -1,0 +1,7 @@
+c     frozen embedding 
+c
+      logical frozemb
+      integer g_frozemb
+c
+      common /cfrozemb/frozemb,g_frozemb
+c $Id: frozemb.fh 22503 2012-05-20 06:58:57Z d3y133 $

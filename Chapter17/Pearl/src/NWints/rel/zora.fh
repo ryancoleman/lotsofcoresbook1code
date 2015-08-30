@@ -1,0 +1,69 @@
+czora...
+czora...zora related quantities
+czora...
+czora...zora flags
+        logical do_zora, do_zora_get_correction
+        common/zora_flags/do_zora, do_zora_get_correction
+c
+czora...spin-orbit control (1=z, 2=y, 3=x, 0=spin-free)
+        integer so_term
+        common/zora_so_term/so_term
+c
+czora...constants
+        double precision clight_au
+        common/zora_consts/clight_au
+czora...zora cutoff
+        double precision zoracutoff
+        common/zora_tols/zoracutoff
+c
+czora...calculation control
+czora...0 = pure kinetic calculated on a grid (for testing)
+czora...1 = zora correction to the kinetic energy
+czora...2 = zora energy scaling
+czora...3 = zora EFG 
+czora-efgz4 FA
+        double precision zoracutoff_EFG
+        common/zora_tols_EFG/zoracutoff_EFG
+        integer zora_calc_type
+        common/zora_calc/zora_calc_type
+        integer g_Ci,g_Cifull(2),g_AtNr
+        integer nlist
+        common/zora_ints/g_Ci,g_Cifull
+        common/zora_listAt/g_AtNr,nlist
+
+        character*(*) lbl_nlmo
+        parameter(lbl_nlmo='zora_EFGSRZ4nlmo')
+        character*(*) lbl_efgz4
+        parameter(lbl_efgz4='zora_efgz4')
+c
+czora-nmr-cs FA
+        character*(*) lbl_nmrcs
+        parameter(lbl_nmrcs='zora_nmrcs')
+        character*(*) lbl_nmrgshift
+        parameter(lbl_nmrgshift='zora_nmrgshift')
+        character*(*) lbl_nmrgshift_AB
+        parameter(lbl_nmrgshift_AB='zora_nmrgshift_AB')
+        character*(*) lbl_nmrhyp
+        parameter(lbl_nmrhyp='zora_nmrhyp')
+        character*(*) lbl_nlmohyp
+        parameter(lbl_nlmohyp='zora_hypnlmo')
+        character*(*) lbl_nlmogshift
+        parameter(lbl_nlmogshift='zora_gshiftnlmo')
+        character*(*) lbl_nlmoshield
+        parameter(lbl_nlmoshield='zora_shieldnlmo')
+        character*(*) lbl_cphfgshift
+        parameter(lbl_cphfgshift='zora_gshiftcphf')
+        character*(*) lbl_cphfshield
+        parameter(lbl_cphfshield='shieldcphf')
+        character*(*) lbl_cphfhyp
+        parameter(lbl_cphfhyp='zora_hypcphf')
+        logical do_NonRel
+        common/NonRel_flag/do_NonRel
+        logical not_zora_scale
+        common/zorascale_flag/not_zora_scale
+        double precision zoracutoff_NMR
+        common/zora_tols_NMR/zoracutoff_NMR
+c
+        integer g_zora_Kinetic(2)
+        common/zora_fock/g_zora_Kinetic
+c $Id: zora.fh 23379 2013-01-05 23:41:27Z niri $

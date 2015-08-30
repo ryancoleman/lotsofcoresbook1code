@@ -1,0 +1,45 @@
+c
+c$Id: cfock.fh 19707 2010-10-29 17:59:36Z d3y133 $
+c
+      logical odensityscreen  ! If true use density screening
+      double precision dentolmax ! Upper bound for dentol
+      double precision semi_direct_tol2e ! Tol2e from when integrals cached
+      integer task_bf         ! Chunking parameter for density matrix
+      integer filesize        ! Max integral file size in doubles
+      integer memsize         ! Max integral cache size in doubles
+      logical onoblock        ! True if not using blocked integrals
+      logical oreplicated     ! True if using replicated data algorithm
+      logical oreadfile       ! True if file/cache being read from
+      logical owritefile      ! True if writing integrals to file
+      logical dovecs          ! use of MO vectors for ri fock build
+      integer g_vecs          ! MO vectors for ri
+      logical rifock          ! in case of mixed method: ri or directfock build
+      integer incomplete        ! Incomplete integral task for semidirect
+      integer incmax, incmin    ! Global min/max of incomplete
+      logical oerilabel       ! True if using labels with ERI's
+      character*255 int2efilename    ! Stub for integral file name
+c
+      integer maxquartet        ! Blocking ... max request size
+      integer maxpair           ! Blocking ... max pair block size
+      integer maxeri            ! Blocking ... eri buffer size
+      integer maxscr            ! Blocking ... scratch size
+      double precision intacc   ! Accuracy of integrals, 0.0 for variable
+c
+      common/cfock/
+     $     intacc,
+     $     dentolmax,
+     $     semi_direct_tol2e,
+     $     odensityscreen,
+     $     task_bf,
+     $     filesize,
+     $     memsize,
+     $     oreadfile,
+     $     owritefile,
+     $     rifock,
+     $     dovecs,
+     $     g_vecs,
+     $     incomplete, incmax, incmin,
+     $     maxquartet, maxpair, maxeri, maxscr,
+     $     oerilabel, oreplicated, onoblock
+      common/ccfock/int2efilename
+c

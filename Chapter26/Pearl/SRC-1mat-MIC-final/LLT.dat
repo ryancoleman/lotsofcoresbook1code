@@ -1,0 +1,18 @@
+'ScaLAPACK LLt factorization input file'
+'MPI Machine'
+'LLT.out'            output file name (if any)
+6                    device out
+'L'                  define Lower or Upper
+1                    number of problems sizes
+23040               values of N
+1                    number of NB's
+64                   values of NB
+1                    number of NRHS's
+1                    values of NRHS
+1                    Number of NBRHS's
+1                    values of NBRHS
+1                    number of process grids (ordered pairs of P & Q)
+3 4 2 3 3 6 3 24 48 1 6    values of P
+3 6 6 3 3 3 2  1  3 4 8    values of Q
+1.0                  threshold
+T                    (T or F) Test Cond. Est. and Iter. Ref. Routines

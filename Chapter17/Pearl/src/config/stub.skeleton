@@ -1,0 +1,9 @@
+* $Id: stub.skeleton 19708 2010-10-29 18:04:21Z d3y133 $
+      Subroutine STUBROUTINE(RTDB)
+#include "errquit.fh"
+      Integer RTDB
+      Call ErrQuit(
+     $   'STUBROUTINE is not in this build of NWChem',
+     $    0, CAPMIS_ERR)
+      Return
+      End

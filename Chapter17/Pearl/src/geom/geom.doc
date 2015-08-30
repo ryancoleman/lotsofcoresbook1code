@@ -1,0 +1,189 @@
+  'Geometry', unfortunately, is a bit of a misnomer since the
+'geometry object' serves several purposes
+
+     - a definition of the coordinate system and positioning in
+       space (also lattice vectors for periodic systems)
+
+     - an association of names/tags with coordinates in space
+
+     - a specification of the external potential (nuclear multipole
+       moments, external fields, effective core potentials, ...) that
+       defines the Hamiltonian for all electronic structure methods
+
+  The geometry is home for Hamiltonian related information (and not
+wavefunction related information).
+
+  The tag is overloaded with many different meanings
+
+   - an element (to provide default specification of nuclear charge, mass,
+     no. of electrons, ...)
+
+   - as a name of an 'atomic' basis set
+
+   - as a DFT grid description
+
+   - as a test for symmetry equivalence (lower symmetry can be forced
+     by specifying different tags for otherwise symmetry equivalent
+     centers)
+
+   - ...
+
+This fits very well with current practice and so everyone will understand
+how to use this.
+
+
+The geometry data includes, or will eventuall include
+
+   1) A description of the coordinates of all types of centers (e.g.,
+      atom, basis function)
+
+   2) Charges (eventually ECPs, ...) associated with those centers
+
+   3) Tags (names) of centers
+
+   4) Masses associated with centers
+
+   5) Variables for optimization (e.g., via constrained cartesians
+      or zmatrix variables)
+
+   6) Any other simple scalar/vector attributed associated
+      specifically with a center
+
+
+
+Operations:
+----------
+
+  All logical functions return true on sucess, false on failure.
+  Only other actions are discussed below.
+
+  logical function geom_check_handle(geom, msg)
+  integer geom    ! [input]
+  character*(*) msg ! [input]
+
+      If (geom is not a valid geometry handle)
+         print out msg and return false
+
+
+  logical function geom_rtdb_load(rtdb, geom, name)
+  integer rtdb    ! [input]
+  integer geom    ! [input]
+  character*(*) name  ! [input]
+
+      Load named geometry from the data base.  One level of
+      translation is attempted upon the name.  Geom must be a valid
+      handle created by geom_create().  The same geometry may be
+      loaded into distinct geometry objects.
+
+      
+  logical function geom_rtdb_store(rtdb, name, geom)
+
+      Store named geometry into the database.  One level of
+      translation is attempted upon the name.
+
+
+  logical function geom_rtdb_delete(rtdb, name)
+
+      Delete the named geometry from the data base.  One level of
+      translation is attempted.  Nothing happens to in-core copies of
+      the geometry.
+
+
+  logical function geom_create(geom, name)
+
+      The only place from which to get a valid geometry handle.  Name
+      is used only for identification in printout and subsequent
+      creates.  If the geometry is already opened a handle to the
+      existing copy is returned.
+
+
+  logical function geom_destroy(geom)
+
+      Delete the incore data structures associated with the geometry
+      and make the geometry invalid for further use.
+
+
+  logical function geom_cart_set(geom, ncent, t, c, q)
+  integer geom [input]
+  integer ncent [input]
+  character*16 t(ncent) [input]
+  double precision c(3,ncent) [input]
+  double precision q(ncent) [input]
+
+     Simple interface for setting tags (t), cartesian coords (c) and
+     charges (q) for the geometry.  Atomic units are currently assumed
+     but might soon be able to specify what units the interface will
+     use.
+
+  logical function geom_cart_get(geom, ncent, t, c, q)
+
+     Extracts info from the geometry (opposite of set)
+
+  
+  logical function geom_cent_get(geom, icent, t, c, q)
+  integer geom  [input]
+  integer icent [input]
+  character*16 t [output]
+  double precision c(3) [output]
+  double precision q [output]
+   
+     Returns tag/coords/charge about the center icent
+
+  logical function geom_cent_set(geom, icent, t, c, q)
+
+     Sets values inside geometry ... opposite of geom_cent_get
+
+
+  logical function geom_ncent(geom, ncent)
+  integer geom [input]
+  integer ncent [output]
+
+     Returns in ncent the no. of centers
+
+  
+  logical function geom_cent_tag(geom, icent, tag)
+  integer geom  [input]
+  integer icent [input]
+  character*16 tag [output]
+
+      Returns just the tag of the cetner
+
+  
+  logical function geom_print(geom)
+
+      Print out the basis set to FORTRAN unit 5
+
+
+  logical function geom_tag_to_element(tag, symbol, element, atn)
+  character*16 tag  [input]
+  character*(*) symbol [output]
+  character*(*) element [output]
+  integer atn [output]
+
+  Attempt to interpret a tag as the name of an element.  If successful,
+  return the symbol, full name and atomic number.
+
+
+  logical function geom_nuc_charge(geom, total_charge)
+  integer geom              ! [input]
+  double precision total_charge ! [output]
+
+     return the sum of the nuclear charges
+
+
+
+  logical function geom_nuc_rep_energy(geom, energy)
+  integer geom              ! [input]
+  double precision energy   ! [output]
+
+     return the effective nuclear repulsion energy
+
+
+
+  The following are not yet fully implemented or designed
+
+  logical function geom_latvec_set(geom, vectors)
+  logical function geom_latvec_get(geom, vectors)
+  logical function geom_efield_set(geom, ef)
+  logical function geom_efield_get(geom, ef)
+

@@ -1,0 +1,389 @@
+c
+c     xc utility functions
+c
+      logical function xc_chkgrad()
+*
+* $Id: xc_util.F 25414 2014-03-31 21:13:28Z edo $
+*
+      implicit none
+c
+#include "cdft.fh"
+#include "steric.fh"
+c
+c     see if any Gradient Corrected Functional is not null
+c
+      double precision tot,eps
+      parameter(eps=1.d-10)
+c
+      tot = xfac(3) + xfac(4) + xfac(5) + xfac(6) + xfac(7) +
+     + xfac(8)  + xfac(9)  + xfac(10) + xfac(11) +xfac(12)+ xfac(13)+
+     + xfac(14) + xfac(15) + xfac(16)+xfac(17)+xfac(18) +xfac(19) +
+     + xfac(22) +
+     + xfac(30) + xfac(31) + xfac(33) + xfac(39) + cfac(29) +
+     + cfac(2)  + cfac(4)  + cfac(5)  + cfac(12) +
+     + cfac(13) + cfac(14) + cfac(15) + cfac(16) + cfac(17)+cfac(18)+
+     + cfac(19) + cfac(20) + cfac(21) + cfac(22) + cfac(23) + cfac(24) +
+     + xfac(25) + cfac(25) + cfac(26) + xfac(20) + xfac(21) + cfac(27) +
+     + xfac(26) + xfac(27) + xfac(28) + xfac(29) + cfac(31) + xfac(32) +
+     + cfac(32) + cfac(33) + cfac(34) + cfac(35) + cfac(36) +
+     + xfac(34) + xfac(35) + xfac(36) + xfac(37) +
+     + cfac(30) + cfac(38) + cfac(39) + cfac(40) + cfac(41) + cfac(42) +
+     + xfac(43) +
+     + xfac(46) + cfac(46) + xfac(47) + cfac(47) + xfac(40) + xfac(41) +
+     + xfac(48) + xfac(49) + xfac(50) + xfac(51) +
+     + cfac(48) + cfac(49) + cfac(50) + cfac(51) +
+     + xfac(52) + xfac(53) + xfac(54) + xfac(55) + xfac(56) +
+     + cfac(52) + cfac(53) + cfac(54) +
+     + xfac(60) + xfac(61) + xfac(62) + xfac(63) + lxdm
+c
+      if (abs(tot).gt.eps.or.lb94.or.cs00)then
+         xc_chkgrad = .true.
+      else if (lsteric) then ! turn on gradients for steric calculations
+         xc_chkgrad = .true.
+      else
+         xc_chkgrad = .false.
+      end if
+c
+      return
+      end
+c
+      logical function xc_gotxc()
+      implicit none
+#include "cdft.fh"
+      double precision tot
+      integer i
+c
+c     return true if there is any XC functional to compute 
+c     (other than HF Exch)
+c
+      tot = -abs(xfac(1))
+      do i = 1, numfunc
+         tot = tot + abs(xfac(i)) + abs(cfac(i))
+      enddo
+      xc_gotxc = tot.gt.1d-8.or.lb94.or.cs00
+      return
+      end
+c
+      integer function xc_getnqmx()
+      implicit none
+#include "cdft.fh"
+      xc_getnqmx=nqmax
+      return
+      end
+c
+      integer function xc_getipol()
+      implicit none
+#include "cdft.fh"
+      xc_getipol=ipol
+      return
+      end
+c
+c     return true for functional without 2nds
+c
+      logical function xc_got2nd()
+      implicit none
+c
+#include "cdft.fh"
+c
+      xc_got2nd=.not.(
+c
+cXhcth     .     xfac(4).ne.0d0.or.
+cXbecke97     .     xfac(5).ne.0d0.or.
+cXb971     .     xfac(6).ne.0d0.or.
+cXh120     .     xfac(10).ne.0d0.or.
+cXh147     .     xfac(11).ne.0d0.or.
+cXB98     .     xfac(12).ne.0d0.or.
+cXB97gga1     .     xfac(13).ne.0d0.or.
+ch407     .     xfac(14).ne.0d0.or.
+chp14     .     xfac(15).ne.0d0.or.
+     .     xfac(16).ne.0d0.or.  ! optx
+cXB972     .     xfac(17).ne.0d0.or.
+     .     xfac(18).ne.0d0.or.
+     .     xfac(21).ne.0d0.or.
+cb973     .     xfac(22).ne.0d0.or.
+     .     xfac(28).ne.0d0.or.
+     .     xfac(29).ne.0d0.or.
+     .     xfac(32).ne.0d0.or.
+     .     xfac(33).ne.0d0.or.
+     .     xfac(34).ne.0d0.or.
+     .     xfac(35).ne.0d0.or.
+     .     xfac(36).ne.0d0.or.
+     .     xfac(37).ne.0d0.or.
+     .     xfac(48).ne.0d0.or.
+     .     xfac(49).ne.0d0.or.
+     .     xfac(50).ne.0d0.or.
+     .     xfac(51).ne.0d0.or.
+     .     xfac(52).ne.0d0.or.
+     .     xfac(53).ne.0d0.or.
+     .     xfac(54).ne.0d0.or.
+     .     xfac(55).ne.0d0.or.
+     .     xfac(56).ne.0d0.or.
+c
+chcth     .     cfac(13).ne.0d0.or.
+cCbecke97     .     cfac(14).ne.0d0.or.
+cCB97-1     .     cfac(15).ne.0d0.or.
+cCh120     .     cfac(16).ne.0d0.or.
+cCh147     .     cfac(17).ne.0d0.or.
+CCB98     .     cfac(18).ne.0d0.or.
+cCB97gga1     .     cfac(19).ne.0d0.or.
+cCh407     .     cfac(20).ne.0d0.or.
+chp414     .     cfac(21).ne.0d0.or.
+     .     cfac(22).ne.0d0.or.
+     .     cfac(25).ne.0d0.or.
+     .     cfac(27).ne.0d0.or.
+     .     cfac(29).ne.0d0.or.
+     .     cfac(30).ne.0d0.or.
+     .     cfac(31).ne.0d0.or.
+     .     cfac(32).ne.0d0.or.
+     .     cfac(33).ne.0d0.or.
+     .     cfac(34).ne.0d0.or.
+     .     cfac(35).ne.0d0.or.
+     .     cfac(38).ne.0d0.or.
+     .     cfac(39).ne.0d0.or.
+     .     cfac(40).ne.0d0.or.
+     .     cfac(42).ne.0d0.or.
+     .     cfac(48).ne.0d0.or.
+     .     cfac(49).ne.0d0.or.
+     .     cfac(50).ne.0d0.or.
+     .     cfac(51).ne.0d0.or.
+     .     cfac(52).ne.0d0.or.
+     .     cfac(53).ne.0d0.or.
+     .     cfac(54).ne.0d0.or.
+     .     cfac(36).ne.0d0)
+c
+      return
+      end
+c
+      logical function xc_chktau()
+C
+C $Id: xc_util.F 25414 2014-03-31 21:13:28Z edo $ 
+C
+      implicit none
+ 
+c
+c     see if any metaGGA Functional using TAU is not null
+c
+#include "cdft.fh"
+C  note in cdft.fh,they define cfac(numfunc) and xfac(numfunc)
+c 
+      double precision tot,eps
+      parameter(eps=1.d-10)
+      tot = xfac(18) + cfac(25) + xfac(21) + cfac(27) +
+     +      xfac(28) + xfac(29) + xfac(33) + xfac(34) + xfac(35) +
+     +      xfac(36) + xfac(37) + xfac(48) + xfac(49) + xfac(50) +
+     +      xfac(51) + lxdm +
+     +      cfac(29) + cfac(31) + cfac(32) + cfac(33) +
+     +      cfac(34) + cfac(35) + cfac(30) + cfac(38) +
+     +      cfac(39) + cfac(40) + xfac(32) + cfac(42) +
+     +      cfac(48) + cfac(49) + cfac(50) + cfac(51)
+c
+      if (abs(tot).gt.eps)then
+         xc_chktau = .true.
+      else
+         xc_chktau = .false.
+      endif
+      return
+      end
+c
+      logical function xc_getxcfac(rtdb)
+      implicit none
+      integer rtdb
+c     load cfac and xfac into cdft.fh
+#include "cdft.fh"
+#include "rtdb.fh"
+#include "mafdecls.fh"
+      xc_getxcfac=rtdb_get(rtdb, 'dft:xfac', mt_dbl, numfunc,
+     &xfac)
+      xc_getxcfac=xc_getxcfac.and.
+     A     rtdb_get(rtdb, 'dft:cfac', mt_dbl, numfunc,
+     &     cfac)
+      return
+      end
+c
+c     return true for functionals with cam
+c
+      logical function xc_hascam()
+      implicit none
+c
+#include "cdft.fh"
+#include "case.fh"
+c
+      xc_hascam=(
+     .     xfac(38).ne.0d0.or.
+     .     xfac(40).ne.0d0.or.
+     .     xfac(41).ne.0d0.or.
+     .     xfac(42).ne.0d0.or.
+     .     xfac(43).ne.0d0.or.
+     .     xfac(50).ne.0d0.or.
+     .     xfac(51).ne.0d0)
+c
+      xc_hascam = xc_hascam.or.cam_exch
+c
+      return
+      end
+c
+c     return true for functionals with short-range HF
+c
+      logical function xc_hassrhf()
+      implicit none
+c
+#include "cdft.fh"
+#include "case.fh"
+c
+      xc_hassrhf = cam_srhf
+c
+      return
+      end
+c
+c     set range-separation parameters
+c
+      subroutine xc_setcamparam(rtdb,cam_exch,cam_srhf,
+     &   cam_omega,cam_alpha,cam_beta)
+c
+      implicit none
+c
+      integer rtdb
+c
+#include "rtdb.fh"
+#include "mafdecls.fh"
+#include "errquit.fh"
+c
+      logical cam_exch,cam_srhf
+      double precision cam_omega,cam_alpha,cam_beta
+c
+      logical direct
+      integer memsize, filesize
+c
+c     set cam flag 
+      if (.not.rtdb_put(rtdb,'dft:cam_exch', mt_log, 1, cam_exch))
+     & call errquit('xc_setcamparam: rtdb_put failed', 2700, RTDB_ERR)
+c
+c     set short-range HF (srhf) flag 
+      if (.not.rtdb_put(rtdb,'dft:cam_srhf', mt_log, 1, cam_srhf))
+     & call errquit('xc_setcamparam: rtdb_put failed', 2700, RTDB_ERR)
+c
+c     set cam_omega
+      if (.not.rtdb_put(rtdb,'dft:cam_omega',mt_dbl,1,cam_omega))
+     & call errquit('xc_setcamparam: rtdb_put failed', 2700, RTDB_ERR)
+c
+c     set cam_alpha
+      if (.not.rtdb_put(rtdb,'dft:cam_alpha',mt_dbl,1,cam_alpha))
+     & call errquit('xc_setcamparam: rtdb_put failed', 2700, RTDB_ERR)
+c
+c     set cam_beta
+      if (.not.rtdb_put(rtdb,'dft:cam_beta',mt_dbl,1,cam_beta))
+     & call errquit('xc_setcamparam: rtdb_put failed', 2700, RTDB_ERR)
+c
+c     Force texas integrals to false for CAM calculations
+      if (.not.rtdb_put(rtdb,'int:cando_txs',mt_log,1,.false.))
+     &   call errquit('cannot set int:cando_txs',0, RTDB_ERR)
+c
+c     Force use of direct
+c
+      direct = .true.
+      filesize = -1
+      memsize  = -1
+      if (.not. rtdb_put(rtdb, 'dft:direct',mt_log,1,direct))
+     &   call errquit('xc_setcamparam: rtdb_put failed',400,RTDB_ERR)
+      if (.not. rtdb_put(rtdb,'int2e:filesize',mt_int,1,filesize))
+     $     call errquit('xc_setcamparam: failed to store filesize',401,
+     &                  RTDB_ERR)
+      if (.not. rtdb_put(rtdb,'int2e:memsize',mt_int,1,memsize))
+     $     call errquit('xc_setcamparam: failed to store filesize',402,
+     &                  RTDB_ERR)
+c
+      return
+      end
+c
+c     return true for functionals without 3rds
+c
+      logical function xc_ngot3rd()
+      implicit none
+c
+#include "cdft.fh"
+c
+      xc_ngot3rd = (
+c
+     .     xfac(4).ne.0d0.or.   ! HCTH
+     .     xfac(5).ne.0d0.or.   ! HCTH (b970)
+     .     xfac(6).ne.0d0.or.   ! HCTH (b971)
+     .     xfac(8).ne.0d0.or.   ! Gill 96
+     .     xfac(9).ne.0d0.or.   ! PW91
+     .     xfac(10).ne.0d0.or.  ! HCTH (h120)
+     .     xfac(11).ne.0d0.or.  ! HCTH (h147)
+     .     xfac(12).ne.0d0.or.  ! HCTH (b980)
+     .     xfac(13).ne.0d0.or.  ! HCTH (b97g)
+     .     xfac(14).ne.0d0.or.  ! HCTH (h407)
+     .     xfac(15).ne.0d0.or.  ! HCTH (hp14)
+     .     xfac(16).ne.0d0.or.  ! OPTX
+     .     xfac(17).ne.0d0.or.  ! HCTH (b972)
+     .     xfac(18).ne.0d0.or.  ! PKZB99-EXC
+     .     xfac(19).ne.0d0.or.  ! mPW91
+     .     xfac(20).ne.0d0.or.  ! HCTH (407p) 
+     .     xfac(21).ne.0d0.or.  ! TPSS03-EXC
+     .     xfac(22).ne.0d0.or.  ! HCTH (b973)
+     .     xfac(25).ne.0d0.or.  ! ft97 
+     .     xfac(26).ne.0d0.or.  ! PW6B95
+     .     xfac(27).ne.0d0.or.  ! PW6BK
+     .     xfac(28).ne.0d0.or.  ! M05 
+     .     xfac(29).ne.0d0.or.  ! M05-2X
+     .     xfac(32).ne.0d0.or.  ! dlDF
+     .     xfac(33).ne.0d0.or.  ! VSXC
+     .     xfac(34).ne.0d0.or.  ! M06-L
+     .     xfac(35).ne.0d0.or.  ! M06-HF
+     .     xfac(36).ne.0d0.or.  ! M06
+     .     xfac(37).ne.0d0.or.  ! M06-2X
+     .     xfac(39).ne.0d0.or.  ! HCTH (b97d)
+     .     xfac(46).ne.0d0.or.  ! SSB-D
+     .     xfac(47).ne.0d0.or.  ! kt1
+     .     xfac(48).ne.0d0.or.  ! M08-HX 
+     .     xfac(49).ne.0d0.or.  ! M08-SO
+     .     xfac(50).ne.0d0.or.  ! M11
+     .     xfac(51).ne.0d0.or.  ! M11-L
+     .     xfac(52).ne.0d0.or.  ! SOGGA
+     .     xfac(53).ne.0d0.or.  ! SOGGA11
+     .     xfac(54).ne.0d0.or.  ! SOGGA11-X
+c
+     .     cfac(5).ne.0d0.or.   ! PW91
+     .     cfac(13).ne.0d0.or.  ! HCTH
+     .     cfac(14).ne.0d0.or.  ! HCTH (b970)
+     .     cfac(15).ne.0d0.or.  ! HCTH (b971)
+     .     cfac(16).ne.0d0.or.  ! HCTH (h120)
+     .     cfac(17).ne.0d0.or.  ! HCTH (h147)
+     .     cfac(18).ne.0d0.or.  ! HCTH (b980)
+     .     cfac(19).ne.0d0.or.  ! HCTH (b97g)
+     .     cfac(20).ne.0d0.or.  ! HCTH (h407)
+     .     cfac(21).ne.0d0.or.  ! HCTH (hp14)
+     .     cfac(22).ne.0d0.or.  ! OPTC
+     .     cfac(23).ne.0d0.or.  ! HCTH (b972)
+     .     cfac(24).ne.0d0.or.  ! ft97 
+     .     cfac(25).ne.0d0.or.  ! PKZB99-COR
+     .     cfac(26).ne.0d0.or.  ! HCTH (407p)
+     .     cfac(27).ne.0d0.or.  ! TPSS03-COR
+     .     cfac(28).ne.0d0.or.  ! HCTH (b973)
+     .     cfac(29).ne.0d0.or.  ! cvs98
+     .     cfac(30).ne.0d0.or.  ! M06-L
+     .     cfac(31).ne.0d0.or.  ! Bc95-COR
+     .     cfac(32).ne.0d0.or.  ! PW6B95
+     .     cfac(33).ne.0d0.or.  ! PWB6K
+     .     cfac(34).ne.0d0.or.  ! M05
+     .     cfac(35).ne.0d0.or.  ! M05-2X
+     .     cfac(36).ne.0d0.or.  ! Be88 
+     .     cfac(37).ne.0d0.or.  ! OP 
+     .     cfac(38).ne.0d0.or.  ! M06-HF
+     .     cfac(39).ne.0d0.or.  ! M06
+     .     cfac(40).ne.0d0.or.  ! M06-2X
+     .     cfac(41).ne.0d0.or.  ! HCTH (b97d)
+     .     cfac(42).ne.0d0.or.  ! dlDF
+     .     cfac(46).ne.0d0.or.  ! SSB-D
+     .     cfac(48).ne.0d0.or.  ! M08-HX
+     .     cfac(49).ne.0d0.or.  ! M08-SO
+     .     cfac(50).ne.0d0.or.  ! M11
+     .     cfac(51).ne.0d0.or.  ! M11-L
+     .     cfac(52).ne.0d0.or.  ! SOGGA
+     .     cfac(53).ne.0d0.or.  ! SOGGA11
+     .     cfac(54).ne.0d0      ! SOGGA11-X
+     .                )
+c
+      return
+      end

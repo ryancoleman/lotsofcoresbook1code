@@ -1,0 +1,1215 @@
+C:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+C     NAME
+C     msgids.fh -- Definitions of all message IDs used in Fortran routines
+C     
+C     DESCRIPTION
+C     All message IDs used in Fortran code should be defined here as
+C     parameters to avoid collisions.  The routine which uses a given
+C     ID should also be identified.
+C     
+C     GA is presently using things counting backwards from 32760.
+C     RTDB counts up from 30000
+C     
+C     We will go from 25000 down -- that should leave plenty of room.
+C:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+      integer msg_ftn_base
+c     $Id: msgids.fh 25409 2014-03-31 18:29:41Z edo $
+      parameter (msg_ftn_base = 25000)
+c     
+      integer msg_utscr2
+      integer msg_tcemem
+      integer msg_utscr
+      integer msg_tdmem
+      integer msg_et_2e, msg_et_adens, msg_et_bdens
+      integer msg_hess_exy
+      integer msg_hess_ddip
+      integer msg_vec_type
+      integer msg_prsum
+      integer msg_mxelt, Msg_NormF
+      integer msg_ichki, msg_ichkd
+      integer msg_atscf
+      integer msg_dfit, msg_dfitb
+      integer msg_schat, msg_schsh, msg_schmx, msg_schpr
+      integer msg_chkmo, msg_mosch, msg_bcstvec
+      integer msg_vec_stat, msg_vec_ttl, msg_vec_nam, msg_vec_nbf,
+     $     msg_vec_set, msg_vec_nmo, msg_vec_eval, msg_vec_occ
+      integer msg_heapmem, msg_stkmem, msg_startup
+      integer msg_pstat_min, msg_pstat_avg, msg_pstat_max
+      integer msg_stpr_walk, msg_ri_dens
+      integer msg_chkjk
+      integer msg_rak
+      integer msg_seqout_ctrl, msg_seqout_text
+      integer msg_fock_ex,msg_xc_ex,msg_cd_ex,msg_ga_chol
+      integer msg_iconst,msg_gop_tvec,msg_lagrange,msg_cd_coef,msg_Tcgtf
+      integer msg_schw1,msg_xc_coef,msg_tmat,msg_excrho
+      integer msg_rms_dens,msg_ecoul2
+      integer msg_tot_max,msg_nqtot
+      integer msg_t_min,msg_t_max
+      integer msg_orthog_1, msg_orthog_2
+      integer msg_3c_index
+      integer msg_gblmem
+      integer msg_rimp2_mem, msg_rimp2g_mem
+      integer msg_uhf
+      integer msg_gen_at_nat, msg_gen_at_restart
+      integer msg_gen_at_iatom, msg_gen_at_ixyz
+      integer msg_dftg_cdf,msg_schw2,msg_schw3
+      integer dft_mxmbf,dft_mxmbfnq
+      integer msg_mull1,msg_mull2
+      integer msg_trace_diag
+      integer msg_grad_nquad
+      integer msg_grad_finished
+      integer msg_mxovl_1,msg_mxovl_2
+      integer msg_sym_1, msg_sym_2
+      integer msg_int2e_file
+      integer msg_riscf_mem
+      integer msg_riscf_put_1
+      integer msg_riscf_put_2
+      integer msg_int2e_stat1
+      integer msg_int2e_stat2
+c
+      integer mag_d00
+      integer mag_d01
+      integer mag_d02
+      integer mag_d03
+      integer mag_d04
+      integer mag_d05
+      integer mag_d06
+      integer mag_d07
+      integer mag_d08
+      integer mag_d09
+      integer mag_d10
+      integer mag_d11
+      integer mag_d12
+      integer mag_d13
+      integer mag_d14
+      integer mag_d15
+      integer mag_d16
+      integer mag_d17
+      integer mag_d18
+      integer mag_d19
+      integer mag_d20
+      integer mag_d21
+      integer mag_d22
+c
+      integer mrg_000
+      integer mrg_d01
+      integer mrg_d02
+      integer mrg_d03
+      integer mrg_d04
+      integer mrg_d05
+      integer mrg_d06
+      integer mrg_d07
+      integer mrg_d08
+      integer mrg_d09
+      integer mrg_d10
+      integer mrg_d11
+      integer mrg_d12
+      integer mrg_d13
+      integer mrg_d14
+      integer mrg_d15
+      integer mrg_d16
+      integer mrg_d17
+      integer mrg_d18
+      integer mrg_d19
+      integer mrg_d20
+      integer mrg_d21
+      integer mrg_d22
+      integer mrg_d23
+      integer mrg_d24
+      integer mrg_d25
+      integer mrg_d26
+      integer mrg_d27
+      integer mrg_d28
+      integer mrg_d29
+      integer mrg_d30
+      integer mrg_d31
+      integer mrg_d32
+      integer mrg_d33
+      integer mrg_d34
+      integer mrg_d35
+      integer mrg_d36
+      integer mrg_d37
+      integer mrg_d38
+      integer mrg_d39
+      integer mrg_d40
+      integer mrg_d41
+      integer mrg_d42
+      integer mrg_d43
+      integer mrg_d44
+      integer mrg_d45
+      integer mrg_d46
+      integer mrg_d47
+      integer mrg_d48
+      integer mrg_d49
+      integer mrg_d50
+      integer mrg_d51
+      integer mrg_d52
+      integer mrg_d53
+      integer mrg_d54
+      integer mrg_d55
+      integer mrg_d56
+      integer mrg_d57
+      integer mrg_d58
+      integer mrg_d59
+      integer mrg_d60
+      integer mrg_d61
+      integer mrg_d62
+      integer mrg_d63
+      integer mrg_d64
+      integer mrg_d65
+      integer mrg_d66
+      integer mrg_d99
+c
+      integer mrg_i01
+      integer mrg_i02
+      integer mrg_i03
+      integer mrg_i04
+      integer mrg_i05
+      integer mrg_i06
+      integer mrg_i07
+      integer mrg_i08
+      integer mrg_i09
+      integer mrg_i10
+      integer mrg_i11
+      integer mrg_i12
+      integer mrg_i13
+      integer mrg_i14
+      integer mrg_i15
+      integer mrg_i16
+      integer mrg_i17
+      integer mrg_i18
+      integer mrg_i19
+      integer mrg_i20
+      integer mrg_i21
+      integer mrg_i22
+      integer mrg_i23
+      integer mrg_i24
+      integer mrg_i25
+      integer mrg_i26
+      integer mrg_i27
+      integer mrg_i28
+      integer mrg_i29
+      integer mrg_i30
+      integer mrg_i31
+      integer mrg_i32
+      integer mrg_i33
+      integer mrg_i34
+      integer mrg_i35
+      integer mrg_i50
+c
+      integer mre_000
+      integer mre_001
+      integer mre_002
+      integer mre_003
+      integer mre_004
+      integer mre_005
+      integer mre_006
+      integer mre_007
+      integer mre_008
+      integer mre_009
+      integer mre_010
+      integer mre_011
+      integer mre_012
+      integer mre_013
+      integer mre_050
+c
+      integer pre_i00
+      integer pre_i99
+c
+      integer mcf_00
+      integer mcf_01
+      integer mcf_02
+      integer mcf_03
+      integer mcf_04
+      integer mcf_05
+      integer mcf_06
+      integer mcf_07
+      integer mcf_08
+      integer mcf_09
+      integer mcf_10
+      integer mcf_11
+      integer mcf_12
+      integer mcf_13
+      integer mcf_14
+      integer mcf_15
+      integer mcf_16
+      integer mcf_17
+      integer mcf_18
+      integer mcf_19
+      integer mcf_20
+      integer mcf_21
+      integer mcf_22
+      integer mcf_23
+      integer mcf_24
+      integer mcf_25
+      integer mcf_26
+      integer mcf_27
+      integer mcf_28
+      integer mcf_29
+      integer mcf_30
+      integer mcf_31
+      integer mcf_32
+      integer mcf_33
+      integer mcf_34
+      integer mcf_35
+      integer mcf_36
+      integer mcf_37
+      integer mcf_38
+      integer mcf_39
+      integer mcf_40
+      integer mcf_41
+      integer mcf_42
+      integer mcf_43
+      integer mcf_44
+      integer mcf_45
+      integer mcf_46
+      integer mcf_47
+      integer mcf_48
+      integer mcf_49
+      integer mcf_50
+      integer mcf_51
+      integer mcf_52
+      integer mcf_53
+      integer mcf_54
+      integer mcf_55
+      integer mcf_56
+      integer mcf_57
+      integer mcf_58
+      integer mcf_59
+      integer mcf_60
+      integer mcf_61
+      integer mcf_62
+      integer mcf_63
+      integer mcf_64
+      integer mcf_65
+      integer mcf_66
+      integer mcf_67
+      integer mcf_68
+      integer mcf_69
+      integer mcf_70
+      integer mcf_71
+      integer mcf_72
+      integer mcf_73
+      integer mcf_74
+      integer mcf_75
+      integer mcf_76
+      integer mcf_77
+      integer mcf_78
+      integer mcf_79
+      integer mcf_80
+      integer mcf_81
+      integer mcf_82
+      integer mcf_83
+      integer mcf_84
+      integer mcf_85
+      integer mcf_86
+      integer mcf_87
+      integer mcf_88
+      integer mcf_89
+c
+      integer msp_00
+      integer msp_01
+      integer msp_02
+      integer msp_03
+      integer msp_04
+      integer msp_05
+      integer msp_06
+      integer msp_07
+      integer msp_08
+      integer msp_09
+      integer msp_10
+      integer msp_11
+      integer msp_12
+      integer msp_13
+      integer msp_14
+      integer msp_15
+      integer msp_16
+      integer msp_17
+      integer msp_18
+      integer msp_19
+      integer msp_20
+      integer msp_21
+      integer msp_22
+      integer msp_23
+      integer msp_24
+      integer msp_25
+      integer msp_26
+      integer msp_27
+      integer msp_28
+      integer msp_29
+      integer msp_30
+      integer msp_31
+      integer msp_32
+      integer msp_33
+      integer msp_34
+      integer msp_35
+      integer msp_36
+      integer msp_37
+      integer msp_38
+      integer msp_39
+      integer msp_40
+      integer msp_41
+      integer msp_42
+      integer msp_43
+      integer msp_44
+      integer msp_45
+      integer msp_46
+      integer msp_47
+      integer msp_48
+      integer msp_49
+      integer msp_50
+c
+      integer hop_00
+      integer hop_01
+      integer hop_02
+      integer hop_03
+      integer hop_04
+      integer hop_05
+      integer hop_06
+      integer hop_07
+      integer hop_08
+      integer hop_09
+      integer hop_10
+      integer hop_11
+      integer hop_12
+      integer hop_13
+      integer hop_14
+      integer hop_15
+      integer hop_16
+      integer hop_17
+      integer hop_18
+      integer hop_19
+      integer hop_20
+      integer hop_21
+      integer hop_22
+      integer hop_23
+      integer hop_24
+      integer hop_25
+c
+      integer msg_hessmin
+      integer msg_hessmax
+      integer msg_moints_stats_1
+      integer msg_moints_stats_2
+      integer msg_moints_stats_3
+      integer msg_moints_stats_4
+      integer msg_moints_stats_5
+      integer msg_moints_stats_6
+      integer msg_moints_stats_7
+      integer msg_detci_maxsync
+      integer msg_detci_sum
+      integer msg_mcscf_sumflip
+      integer msg_mcscf_symcheck
+      integer msg_mcscf_ifocktrace
+      integer msg_mcscf_ifocktrace2
+      integer msg_mcscf_etrace
+      integer msg_mcscf_actenergy
+      integer msg_mcscf_chkhess
+      integer msg_gapss_vcoul
+      integer msg_gapss_ltp
+      integer msg_direct_mp2_emp2
+      integer msg_gapss_b_ijr
+      integer msg_gapss_vppcalc      
+      integer msg_grad_nuc
+      integer msg_grad_wgh
+      integer msg_grad_kin
+      integer msg_grad_2el
+      integer msg_grad_so 
+      integer msg_grad_nucq
+      integer msg_grad_elq
+      integer msg_grad_qq
+      integer msg_gapss_xcijr      
+      integer msg_gapss_lat_tran
+      integer msg_gapss_pijr_ef
+      integer msg_gapss_density, msg_gapss_fitrho
+      integer msg_gapss_gradwt, msg_gapss_gradwt2
+      integer msg_gapss_gradwt3, msg_gapss_pulay
+      integer msg_gapss_pulay2, msg_gapss_pulay3
+      integer msg_gapss_doseig
+      integer msg_riscf_free
+c
+      integer msg_grad_xc
+      integer msg_max_3c_incore, msg_min_stack_avail, msg_min_ga_avail
+C
+      integer msg_cc_emp2, msg_cc_empt, msg_cc_ecc, msg_cc_mem,
+     $   msg_cc_diis1, msg_cc_diis2, msg_cc_term1, msg_cc_term2,
+     $   msg_cc_term3, msg_cc_term4, msg_cc_term5, msg_cc_term6,
+     $   msg_cc_t1a, msg_cc_t1b
+      Integer msg_ccden_1, msg_ccden_2, msg_ccden_3, msg_ccden_4 
+      Integer msg_qstat_1, msg_qstat_2, msg_qstat_3
+
+c
+      integer msg_qmmm_sepatset
+      integer msg_qmmm_node    
+      integer msg_qmmm_nat1    
+      integer msg_qmmm_nat2    
+      integer msg_qmmm_offset  
+      integer msg_qmmm_numin   
+      integer msg_qmmm_numout  
+      integer msg_qmmm_node2   
+      integer msg_qmmm_geom    
+      integer msg_qmmm_chg     
+      integer msg_qmmm_atn     
+      integer msg_qmmm_numin2  
+      integer msg_qmmm_numout2 
+      integer msg_qmmm_c 
+      integer msg_qmmm_c1 
+      integer msg_qmmm_inum 
+      integer msg_qmmm_inumw 
+      integer msg_qmmm_nbqw 
+      integer msg_qmmm_nbqs
+      integer msg_qmmm_nbqw_off
+      integer msg_qmmm_ind_solvent
+      integer msg_qmmm_nqm
+      integer msg_qmmm_qbqw 
+      integer msg_qmmm_qbqs
+      integer msg_qmmm_cbqw 
+      integer msg_qmmm_cbqs
+      integer msg_qmmm_ndx
+      integer msg_qmmm_ind
+      integer msg_qmmm_force
+      integer msg_qmmm_forcew
+      integer msg_qmmm_act
+      integer msg_qmmm_wact
+      integer msg_qmmm_cw
+      integer msg_qmmm_m
+      integer msg_qmmm_mw
+      integer msg_qmmm_misc
+c
+      integer mrp_000
+      integer mrp_d01
+      integer mrp_d02
+      integer mrp_d03
+      integer mrp_d04
+      integer mrp_d05
+c
+      integer mrp_i01
+      integer mrp_i02
+      integer mrp_i03
+      integer mrp_i04
+      integer mrp_i05
+      integer mrp_i06
+      integer mrp_i07
+c
+      integer mrp_999
+c
+      integer msg_gapss_scfshift1, msg_gapss_scfshift2
+C
+      Integer Msg_CMR_File
+      integer msg_gapss_dvcoul
+      integer msg_grid_stat1,msg_grid_file
+      integer msg_DRDY_OPCODE
+      integer msg_gop_rdens ! dft: dgop for rdens_atom
+      integer msg_igop_tru ! dft: igop for rad_trunc
+      integer msg_igop_tru1 ! dft: igop for rad_trunc
+      integer msg_igop_tru2 ! dft: igop for rad_trunc
+      integer msg_igop_tru3 ! dft: igop for rad_trunc
+      integer msg_igop_tru4 ! dft: igop for rad_trunc
+      integer msg_igop_tru5 ! dft: igop for rad_trunc
+      integer msg_igop_tru6! dft: igop for rad_trunc
+c
+      integer msg_rq, msg_dq, msg_diagv, msg_dmx, msg_dmy, msg_dmz
+      integer msg_coupv, msg_dm2x, msg_dm2y, msg_dm2z
+c
+      integer msg_j21, msg_j20, msg_j301, msg_j302
+      integer msg_u01, msg_u02
+c
+      integer msg_nbo_icd
+      integer msg_efgs_col
+      integer msg_perfm_sum,msg_perfm_max,msg_perfm_min
+      integer msg_cosmo0,msg_cosmo1,msg_cosmo2
+      integer msg_cosaxd,msg_cosxad
+      integer msg_frq,msg_eigv,msg_ns1,msg_ns2,msg_ns3
+      integer msg_dntmc0, msg_dntmc1, msg_dntmc2, msg_dntmc3
+      integer msg_dntmc4, msg_dntmc5, msg_dntmc6, msg_dntmc7
+      integer msg_smd, msg_xdm1, msg_xdm2, msg_xdm3
+c-----------------------------------------------------------------------
+      parameter (msg_prsum = msg_ftn_base -  1) ! sum_pairs
+c     
+      parameter (msg_mxelt = msg_ftn_base -  2) ! ga_maxelt
+c     
+      parameter (msg_ichki = msg_ftn_base -  3) ! int_chk_sum
+      parameter (msg_ichkd = msg_ftn_base -  4) ! int_chk_sum
+c     
+      parameter (msg_atscf = msg_ftn_base -  5) ! datoms
+c     
+      parameter (msg_dfit  = msg_ftn_base -  6) ! ri_v_fit_cd
+      parameter (msg_dfitb = msg_ftn_base -  7) ! ri_v_fit_cd
+c     
+      parameter (msg_schat = msg_ftn_base -  8) ! schwarz_init
+      parameter (msg_schsh = msg_ftn_base -  9) ! schwarz_init
+      parameter (msg_schmx = msg_ftn_base - 10) ! schwarz_init
+      parameter (msg_schpr = msg_ftn_base - 11) ! schwarz_print
+c     
+      parameter (msg_chkmo = msg_ftn_base - 12) ! ga_check_moblocked
+      parameter (msg_mosch = msg_ftn_base - 13) ! moints_build
+      parameter (msg_bcstvec = msg_ftn_base - 14) ! brdcst_vec
+c     
+      parameter (msg_vec_ttl  = msg_ftn_base - 15) ! movecs_read_header
+      parameter (msg_vec_nam  = msg_ftn_base - 16) ! movecs_read_header
+      parameter (msg_vec_nbf  = msg_ftn_base - 17) ! movecs_read_header
+      parameter (msg_vec_set  = msg_ftn_base - 18) ! movecs_read_header
+      parameter (msg_vec_nmo  = msg_ftn_base - 19) ! movecs_read_header
+      parameter (msg_vec_eval = msg_ftn_base - 20) ! movecs_read
+      parameter (msg_vec_occ  = msg_ftn_base - 21) ! movecs_read
+      parameter (msg_vec_stat = msg_ftn_base - 22) ! movecs_*
+c     
+      parameter (msg_heapmem  = msg_ftn_base - 23) ! input_mem_size
+      parameter (msg_stkmem   = msg_ftn_base - 24) ! input_mem_size
+c     
+      parameter (msg_startup  = msg_ftn_base - 25) ! input_start_opt
+c     
+      parameter (msg_pstat_min = msg_ftn_base - 26) ! pstat_print_all
+      parameter (msg_pstat_avg = msg_ftn_base - 27) ! pstat_print_all
+      parameter (msg_pstat_max = msg_ftn_base - 28) ! pstat_print_all
+c     
+      parameter (msg_stpr_walk = msg_ftn_base - 29) ! stpr_walk
+c     
+      parameter (msg_ri_dens   = msg_ftn_base - 30) ! rhf_ri_two
+c     
+      parameter (msg_chkjk = msg_ftn_base - 31) ! ga_check_jkblocked
+c     
+      parameter (msg_rak  = msg_ftn_base - 32) ! reserved for raktest
+c     
+      parameter (msg_seqout_ctrl = msg_ftn_base - 33) ! sequential output
+      parameter (msg_seqout_text = msg_ftn_base - 34) 
+c     
+      parameter (msg_fock_ex  = msg_ftn_base - 35) ! dft: flag for fock i/o
+c     
+      parameter (msg_xc_ex    = msg_ftn_base - 36) ! dft: flag for xcinv i/o
+c     
+      parameter (msg_cd_ex    = msg_ftn_base - 37) ! dft: flag for cdinv i/o
+c     
+      parameter (msg_ga_chol  = msg_ftn_base - 38) ! dft: ga_chol brdcst
+c     
+      parameter (msg_iconst   = msg_ftn_base - 39) ! dft: iconst() brdcst
+c     
+      parameter (msg_gop_tvec = msg_ftn_base - 40) ! dft: tvec dgop
+c     
+      parameter (msg_lagrange = msg_ftn_base - 41) ! dft: lagr mult dgop
+c     
+      parameter (msg_cd_coef  = msg_ftn_base - 42) ! dft: cd coeff dgop
+c     
+      parameter (msg_schw1    = msg_ftn_base - 43) ! dft: % schwarz fitcd
+c     
+      parameter (msg_xc_coef  = msg_ftn_base - 44) ! dft: dgop on xc coeff
+c     
+      parameter (msg_nqtot    = msg_ftn_base - 45) ! dft: igop on nqtot
+c     
+      parameter (msg_tmat     = msg_ftn_base - 46) ! dft: dgop on tmat
+c     
+      parameter (msg_excrho   = msg_ftn_base - 47) ! dft: dgop on ex,ec,rho_int
+c     
+      parameter (msg_rms_dens = msg_ftn_base - 48) ! dft: dgop on delta dm
+c     
+      parameter (msg_ecoul2   = msg_ftn_base - 49) ! dft: dgop on e coul
+c     
+c     ten positions needed for msg_t_min
+c     
+      parameter (msg_t_min    = msg_ftn_base - 59) ! dft: dgop partial min times
+c     
+c     ten positions needed for msg_t_max
+c     
+      parameter (msg_t_max    = msg_ftn_base - 69) ! dft: dgop partial max times
+c     
+      parameter (msg_tot_max  = msg_ftn_base - 70) ! dft: dgop total max times
+c     
+      parameter (msg_orthog_1  = msg_ftn_base - 71) ! util: ga_orthog 1st dgop
+c     
+      parameter (msg_orthog_2  = msg_ftn_base - 72) ! util: ga_orthog 2nd dgop
+c     
+      parameter (msg_3c_index = msg_ftn_base - 73) ! ri-scf make_index brdcst
+c     
+      parameter (msg_gblmem = msg_ftn_base - 74) ! input_mem_size
+c     
+      parameter (msg_rimp2_mem = msg_ftn_base - 75) ! rimp2 memory usage igops
+c     
+      parameter (msg_uhf = msg_ftn_base - 76) ! for uhf_spin gop
+c     
+*     . . . . . . . . . . . . . . . . . . . . . . ! for stpr_gen_apphess_at 
+      parameter (msg_gen_at_nat     = msg_ftn_base - 77)  
+      parameter (msg_gen_at_restart = msg_ftn_base - 78)
+      parameter (msg_gen_at_iatom   = msg_ftn_base - 79)
+      parameter (msg_gen_at_ixyz    = msg_ftn_base - 80)
+c     
+      parameter (msg_dftg_cdf       = msg_ftn_base - 81)
+c     
+      parameter (msg_schw2    = msg_ftn_base - 82) ! dft: no. of  schwarz blocks
+      parameter (msg_schw3    = msg_ftn_base - 83) ! dft: no. of  schwarz blocks
+
+      parameter (msg_mull1    = msg_ftn_base - 84) ! dft: mulliken pop
+      parameter (msg_mull2    = msg_ftn_base - 85) ! dft: mulliken pop
+c     
+c     
+      parameter (msg_trace_diag     = msg_ftn_base - 87) ! util: trace of ga
+c     
+      parameter (msg_grad_nquad = msg_ftn_base - 88) ! gradients: grad_store
+      parameter (msg_grad_finished = msg_ftn_base - 89) ! gradients: grad_finished
+c     
+      parameter (msg_mxovl_1 = msg_ftn_base - 90) ! dft: max_ovl
+      parameter (msg_mxovl_2 = msg_ftn_base - 91) ! dft: max_ovl
+c     
+      parameter (msg_sym_1 = msg_ftn_base - 92) ! sym: sym_mo_adapt
+      parameter (msg_sym_2 = msg_ftn_base - 93) ! sym: sym_mo_adapt
+c     
+      parameter (msg_int2e_file = msg_ftn_base - 94) ! ddscf: int2e_file.f
+c     
+      parameter (msg_riscf_mem = msg_ftn_base - 95) ! ddscf: riscf_fock.f
+      parameter (msg_riscf_put_1 = msg_ftn_base - 96) ! ddscf: riscf_io.f
+      parameter (msg_riscf_put_2 = msg_ftn_base - 97) ! ddscf: riscf_io.f
+c     
+      parameter (msg_int2e_stat1= msg_ftn_base - 98) ! ddscf: int2e_file.f
+      parameter (msg_int2e_stat2= msg_ftn_base - 99) ! ddscf: int2e_file.f
+c
+      parameter(mrg_000=msg_ftn_base-100) ! nwargos
+      parameter(mrg_d01=msg_ftn_base-101) ! arg_bscale
+      parameter(mrg_d02=msg_ftn_base-102) ! arg_cmbox
+      parameter(mrg_d03=msg_ftn_base-103) ! arg_cmsolu
+      parameter(mrg_d04=msg_ftn_base-104) ! arg_cntrbx
+      parameter(mrg_d05=msg_ftn_base-105) ! arg_cntrbx
+      parameter(mrg_d06=msg_ftn_base-106) ! arg_collct
+      parameter(mrg_d07=msg_ftn_base-107) ! arg_collct
+      parameter(mrg_d08=msg_ftn_base-108) ! arg_congra
+      parameter(mrg_d09=msg_ftn_base-109) ! arg_congra
+      parameter(mrg_d10=msg_ftn_base-110) ! arg_congra
+      parameter(mrg_d11=msg_ftn_base-111) ! arg_congra
+      parameter(mrg_d12=msg_ftn_base-112) ! arg_congra
+      parameter(mrg_d13=msg_ftn_base-113) ! arg_congra
+      parameter(mrg_d14=msg_ftn_base-114) ! arg_decomp
+      parameter(mrg_d15=msg_ftn_base-115) ! arg_dldbal
+      parameter(mrg_d16=msg_ftn_base-116) ! arg_dldbal
+      parameter(mrg_d17=msg_ftn_base-117) ! arg_dldbal
+      parameter(mrg_d18=msg_ftn_base-118) ! arg_fnorm
+      parameter(mrg_d19=msg_ftn_base-119) ! arg_forcec
+      parameter(mrg_d20=msg_ftn_base-120) ! arg_forcep
+      parameter(mrg_d21=msg_ftn_base-121) ! arg_gauss2
+      parameter(mrg_d22=msg_ftn_base-122) ! arg_induce
+      parameter(mrg_d23=msg_ftn_base-123) ! arg_memor1
+      parameter(mrg_d24=msg_ftn_base-124) ! arg_memor1
+      parameter(mrg_d25=msg_ftn_base-125) ! arg_param2
+      parameter(mrg_d26=msg_ftn_base-126) ! arg_param2
+      parameter(mrg_d27=msg_ftn_base-127) ! arg_param2
+      parameter(mrg_d28=msg_ftn_base-128) ! arg_param2
+      parameter(mrg_d29=msg_ftn_base-129) ! arg_rdmri
+      parameter(mrg_d30=msg_ftn_base-130) ! arg_rdmro
+      parameter(mrg_d31=msg_ftn_base-131) ! arg_setup1
+      parameter(mrg_d32=msg_ftn_base-132) ! arg_setup1
+      parameter(mrg_d33=msg_ftn_base-133) ! arg_setup1
+      parameter(mrg_d34=msg_ftn_base-134) ! arg_slowrm
+      parameter(mrg_d35=msg_ftn_base-135) ! arg_slowrm
+      parameter(mrg_d36=msg_ftn_base-136) ! arg_slowrm
+      parameter(mrg_d37=msg_ftn_base-137) ! arg_stdesc
+      parameter(mrg_d38=msg_ftn_base-138) ! arg_wrsben
+      parameter(mrg_d39=msg_ftn_base-139) ! arg_wrsben
+      parameter(mrg_d40=msg_ftn_base-140) ! arg_wrsben
+      parameter(mrg_d41=msg_ftn_base-141) ! arg_wrsben
+      parameter(mrg_d42=msg_ftn_base-142) ! arg_wrsben
+      parameter(mrg_d43=msg_ftn_base-143) ! arg_wrsben
+      parameter(mrg_d44=msg_ftn_base-144) ! arg_wrsben
+      parameter(mrg_d45=msg_ftn_base-145) ! arg_wrsben
+      parameter(mrg_d46=msg_ftn_base-146) ! arg_wrtraj
+      parameter(mrg_d47=msg_ftn_base-147) ! arg_xscale
+      parameter(mrg_d48=msg_ftn_base-148) ! arg_props
+      parameter(mrg_d49=msg_ftn_base-149) ! arg_props
+c
+      parameter(mrg_i01=msg_ftn_base-150) ! arg_diagtm
+      parameter(mrg_i02=msg_ftn_base-151) ! arg_dymcti
+      parameter(mrg_i03=msg_ftn_base-152) ! arg_memor1
+      parameter(mrg_i04=msg_ftn_base-153) ! arg_memor1
+      parameter(mrg_i05=msg_ftn_base-154) ! arg_numbox
+      parameter(mrg_i06=msg_ftn_base-155) ! arg_param1
+      parameter(mrg_i07=msg_ftn_base-156) ! arg_param2
+      parameter(mrg_i08=msg_ftn_base-157) ! arg_param2
+      parameter(mrg_i09=msg_ftn_base-158) ! arg_param2
+      parameter(mrg_i10=msg_ftn_base-159) ! arg_props
+      parameter(mrg_i11=msg_ftn_base-160) ! arg_props
+      parameter(mrg_i12=msg_ftn_base-161) ! arg_props
+      parameter(mrg_i13=msg_ftn_base-162) ! arg_setup1
+      parameter(mrg_i14=msg_ftn_base-163) ! arg_timing
+      parameter(mrg_i15=msg_ftn_base-164) ! arg_wrtinp
+      parameter(mrg_i16=msg_ftn_base-165) ! arg_param1
+      parameter(mrg_i17=msg_ftn_base-166) ! arg_param1
+      parameter(mrg_i18=msg_ftn_base-167) ! arg_param3
+      parameter(mrg_i19=msg_ftn_base-168) ! arg_setup1
+      parameter(mrg_i20=msg_ftn_base-169)
+c
+      parameter (msg_hessmin = msg_ftn_base - 170 )         ! MCSCF orbital hessian min
+      parameter (msg_hessmax = msg_ftn_base - 171 )         ! MCSCF orbital hessian max
+c
+c
+      parameter (msg_moints_stats_1 = msg_ftn_base - 172 )   ! moints stats 1
+      parameter (msg_moints_stats_2 = msg_ftn_base - 173 )   ! moints stats 2
+      parameter (msg_moints_stats_3 = msg_ftn_base - 174 )   ! moints stats 3
+      parameter (msg_moints_stats_4 = msg_ftn_base - 175 )   ! moints stats 4
+      parameter (msg_moints_stats_5 = msg_ftn_base - 176 )   ! moints stats 5
+      parameter (msg_moints_stats_6 = msg_ftn_base - 177 )   ! moints stats 6
+      parameter (msg_moints_stats_7 = msg_ftn_base - 178 )   ! moints stats 7
+c
+c
+      parameter (msg_detci_maxsync = msg_ftn_base - 179 )    ! detci max sync time
+      parameter (msg_detci_sum     = msg_ftn_base - 180 )    ! detci sum
+c
+      parameter (msg_mcscf_sumflip     = msg_ftn_base - 181 )
+      parameter (msg_mcscf_symcheck    = msg_ftn_base - 182 )
+      parameter (msg_mcscf_ifocktrace  = msg_ftn_base - 183 )
+      parameter (msg_mcscf_ifocktrace2 = msg_ftn_base - 184 )
+      parameter (msg_mcscf_etrace      = msg_ftn_base - 185 )
+      parameter (msg_mcscf_actenergy   = msg_ftn_base - 186 )
+      parameter (msg_mcscf_chkhess     = msg_ftn_base - 187 )
+      parameter (msg_gapss_vcoul     = msg_ftn_base - 188 )  ! gapss: gap_vcoul
+      parameter (msg_gapss_ltp     = msg_ftn_base - 189 )    ! gapss: gap_vcoul
+      parameter (msg_direct_mp2_emp2 = msg_ftn_base - 190 ) ! direct_mp2
+      parameter (msg_gapss_b_ijr   = msg_ftn_base - 192 )    ! gapss: gap_bijr
+      parameter (msg_gapss_vppcalc = msg_ftn_base - 193 )    ! gapss: gap_vppcalc
+C
+      parameter (msg_grad_nuc = msg_ftn_base - 194 )
+      parameter (msg_grad_wgh = msg_ftn_base - 195 )
+      parameter (msg_grad_kin = msg_ftn_base - 196 )
+      parameter (msg_grad_2el = msg_ftn_base - 197 )
+      parameter (msg_grad_so = msg_ftn_base - 796  )
+      parameter (msg_grad_nucq = msg_ftn_base - 797  )
+      parameter (msg_grad_elq = msg_ftn_base - 798  )
+      parameter (msg_grad_qq = msg_ftn_base - 799  )
+C
+      parameter (msg_gapss_xcijr = msg_ftn_base - 198 )    ! gapss: gap_xcijr
+      parameter (msg_gapss_lat_tran = msg_ftn_base - 199 ) ! gapss: gap_lat_tran
+      parameter (msg_gapss_pijr_ef = msg_ftn_base - 200 ) ! gapss: gap_pijr_ef
+      parameter (msg_gapss_density = msg_ftn_base - 201 ) ! gapss: gap_density
+c
+      parameter (msg_grad_xc=msg_ftn_base-202) !  dftgrad: dftg_force
+      parameter (msg_riscf_free=msg_ftn_base-203) !  dftgrad: dftg_force
+c     
+      parameter (msg_max_3c_incore = msg_ftn_base - 204) ! dft: igop on iwhat_max
+      parameter (msg_min_stack_avail = msg_ftn_base - 205) ! dft: igop on stack avail
+      parameter (msg_min_ga_avail = msg_ftn_base - 206) ! dft: igop on ga avail
+c     
+      parameter (msg_cc_emp2   = msg_ftn_base - 207) ! ccsd
+      parameter (msg_cc_empt   = msg_ftn_base - 208) ! ccsd
+      parameter (msg_cc_ecc    = msg_ftn_base - 209) ! ccsd
+      parameter (msg_cc_mem    = msg_ftn_base - 210) ! ccsd
+      parameter (msg_cc_diis1  = msg_ftn_base - 211) ! ccsd
+      parameter (msg_cc_diis2  = msg_ftn_base - 212) ! ccsd
+      parameter (msg_cc_term1  = msg_ftn_base - 213) ! ccsd
+      parameter (msg_cc_term2  = msg_ftn_base - 214) ! ccsd
+      parameter (msg_cc_term3  = msg_ftn_base - 215) ! ccsd
+      parameter (msg_cc_term4  = msg_ftn_base - 216) ! ccsd
+      parameter (msg_cc_term5  = msg_ftn_base - 217) ! ccsd
+      parameter (msg_cc_term6  = msg_ftn_base - 218) ! ccsd
+      parameter (msg_cc_t1a    = msg_ftn_base - 219) ! ccsd
+      parameter (msg_cc_t1b    = msg_ftn_base - 220) ! ccsd
+      parameter (msg_ccden_1   = msg_ftn_base - 221) ! ccsd density
+      parameter (msg_ccden_2   = msg_ftn_base - 222) ! ccsd density
+      parameter (msg_ccden_3   = msg_ftn_base - 223) ! ccsd density
+      parameter (msg_ccden_4   = msg_ftn_base - 224) ! ccsd density
+      parameter (msg_qstat_1   = msg_ftn_base - 225) ! ccsd qstat
+      parameter (msg_qstat_2   = msg_ftn_base - 226) ! ccsd qstat
+      parameter (msg_qstat_3   = msg_ftn_base - 227) ! ccsd qstat
+c
+c     pme
+c
+      parameter(mrp_000=msg_ftn_base-230)
+      parameter(mrp_d01=msg_ftn_base-231) ! pme_chgchk
+      parameter(mrp_d02=msg_ftn_base-232) ! pme_chgchk
+      parameter(mrp_d03=msg_ftn_base-233) ! pme_decomp
+      parameter(mrp_d04=msg_ftn_base-234) ! pme_decomp
+      parameter(mrp_d05=msg_ftn_base-235) ! pme_slbchk
+c
+      parameter(mrp_i01=msg_ftn_base-240) ! pme_decomp
+      parameter(mrp_i02=msg_ftn_base-241) ! pme_excchg
+      parameter(mrp_i03=msg_ftn_base-242) ! pme_excrf1
+      parameter(mrp_i04=msg_ftn_base-243) ! pme_excrf2
+      parameter(mrp_i05=msg_ftn_base-244) ! pme_init
+      parameter(mrp_i06=msg_ftn_base-245) ! pme_init
+      parameter(mrp_i07=msg_ftn_base-246) ! pme_init
+      parameter(mrp_999=msg_ftn_base-259) ! pme
+c
+      parameter (msg_qmmm_sepatset = msg_ftn_base - 260) ! nwargos/qmmm *b
+      parameter (msg_qmmm_node     = msg_ftn_base - 261) ! nwargos/qmmm *b
+      parameter (msg_qmmm_nat1     = msg_ftn_base - 262) ! nwargos/qmmm *ig
+      parameter (msg_qmmm_nat2     = msg_ftn_base - 263) ! nwargos/qmmm *ig
+      parameter (msg_qmmm_offset   = msg_ftn_base - 264) ! nwargos/qmmm *ig
+      parameter (msg_qmmm_numin    = msg_ftn_base - 265) ! nwargos/qmmm *ig
+      parameter (msg_qmmm_numout   = msg_ftn_base - 266) ! nwargos/qmmm *ig
+      parameter (msg_qmmm_node2    = msg_ftn_base - 267) ! nwargos/qmmm *b
+      parameter (msg_qmmm_geom     = msg_ftn_base - 268) ! nwargos/qmmm *dg
+      parameter (msg_qmmm_chg      = msg_ftn_base - 269) ! nwargos/qmmm *dg
+      parameter (msg_qmmm_atn      = msg_ftn_base - 270) ! nwargos/qmmm *ig
+      parameter (msg_qmmm_numin2   = msg_ftn_base - 271) ! nwargos/qmmm *ig
+      parameter (msg_qmmm_numout2  = msg_ftn_base - 272) ! nwargos/qmmm *ig
+*
+      parameter(mrg_d50=msg_ftn_base-273) ! arg_props
+      parameter(mrg_d51=msg_ftn_base-274) ! arg_props
+      parameter(mrg_d52=msg_ftn_base-275) ! arg_props
+      parameter(mrg_d53=msg_ftn_base-276) ! arg_shakep
+      parameter(mrg_d54=msg_ftn_base-277) ! arg_shakep
+      parameter(mrg_d55=msg_ftn_base-278) ! arg_shakep
+c
+      parameter(msg_gapss_scfshift1=msg_ftn_base-279) ! gap_scfshift
+      parameter(msg_gapss_scfshift2=msg_ftn_base-280) ! gap_scfshift
+c
+      parameter(mre_000=msg_ftn_base-281) ! esp_grid
+      parameter(mre_001=msg_ftn_base-282) ! esp_grid
+      parameter(mre_002=msg_ftn_base-283) ! esp_grid
+      parameter(mre_003=msg_ftn_base-284) ! esp_grid
+      parameter(mre_004=msg_ftn_base-285) ! esp_grid
+      parameter(mre_005=msg_ftn_base-286) ! esp_grid
+      parameter(mre_006=msg_ftn_base-287) ! esp_grid
+      parameter(mre_007=msg_ftn_base-288) ! esp_grid
+      parameter(mre_008=msg_ftn_base-289) ! esp_grid
+      parameter(mre_009=msg_ftn_base-290) ! esp_grid
+      parameter(mre_010=msg_ftn_base-291) ! esp_grid
+      parameter(mre_011=msg_ftn_base-292) ! esp_grid
+      parameter(mre_012=msg_ftn_base-293) ! esp_grid
+      parameter(mre_013=msg_ftn_base-294) ! esp_grid
+      parameter(mre_050=msg_ftn_base-331) ! esp_grid
+c
+      parameter(mrg_i21=msg_ftn_base-332) ! arg_rdstrt
+      parameter(mrg_i22=msg_ftn_base-333) ! arg_rdstrt
+      parameter(mrg_i23=msg_ftn_base-334) ! arg_rdstrt
+      parameter(mrg_i24=msg_ftn_base-335) ! arg_wrstrt
+      parameter(mrg_i25=msg_ftn_base-336) ! arg_wrstrt
+      parameter(mrg_i26=msg_ftn_base-337) ! arg_dldbal
+      parameter(mrg_i27=msg_ftn_base-338) ! arg_rdstrt
+      parameter(mrg_i28=msg_ftn_base-339) ! arg_rdstrt
+      parameter(mrg_i29=msg_ftn_base-340) ! arg_rdstrt
+      parameter(mrg_i30=msg_ftn_base-341) ! arg_param1
+      parameter(mrg_i31=msg_ftn_base-342) ! arg_knodes
+      parameter(mrg_i32=msg_ftn_base-343) ! arg_knodes
+      parameter(mrg_i33=msg_ftn_base-344) ! arg_setup1
+      parameter(mrg_i34=msg_ftn_base-345) ! arg_formul
+      parameter(mrg_i35=msg_ftn_base-346) ! arg_formul
+      parameter(mrg_i50=msg_ftn_base-361) ! arg_wrstrt
+c
+      parameter(mrg_d56=msg_ftn_base-362) ! arg_rdstrt
+      parameter(mrg_d57=msg_ftn_base-363) ! arg_rdstrt
+      parameter(mrg_d58=msg_ftn_base-364) ! arg_rdstrt
+      parameter(mrg_d59=msg_ftn_base-365) ! arg_param1
+      parameter(mrg_d60=msg_ftn_base-366) ! arg_param1
+      parameter(mrg_d61=msg_ftn_base-367) ! arg_ininoe
+      parameter(mrg_d62=msg_ftn_base-368) ! arg_ininoe
+      parameter(mrg_d63=msg_ftn_base-369) ! arg_dldbal
+      parameter(mrg_d64=msg_ftn_base-370) ! arg_formul
+      parameter(mrg_d65=msg_ftn_base-371) ! arg_formul
+      parameter(mrg_d66=msg_ftn_base-372) ! arg_formul
+      parameter(mrg_d99=msg_ftn_base-405) ! arg_rdstrt
+C
+      parameter (Msg_NormF = msg_ftn_base -  406) ! GA_NormF
+C
+      parameter (msg_rimp2g_mem = msg_ftn_base - 407) ! rimp2g memory usage igops
+c
+      parameter(pre_i00=msg_ftn_base-408) !
+      parameter(pre_i99=msg_ftn_base-450) !
+c
+      parameter (msg_gapss_dvcoul=msg_ftn_base-451)  ! gapss: gap_dvcoul
+      Parameter (Msg_CMR_File = Msg_Ftn_Base - 452)  ! Corr_Mk_Ref
+      parameter (msg_gapss_fitrho=msg_ftn_base-453)  ! gapss: gap_fit_rho
+      parameter (msg_gapss_gradwt=msg_ftn_base-454)  ! gapss: gap_gradweight
+      parameter (msg_gapss_gradwt2=msg_ftn_base-455)  ! gapss: gap_gradweight2
+      parameter (msg_gapss_gradwt3=msg_ftn_base-456)  ! gapss: gap_gradweight3
+      parameter (msg_gapss_pulay=msg_ftn_base-457)  ! gapss: gap_pulay
+      parameter (msg_gapss_pulay2=msg_ftn_base-458)  ! gapss: gap_pulay2
+      parameter (msg_gapss_pulay3=msg_ftn_base-459)  ! gapss: gap_pulay3
+      parameter (msg_gapss_doseig=msg_ftn_base-460)  ! gapss: gap_dos_eig
+c
+      parameter (mag_d00=msg_ftn_base-500) ! analysis module
+      parameter (mag_d01=msg_ftn_base-501) ! analysis module
+      parameter (mag_d02=msg_ftn_base-502) ! analysis module
+      parameter (mag_d03=msg_ftn_base-503) ! analysis module
+      parameter (mag_d04=msg_ftn_base-504) ! analysis module
+      parameter (mag_d05=msg_ftn_base-505) ! analysis module
+      parameter (mag_d06=msg_ftn_base-506) ! analysis module
+      parameter (mag_d07=msg_ftn_base-507) ! analysis module
+      parameter (mag_d08=msg_ftn_base-508) ! analysis module
+      parameter (mag_d09=msg_ftn_base-509) ! analysis module
+      parameter (mag_d10=msg_ftn_base-510) ! analysis module
+      parameter (mag_d11=msg_ftn_base-511) ! analysis module
+      parameter (mag_d12=msg_ftn_base-512) ! analysis module
+c
+      parameter(mcf_00=msg_ftn_base-550)
+      parameter(mcf_01=msg_ftn_base-551)
+      parameter(mcf_02=msg_ftn_base-552)
+      parameter(mcf_03=msg_ftn_base-553)
+      parameter(mcf_04=msg_ftn_base-554)
+      parameter(mcf_05=msg_ftn_base-555)
+      parameter(mcf_06=msg_ftn_base-556)
+      parameter(mcf_07=msg_ftn_base-557)
+      parameter(mcf_08=msg_ftn_base-558)
+      parameter(mcf_09=msg_ftn_base-559)
+      parameter(mcf_10=msg_ftn_base-560)
+      parameter(mcf_11=msg_ftn_base-561)
+      parameter(mcf_12=msg_ftn_base-562)
+      parameter(mcf_13=msg_ftn_base-563)
+      parameter(mcf_14=msg_ftn_base-564)
+      parameter(mcf_15=msg_ftn_base-565)
+      parameter(mcf_16=msg_ftn_base-566)
+      parameter(mcf_17=msg_ftn_base-567)
+      parameter(mcf_18=msg_ftn_base-568)
+      parameter(mcf_19=msg_ftn_base-569)
+      parameter(mcf_20=msg_ftn_base-570)
+      parameter(mcf_21=msg_ftn_base-571)
+      parameter(mcf_22=msg_ftn_base-572)
+      parameter(mcf_23=msg_ftn_base-573)
+      parameter(mcf_24=msg_ftn_base-574)
+      parameter(mcf_25=msg_ftn_base-575)
+      parameter(mcf_26=msg_ftn_base-576)
+      parameter(mcf_27=msg_ftn_base-577)
+      parameter(mcf_28=msg_ftn_base-578)
+      parameter(mcf_29=msg_ftn_base-579)
+      parameter(mcf_30=msg_ftn_base-580)
+      parameter(mcf_31=msg_ftn_base-581)
+      parameter(mcf_32=msg_ftn_base-582)
+      parameter(mcf_33=msg_ftn_base-583)
+      parameter(mcf_34=msg_ftn_base-584)
+      parameter(mcf_35=msg_ftn_base-585)
+      parameter(mcf_36=msg_ftn_base-586)
+      parameter(mcf_37=msg_ftn_base-587)
+      parameter(mcf_38=msg_ftn_base-588)
+      parameter(mcf_39=msg_ftn_base-589)
+      parameter(mcf_40=msg_ftn_base-590)
+      parameter(mcf_41=msg_ftn_base-591)
+      parameter(mcf_42=msg_ftn_base-592)
+      parameter(mcf_43=msg_ftn_base-593)
+      parameter(mcf_44=msg_ftn_base-594)
+      parameter(mcf_45=msg_ftn_base-595)
+      parameter(mcf_46=msg_ftn_base-596)
+      parameter(mcf_47=msg_ftn_base-597)
+      parameter(mcf_48=msg_ftn_base-598)
+      parameter(mcf_49=msg_ftn_base-599)
+      parameter(mcf_50=msg_ftn_base-600)
+c
+      parameter(dft_mxmbf=msg_ftn_base-601)
+      parameter(dft_mxmbfnq=msg_ftn_base-602)
+c
+      parameter(mcf_51=msg_ftn_base-611)
+      parameter(mcf_52=msg_ftn_base-612)
+      parameter(mcf_53=msg_ftn_base-613)
+      parameter(mcf_54=msg_ftn_base-614)
+      parameter(mcf_55=msg_ftn_base-615)
+      parameter(mcf_56=msg_ftn_base-616)
+      parameter(mcf_57=msg_ftn_base-617)
+      parameter(mcf_58=msg_ftn_base-618)
+      parameter(mcf_59=msg_ftn_base-619)
+      parameter(mcf_60=msg_ftn_base-620)
+      parameter(mcf_61=msg_ftn_base-621)
+      parameter(mcf_62=msg_ftn_base-622)
+      parameter(mcf_63=msg_ftn_base-623)
+      parameter(mcf_64=msg_ftn_base-624)
+      parameter(mcf_65=msg_ftn_base-625)
+      parameter(mcf_66=msg_ftn_base-626)
+      parameter(mcf_67=msg_ftn_base-627)
+      parameter(mcf_68=msg_ftn_base-628)
+      parameter(mcf_69=msg_ftn_base-629)
+      parameter(mcf_70=msg_ftn_base-600)
+      parameter(mcf_71=msg_ftn_base-631)
+      parameter(mcf_72=msg_ftn_base-632)
+      parameter(mcf_73=msg_ftn_base-633)
+      parameter(mcf_74=msg_ftn_base-634)
+      parameter(mcf_75=msg_ftn_base-635)
+      parameter(mcf_76=msg_ftn_base-636)
+      parameter(mcf_77=msg_ftn_base-637)
+      parameter(mcf_78=msg_ftn_base-638)
+      parameter(mcf_79=msg_ftn_base-639)
+      parameter(mcf_80=msg_ftn_base-640)
+      parameter(mcf_81=msg_ftn_base-641)
+      parameter(mcf_82=msg_ftn_base-642)
+      parameter(mcf_83=msg_ftn_base-643)
+      parameter(mcf_84=msg_ftn_base-644)
+      parameter(mcf_85=msg_ftn_base-645)
+      parameter(mcf_86=msg_ftn_base-646)
+      parameter(mcf_87=msg_ftn_base-647)
+      parameter(mcf_88=msg_ftn_base-648)
+      parameter(mcf_89=msg_ftn_base-649)
+c
+      parameter(msp_00=msg_ftn_base-650)
+      parameter(msp_01=msg_ftn_base-651)
+      parameter(msp_02=msg_ftn_base-652)
+      parameter(msp_03=msg_ftn_base-653)
+      parameter(msp_04=msg_ftn_base-654)
+      parameter(msp_05=msg_ftn_base-655)
+      parameter(msp_06=msg_ftn_base-656)
+      parameter(msp_07=msg_ftn_base-657)
+      parameter(msp_08=msg_ftn_base-658)
+      parameter(msp_09=msg_ftn_base-659)
+      parameter(msp_10=msg_ftn_base-660)
+      parameter(msp_11=msg_ftn_base-661)
+      parameter(msp_12=msg_ftn_base-662)
+      parameter(msp_13=msg_ftn_base-663)
+      parameter(msp_14=msg_ftn_base-664)
+      parameter(msp_15=msg_ftn_base-665)
+      parameter(msp_16=msg_ftn_base-666)
+      parameter(msp_17=msg_ftn_base-667)
+      parameter(msp_18=msg_ftn_base-668)
+      parameter(msp_19=msg_ftn_base-669)
+      parameter(msp_20=msg_ftn_base-670)
+      parameter(msp_21=msg_ftn_base-671)
+      parameter(msp_22=msg_ftn_base-672)
+      parameter(msp_23=msg_ftn_base-673)
+      parameter(msp_24=msg_ftn_base-674)
+      parameter(msp_25=msg_ftn_base-675)
+      parameter(msp_26=msg_ftn_base-676)
+      parameter(msp_27=msg_ftn_base-677)
+      parameter(msp_28=msg_ftn_base-678)
+      parameter(msp_29=msg_ftn_base-679)
+      parameter(msp_30=msg_ftn_base-680)
+      parameter(msp_31=msg_ftn_base-681)
+      parameter(msp_32=msg_ftn_base-682)
+      parameter(msp_33=msg_ftn_base-683)
+      parameter(msp_34=msg_ftn_base-684)
+      parameter(msp_35=msg_ftn_base-685)
+      parameter(msp_36=msg_ftn_base-686)
+      parameter(msp_37=msg_ftn_base-687)
+      parameter(msp_38=msg_ftn_base-688)
+      parameter(msp_39=msg_ftn_base-689)
+      parameter(msp_40=msg_ftn_base-690)
+      parameter(msp_41=msg_ftn_base-691)
+      parameter(msp_42=msg_ftn_base-692)
+      parameter(msp_43=msg_ftn_base-693)
+      parameter(msp_44=msg_ftn_base-694)
+      parameter(msp_45=msg_ftn_base-695)
+      parameter(msp_46=msg_ftn_base-696)
+      parameter(msp_47=msg_ftn_base-697)
+      parameter(msp_48=msg_ftn_base-698)
+      parameter(msp_49=msg_ftn_base-699)
+      parameter(msp_50=msg_ftn_base-700)
+c
+      parameter(msg_Tcgtf=msg_ftn_base-701) ! dft_fitcd: temp array dgop
+c
+      parameter(msg_grid_stat1=msg_ftn_base-702)
+      parameter(msg_grid_file=msg_ftn_base-703)
+c
+      parameter(msg_DRDY_OPCODE = msg_ftn_base-704)
+      parameter(msg_gop_rdens = msg_ftn_base-705)! dft: dgop for rdens_atom
+      parameter(msg_igop_tru = msg_ftn_base-706)! dft: igop for trun
+      parameter(msg_igop_tru1 = msg_ftn_base-707)! dft: igop for trun
+      parameter(msg_igop_tru2 = msg_ftn_base-708)! dft: igop for trun
+      parameter(msg_igop_tru3 = msg_ftn_base-709)! dft: igop for trun
+      parameter(msg_igop_tru4 = msg_ftn_base-710)! dft: igop for trun
+      parameter(msg_igop_tru5 = msg_ftn_base-711)! dft: igop for trun
+      parameter(msg_igop_tru6 = msg_ftn_base-712)! dft: igop for trun
+c
+      parameter(msg_rq = msg_ftn_base-750)
+      parameter(msg_dq = msg_ftn_base-751)
+      parameter(msg_diagv = msg_ftn_base-752)
+      parameter(msg_dmx = msg_ftn_base-753)
+      parameter(msg_dmy = msg_ftn_base-754)
+      parameter(msg_dmz = msg_ftn_base-755)
+      parameter(msg_coupv = msg_ftn_base-756)
+      parameter(msg_dm2x = msg_ftn_base-757)
+      parameter(msg_dm2y = msg_ftn_base-758)
+      parameter(msg_dm2z = msg_ftn_base-759)
+      parameter(msg_frq=msg_ftn_base-760)
+      parameter(msg_eigv=msg_ftn_base-761)
+      parameter(msg_ns1=msg_ftn_base-762)
+      parameter(msg_ns2=msg_ftn_base-763)
+      parameter(msg_ns3=msg_ftn_base-764)
+c
+      parameter(msg_j21 = msg_ftn_base-780)
+      parameter(msg_j20 = msg_ftn_base-781)
+      parameter(msg_j301 = msg_ftn_base-782)
+      parameter(msg_j302 = msg_ftn_base-783)
+      parameter(msg_u01 = msg_ftn_base-784)
+      parameter(msg_u02 = msg_ftn_base-785)
+c
+      parameter (mag_d13=msg_ftn_base-786) ! analysis module
+      parameter (mag_d14=msg_ftn_base-787) ! analysis module
+      parameter (mag_d15=msg_ftn_base-788) ! analysis module
+      parameter (mag_d16=msg_ftn_base-789) ! analysis module
+      parameter (mag_d17=msg_ftn_base-790) ! analysis module
+      parameter (mag_d18=msg_ftn_base-791) ! analysis module
+      parameter (mag_d19=msg_ftn_base-792) ! analysis module
+      parameter (mag_d20=msg_ftn_base-793) ! analysis module
+      parameter (mag_d21=msg_ftn_base-794) ! analysis module
+      parameter (mag_d22=msg_ftn_base-795) ! analysis module
+c
+      parameter (msg_vec_type = msg_ftn_base - 796) ! movecs_read_header
+c
+      parameter (msg_hess_exy = msg_ftn_base - 797) ! hessian summation
+      parameter (msg_hess_ddip = msg_ftn_base - 798) ! dipole derivative summation
+c
+      parameter(msg_nbo_icd = msg_ftn_base - 800) ! NBO messages
+      parameter(msg_et_2e = msg_ftn_base - 801) ! et 2e summation
+c
+      parameter (msg_tdmem = msg_ftn_base - 802) ! tddft_memory
+      parameter (msg_tcemem = msg_ftn_base - 803) ! tce_memory
+c
+      parameter (msg_utscr = msg_ftn_base - 804) ! util_avail_scr
+      parameter (msg_utscr2 = msg_ftn_base - 805) ! util_avail_scr
+c
+      parameter(msg_et_adens = msg_ftn_base - 806) ! et_2e max alpha density
+      parameter(msg_et_bdens = msg_ftn_base - 807) ! et_2e max beta density
+c
+      parameter(hop_00=msg_ftn_base-808)
+      parameter(hop_01=msg_ftn_base-809)
+      parameter(hop_02=msg_ftn_base-810)
+      parameter(hop_03=msg_ftn_base-811)
+      parameter(hop_04=msg_ftn_base-812)
+      parameter(hop_05=msg_ftn_base-813)
+      parameter(hop_06=msg_ftn_base-814)
+      parameter(hop_07=msg_ftn_base-815)
+      parameter(hop_08=msg_ftn_base-816)
+      parameter(hop_09=msg_ftn_base-817)
+      parameter(hop_10=msg_ftn_base-818)
+      parameter(hop_11=msg_ftn_base-819)
+      parameter(hop_12=msg_ftn_base-820)
+      parameter(hop_13=msg_ftn_base-821)
+      parameter(hop_14=msg_ftn_base-822)
+      parameter(hop_15=msg_ftn_base-823)
+      parameter(hop_16=msg_ftn_base-824)
+      parameter(hop_17=msg_ftn_base-825)
+      parameter(hop_18=msg_ftn_base-826)
+      parameter(hop_19=msg_ftn_base-827)
+      parameter(hop_20=msg_ftn_base-828)
+      parameter(hop_21=msg_ftn_base-829)
+      parameter(hop_22=msg_ftn_base-830)
+      parameter(hop_23=msg_ftn_base-831)
+      parameter(hop_24=msg_ftn_base-832)
+      parameter(hop_25=msg_ftn_base-833)
+c
+      parameter(msg_qmmm_c=msg_ftn_base-834) 
+      parameter(msg_qmmm_inum=msg_ftn_base-835) 
+      parameter(msg_qmmm_nbqs=msg_ftn_base-836) 
+      parameter(msg_qmmm_nbqw=msg_ftn_base-837) 
+      parameter(msg_qmmm_nqm=msg_ftn_base-838) 
+      parameter(msg_qmmm_nbqw_off=msg_ftn_base-839)
+      parameter(msg_qmmm_ind_solvent=msg_ftn_base-840)
+      parameter(msg_qmmm_qbqw=msg_ftn_base-841) 
+      parameter(msg_qmmm_qbqs=msg_ftn_base-842)
+      parameter(msg_qmmm_cbqw=msg_ftn_base-843) 
+      parameter(msg_qmmm_cbqs=msg_ftn_base-844)
+      parameter(msg_qmmm_ndx=msg_ftn_base-845)
+      parameter(msg_qmmm_ind=msg_ftn_base-846)
+      parameter(msg_qmmm_force=msg_ftn_base-847)
+      parameter(msg_qmmm_forcew=msg_ftn_base-848)
+      parameter(msg_qmmm_c1=msg_ftn_base-849) 
+      parameter(msg_qmmm_act=msg_ftn_base-850) 
+      parameter(msg_qmmm_wact=msg_ftn_base-851) 
+      parameter(msg_qmmm_inumw=msg_ftn_base-852) 
+      parameter(msg_qmmm_cw=msg_ftn_base-853) 
+      parameter(msg_qmmm_m=msg_ftn_base-854) 
+      parameter(msg_qmmm_mw=msg_ftn_base-855) 
+      parameter(msg_qmmm_misc=msg_ftn_base-856) 
+c
+      parameter(msg_efgs_col=msg_ftn_base-870)
+c
+      parameter(msg_perfm_sum=msg_ftn_base-871)
+      parameter(msg_perfm_max=msg_ftn_base-872)
+      parameter(msg_perfm_min=msg_ftn_base-873)
+c    
+      parameter(msg_cosmo1=msg_ftn_base-900)
+      parameter(msg_cosmo2=msg_ftn_base-901)
+      parameter(msg_cosmo0=msg_ftn_base-902)
+      parameter(msg_cosaxd=msg_ftn_base-903)
+      parameter(msg_cosxad=msg_ftn_base-904)
+c
+      parameter(msg_dntmc0=msg_ftn_base-903)
+      parameter(msg_dntmc1=msg_ftn_base-904)
+      parameter(msg_dntmc2=msg_ftn_base-905)
+      parameter(msg_dntmc3=msg_ftn_base-906)
+      parameter(msg_dntmc4=msg_ftn_base-907)
+      parameter(msg_dntmc5=msg_ftn_base-908)
+      parameter(msg_dntmc6=msg_ftn_base-909)
+      parameter(msg_dntmc7=msg_ftn_base-910)
+c
+      parameter(msg_smd=msg_ftn_base-930)
+      parameter(msg_xdm1=msg_ftn_base-931)
+      parameter(msg_xdm2=msg_ftn_base-932)
+      parameter(msg_xdm3=msg_ftn_base-933)

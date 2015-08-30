@@ -1,0 +1,74 @@
+Cpcgecopy_d2h_async.o: Cpcgecopy_d2h_async.cpp
+	$(CC) $(CFLAGS) -c Cpcgecopy_d2h_async.cpp
+
+Cpcgecopy_d2h.o: Cpcgecopy_d2h.cpp
+	$(CC) $(CFLAGS) -c Cpcgecopy_d2h.cpp
+
+Cpcgemm_hhd.o: Cpcgemm_hhd.cpp
+	$(CC) $(CFLAGS) -c Cpcgemm_hhd.cpp
+
+Cpclaprnt.o: Cpclaprnt.cpp
+	$(CC) $(CFLAGS) -c Cpclaprnt.cpp
+
+pcgetrf_gpu2.o: pcgetrf_gpu2.cpp
+	$(CC) $(CFLAGS) -c pcgetrf_gpu2.cpp
+
+pcgetrf_gpu.o: pcgetrf_gpu.cpp
+	$(CC) $(CFLAGS) -c pcgetrf_gpu.cpp
+
+Cpcswap_gpu.o: Cpcswap_gpu.cpp
+	$(CC) $(CFLAGS) -c Cpcswap_gpu.cpp
+
+Cpclaswp_gpu.o: Cpclaswp_gpu.cpp
+	$(CC) $(CFLAGS) -c Cpclaswp_gpu.cpp
+
+pcgetrf_ooc2.o: pcgetrf_ooc2.cpp
+	$(CC) $(CFLAGS) -c pcgetrf_ooc2.cpp
+
+pcgetrf_ooc.o: pcgetrf_ooc.cpp
+	$(CC) $(CFLAGS) -c pcgetrf_ooc.cpp
+
+
+pcludriver_org.o: pcludriver_org.F
+	$(FC) $(FFLAGS) -c pcludriver_org.F
+
+pcludriver.o: pcludriver.F
+	$(FC) $(FFLAGS) -c pcludriver.F
+
+pcludriver.exe: pcludriver.o liblin.a lib.a
+	$(CC) $(CFLAGS) -DUSE_CUDA_MALLOC_HOST=1 -c MallocHost.cpp
+	$(FC) $(FFLAGS) -o pcludriver.exe \
+	  	pcludriver.F \
+		print_desc.f \
+		MallocHost.o \
+		liblin.a lib.a $(LIBS)
+
+
+
+
+pcludriver_org.exe: pcludriver_org.o liblin.a lib.a
+	$(CC) $(CFLAGS) -UUSE_CUDA_MALLOC_HOST -c MallocHost.cpp
+	$(FC) $(FFLAGS) -o pcludriver_org.exe \
+	  	pcludriver_org.F \
+		print_desc.f \
+		MallocHost.o \
+		liblin.a lib.a $(LIBS)
+
+
+pcludriver2.exe: pcludriver2.o liblin.a lib.a
+	$(CC) $(CFLAGS) -DUSE_CUDA_MALLOC_HOST=1 -c MallocHost.cpp
+	$(FC) $(FFLAGS) -o pcludriver2.exe \
+	  	pcludriver2.F \
+		print_desc.f \
+		MallocHost.o \
+		liblin.a lib.a $(LIBS)
+
+pcludriver_fake.exe:  $(SRC) fake_cublas.cpp pcludriver.F 
+	$(CC) $(CFLAGS) -DUSE_FAKE_CUBLAS -c  $(SRC) fake_cublas.cpp
+	$(FC) $(FFLAGS) -DUSE_FAKE_CUBLAS -o pcludriver_fake.exe \
+	  	pcludriver.F \
+		print_desc.f \
+		idamax.f \
+		xerbla.f \
+		fake_cublas.o \
+		$(OBJECTS) $(LIBS)

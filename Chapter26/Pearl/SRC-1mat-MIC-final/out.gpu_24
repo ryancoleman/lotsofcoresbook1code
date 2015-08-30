@@ -1,0 +1,149 @@
+I am MPI task16 of 24 and my device is 1
+I am MPI task14 of 24 and my device is 2
+I am MPI task12 of 24 and my device is 0
+I am MPI task6 of 24 and my device is 0
+I am MPI task5 of 24 and my device is 2
+I am MPI task15 of 24 and my device is 0
+I am MPI task11 of 24 and my device is 2
+I am MPI task19 of 24 and my device is 1
+I am MPI task22 of 24 and my device is 1
+I am MPI task10 of 24 and my device is 1
+I am MPI task2 of 24 and my device is 2
+I am MPI task9 of 24 and my device is 0
+I am MPI task17 of 24 and my device is 2
+I am MPI task0 of 24 and my device is 0
+I am MPI task3 of 24 and my device is 0
+I am MPI task4 of 24 and my device is 1
+I am MPI task8 of 24 and my device is 2
+I am MPI task21 of 24 and my device is 0
+I am MPI task18 of 24 and my device is 0
+I am MPI task7 of 24 and my device is 1
+I am MPI task13 of 24 and my device is 1
+I am MPI task20 of 24 and my device is 2
+I am MPI task23 of 24 and my device is 2
+I am MPI task1 of 24 and my device is 1
+SCALAPACK Ax=b by LLt factorization.
+'MPI Machine'                                                                  
+ 
+Tests of the parallel real double precision LLt factorization and solve.
+The following scaled residual checks will be computed:
+ Solve residual         = ||Ax - b|| / (||x|| * ||A|| * eps * N)
+ Factorization residual = ||A - LL'|| / (||A|| * eps * N)
+The matrix A is randomly generated for each test.
+ 
+An explanation of the input/output parameters follows:
+TIME    : Indicates whether WALL or CPU time was used.
+UPLO    : Whether data is stored in 'Upper' or 'Lower' portion of array A.
+N       : The number of rows and columns in the matrix A.
+NB      : The size of the square blocks the matrix A is split into.
+NRHS    : The total number of RHS to solve for.
+NBRHS   : The number of RHS to be put on a column of processes before going
+          on to the next column of processes.
+P       : The number of process rows.
+Q       : The number of process columns.
+THRESH  : If a residual value is less than THRESH, CHECK is flagged as PASSED
+LLt time: Time in seconds to factor the matrix
+Sol Time: Time in seconds to solve the system.
+MFLOPS  : Rate of execution for factor and solve.
+ 
+The following parameter values will be used:
+  UPLO :             L
+  N    :         40000
+  NB   :            64   128   256   512  1024
+  NRHS :             1
+  NBRHS:             1
+  P    :             3
+  Q    :             8
+ 
+Relative machine precision (eps) is taken to be       0.111022E-15
+Routines pass computational tests if scaled residual is less than   1.0000    
+ TOTMEM IS             8589934592
+ MEMSIZ IS   1073741824
+ 
+TIME UPLO     N  NB NRHS NBRHS    P    Q LLt Time Slv Time   MFLOPS CHECK
+---- ---- ----- --- ---- ----- ---- ---- -------- -------- -------- ------
+ 
+ memsize =    134217728
+pdpotrf_ooc2: mm 40000 nn 512 mb 64 nb 64 isize 856064 
+pdpotrf_ooc2: memsize 134217728 npanels 156 nby 79872
+pdpotrf_gpu2: m 40000 n 40000 ia 1 ja 1 
+Y <- A was called 1 times, total 1.787565 secs
+Y:pdpotrf_gpu2 was called 1 times, total 28.505273 secs
+gpu2:potrf_gpu was called 27 times, total 0.526176 secs
+gpu2:bcast hDtmp was called 625 times, total 0.981138 secs
+gpu2:trsm was called 78 times, total 0.001183 secs
+pdpotrf_gpu2:pdsyrk was called 624 times, total 17.260773 secs
+Cpdsyrk_hhd was called 624 times, total 17.260260 secs
+syrk:copy was called 624 times, total 16.550221 secs
+syrk:dist_copy_A was called 624 times, total 6.550271 secs
+syrk:dist_copy_B was called 624 times, total 7.675322 secs
+Cpsyrk_helper was called 624 times, total 0.706557 secs
+WALL    L 40000    64    1     1    3    8    30.43     0.29  694525.07 PASSED
+pdpotrf_ooc2: mm 40000 nn 1024 mb 128 nb 128 isize 1712128 
+pdpotrf_ooc2: memsize 134217728 npanels 78 nby 79872
+pdpotrf_gpu2: m 40000 n 40000 ia 1 ja 1 
+Y <- A was called 1 times, total 0.613314 secs
+Y:pdpotrf_gpu2 was called 1 times, total 26.118058 secs
+gpu2:potrf_gpu was called 14 times, total 0.346690 secs
+gpu2:bcast hDtmp was called 313 times, total 0.704462 secs
+gpu2:trsm was called 39 times, total 0.000583 secs
+pdpotrf_gpu2:pdsyrk was called 312 times, total 17.221604 secs
+Cpdsyrk_hhd was called 312 times, total 17.221325 secs
+syrk:copy was called 312 times, total 16.909409 secs
+syrk:dist_copy_A was called 312 times, total 5.735528 secs
+syrk:dist_copy_B was called 312 times, total 8.436882 secs
+Cpsyrk_helper was called 312 times, total 0.309280 secs
+WALL    L 40000   128    1     1    3    8    26.79     0.31  787338.80 PASSED
+pdpotrf_ooc2: mm 40000 nn 2048 mb 256 nb 256 isize 3424256 
+pdpotrf_ooc2: memsize 134217728 npanels 39 nby 79872
+pdpotrf_gpu2: m 40000 n 40000 ia 1 ja 1 
+Y <- A was called 1 times, total 0.663784 secs
+Y:pdpotrf_gpu2 was called 1 times, total 25.553418 secs
+gpu2:potrf_gpu was called 7 times, total 0.273811 secs
+gpu2:bcast hDtmp was called 157 times, total 0.491940 secs
+gpu2:trsm was called 20 times, total 0.000661 secs
+pdpotrf_gpu2:pdsyrk was called 156 times, total 18.119444 secs
+Cpdsyrk_hhd was called 156 times, total 18.119299 secs
+syrk:copy was called 156 times, total 17.986076 secs
+syrk:dist_copy_A was called 156 times, total 6.524903 secs
+syrk:dist_copy_B was called 156 times, total 8.421027 secs
+Cpsyrk_helper was called 152 times, total 0.125550 secs
+WALL    L 40000   256    1     1    3    8    26.40     0.31  798708.51 PASSED
+pdpotrf_ooc2: mm 40000 nn 4096 mb 512 nb 512 isize 6848512 
+pdpotrf_ooc2: memsize 134217728 npanels 19 nby 77824
+pdpotrf_gpu2: m 40000 n 40000 ia 1 ja 1 
+Y <- A was called 1 times, total 0.589808 secs
+Y:pdpotrf_gpu2 was called 1 times, total 25.085914 secs
+gpu2:potrf_gpu was called 4 times, total 0.218739 secs
+gpu2:bcast hDtmp was called 79 times, total 0.438318 secs
+gpu2:trsm was called 10 times, total 0.000487 secs
+pdpotrf_gpu2:pdsyrk was called 78 times, total 18.774614 secs
+Cpdsyrk_hhd was called 78 times, total 18.774522 secs
+syrk:copy was called 78 times, total 18.714228 secs
+syrk:dist_copy_A was called 78 times, total 7.207568 secs
+syrk:dist_copy_B was called 78 times, total 8.756410 secs
+Cpsyrk_helper was called 72 times, total 0.049721 secs
+WALL    L 40000   512    1     1    3    8    25.86     0.36  813759.56 PASSED
+pdpotrf_ooc2: mm 40000 nn 8192 mb 1024 nb 1024 isize 13697024 
+pdpotrf_ooc2: memsize 134217728 npanels 9 nby 73728
+pdpotrf_gpu2: m 40000 n 40000 ia 1 ja 1 
+Y <- A was called 1 times, total 0.638288 secs
+Y:pdpotrf_gpu2 was called 1 times, total 25.300268 secs
+gpu2:potrf_gpu was called 2 times, total 0.154970 secs
+gpu2:bcast hDtmp was called 40 times, total 0.659492 secs
+gpu2:trsm was called 5 times, total 0.000490 secs
+pdpotrf_gpu2:pdsyrk was called 39 times, total 21.365439 secs
+Cpdsyrk_hhd was called 39 times, total 21.365403 secs
+syrk:copy was called 39 times, total 21.324708 secs
+syrk:dist_copy_A was called 39 times, total 11.169276 secs
+syrk:dist_copy_B was called 39 times, total 6.993562 secs
+Cpsyrk_helper was called 32 times, total 0.018860 secs
+WALL    L 40000  1024    1     1    3    8    26.14     0.55  799480.58 PASSED
+ 
+Finished      5 tests, with the following results:
+    5 tests completed and passed residual checks.
+    0 tests completed and failed residual checks.
+    0 tests skipped because of illegal input values.
+ 
+ 
+END OF TESTS.

@@ -1,0 +1,9 @@
+c
+c $Id: hnd_tol.fh 19696 2010-10-29 16:53:42Z d3y133 $
+c
+c Holds the tolerance information (itol).  normf and normp are still
+c available for other parts of the code that are more tightly coupled
+c to HONDO integrals.
+c
+      integer normf, normp, itol
+      common/hnd_baspar/normf,normp,itol

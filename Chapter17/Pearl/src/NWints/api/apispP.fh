@@ -1,0 +1,20 @@
+C
+c $Id: apispP.fh 19696 2010-10-29 16:53:42Z d3y133 $
+c
+C  This may be obsoleter rak/10/3/96
+c  I do not want to remove it since cvs will not allow
+C  reusing the name and there may be some sp specific code
+c  later on.
+C
+      integer hszspa,kszspa
+      integer hszspb,kszspb
+      integer hszspc,kszspc
+      integer hszspd,kszspd
+      integer hspscat,kspscat
+      integer max_sp_blksz
+      integer sp_scat_sz
+      logical no_sp_conts
+      common /apisppc/ hszspa,kszspa,hszspb,kszspb,hszspc,kszspc,
+     &       hszspd,kszspd,hspscat,kspscat,
+     &       max_sp_blksz,sp_scat_sz,no_sp_conts
+c

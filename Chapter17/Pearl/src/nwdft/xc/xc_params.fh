@@ -1,0 +1,6 @@
+c
+c     xc params
+c
+      double precision pi
+      parameter(pi = 3.14159265358979323846d0)
+c $Id: xc_params.fh 21176 2011-10-10 06:35:49Z d3y133 $

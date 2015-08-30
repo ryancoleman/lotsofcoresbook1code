@@ -1,0 +1,12 @@
+c
+c     simple statement function for evaluating index into lower
+c     triangular packed array ... indices do not have to be ordered
+c
+c     This file must be include immediately before the first executable
+c     statement
+c
+      integer itri, iiitri, jjjtri
+C$Id: itri.fh 19707 2010-10-29 17:59:36Z d3y133 $
+      itri(iiitri,jjjtri) =
+     $     (max(iiitri,jjjtri)*(max(iiitri,jjjtri)-3))/2 +
+     $     iiitri + jjjtri

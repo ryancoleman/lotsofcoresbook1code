@@ -1,0 +1,251 @@
+# $Id: basis.doc 19708 2010-10-29 18:04:21Z d3y133 $
+
+Basis Set Object/API
+Rick A. Kendall and Robert J. Harrison (April/May 1994)
+
+The basis set object/api was designed to get all information from the
+basis set based on a unique handle.  The internal data structures
+store only the unique tag information which is different from what a
+symmetry unique atom might be.  The routines are listed below with a
+short argument list and then detailed descriptions follow.  
+
+logical function bas_version()
+logical function bas_create(basis,name)
+logical function bas_destroy(basis)
+logical function bas_check_handle(basis,msg)
+logical function bas_print(basis)
+logical function bas_rtdb_load(rtdb, geom, basis, name)
+logical function bas_rtdb_store(rtdb, name, basis)
+logical function bas_high_angular(basis,high_angular)
+logical function gbs_map_print(basis)
+logical function bas_print_all()
+logical function bas_cn2ce(basis,cont,center)
+logical function bas_cn2bfr(basis,cont,ifirst,ilast)
+logical function bas_ce2bfr(basis, icent, ibflo, ibfhi)
+logical function bas_ce2cnr(basis,center,ifirst,ilast)
+logical function bas_bf2ce(basis,testbf,center)
+logical function bas_bf2cn(basis,testbf,cont)
+logical function bas_numbf(basis,nbf)
+logical function bas_name(basis,basis_name,trans_name)
+logical function bas_get_exponent(basis,icont,exp)
+logical function bas_continfo(basis,icont,type,nprimo,ngeno,sphcart)
+logical function bas_numcont(basis,numcont)
+logical function bas_get_coeff(basis,icont,coeff)
+logical function bas_set_exponent(basis,icont,exp,nexp)
+logical function bas_set_coeff(basis,icont,coeff,ncoeff)
+logical function bas_nbf_cn_max(basis,nbf_max)
+logical function bas_nbf_ce_max(basis,nbf_max)
+
+c......................................................................
+      logical function bas_version()
+c: Routine that calclulates the size of the common block structures 
+c  used in the basis set object and the mapped representation object.
+c:input none
+c:output always true.
+c......................................................................
+      logical function bas_create(basis,name)
+c
+c creates a handle and marks it active in the in-core data structure
+c
+      integer basis       ! [output] returned handle
+      character*(*)name   ! [input] name of basis set.  
+c......................................................................
+      logical function bas_destroy(basis)
+c
+c destroys information about an active incore basis
+c and the associated mapping arrays.
+c
+      integer basis ![input] basis set handle to be destroyed
+c......................................................................
+      logical function bas_check_handle(basis,msg)
+c
+c Checks to see if a basis set handle is valid
+c
+      integer basis      ! [input] handle
+      character*(*) msg  ! [input] error message
+c......................................................................
+      logical function bas_print(basis)
+c
+c routine to print unique basis information that is in core
+c
+      integer basis  ! [input] basis set handle
+c......................................................................
+      logical function bas_rtdb_load(rtdb, geom, basis, name)
+c
+c routine that loads a basis set from the rtdb and using the 
+c geometry information builds the mapping arrays to contractions/
+c shells, basis functions, and centers.
+c
+      integer rtdb        ! [input] rtdb handle      
+      integer geom        ! [input] geometry handle with info loaded
+      integer basis       ! [input] basis handle
+      character*(*) name  ! [input] basis set name that must be on the rtdb
+c......................................................................
+      logical function bas_rtdb_store(rtdb, name, basis)
+c
+c routine that does an incore basis set store to the rtdb
+c
+      integer rtdb              ! [input] handle to database
+      character*(*) name        ! [input] name to use when storing db
+      integer basis             ! [input] handle to basis set
+c......................................................................
+      logical function bas_high_angular(basis,high_angular)
+c
+c  calculate, return and store high angular momentem function
+c   for given basis. 
+c
+      integer basis         ! [input] basis set handle
+      integer high_angular  ! [output] high angular momentum of basis
+c......................................................................
+      logical function gbs_map_print(basis)
+c
+c prints the basis set <-> geometry mapping information
+c
+      integer basis    ! [input] basis set handle
+c......................................................................
+      logical function bas_print_all()
+c
+c routine to print active all basis set(s) information
+c
+c......................................................................
+      logical function bas_cn2ce(basis,cont,center)
+c
+c returns the center for a given mapped contraction
+c
+      integer basis     ! [input] basis set handle
+      integer cont      ! [input] mapped contraction index
+      integer center    ! [output] center index
+c......................................................................
+      logical function bas_cn2bfr(basis,cont,ifirst,ilast)
+c
+c returns the first basis function index of a mapped contraction 
+c in ifirst and the last basis function index in ilast
+c
+      integer basis     ! [input] basis set handle
+      integer cont      ! [input] mapped contraction index
+      integer ifirst    ! [output] first basis function
+      integer ilast     ! [output] last basis function     
+c......................................................................
+      logical function bas_ce2bfr(basis, icent, ibflo, ibfhi)
+c
+c  returns the basis function range for a given center
+c
+      integer basis             ! [input] handle
+      integer icent             ! [input] no. of center
+      integer ibflo, ibfhi      ! [output] range of functions on center
+c......................................................................
+      logical function bas_ce2cnr(basis,center,ifirst,ilast)
+c
+c returns the mapped contraction range on a given center
+c
+      integer basis    ! [input] basis set handle         
+      integer center   ! [input] center index 
+      integer ifirst   ! [output] first mapped contraction
+      integer ilast    ! [output] last mapped contraction
+c......................................................................
+      logical function bas_bf2ce(basis,testbf,center)
+c
+c routine to return the center of a given basis function 
+c
+      integer basis   ! [input] basis set handle         
+      integer testbf  ! [input] basis function index
+      integer center  ! [output] center index
+c......................................................................
+      logical function bas_bf2cn(basis,testbf,cont)
+c
+c returns the mapped contraction index that contains the given 
+c basis function index
+c 
+      integer basis   ! [input] basis set handle         
+      integer testbf  ! [input] basis function index
+      integer cont    ! [output] mapped contraction index
+c......................................................................
+      logical function bas_numbf(basis,nbf)
+c
+c returns the total number of basis functions of the mapped basis set.
+c
+      integer basis   ! [input] basis set handle         
+      integer nbf     ! [output] number of basis functions
+c......................................................................
+      logical function bas_name(basis,basis_name,trans_name)
+c
+c returns the name and translated name of the basis set
+c
+      integer       basis    ! [input] basis set handle
+      character*(*) basis_name ! [output] basis set name when loaded
+      character*(*) trans_name ! [output] basis set name in context when loaded
+c......................................................................
+      logical function bas_get_exponent(basis,icont,exp)
+c
+c  returns the exponents of a given mapped contraction 
+c
+      integer basis           ! [input] basis set handle
+      integer icont           ! [input] mapped contraction index
+      double precision exp(*) ! [output] exponents
+c......................................................................
+      logical function bas_continfo(basis,icont,
+     &       type,nprimo,ngeno,sphcart)
+c
+c  returns the generic information about the given mapped contraction
+c
+      integer basis             ! [input] basis handle
+      integer icont             ! [input] contraction index
+      integer type              ! [output] type (sp/s/p/d/..)
+      integer nprimo            ! [output] no. of primitives
+      integer ngeno             ! [output] no. of contractions
+      integer sphcart           ! [output] 0/1 for cartesian/shperical
+c......................................................................
+      logical function bas_numcont(basis,numcont)
+c
+c returns the total number of mapped contractions/shells for the 
+c given basis set
+c
+      integer basis     ! [input] basis set handle
+      integer numcont   ! [output] number of mapped contractions
+c......................................................................
+      logical function bas_get_coeff(basis,icont,coeff)
+c
+c returns the coefficients for the given mapped contraction
+c
+      integer basis              ! [input] basis set handle
+      integer icont              ! [input] mapped contraction index
+      double precision coeff(*)  ! [output] mapped contraction coeffs.
+c......................................................................
+      logical function bas_set_exponent(basis,icont,exp,nexp)
+c
+c sets the exponents to the input array for a given mapped contraction
+c
+      integer basis               ! [input] basis set handle        
+      integer icont               ! [input] mapped contraction index
+      integer nexp                ! [input] number of exponents for contraction
+      double precision exp(nexp)  ! [input] "new" exponents for contraction    
+c......................................................................
+      logical function bas_set_coeff(basis,icont,coeff,ncoeff)
+c
+c sets the coefficients of the given mapped contraction
+c
+      integer basis                   ! [input] basis set handle                   
+      integer icont                   ! [input] mapped contraction index           
+      integer ncoeff                  ! [input] number of coeffs. for contraction
+      double precision coeff(ncoeff)  ! [input] "new" coeffs. for contraction    
+c......................................................................
+      logical function bas_nbf_cn_max(basisin,nbf_max)
+      implicit none
+c
+c  calculate, return and store maximum basis function block size
+c   for all contractions in a given basis. 
+c
+      integer basisin       ! [input] basis set handle
+      integer nbf_max       ! [output] largest basis function block on any 
+c                           !          shell in the given basis set.
+c......................................................................
+      logical function bas_nbf_ce_max(basisin,nbf_max)
+      implicit none
+c
+c  calculate, return and store maximum basis function block size
+c   for all contractions in a given basis. 
+c
+      integer basisin       ! [input] basis set handle
+      integer nbf_max       ! [output] largest nbf block on an 
+c                           !          atom in the given basis.
+c......................................................................

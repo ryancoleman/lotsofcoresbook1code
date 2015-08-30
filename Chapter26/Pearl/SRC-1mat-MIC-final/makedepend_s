@@ -1,0 +1,90 @@
+Cpsgecopy_d2h_async.o: Cpsgecopy_d2h_async.cpp
+	$(CC) $(CFLAGS) -c Cpsgecopy_d2h_async.cpp
+
+Cpsgecopy_d2h.o: Cpsgecopy_d2h.cpp
+	$(CC) $(CFLAGS) -c Cpsgecopy_d2h.cpp
+
+Cpsgemm_hhd.o: Cpsgemm_hhd.cpp
+	$(CC) $(CFLAGS) -c Cpsgemm_hhd.cpp
+
+Cpssyrk_hhd.o: Cpssyrk_hhd.cpp
+	$(CC) $(CFLAGS) -c Cpssyrk_hhd.cpp
+
+Cpslaprnt.o: Cpslaprnt.cpp
+	$(CC) $(CFLAGS) -c Cpslaprnt.cpp
+
+psgetrf_gpu2.o: psgetrf_gpu2.cpp
+	$(CC) $(CFLAGS) -c psgetrf_gpu2.cpp
+
+pspotrf_gpu2.o: pspotrf_gpu2.cpp
+	$(CC) $(CFLAGS) -c pspotrf_gpu2.cpp
+
+psgetrf_gpu.o: psgetrf_gpu.cpp
+	$(CC) $(CFLAGS) -c psgetrf_gpu.cpp
+
+Cpsswap_gpu.o: Cpsswap_gpu.cpp
+	$(CC) $(CFLAGS) -c Cpsswap_gpu.cpp
+
+Cpslaswp_gpu.o: Cpslaswp_gpu.cpp
+	$(CC) $(CFLAGS) -c Cpslaswp_gpu.cpp
+
+psgetrf_ooc2.o: psgetrf_ooc2.cpp
+	$(CC) $(CFLAGS) -c psgetrf_ooc2.cpp
+
+psgetrf_ooc.o: psgetrf_ooc.cpp
+	$(CC) $(CFLAGS) -c psgetrf_ooc.cpp
+
+pspotrf_ooc2.o: pspotrf_ooc2.cpp
+	$(CC) $(CFLAGS) -c pspotrf_ooc2.cpp
+
+psludriver_org.o: psludriver_org.F
+	$(FC) $(FFLAGS) -c psludriver_org.F
+
+psludriver.o: psludriver.F
+	$(FC) $(FFLAGS) -c psludriver.F
+
+pslltdriver2.o: pslltdriver2.F
+	$(FC) $(FFLAGS) -c pslltdriver2.F
+
+psludriver.exe: psludriver.o liblin.a lib.a
+	$(CC) $(CFLAGS) -DUSE_CUDA_MALLOC_HOST=1 -c MallocHost.cpp
+	$(FC) $(FFLAGS) -o psludriver.exe \
+	  	psludriver.F \
+		print_desc.f \
+		MallocHost.o \
+		liblin.a lib.a $(LIBS)
+
+psludriver_org.exe: psludriver_org.o liblin.a lib.a
+	$(CC) $(CFLAGS) -UUSE_CUDA_MALLOC_HOST -c MallocHost.cpp
+	$(FC) $(FFLAGS) -o psludriver_org.exe \
+	  	psludriver_org.F \
+		print_desc.f \
+		MallocHost.o \
+		liblin.a lib.a $(LIBS)
+
+
+psludriver2.exe: psludriver2.o liblin.a lib.a
+	$(CC) $(CFLAGS) -DUSE_CUDA_MALLOC_HOST=1 -c MallocHost.cpp
+	$(FC) $(FFLAGS) -o psludriver2.exe \
+	  	psludriver2.F \
+		print_desc.f \
+		MallocHost.o \
+		liblin.a lib.a $(LIBS)
+
+psludriver_fake.exe:  $(SRC) fake_cublas.cpp psludriver.F 
+	$(CC) $(CFLAGS) -DUSE_FAKE_CUBLAS -c  $(SRC) fake_cublas.cpp
+	$(FC) $(FFLAGS) -DUSE_FAKE_CUBLAS -o psludriver_fake.exe \
+	  	psludriver.F \
+		print_desc.f \
+		idamax.f \
+		xerbla.f \
+		fake_cublas.o \
+		$(OBJECTS) $(LIBS)
+
+pslltdriver2.exe: pslltdriver2.o liblin.a lib.a
+	$(CC) $(CFLAGS) -DUSE_CUDA_MALLOC_HOST=1 -c MallocHost.cpp
+	$(FC) $(FFLAGS) -o pslltdriver2.exe \
+	  	pslltdriver2.F \
+		print_desc.f \
+		MallocHost.o \
+		liblin.a lib.a $(LIBS)

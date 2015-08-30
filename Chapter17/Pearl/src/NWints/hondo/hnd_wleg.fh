@@ -1,0 +1,14 @@
+c
+c $Id: hnd_wleg.fh 19696 2010-10-29 16:53:42Z d3y133 $
+c
+
+c
+c  Gauss-Legendre quadrature data for up to L=30
+c
+      integer gleg_points
+      parameter(gleg_points=32)
+      double precision hl, wl
+ 
+      common/hnd_hlegendre/hl(gleg_points)
+      common/hnd_wlegendre/wl(gleg_points)
+

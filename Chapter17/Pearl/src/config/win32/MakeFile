@@ -1,0 +1,31 @@
+#
+#	$Id: MakeFile 19708 2010-10-29 18:04:21Z d3y133 $
+#
+
+CPPFLAGS = -nologo /GX
+
+all: file_exists.exe convmake.exe cleanmake.exe
+
+file_exists.exe: file_exists.obj
+	cl -nologo /Fe"$@" $**
+
+convmake.exe: convmake.obj TokenList.obj
+	cl -nologo /Fe"$@" $**
+
+cleanmake.exe: cleanmake.obj
+	cl -nologo /Fe"$@" $**
+
+clean:
+	@if exist "file_exists.exe" erase "file_exists.exe"
+	@if exist "convmake.exe" erase "convmake.exe"
+	@if exist "cleanmake.exe" erase "cleanmake.exe"
+	@if exist "*.obj" erase "*.obj"
+	@if exist "*.i" erase "*.i"
+
+!IF EXIST (GNUmakefile)
+MakeFile: GNUmakefile
+	@$(CNFDIR)\win32\convmake.exe
+!ELSE
+MakeFile:
+	@echo No GNUmakefile - nothing to be done
+!ENDIF

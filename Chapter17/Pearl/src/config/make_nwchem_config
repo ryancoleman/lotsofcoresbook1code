@@ -1,0 +1,364 @@
+# This makefile produces the nwchem_config.h makefile fragment included by
+# makefile.h, the src/stubs.F file, and the NWCHEM_CONFIG file which says
+# how things are configured in human-readable form.
+#
+#	NWCHEM_MODULES	normally set by the invoker of this makefile.
+# These should be used eventually, but they don't work as we would
+# want them to now -- NWCHEM_TOP has to be set for makefile.h to
+# _find_ the include file that it would be read from.
+#	NWCHEM_TOP	"
+#	NWCHEM_TARGET	"
+#
+# $Id: make_nwchem_config 26004 2014-08-19 00:15:13Z edo $
+#-----------------------------------------------------------------------------
+# These are the directories required to build the various high-level
+# computational modules for NWChem.  They are built after the core
+# directories.
+
+KNOWN_MODULE_SUBDIRS = NWints atomscf ddscf develop gradients moints nwdft \
+	nwxc rimp2 stepper driver optim scfaux cphf ccsd vib mcscf prepar \
+        esp hessian selci dplot mp2_grad qhop \
+        property solvation nwpw fft rimp2_grad python argos analyz diana nwmd cafe space \
+        drdy vscf uccsdt qmmm rism qmd etrans tce geninterface bq cons\
+        perfm dntmc smd nbo dangchang leps ccca lucia
+
+# These are the libraries for the high-level modules.  They should be
+# specified in an order that will link correctly, but that shouldn't
+# be too hard to come up with.  These should be platform-independent.
+
+KNOWN_MODULE_LIBS = -ltest -lccsd -lmcscf -lselci -lmp2 -lmoints \
+                    -lstepper -ldriver -loptim -lplnwv -lnwdft -lgradients \
+                    -lcphf -lscfaux -lesp -lddscf -ldangchang -lleps -lguess -lhessian \
+                    -lvib -lnwcutil -lrimp2g -lrimp2 -lproperty -lsolvation -lnwints \
+		    -largos -lprepar -lnwmd -lnwpw -lofpw -lpaw -lpspw -lband -lnwpwlib \
+                    -lnwxc -lsmd -lsmddb\
+                    -lcafe -lspace -lanalyze -ldiana -lqhop \
+                    -lpfft -ldplot -lnwpython -ldrdy -lvscf -lqmmm -lrism -lqmd -letrans\
+                    -lpspw -ltce  -lgeninterface -lbq  -lcons -lperfm -lnbo -ldntmc -lccca\
+                    -llucia
+
+# This include file handles configuration of the NW_MODULE_SUBDIRS and
+# NW_MODULE_LIBS macros for what we actually want to build.  It
+# works from KNOWN_MODULE_SUBDIRS and KNOWN_MODULES_LIBS (keeping the order
+# but removing unneeded elements) and produces the following
+# additional macros:
+#
+# NW_MODULE_SUBDIRS:	List of directories that must be built
+# NW_MODULE_LIBS:	List of libraries to be linked against
+# EXCLUDED_SUBDIRS:	Those directories that were removed from
+# 			KNOWN_MODULE_SUBDIRS to produce NW_MODULE_SUBDIRS
+
+ifndef NWCHEM_TOP
+error1:
+	@echo You must define NWCHEM_TOP in your environment to be the path
+	@echo of the top level nwchem directory ... something like
+	@echo     setenv NWCHEM_TOP /msrc/home/elvis/nwchem
+	@exit 1
+endif
+
+# Set a default here in case the caller doesn't
+
+ifndef NWCHEM_MODULES
+   NWCHEM_MODULES = all
+endif
+MODULES := $(NWCHEM_MODULES) 
+
+# For convenience, we define some shorthand "module" names which are
+# expanded below.
+
+EXPANSIONS = all qm md classical tps alldev pnnl pnnldev smallqm
+
+EXP_all = $(filter-out argos leps smd uccsdt python develop scfaux rimp2_grad geninterface diana nbo rism lucia,$(KNOWN_MODULE_SUBDIRS) )
+EXP_pnnl = $(EXP_all) python dntmc
+EXP_alldev = develop $(EXP_all)
+EXP_pnnldev = develop $(EXP_pnnl)
+EXP_qm  = NWints atomscf ddscf gradients moints nwdft nwxc rimp2 hessian bq cons \
+          optim stepper driver ccsd vib mcscf property solvation selci dplot mp2_grad esp etrans tce vscf 
+EXP_smallqm  = NWints atomscf ddscf gradients moints nwdft rimp2 hessian bq cons \
+          optim stepper driver vib qmd mcscf property solvation selci dplot \
+           mp2_grad esp etrans vscf nwmd
+EXP_ver2 = prepar gradients mp2_grad stepper vib mcscf \
+           optim driver analyz diana
+#plane_wave ... broken? RJH
+EXP_qmandpw = nwpw NWints atomscf ddscf gradients moints nwdft nwxc rimp2 hessian bq cons \
+          optim stepper driver ccsd vib mcscf property solvation selci dplot mp2_grad esp etrans vscf 
+EXP_tps = prepar nwmd analyz diana
+EXP_md  = prepar nwmd analyz ddscf nwdft nwxc gradients esp
+EXP_classical  = prepar nwmd analyz
+EXP_venus = NWints atomscf ddscf gradients moints nwdft nwxc rimp2 hessian \
+          ccsd vib property solvation mp2_grad geninterface bq cons
+# Need bq in front of cons?
+EXP_qmmm_valiev = $(filter-out argos leps nbo tce uccsdt python diana develop scfaux rimp2_grad vscf geninterface dntmc lucia,$(KNOWN_MODULE_SUBDIRS) )
+EXP_rism = $(filter-out argos leps nbo tce uccsdt python diana develop scfaux rimp2_grad vscf geninterface dntmc lucia,$(KNOWN_MODULE_SUBDIRS) )
+
+# Check each expansion
+
+MODULES := $(patsubst all,$(EXP_all),$(MODULES) )
+MODULES := $(patsubst pnnl,$(EXP_pnnl),$(MODULES) )
+MODULES := $(patsubst qm,$(EXP_qm),$(MODULES) )
+MODULES := $(patsubst smallqm,$(EXP_smallqm),$(MODULES) )
+MODULES := $(patsubst classical,$(EXP_classical),$(MODULES))
+MODULES := $(patsubst md,$(EXP_md),$(MODULES))
+MODULES := $(patsubst qmmm_valiev,$(EXP_qmmm_valiev),$(MODULES))
+MODULES := $(patsubst rism,$(EXP_rism),$(MODULES))
+MODULES := $(patsubst tps,$(EXP_tps),$(MODULES))
+MODULES := $(patsubst alldev,$(EXP_alldev),$(MODULES) )
+MODULES := $(patsubst pnnldev,$(EXP_pnnldev),$(MODULES) )
+MODULES := $(patsubst venus,$(EXP_venus),$(MODULES) )
+MODULES := $(patsubst qmandpw,$(EXP_qmandpw),$(MODULES) )
+
+# Make sure everything on the list is cool
+UNKNOWN_MODULES := $(filter-out $(KNOWN_MODULE_SUBDIRS),$(MODULES))
+
+ifneq ($(UNKNOWN_MODULES),)
+error_unknown_modules:
+	@echo Your module list contains contains unknown targets:
+	@echo $(UNKNOWN_MODULES)
+	@echo The following modules are known at the moment:
+	@echo $(KNOWN_MODULE_SUBDIRS)
+	@exit 1
+endif
+
+#-----------------------------------------------------------------------------
+# Now expand things to make sure we get all dependencies.  Must be ordered
+# so that substitutions can be further expanded below.  There must be such
+# an order or the link command will have to contain repreated elements and
+# will be hard to generate automatically.
+
+MODULES := $(patsubst geninterface,geninterface,$(MODULES) )
+
+MODULES := $(patsubst property,property ddscf solvation,$(MODULES) )
+
+#MODULES := $(patsubst plane_wave,plane_wave nwdft nwxc,$(MODULES) )
+#MODULES := $(patsubst oimp2,oimp2 rimp2 moints,$(MODULES) )
+
+MODULES := $(patsubst vib,vib stepper driver optim gradients,$(MODULES) )
+MODULES := $(patsubst driver, driver stepper optim gradients,$(MODULES) )
+MODULES := $(patsubst stepper,stepper gradients,$(MODULES) )
+MODULES := $(patsubst gradients,gradients ddscf nwdft nwxc,$(MODULES) )
+MODULES := $(patsubst hessian,hessian ddscf gradients nwdft nwxc cphf property stepper vib,$(MODULES) )
+
+MODULES := $(patsubst rimp2_grad,rimp2_grad rimp2 cphf ddscf mp2_grad NWints,$(MODULES) )
+MODULES := $(patsubst rimp2,rimp2 ddscf NWints,$(MODULES) )
+
+MODULES := $(patsubst selci,selci moints,$(MODULES) )
+MODULES := $(patsubst mp2_grad,mp2_grad moints cphf gradients,$(MODULES) )
+MODULES := $(patsubst ccsd,ccsd cphf mp2_grad moints ddscf,$(MODULES) )
+MODULES := $(patsubst mcscf,mcscf moints ddscf,$(MODULES) )
+MODULES := $(patsubst moints,moints ddscf NWints,$(MODULES) )
+MODULES := $(patsubst cphf,cphf ddscf,$(MODULES) )
+MODULES := $(patsubst scfaux,scfaux ddscf,$(MODULES) )
+
+MODULES := $(patsubst nwdft,nwdft nwxc ddscf NWints,$(MODULES) )
+
+MODULES := $(patsubst esp,esp NWints,$(MODULES) )
+
+MODULES := $(patsubst etrans, etrans ddscf NWints,$(MODULES) )
+
+MODULES := $(patsubst tce,tce nwdft nwxc ddscf NWints hessian gradients,$(MODULES) )
+
+MODULES := $(patsubst argos,argos cafe space fft qhop,$(MODULES) )
+MODULES := $(patsubst nwmd,nwmd cafe space fft qhop,$(MODULES) )
+
+MODULES := $(patsubst develop,develop ddscf uccsdt,$(MODULES) )
+MODULES := $(patsubst uccsdt,uccsdt ddscf ccsd,$(MODULES) )
+MODULES := $(patsubst drdy,drdy ddscf gradients stepper,$(MODULES) )
+
+MODULES := $(patsubst dplot,dplot nwdft nwxc ddscf,$(MODULES) )
+MODULES := $(patsubst nwpw,nwpw nwxc fft,$(MODULES) )
+
+MODULES := $(patsubst ddscf,ddscf  atomscf nwdft nwxc NWints,$(MODULES) )
+# This dependency is the other way round (matchnxyz used by symmetry)
+# but is required for correct linking on SOLARIS.  Nasty kludge.
+#
+# This must be the last one!!!!!!!! rak 3/6/97
+#
+MODULES := $(patsubst NWints,NWints symmetry, $(MODULES) )
+
+# Now we've got a list of modules, but there may be duplicates
+# so let's get rid of them.
+
+MODULES := $(sort $(MODULES) )
+EXCLUDED_SUBDIRS = $(filter-out $(MODULES),$(KNOWN_MODULE_SUBDIRS))
+
+#-----------------------------------------------------------------------------
+# Now map module names into libraries
+MOD_LIBS = $(MODULES)
+
+MOD_LIBS := $(patsubst geninterface,-lgeninterface,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst python,-lnwpython,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst selci,-lselci,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst mp2_grad,-lmp2,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst NWints,-lnwints,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst atomscf,-lguess,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst ddscf,-lddscf,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst develop,-ltest,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst uccsdt,-lccsd,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst drdy,-ldrdy,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst gradients,-lgradients,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst hessian,-lhessian,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst ccsd,-lccsd,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst mcscf,-lmcscf,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst moints,-lmoints,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst nwdft,-lnwdft -lnwxc,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst rimp2,-lrimp2,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst rimp2_grad,-lrimp2g,$(MOD_LIBS) )
+#MOD_LIBS := $(patsubst oimp2,-loimp2,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst stepper,-lstepper,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst symmetry,-lnwcutil,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst cphf,-lcphf,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst scfaux,-lscfaux,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst vib,-lvib,$(MOD_LIBS) )
+#MOD_LIBS := $(patsubst plane_wave,-lplnwv -lnwxc,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst prepar,-lprepar,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst esp,-lesp,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst etrans,-letrans,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst tce,-ltce,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst argos,-largos,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst cafe,-lcafe,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst space,-lspace,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst qhop,-lqhop,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst nwmd,-lnwmd,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst qmd,-lqmd,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst qmmm,-lqmmm,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst rism,-lrism,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst analyz,-lanalyze,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst diana,-ldiana,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst dplot,-ldplot,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst property,-lproperty,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst vscf,-lvscf,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst optim,-loptim,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst driver,-ldriver,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst cons,-lcons,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst bq,-lbq,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst nwpw,-lnwpw -lofpw -lpaw -lpspw -lband -lnwpwlib -lnwxc,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst smd,-lsmd -lsmddb,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst fft,-lpfft,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst perfm,-lperfm,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst dntmc,-ldntmc,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst dangchang,-ldangchang,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst leps,-lleps,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst nbo,-lnbo,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst ccca,-lccca,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst lucia,-llucia,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst solvation,-lsolvation,$(MOD_LIBS) )
+MOD_LIBS := $(patsubst nwxc,-lnwxc,$(MOD_LIBS) )
+MOD_LIBS := $(strip $(MOD_LIBS))
+
+#-----------------------------------------------------------------------------
+# Finally, map excluded modules into routines which must be stubbed
+STUBROUTINES = $(EXCLUDED_SUBDIRS)
+
+STUBROUTINES := $(patsubst python,task_python python_input,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst selci,selci selci_input,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst mp2_grad,mp2_grad mp2_input semi_dir_mp2,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst NWints,int_input task_check_sum sym_bas_op intgrl_input,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst atomscf,,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst ddscf,scf scf_input vectors_input rel_input task_et,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst develop,uccsdtest rjhtest jantest jvltest jvltest2 raktest kgdtest debtest,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst drdy,drdy_input task_drdy,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst gradients,grad_force scf_gradient mcscf_gradient gradients_input grad_active_atoms stpr_sjacobi,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst hessian, hess_anal hess_tidy hess_input xc_chkdispauto xc_init_index xc_exit_index hessti xc_hessian xc_cpks_rhs xc_rhogen_nucder xc_d2expl xc_cpks_coeff xc_tabcd_cpks_lhs xc_tabcd_cpks_rhs xc_rhogen_pert dft_3dacc hess_check uhf_fock_setup uhf_fock_finish shell_fock_build shell_fock_build_cam,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst ccsd,ccsd ccsd_input,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst mcscf,mcscf mcscf_input,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst moints,atwtest direct_mp2 moints_full,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst nwdft,nwdft occup_input xc_chktau dft_fitcd grid_cleanup dft_fitvc grid_quadv0_gen dft_input xc_quadv0_gen dft_energy dft_energy_gradient sodft_energy tddft_input tddft_energy sodft_energy sodft_energy_gradient rt_dft_input xc_vdw_to_hessian,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst rimp2,rimp2,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst rimp2_grad,rimp2g,$(STUBROUTINES) )
+#STUBROUTINES := $(patsubst oimp2,oimp2,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst stepper,stpr_walk stpr_walk_task stpr_walk_reset stepper_input stpr_gen_hess_at stpr_gen_hess_atc stpr_print_ddipole stpr_wrt_fd_from_sq stpr_wrt_fd_dipole,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst symmetry,,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst cphf,cphf cphf_poliz mjdtest cphf2,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst scfaux,,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst vib,vib_vib freq_vib_input vib_dsquar,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst driver,driver oniom_energy oniom_gradient oniom_input drv_lst drv_opt driver_input lbfgsb_driver deloc_driver,$(STUBROUTINES) )
+#STUBROUTINES := $(patsubst plane_wave,plnwv plnwv_input,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst prepar,prepar pre_input,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst analyz,analyz ana_input,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst diana,diana dia_input,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst esp,esp esp_input,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst etrans,etrans et_calc et_input et_calc_fmo,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst tce,tce_energy_fragment tce_gradient tce_input tce_prop_start tce_property tce_cholesky tce_imaginary,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst argos,argos argos_input,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst nwmd,nwmd md_input,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst qmd,qmd_setup qmd_start qmd_wrttrj qmd_forces qmd_driver qmd_input task_qmd qmd_main,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst rism,task_rism rism_input,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst qmmm, qmmm_input task_qmmm_fep task_qmmm_abc qmmm_print_energy1 qmmm_forces qmmm_init qmmm_end task_qmmm_energy task_qmmm_gradient task_qmmm_optimize task_qmmm_dynamics task_qmmm_esp task_qmmm_pes task_qmmm_thermo qmmm_bq_forces,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst dplot,dplot dplot_input player,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst property,property raman_input task_raman prop_input hnd_nwhnd_tran hnd_prp_vec_read hnd_diag hnd_elfcon_symm hnd_elfcon get_slctd_atoms xc_tabcd_giao_nmr_rhs int_giao_1ega giao_b1_movecs,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst solvation,cosmo_input cosmo_initialize cosmo_charges cosmo_charges_from_dmat cosmo_def_radii cosmo_tidy cosff cosdff,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst vscf,task_vscf vscf_input,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst dntmc,task_dntmc dntmc_input,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst dangchang,dc_energy dangchang_input,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst leps,leps_energy mymd_input mymc_input leps_gradient md_driver md_data  mc_driver mc_data gasdev crossing mc_main md_set mc_init urand,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst nwpw,nwpw nwpw_input ofpw_energy paw_energy paw_gradient task_paw task_pspw task_ofpw pspw_input pspw_energy pspw_gradient band_energy band_gradient task_band,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst smd,task_smd smd_input task_smd_energy task_smd_dynamics task_fragment_energy task_smd_fragment,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst uccsdt,uccsdt moints_screen,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst nbo,task_nbo nbo_input,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst ccca,task_ccca task_ccca_energy ccca_input,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst optim,tropt neb neb_input task_mepgs mepgs_input task_string string_input tropt_input,$(STUBROUTINES) )
+STUBROUTINES := $(patsubst lucia, lucia,$(STUBROUTINES))
+STUBROUTINES := $(patsubst solvation, solvation,$(STUBROUTINES))
+#STUBROUTINES := $(patsubst cons, cons_end cons_input cons_add_egrad cons_add_energy cons_init cons_print_summary cons_active,$(STUBROUTINES) )
+STUBROUTINES := $(strip $(STUBROUTINES))
+STUBROUTINES := $(sort $(STUBROUTINES))
+
+.PHONY:	all list-options nwchem_config.h NWCHEM_CONFIG ../stubs.F
+all:	nwchem_config.h NWCHEM_CONFIG ../stubs.F
+
+nwchem_config.h:
+	echo \# This configuration generated automatically on \
+	      `hostname` at `date` > $@
+	echo "# Request modules from user: $(NWCHEM_MODULES)" >> $@
+	echo "NW_MODULE_SUBDIRS = $(filter $(MODULES),$(KNOWN_MODULE_SUBDIRS))" >> $@
+	echo "NW_MODULE_LIBS = $(filter $(MOD_LIBS),$(KNOWN_MODULE_LIBS))" >> $@
+	echo "EXCLUDED_SUBDIRS = $(EXCLUDED_SUBDIRS)" >> $@
+	echo "CONFIG_LIBS = $(CONFIG_LIBS)" >> $@
+NWCHEM_CONFIG:
+	echo \# This configuration generated automatically on \
+	     `hostname` at `date` > $@
+	echo "# Request modules from user: $(NWCHEM_MODULES)" >> $@
+	echo The following subdirectories are built: >> $@ 
+	echo $(MODULES) >> $@ 
+	echo corresponding to these libraries: >> $@ 
+	echo $(MOD_LIBS) >> $@ 
+	echo >> $@ 
+ifeq ($(EXCLUDED_SUBDIRS),)
+	echo No directories are excluded from the build, >> $@ 
+else
+	echo The following directories are excluded from the build: >> $@ 
+	echo $(EXCLUDED_SUBDIRS) >> $@ 
+endif
+ifeq ($(STUBROUTINES),)
+	echo and no routines will be replaced by stubs. >> $@ 
+else
+	echo and these routines will be replaced by stubs: >> $@ 
+	echo $(STUBROUTINES)  >> $@ 
+endif
+ifeq ($(CONFIG_LIBS),)
+	echo "No extra configuration libraries were added " >> $@
+else
+	echo "These libraries were added as at configuration time as "
+	echo "extras over the default libraries for the given target"
+	echo "$(CONFIG_LIBS)" >> $@
+endif
+
+# This file will stub out any modules we are excluding from the build.
+
+../stubs.F:
+	cp census.skeleton $@ 
+ifneq ($(STUBROUTINES),)
+	for routine in $(STUBROUTINES); do \
+	   sed s/STUBROUTINE/$$routine/g stub.skeleton >> $@ ; \
+	done
+endif
+
+# This provides the user some feedback on what the possibilities are
+# for configuring the code.
+list-options:
+	@echo
+	@echo The following modules are known:
+	@echo $(KNOWN_MODULE_SUBDIRS)
+	@echo
+	@echo The following shorthand names are also recognized:
+	@echo $(EXPANSIONS)

@@ -1,0 +1,3 @@
+* $Id: baslibraryP.fh 19708 2010-10-29 18:04:21Z d3y133 $
+      character*256 user_library_name
+      common /bas_input_library/ user_library_name

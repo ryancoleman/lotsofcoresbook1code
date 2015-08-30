@@ -1,0 +1,14 @@
+c
+c     $Id: tddft_grad_util.fh 25750 2014-06-08 07:56:45Z d3y133 $
+c
+c     Include file to pick up the print level definitions from
+c     util.fh and to define the type of the function
+c     tddft_grad_util_print.
+c
+c     Written by Huub van Dam, Oct 2007.
+c
+#include "util.fh"
+c
+      logical  tddft_grad_util_print
+      external tddft_grad_util_print
+c

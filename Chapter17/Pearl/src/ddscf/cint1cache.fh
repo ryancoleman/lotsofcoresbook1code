@@ -1,0 +1,7 @@
+*
+* $Id: cint1cache.fh 19707 2010-10-29 17:59:36Z d3y133 $
+*
+      logical ocache
+      integer bas1
+      integer g_cache(3)
+      common / cint1ecache / ocache, bas1, g_cache

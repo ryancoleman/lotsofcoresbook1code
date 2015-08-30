@@ -1,0 +1,6 @@
+c
+c $Id: chow.fh 19708 2010-10-29 18:04:21Z d3y133 $
+c
+      LOGICAL        OMIN, TS, STD, TROT, TRTR, MWC
+      COMMON / HOW / OMIN, TS, STD, TROT, TRTR, MWC
+c

@@ -1,0 +1,8 @@
+c
+c $Id: const.fh 19696 2010-10-29 16:53:42Z d3y133 $
+c
+c     conp = prefactors from pairs of primitives
+c
+      double precision conp
+      common /const/ conp(25*25)
+c

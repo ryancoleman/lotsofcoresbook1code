@@ -1,0 +1,426 @@
+ argument  1 = uracil_dimer.nw
+All connections between all procs tested: SUCCESS
+ 
+
+
+============================== echo of input deck ==============================
+title "uracil-6-31-Gs-act"
+echo
+start uracil-6-31-Gs-act
+
+memory stack 1400 mb heap 100 mb global 1600 mb noverify
+
+
+geometry units angstrom noprint
+N            .034130    -.986909     .000000
+N          -1.173397     .981920     .000000
+C          -1.218805    -.408164     .000000
+C           -.007302    1.702153     .000000
+C           1.196200    1.107045     .000000
+C           1.289085    -.345905     .000000
+O           2.310232    -.996874     .000000
+O          -2.257041   -1.026495     .000000
+H            .049329   -1.997961     .000000
+H          -2.070598    1.437050     .000000
+H           -.125651    2.776484     .000000
+H           2.111671    1.674079     .000000
+N            .034130    -.986909     100.000000
+N          -1.173397     .981920     100.000000
+C          -1.218805    -.408164     100.000000
+C           -.007302    1.702153     100.000000
+C           1.196200    1.107045     100.000000
+C           1.289085    -.345905     100.000000
+O           2.310232    -.996874     100.000000
+O          -2.257041   -1.026495     100.000000
+H            .049329   -1.997961     100.000000
+H          -2.070598    1.437050     100.000000
+H           -.125651    2.776484     100.000000
+H           2.111671    1.674079     100.000000
+end
+
+basis cartesian noprint
+* library 6-31G
+end
+
+scf
+direct
+thresh 1.0e-5
+tol2e 1.0e-10
+singlet
+rhf
+print low
+end
+
+tce
+ccsd(t)
+thresh 1d1
+freeze atomic
+tilesize 24
+2eorb
+2emet 15
+end
+set tce:nts  t
+
+task tce
+================================================================================
+
+
+                                         
+                                         
+ 
+ 
+              Northwest Computational Chemistry Package (NWChem) 6.5
+              ------------------------------------------------------
+ 
+ 
+                    Environmental Molecular Sciences Laboratory
+                       Pacific Northwest National Laboratory
+                                Richland, WA 99352
+ 
+                              Copyright (c) 1994-2014
+                       Pacific Northwest National Laboratory
+                            Battelle Memorial Institute
+ 
+             NWChem is an open-source computational chemistry package
+                        distributed under the terms of the
+                      Educational Community License (ECL) 2.0
+             A copy of the license is included with this distribution
+                              in the LICENSE.TXT file
+ 
+                                  ACKNOWLEDGMENT
+                                  --------------
+
+            This software and its documentation were developed at the
+            EMSL at Pacific Northwest National Laboratory, a multiprogram
+            national laboratory, operated for the U.S. Department of Energy
+            by Battelle under Contract Number DE-AC05-76RL01830. Support
+            for this work was provided by the Department of Energy Office
+            of Biological and Environmental Research, Office of Basic
+            Energy Sciences, and the Office of Advanced Scientific Computing.
+
+
+           Job information
+           ---------------
+
+    hostname        = g7
+    program         = /dtemp/edo/create_tar/tests/../nwchem-6.5/bin/LINUX64/nwchem
+    date            = Thu Oct 16 18:30:02 2014
+
+    compiled        = Tue_Oct_14_18:50:51_2014
+    source          = /dtemp/edo/create_tar/nwchem-6.5
+    nwchem branch   = 6.5
+    nwchem revision = N/A
+    ga revision     = N/A
+    input           = uracil_dimer.nw
+    prefix          = uracil-6-31-Gs-act.
+    data base       = ./uracil-6-31-Gs-act.db
+    status          = startup
+    nproc           =       16
+    time left       =     -1s
+
+
+
+           Memory information
+           ------------------
+
+    heap     =   13107194 doubles =    100.0 Mbytes
+    stack    =  183500799 doubles =   1400.0 Mbytes
+    global   =  209715200 doubles =   1600.0 Mbytes (distinct from heap & stack)
+    total    =  406323193 doubles =   3100.0 Mbytes
+    verify   = no 
+    hardfail = no 
+
+
+           Directory information
+           ---------------------
+ 
+  0 permanent = .
+  0 scratch   = .
+ 
+ 
+                     0  ppn                     16
+ 
+ 
+                                NWChem Input Module
+                                -------------------
+ 
+ 
+                                uracil-6-31-Gs-act
+                                ------------------
+ CS  symmetry detected
+                                 NWChem SCF Module
+                                 -----------------
+ 
+ 
+                                uracil-6-31-Gs-act
+ 
+ 
+
+  ao basis        = "ao basis"
+  functions       =   160
+  atoms           =    24
+  closed shells   =    58
+  open shells     =     0
+  charge          =   0.00
+  wavefunction    = RHF 
+  input vectors   = atomic
+  output vectors  = ./uracil-6-31-Gs-act.movecs
+  use symmetry    = T
+  symmetry adapt  = T
+ 
+
+ Forming initial guess at       0.2s
+
+
+ !! scf_movecs_sym_adapt:  160 vectors were symmetry contaminated
+
+  Symmetry fudging
+
+ !! scf_movecs_sym_adapt:  158 vectors were symmetry contaminated
+
+
+ Starting SCF solution at       0.4s
+
+
+
+       Final RHF  results 
+       ------------------ 
+
+         Total SCF energy =   -824.557243947263
+      One-electron energy =  -2574.714182450042
+      Two-electron energy =   1018.041701279199
+ Nuclear repulsion energy =    732.115237223581
+
+        Time for solution =      3.6s
+
+
+                   NWChem Extensible Many-Electron Theory Module
+                   ---------------------------------------------
+ 
+              ======================================================
+                   This portion of the program was automatically
+                  generated by a Tensor Contraction Engine (TCE).
+                  The development of this portion of the program
+                 and TCE was supported by US Department of Energy,
+                Office of Science, Office of Basic Energy Science.
+                      TCE is a product of Battelle and PNNL.
+              Please cite: S.Hirata, J.Phys.Chem.A 107, 9887 (2003).
+              ======================================================
+ 
+                                uracil-6-31-Gs-act
+ 
+ 
+            General Information
+            -------------------
+      Number of processors :    16
+         Wavefunction type : Restricted Hartree-Fock
+          No. of electrons :   116
+           Alpha electrons :    58
+            Beta electrons :    58
+           No. of orbitals :   320
+            Alpha orbitals :   160
+             Beta orbitals :   160
+        Alpha frozen cores :    16
+         Beta frozen cores :    16
+     Alpha frozen virtuals :     0
+      Beta frozen virtuals :     0
+         Spin multiplicity : singlet 
+    Number of AO functions :   160
+       Number of AO shells :    96
+        Use of symmetry is : on 
+      Symmetry adaption is : on 
+         Schwarz screening : 0.10D-09
+ 
+          Correlation Information
+          -----------------------
+          Calculation type : Coupled-cluster singles & doubles w/ perturbation           
+   Perturbative correction : (T)                                                         
+            Max iterations :      100
+        Residual threshold : 0.10D+02
+     T(0) DIIS level shift : 0.00D+00
+     L(0) DIIS level shift : 0.00D+00
+     T(1) DIIS level shift : 0.00D+00
+     L(1) DIIS level shift : 0.00D+00
+     T(R) DIIS level shift : 0.00D+00
+     T(I) DIIS level shift : 0.00D+00
+   CC-T/L Amplitude update :  5-th order DIIS
+                I/O scheme : Global Array Library
+        L-threshold : 0.10D+02
+        EOM-threshold : 0.10D+02
+ no EOMCCSD initial starts read in
+ TCE RESTART OPTIONS
+ READ_INT:   F
+ WRITE_INT:  F
+ READ_TA:    F
+ WRITE_TA:   F
+ READ_XA:    F
+ WRITE_XA:   F
+ READ_IN3:   F
+ WRITE_IN3:  F
+ SLICE:      F
+ D4D5:       F
+ 
+            Memory Information
+            ------------------
+          Available GA space size is    3355417600 doubles
+          Available MA space size is     196577492 doubles
+ 
+ Maximum block size supplied by input
+ Maximum block size        24 doubles
+
+ tile_dim =     21
+
+ Block   Spin    Irrep     Size     Offset   Alpha
+ -------------------------------------------------
+   1    alpha     a'    21 doubles       0       1
+   2    alpha     a"    21 doubles      21       2
+   3    beta      a'    21 doubles      42       1
+   4    beta      a"    21 doubles      63       2
+   5    alpha     a'    17 doubles      84       5
+   6    alpha     a'    17 doubles     101       6
+   7    alpha     a'    17 doubles     118       7
+   8    alpha     a"    17 doubles     135       8
+   9    alpha     a"    17 doubles     152       9
+  10    alpha     a"    17 doubles     169      10
+  11    beta      a'    17 doubles     186       5
+  12    beta      a'    17 doubles     203       6
+  13    beta      a'    17 doubles     220       7
+  14    beta      a"    17 doubles     237       8
+  15    beta      a"    17 doubles     254       9
+  16    beta      a"    17 doubles     271      10
+
+ Global array virtual files algorithm will be used
+
+ Parallel file system coherency ......... OK
+ 
+ Fock matrix recomputed
+ 1-e file size   =            10368
+ 1-e file name   = ./uracil-6-31-Gs-act
+ Cpu & wall time / sec            0.4            0.4
+ 4-electron integrals stored in orbital form
+ 
+ v2    file size   =         36443346
+ 4-index algorithm nr.  15 is used
+ imaxsize =       30
+ imaxsize ichop =        0
+ starting step 0 at                 4.57 secs 
+ starting step 1 at                10.01 secs 
+ starting step 2 at                12.43 secs 
+ starting step 3 at                13.40 secs 
+ starting step 4 at                15.58 secs 
+ done step 4 at                15.80 secs 
+ Cpu & wall time / sec           10.9           11.2
+ do_pt =  F
+ do_lam_pt =  F
+ do_cr_pt =  F
+ do_lcr_pt =  F
+ do_2t_pt =  F
+ T1-number-of-tasks                     6
+ 
+ t1 file size   =             2142
+ t1 file name   = ./uracil-6-31-Gs-act
+ t1 file handle =       -998
+ T2-number-of-boxes                   105
+ 
+ t2 file size   =         13382145
+ t2 file name   = ./uracil-6-31-Gs-act
+ t2 file handle =       -996
+CCSD iterations
+ ---------------------------------------------------------
+ Iter          Residuum       Correlation     Cpu    Wall 
+ ---------------------------------------------------------
+NEW TASK SCHEDULING
+CCSD_T1_NTS --- OK
+CCSD_T2_NTS --- OK
+    1   0.2968561599581  -1.5843606840228     7.2     7.4
+ -----------------------------------------------------------------
+ Iterations converged
+ CCSD correlation energy / hartree =        -1.584360684022787
+ CCSD total energy / hartree       =      -826.141604631285531
+
+ Singles contributions
+
+ Doubles contributions
+ CCSD(T)
+ Using plain CCSD(T) code
+ 
+ CCSD[T]  correction energy / hartree =        -0.065449867258131
+ CCSD[T] correlation energy / hartree =        -1.649810551280918
+ CCSD[T] total energy / hartree       =      -826.207054498543698
+ CCSD(T)  correction energy / hartree =        -0.058745873992428
+ CCSD(T) correlation energy / hartree =        -1.643106558015215
+ CCSD(T) total energy / hartree       =      -826.200350505277925
+ Cpu & wall time / sec          331.5          332.1
+
+ Task  times  cpu:      354.2s     wall:      355.5s
+ 
+ 
+                                NWChem Input Module
+                                -------------------
+ 
+ 
+ Summary of allocated global arrays
+-----------------------------------
+  No active global arrays
+
+
+
+                         GA Statistics for process    0
+                         ------------------------------
+
+       create   destroy   get      put      acc     scatter   gather  read&inc
+calls:  558      558     1.38e+04 2018     6756        0        0     2388     
+number of processes/call 1.74e+00 1.93e+00 1.20e+00 0.00e+00 0.00e+00
+bytes total:             7.61e+09 5.94e+08 3.27e+08 0.00e+00 0.00e+00 1.91e+04
+bytes remote:            4.66e+09 4.31e+07 3.01e+08 0.00e+00 0.00e+00 2.64e+03
+Max memory consumed for GA by this process: 311844344 bytes
+ 
+MA_summarize_allocated_blocks: starting scan ...
+MA_summarize_allocated_blocks: scan completed: 0 heap blocks, 0 stack blocks
+MA usage statistics:
+
+	allocation statistics:
+					      heap	     stack
+					      ----	     -----
+	current number of blocks	         0	         0
+	maximum number of blocks	        17	        42
+	current total bytes		         0	         0
+	maximum total bytes		    239664	 733193304
+	maximum total K-bytes		       240	    733194
+	maximum total M-bytes		         1	       734
+ 
+ 
+                                     CITATION
+                                     --------
+                Please cite the following reference when publishing
+                           results obtained with NWChem:
+ 
+                 M. Valiev, E.J. Bylaska, N. Govind, K. Kowalski,
+              T.P. Straatsma, H.J.J. van Dam, D. Wang, J. Nieplocha,
+                        E. Apra, T.L. Windus, W.A. de Jong
+                 "NWChem: a comprehensive and scalable open-source
+                  solution for large scale molecular simulations"
+                      Comput. Phys. Commun. 181, 1477 (2010)
+                           doi:10.1016/j.cpc.2010.04.018
+ 
+                                      AUTHORS
+                                      -------
+          E. Apra, E. J. Bylaska, W. A. de Jong, N. Govind, K. Kowalski,
+       T. P. Straatsma, M. Valiev, H. J. J. van Dam, D. Wang, T. L. Windus,
+        J. Hammond, J. Autschbach, K. Bhaskaran-Nair, J. Brabec, K. Lopata,
+        S. Krishnamoorthy, W. Ma, M. Klemm, O. Villa, Y. Chen, V. Anisimov,
+    F. Aquino, S. Hirata, M. T. Hackler, T. Risthaus, M. Malagoli, A. Marenich,
+   A. Otero-de-la-Roza, J. Mullin, P. Nichols, R. Peverati, J. Pittner, Y. Zhao,
+         P.-D. Fan, A. Fonari, R. J. Harrison, M. Dupuis, D. Silverstein,
+    D. M. A. Smith, J. Nieplocha, V. Tipparaju, M. Krishnan, B. E. Van Kuiken,
+        A. Vazquez-Mayagoitia, L. Jensen, M. Swart, Q. Wu, T. Van Voorhis,
+     A. A. Auer, M. Nooijen, L. D. Crosby, E. Brown, G. Cisneros, G. I. Fann,
+   H. Fruchtl, J. Garza, K. Hirao, R. A. Kendall, J. A. Nichols, K. Tsemekhman,
+    K. Wolinski, J. Anchell, D. E. Bernholdt, P. Borowski, T. Clark, D. Clerc,
+   H. Dachsel, M. J. O. Deegan, K. Dyall, D. Elwood, E. Glendening, M. Gutowski,
+   A. C. Hess, J. Jaffe, B. G. Johnson, J. Ju, R. Kobayashi, R. Kutteh, Z. Lin,
+   R. Littlefield, X. Long, B. Meng, T. Nakajima, S. Niu, L. Pollack, M. Rosing,
+   K. Glaesemann, G. Sandrone, M. Stave, H. Taylor, G. Thomas, J. H. van Lenthe,
+                               A. T. Wong, Z. Zhang.
+
+ Total times  cpu:      354.2s     wall:      355.7s

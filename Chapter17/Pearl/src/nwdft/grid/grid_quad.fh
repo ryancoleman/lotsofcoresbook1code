@@ -1,0 +1,52 @@
+#include "dft2drv.fh"
+#include "dft3drv.fh"
+c
+      logical grad ! [in]
+      integer g_dens(2),g_vxc(*)
+      integer ncoef_max
+      integer nqtot ! [in/out] total no of grid pts (to ge igop'ed)
+      integer natoms
+      double precision Ex, Ec
+c
+      double precision Amat(*)
+      double precision Cmat(*)
+      double precision Mmat(*)
+      double precision ttau(*)  ! total
+c
+      integer cetobfr(2,natoms)
+c
+      double precision rdens_atom(ipol*natoms*natoms)
+      double precision rho(*), delrho(*), hess(1) 
+      double precision  Bmat(nbf_ao_mxnbf_ce*n_per_rec)
+c
+      integer ibf_ao(nbf_ao)
+      double precision Pmat(*),
+     &                 Fmat(*)
+      double precision qwght(n_per_rec), qxyz(3,n_per_rec)
+      double precision xyz(3,natoms)
+c     bp and with different dimensions
+c     grid_setsp      : nqmax    ,natoms
+c     rest of routine : n_per_rec, natoms
+#ifdef USE_BP
+      double precision bp(n_per_rec,natoms)
+#endif
+      double precision rchi_atom(natoms),rdelchi_atom(3,natoms)
+      integer iniz(natoms), ifin(natoms)
+      double precision ccoef(ncoef_max), expo(nbf_ao_mxprim)
+      double precision rq(n_per_rec, natoms)
+      double precision  rho_int
+c
+      double precision Amat2(*)
+      double precision Cmat2(*)
+      double precision Mmat2(*)
+c
+      double precision iscr(*)
+      integer nscr
+      integer nmat ! [in]
+      logical do_scf, do_cpks_l, do_cpks_r, do_nmrks_r, do_xdm
+      double precision tmat(*)
+c
+      logical do_gxc
+      double precision Amat3(*)
+      double precision Cmat3(*)
+c $Id: grid_quad.fh 25752 2014-06-08 08:01:13Z d3y133 $

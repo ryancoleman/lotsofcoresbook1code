@@ -1,0 +1,9 @@
+*
+* $Id: fmmP.fh 19707 2010-10-29 17:59:36Z d3y133 $
+*
+      integer well_separated
+      parameter (well_separated = 2)
+c
+      integer leveloff(0:9)
+      common /csigh/leveloff
+

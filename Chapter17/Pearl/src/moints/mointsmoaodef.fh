@@ -1,0 +1,10 @@
+*
+* $Id: mointsmoaodef.fh 19708 2010-10-29 18:04:21Z d3y133 $
+*
+      integer MOINTS_IOBUFLEN
+      integer MOINTS_NBLKINFO
+      parameter(MOINTS_IOBUFLEN=8192)
+      parameter(MOINTS_NBLKINFO=15)
+c
+
+

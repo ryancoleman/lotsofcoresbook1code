@@ -1,0 +1,11 @@
+*
+* $Id: cstprfiles.fh 19708 2010-10-29 18:04:21Z d3y133 $
+*
+      CHARACTER*255 FILE41      ! dump file (need for restart)
+      CHARACTER*255 FILE44      ! mode for tracking (need for restart)
+      CHARACTER*255 FILE45      ! backstep 
+      CHARACTER*255 FILEHESS    ! Ascii hessian (need for restart)
+      CHARACTER*255 FILEDDIPOLE ! derivative dipole file
+      CHARACTER*255 FILEATR     ! Current FD hessian (need for restart)
+      COMMON / CSTPRFILES / FILE41, FILE44, FILE45, FILEHESS,
+     &    FILEATR, FILEDDIPOLE

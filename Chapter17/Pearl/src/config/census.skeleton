@@ -1,0 +1,12 @@
+      Subroutine Module_Census
+* $Id: census.skeleton 19708 2010-10-29 18:04:21Z d3y133 $
+C
+C     Eventually this routine should print out a list of modules or
+C     tasks or something which are incorporated into the present
+C     build of the program.
+C
+C     For now, let's not worry too much
+C
+      Write (6, *) 'I dont''t know which modules are in this build.'
+      Return
+      End

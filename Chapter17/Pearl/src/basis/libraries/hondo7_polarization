@@ -1,0 +1,73 @@
+#  HONDO7 Polarization  EMSL  Basis Set Exchange Library  3/15/13 10:19 AM
+# !
+#   
+
+
+basis "H_HONDO7 Polarization" CARTESIAN
+H    P
+      1.0000000              1.0000000        
+end
+basis "He_HONDO7 Polarization" CARTESIAN
+He    P
+      1.0000000              1.0000000        
+end
+basis "Be_HONDO7 Polarization" CARTESIAN
+Be    D
+      0.3200000              1.0000000        
+end
+basis "B_HONDO7 Polarization" CARTESIAN
+B    D
+      0.5000000              1.0000000        
+end
+basis "C_HONDO7 Polarization" CARTESIAN
+C    D
+      0.7200000              1.0000000        
+end
+basis "N_HONDO7 Polarization" CARTESIAN
+N    D
+      0.9800000              1.0000000        
+end
+basis "O_HONDO7 Polarization" CARTESIAN
+O    D
+      1.2800000              1.0000000        
+end
+basis "F_HONDO7 Polarization" CARTESIAN
+F    D
+      1.6200000              1.0000000        
+end
+basis "Ne_HONDO7 Polarization" CARTESIAN
+Ne    D
+      2.0000000              1.0000000        
+end
+basis "Na_HONDO7 Polarization" CARTESIAN
+Na    D
+      0.1570000              1.0000000        
+end
+basis "Mg_HONDO7 Polarization" CARTESIAN
+Mg    D
+      0.2340000              1.0000000        
+end
+basis "Al_HONDO7 Polarization" CARTESIAN
+Al    D
+      0.3110000              1.0000000        
+end
+basis "Si_HONDO7 Polarization" CARTESIAN
+Si    D
+      0.3880000              1.0000000        
+end
+basis "P_HONDO7 Polarization" CARTESIAN
+P    D
+      0.4650000              1.0000000        
+end
+basis "S_HONDO7 Polarization" CARTESIAN
+S    D
+      0.5420000              1.0000000        
+end
+basis "Cl_HONDO7 Polarization" CARTESIAN
+Cl    D
+      0.6190000              1.0000000        
+end
+basis "Ar_HONDO7 Polarization" CARTESIAN
+Ar    D
+      0.6960000              1.0000000        
+end

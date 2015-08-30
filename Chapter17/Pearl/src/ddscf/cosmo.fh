@@ -1,0 +1,23 @@
+*
+* $Id: cosmo.fh 19707 2010-10-29 17:59:36Z d3y133 $
+*
+c
+c     For COSMO we need to know if cosmo is on and which phase we are in:
+c
+c     cosmo_on = logical telling us that COSMO should be used
+c     cosmo_last = logical telling properties that last calculation was cosmo
+c                  and that point charges need to be included in calculation
+c     cosmo_phase = phase of calculation, 1=gas-phase, 2=sol-phase
+c
+      logical cosmo_on, cosmo_last
+      integer cosmo_phase
+c
+      common /cosmo/
+c
+c     Logicals
+c
+     $     cosmo_on, cosmo_last,
+c
+c     Integers
+c
+     $     cosmo_phase

@@ -1,0 +1,21 @@
+C$Id: util_sgroup.fh 19707 2010-10-29 17:59:36Z d3y133 $
+
+C      Parameters
+       integer maxcpus,maxdeep
+       parameter(maxcpus=2048)           ! Max CPU's in a group & max groups
+       parameter(maxdeep=512)            ! Max depth of groups
+
+C      DATA
+       integer mygroup(0:maxdeep)          ! NOT the same as the GA group number
+       integer my_ga_grp(0:maxdeep)        ! My GA Group number
+       integer my_ga_0_grp(0:maxdeep)      ! GA group number for group of all 0s
+       integer ngroups(0:maxdeep)          ! number of groups, at this level
+       logical sgprint                     ! debug printout?
+       character*256 rtdb_fname(0:maxdeep) ! Runtime database name at this level
+       integer depth                       ! How deep am I
+
+C      That are all in common
+       common /sgroup/ ngroups,mygroup,my_ga_grp,my_ga_0_grp,
+     *                 depth,sgprint
+       common /sgroupchr/rtdb_fname
+

@@ -1,0 +1,31 @@
+c     
+c     $Id: crohf.fh 19707 2010-10-29 17:59:36Z d3y133 $
+c     $Synopsis "Pass info to ROHF internal routines"$
+c     
+c     Private COMMON block for ROHF internal routines
+c     to facilitate use of generic solvers.
+c     Provide only the minimal amount of info for internal routines
+c     to function.
+c     Should only be included by the wrapper modules
+c     Prefix with "crohf_" to avoid namespace conflict
+c     
+
+      integer crohf_init_flag   ! Validity flag for this common block
+c     
+      integer crohf_vlen        ! Length of parameter space
+      integer crohf_g_fcv       ! Closed-virtual Fock matrix handle
+      integer crohf_g_fpv       ! Partial-virtual Fock matrix handle
+      integer crohf_g_fcp       ! Closed-partial Fock matrix handle
+c
+      logical noskew            ! to facilitate generic solvers wiith
+                                ! imaginary components (i.e. NMR
+                                ! shielding) default is .true. but
+                                ! needs to be .false. for NMR
+      common/crohf/
+     $     crohf_init_flag,
+     $     crohf_vlen,
+     $     crohf_g_fcv,
+     $     crohf_g_fpv,
+     $     crohf_g_fcp,
+     $     noskew
+c

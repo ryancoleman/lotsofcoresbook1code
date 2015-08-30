@@ -1,0 +1,26 @@
+#
+# Make.def file for Intel compiler (icpc)
+CC      = icpc
+CLINKER = $(CC)
+#DEVICE  = CL_DEVICE_TYPE_DEFAULT
+# Other valid device types on Intel platforms include:
+# For CPU:
+#   DEVICE  = CL_DEVICE_TYPE_CPU
+# For Xeon Phi:
+DEVICE = CL_DEVICE_TYPE_ACCELERATOR
+# For integrated graphics:
+#   DEVICE  = CL_DEVICE_TYPE_GPU
+
+
+STDS = -std=c++11
+
+OPENCLFLAGS = 
+CFLAGS      = $(STDS) -O3 -DDEVICE=$(DEVICE) 
+CPPFLAGS    = $(CFLAGS)
+LIBS        = -lm -lOpenCL
+
+
+OBJ=o
+EXE=
+RM=rm -f
+PRE=./

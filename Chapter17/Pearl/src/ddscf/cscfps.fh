@@ -1,0 +1,22 @@
+C$Id: cscfps.fh 19707 2010-10-29 17:59:36Z d3y133 $
+c
+c     pstat handles for the SCF code
+c
+      integer ps_fock_2e, ps_int_1e, ps_solve, ps_search,
+     $     ps_matexp, ps_total, ps_int_2e, ps_diag, ps_fock_add,
+     $     ps_vecio, ps_orthog, ps_int_dip, ps_gaops, ps_fock_io,
+     $     ps_sym_sym, ps_sym_ad, ps_riscf_read, ps_intio
+      integer ps_vhalf, ps_index, ps_transform, ps_extract, ps_exchange,
+     $     ps_coulomb, ps_copy, ps_transpose, ps_k2cf,
+     $     ps_mull, ps_multip, ps_moanal
+
+      logical oscfps            ! True if gathering stats
+      common /cscfps/ oscfps,
+     $     ps_fock_2e, ps_int_1e, ps_solve, ps_search,
+     $     ps_matexp, ps_total, ps_int_2e, ps_diag, ps_fock_add,
+     $     ps_vecio, ps_orthog, ps_int_dip, ps_vhalf, ps_index, 
+     $     ps_transform, ps_extract, ps_exchange, ps_coulomb, 
+     $     ps_copy, ps_transpose, ps_intio, ps_gaops, ps_fock_io,
+     $     ps_sym_sym, ps_sym_ad, ps_riscf_read, ps_k2cf,
+     $     ps_mull, ps_multip, ps_moanal
+c

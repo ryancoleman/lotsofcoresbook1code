@@ -1,0 +1,17 @@
+*
+      double precision pi          ! Value of pi
+      double precision qpirt       ! Value of sqrt(pi)/4
+      double precision zero        ! 0.0d00
+      double precision half        ! 0.5d00
+      double precision one         ! 1.0d00
+      double precision two         ! 2.0d00
+      double precision four        ! 4.0d00
+*
+      common/ecp_consts/pi,qpirt,zero,half,one,two,four
+*
+      double precision thr_ecp     ! threshold for ints
+      double precision ln_thr_ecp  ! natural log of threshold for ints
+*
+      common/ecp_toler/thr_ecp,ln_thr_ecp
+*
+c $Id: ecp_consts.fh 21176 2011-10-10 06:35:49Z d3y133 $

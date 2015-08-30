@@ -1,0 +1,5 @@
+      double precision l_cube
+      integer shft,nsub4
+      logical sub4
+      common /grspher/ shft,sub4,l_cube,nsub4
+c $Id: grid_cube.fh 21176 2011-10-10 06:35:49Z d3y133 $

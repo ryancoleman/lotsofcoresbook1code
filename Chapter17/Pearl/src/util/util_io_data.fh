@@ -1,0 +1,10 @@
+*
+* $Id: util_io_data.fh 19707 2010-10-29 17:59:36Z d3y133 $
+*
+      logical io_on
+      integer io_unit
+
+      common /util_io_data/ 
+     &                   io_on,
+     &                   io_unit
+

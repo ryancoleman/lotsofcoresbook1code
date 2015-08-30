@@ -1,0 +1,192 @@
+c $Id: bas.fh 19708 2010-10-29 18:04:21Z d3y133 $
+c:bas.fh
+c
+      logical bas_checksum
+      logical bas_version        
+      logical bas_create         
+      logical bas_destroy        
+      logical bas_check_handle   
+      logical bas_print          
+      logical bas_summary_print          
+      logical bas_rtdb_load      
+      logical bas_rtdb_store     
+      logical bas_rtdb_do_store  
+      logical bas_high_angular   
+      logical gbs_map_clear      
+      logical gbs_map_print      
+      logical bas_rtdb_out       
+      logical bas_rtdb_add       
+      logical bas_print_all      
+      logical bas_rtdb_in        
+      logical bas_cn2ce          
+      logical bas_cn2uce          
+      logical bas_cn2bfr         
+      logical bas_ce2bfr         
+      logical bas_ce2cnr         
+      logical bas_bf2ce
+      logical bas_bf2cn
+      logical bas_numbf          
+      logical bas_name
+      logical bas_cando_mpoles
+c
+      logical bas_get_exponent   
+      logical bas_continfo       
+      logical bas_numcont        
+      logical bas_get_coeff      
+      logical bas_set_exponent   
+      logical bas_set_coeff      
+      logical bas_nbf_cn_max
+      logical bas_nbf_ce_max
+      logical bas_geom
+      logical bas_ncoef_cn_max
+      logical bas_nprim_cn_max
+      logical bas_ncontr_cn_max
+c
+      logical bas_norm_get
+      logical bas_norm_set
+      logical bas_norm_print
+c
+      logical ecp_check_handle
+      logical so_check_handle
+      logical ecp_get_rexponent
+      logical ecp_set_rexponent
+      logical ecp_print
+      logical so_print
+      logical bas_set_ecp_name
+      logical bas_get_ecp_name
+      logical bas_set_ecp_handle
+      logical bas_get_ecp_handle
+      logical bas_set_ecp_basis
+      logical ecp_set_num_elec
+      logical ecp_get_num_elec
+      logical ecp_set_parent_handle
+      logical ecp_get_parent_handle
+c
+      logical bas_set_so_name
+      logical bas_get_so_name
+      logical bas_set_so_handle
+      logical bas_get_so_handle
+      logical bas_set_so_basis
+c
+      logical bas_cont_tag
+      logical bas_is_spherical
+c
+      logical ecpso_ncent
+      logical so_ncent
+      logical ecp_ncent
+      logical ecpso_list_ncent
+      logical so_list_ncent
+      logical ecp_list_ncent
+      logical ecpso_get_coords
+      logical so_get_coords
+      logical ecp_get_coords
+      logical bas_num_coef
+      logical bas_num_prim
+      logical bas_isce
+      logical bas_large_exponent
+      logical bas_cont_large_exponent
+      logical bas_any_gcorsp
+c
+      logical bas_rel_exists
+      logical basis_is_rel
+      logical bas_get_ao_handle
+      logical bas_any_rel_shells
+      logical bas_rel_high_ang
+c
+      logical bas_do_tags_match
+c
+      external bas_version        
+      external bas_create         
+      external bas_destroy        
+      external bas_check_handle   
+      external bas_print          
+      external bas_summary_print          
+      external bas_rtdb_load      
+      external bas_rtdb_store     
+      external bas_rtdb_do_store  
+      external bas_high_angular   
+      external gbs_map_clear      
+      external gbs_map_print      
+      external bas_rtdb_out       
+      external bas_rtdb_add       
+      external bas_print_all      
+      external bas_rtdb_in        
+      external bas_cn2ce          
+      external bas_cn2uce          
+      external bas_cn2bfr         
+      external bas_ce2cnr         
+      external bas_ce2bfr         
+      external bas_bf2ce
+      external bas_bf2cn
+      external bas_numbf          
+      external bas_name
+c 
+      external bas_get_exponent   
+      external bas_continfo       
+      external bas_numcont        
+      external bas_get_coeff      
+      external bas_set_exponent   
+      external bas_set_coeff      
+      external bas_nbf_cn_max
+      external bas_nbf_ce_max
+      external bas_geom
+      external bas_ncoef_cn_max
+      external bas_nprim_cn_max
+      external bas_ncontr_cn_max
+c
+      external bas_norm_get
+      external bas_norm_set
+      external bas_norm_print
+c
+      external ecp_check_handle
+      external ecp_get_rexponent
+      external ecp_set_rexponent
+      external ecp_print
+      external bas_set_ecp_name
+      external bas_get_ecp_name
+      external bas_set_ecp_handle
+      external bas_get_ecp_handle
+      external bas_set_ecp_basis
+      external ecp_set_num_elec
+      external ecp_get_num_elec
+      external ecp_set_parent_handle
+      external ecp_get_parent_handle
+c
+      external bas_set_so_name
+      external bas_get_so_name
+      external bas_set_so_handle
+      external bas_get_so_handle
+      external bas_set_so_basis
+c
+      external bas_cont_tag
+c
+      external bas_checksum
+      external bas_cando_mpoles
+      external bas_is_spherical
+      external so_check_handle
+      external so_print
+c
+      external ecpso_ncent
+      external so_ncent
+      external ecp_ncent
+      external ecpso_list_ncent
+      external so_list_ncent
+      external ecp_list_ncent
+      external ecpso_get_coords
+      external so_get_coords
+      external ecp_get_coords
+      external bas_num_coef
+      external bas_num_prim
+      external bas_isce
+      external bas_large_exponent
+      external bas_cont_large_exponent
+      external bas_any_gcorsp
+c
+      external bas_rel_exists
+      external basis_is_rel
+      external bas_get_ao_handle
+      external bas_any_rel_shells
+      external bas_rel_high_ang
+c
+      external bas_do_tags_match
+*

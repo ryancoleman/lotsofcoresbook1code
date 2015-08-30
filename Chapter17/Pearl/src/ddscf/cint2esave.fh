@@ -1,0 +1,11 @@
+#ifdef SOLARIS
+*
+* $Id: cint2esave.fh 19707 2010-10-29 17:59:36Z d3y133 $
+*
+c     needed with -stackvar option
+c
+c     RJH ... workshop 5 compilers don't need this and it
+c     breaks the workshop 6 f90 compilation.
+c     
+c      save ibuf, labels4
+#endif

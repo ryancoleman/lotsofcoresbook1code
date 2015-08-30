@@ -1,0 +1,18 @@
+#!/bin/bash
+mv util_version.F bigv.F
+cat > util_version.F<<EOF 
+      subroutine util_version()
+      end
+EOF
+cat > util_nwchem_version.F<<EOF
+      subroutine util_nwchem_version(nwrev)
+      character*(*) nwrev
+      nwrev='dev'
+      end
+EOF
+cat > util_ga_version.F<<EOF 
+      subroutine util_ga_version(nwrev)
+      character*(*) nwrev
+      nwrev='dev'
+      end
+EOF

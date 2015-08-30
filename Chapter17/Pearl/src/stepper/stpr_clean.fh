@@ -1,0 +1,4 @@
+* $Id: stpr_clean.fh 19708 2010-10-29 18:04:21Z d3y133 $
+      double precision thrcln
+      parameter (thrcln=1.0d-06)
+*     DATA THRCLN/1.D-6/

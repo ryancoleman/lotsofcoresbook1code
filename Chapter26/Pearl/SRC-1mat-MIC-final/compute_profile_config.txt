@@ -1,0 +1,13 @@
+gpustarttimestamp
+gridsize3d
+threadblocksize
+dynsmemperblock
+stasmemperblock
+regperthread
+memtransfersize
+memtransferdir
+streamid
+countermodeaggregate
+active_warps
+active_cycles
+
